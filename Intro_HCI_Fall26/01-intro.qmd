@@ -1,0 +1,28 @@
+---
+title: "01 Intro"
+format: revealjs
+---
+
+# [Week 1]{.r-fit-text}
+
+# Intros
+- Valle: ux research director at indeed and mom.
+- Mick: associate professor of instruction and dad. 
+- You: say something interesting about yourself as we go around the room.
+
+::: {.notes}
+These are speaker notes
+:::
+
+##
+![](fiCOVERPHOTO.jpg)
+
+# Today 
+- Syllabus
+- Canvas
+- Mick's website
+- Overview of our textbook 
+
+# Pause to look at these items
+
+# [END]{.r-fit-text}
