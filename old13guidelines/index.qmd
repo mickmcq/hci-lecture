@@ -1,0 +1,174 @@
+---
+title: "HCI:<br>UX Guidelines"
+author: Mick McQuaid
+date: today
+bibliography: master.bib
+format:
+  revealjs:
+    logo: iSchoolLogo.png
+    theme: moon
+    css: style.css
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    controls: true
+    controls-layout: bottom-right
+    center: true
+---
+
+::: {.r-fit-text}
+Week THIRTEEN
+:::
+
+# Today
+
+- Plans (from last time)
+- Q and A from last time
+- Discussion leading (Mick)
+- Design Critique (Mick)
+- Article Presentation (?)
+- Bad Design
+- Design Guidelines
+
+# Plans and Situated Actions
+Last time one student objected to the *interaction cycle* of Hartson and Pyla on the grounds that people often don't plan. In response, I suggested that they may mean something different by the word *plan* than what the student meant. I indicated I would look at @Suchman2006 for some guidance.
+
+## Cognitive science's view of plans
+Suchman argues that the world of cognitive science subscribes to a view of plans that is necessarily vague. She claims that the dominant definition is that a plan is a description of the actions that accomplish some goal. She then points out many problems with this definition, problems that have often been raised by cognitive scientists trying to reframe plans in a more consistent way. What are some of the obvious problems?
+
+## Some problems with the cognitive science view
+- What if I slam on the brakes to avoid hitting a child? What is my plan?
+- What if I can't explain what I'm going to do before I do it?
+- What if I don't know what I'm going to do before I do it?
+- What if I change direction in the course of doing something?
+
+## Plans
+
+In footnote 8 of Chapter 5, *Plans*, Suchman says the following:
+
+I take planning itself to be a form of situated action. As I have argued in Chapter 1, this is true both in the sense that plans are imaginative and discursive accounts created in anticipation of action and in the sense that they may be cited in the midst of ongoing activity, as well as afterwards. See also Chapter 11.
+
+##
+Characterizing a model of plans
+
+preconditions -> actions -> effects
+
+... but I don't necessarily think of these things consciously---if I rush out the door, I don't consciously think that there is ground on the other side to support me, but that assumption is somehow there ...
+
+## Planning and purposeful action
+"Plans" don't provide a solution to the problem of *how* we constrain and direct our actions. They may allows to talk about those constraints and directions before or after the actions.
+
+## Summary
+The student held a specific view of what planning is: thinking coherently about what is to be done so that the actions have a great chance of success. On the other hand, the interaction cycle may be influenced by a view that planning may not be consciously articulated before action. (This is not to justify the interaction cycle idea, which I still think is flawed, especially in view of some of what Suchman says about the situation of the actor, e.g., that cognitive science often oversimplifies, saying other actors are just part of the environment and need no further theorizing.)
+
+# Q and A from last time
+
+## Learning
+
+##
+As we delved into our discussions section, Our focus centered on the need to recognize that understanding human behavior and cognition in technology goes beyond interface design, acknowledging its complex influences. This prompted me to consider how various factors like mood, time of day, and past experiences shape users' engagement with content. For instance, imagine someone who is SUPER hangry and needing to order food online; encountering a complex app/website could potentially ruin their entire day and deter them from ever using that platform again. This could result in significant losses for food businesses. I still avoid ordering food online from most websites, not due to usability issues but because they often take too long to load on my phone..…I can’t imagine how I'd react if, after a lengthy wait, the website had a poorly designed interface, especially if I'm hungry.
+
+##
+I enjoyed the conversation about shortcuts and the ways in which there is much good and much trouble that comes from the existence and use of shortcuts.
+
+##
+Certain expectations from our culture may impact the usage of the technology, or it could be something more deeply ingrained.
+
+##
+There is a need to balance simplicity and complexity within systems to ensure they are both accessible and capable of performing advanced tasks. This challenge seems complex, and since in class we talk about the totality of design without having a specific  product in mind, I found the dialogue to vague and hard to engage with. Nonetheless, this demands a deep understanding of user behavior and needs, where intuitive and efficient user experiences are crafted by considering how users interact with technology, including cognitive factors and the utilization of shortcuts.
+
+
+## Q&A
+
+##
+Not a question, but I think I will be spending time over the summer reviewing everything Rachel taught us in Figma, because I can‘t use it super intuitively yet, but I think spending more time will help it be smoother.
+
+##
+Solidworks, AutoCAD, Ansys are all 3D CAD/Modeling software, yet their UI and Shortcuts vary wildly from one another. Why do you think there is not more standardized shortcuts for software and program of similar functions and applications?
+
+##
+Could the discussion of human-computer interaction as merely a physical relationship (aesthetic and functionality) be considered overly simplistic, given the shift towards designing abstract environments as products? How does this evolving landscape underscore the need for adaptability and robust feedback mechanisms?
+
+
+# Discussion
+
+## Numbers
+How do organizations decide on the length of numbers for phone numbers, credit cards, bank accounts, verification codes, and so on? Do they try to make some of these easy to remember? Do they intentionally try to make some hard to remember?
+
+## Visual bandwidth
+How can we address the low visual bandwidth of a phone or watch as compared to a desktop computer or physical newpaper?
+
+## Text design
+Should product development teams include copy writers and copy editors?
+
+## Minimalism vs feature richness
+Should complex designs be minimalist or feature rich or both or a balance?
+
+*By the way, you may notice that designs that require split second timing, such airplane piloting and securities trading, present more complex interfaces than designs to be used occasionally.*
+
+## Poor design and errors
+Has poor design led you to make errors?
+
+*(Yes, in the past 72 hours!)*
+
+## Phone numbers
+Not every country uses seven digit phone numbers. Does the logic of the Bell System's choice hold true for other countries, other cultures?
+
+## Consistency and boredom
+Consistency is important but may lead to boredom. How do you balance it with appeal?
+
+## Cognitive affordances in retail
+What are some factors retail stores use to enhance customer experience?
+
+# Design Critique
+
+::: {.incremental}
+- My choice of terminal: iTerm2
+- Most popular terminal on macOS
+- Vastly many options focused on terminal workflow
+- Updated at least monthly
+- Plays nicely with others
+:::
+
+# Article Presentation
+- Not an article this time, but an entire book!
+- @Olson2014 is called *Ways of Knowing in HCI* and covers most of the popular research methods
+- It's a collection of chapters by different authors rather than a single-authored book
+- It's available free online
+- It's worth consulting before you do a survey or an experiment or a case study or ...
+
+# Bad Designs
+Your contributions ...
+
+*(My contribution is a low-cost, low-satisfaction LMS, a competitor to Canvas)#
+
+# Design guidelines
+- [Google Material 3](https://m3.material.io/)
+- [Apple HIG](https://developer.apple.com/design/human-interface-guidelines)
+- [Microsoft Fluent 2 Design Principles](https://fluent2.microsoft.design/design-principles)
+- [Microsoft Inclusive Design](https://inclusive.microsoft.design/)
+
+# Readings
+
+Readings this week include @Hartson2019: Ch 32
+
+# Assignments
+Proj 6
+
+# References
+
+::: {#refs}
+:::
+
+---
+
+::: {.r-fit-text}
+END
+:::
+
+# Colophon
+
+This slideshow was produced using `quarto`
+
+Fonts are *League Gothic* and *Lato*
+

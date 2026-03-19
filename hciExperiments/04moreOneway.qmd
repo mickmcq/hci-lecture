@@ -1,0 +1,103 @@
+
+# Another example of tasks using two tools (More on oneway ANOVA)
+
+The `designtime` data records task times in minutes to complete the same project in Illustrator or InDesign.
+
+Read the designtime data into R. Determine how many subjects participated.
+
+```{r}
+dt<-read_csv("designtime.csv")
+#. convert Subject to a factor
+dt$Subject<-as.factor(dt$Subject)
+dt$Tool<-as.factor(dt$Tool)
+summary(dt)
+length(dt$Subject)
+tail(dt)
+```
+
+We see from the summary that there are sixty observations. We can see the same by checking the `length()` of the Subject (or any other) variable in the data.
+
+Create a boxplot of the task time for each tool and comment on the medians and variances.
+
+```{r}
+ggplot(dt,aes(Tool,Time,fill=Tool)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+```
+
+Both the median and the variance is much larger for Illustrator than for InDesign.
+
+Conduct a Shapiro-Wilk test for normality for each tool and comment.
+
+```{r}
+shapiro.test(dt[dt$Tool=="Illustrator",]$Time)
+shapiro.test(dt[dt$Tool=="InDesign",]$Time)
+```
+
+In the case of InDesign, we fail to reject the null hypothesis that the data are drawn from a normal distribution. In the case of Illustrator, we reject the null hypothesis at the five percent level but not at the one percent level (just barely).
+
+Conduct a Shapiro-Wilk test for normality on the residuals and comment.
+
+```{r}
+m<-aov(Time~Tool,data=dt)
+shapiro.test(residuals(m))
+```
+
+We reject the null hypothesis that the residuals are normally distributed.
+
+Conduct a Brown-Forsythe test of homoscedasticity.
+
+```{r}
+leveneTest(Time~Tool,data=dt,center=median)
+```
+
+We reject the null hypothesis that the two samples are drawn from populations with equal variance.
+
+Fit a lognormal distribution to the Time response for each Tool. Conduct a Kolmogorov-Smirnov goodness-of-fit test and comment.
+
+```{r}
+fit<-fitdistr(dt[dt$Tool=="Illustrator",]$Time,
+    "lognormal")$estimate
+tst<-ks.test(dt[dt$Tool=="Illustrator",]$Time,
+    "plnorm",meanlog=fit[1],sdlog=fit[2],exact=TRUE)
+tst
+fit<-fitdistr(dt[dt$Tool=="InDesign",]$Time,
+    "lognormal")$estimate
+tst<-ks.test(dt[dt$Tool=="InDesign",]$Time,
+    "plnorm",meanlog=fit[1],sdlog=fit[2],exact=TRUE)
+tst
+```
+
+We fail to reject the null hypothesis that the Illustrator sample is drawn from a lognormal distribution.
+We fail to reject the null hypothesis that the InDesign sample is drawn from a lognormal distribution.
+
+Create a log-transformed Time response column. Compute the mean for each tool and comment.
+
+```{r}
+dt$logTime<-log(dt$Time)
+mean(dt$logTime[dt$Tool=="Illustrator"])
+mean(dt$logTime[dt$Tool=="InDesign"])
+dt |>
+  group_by(Tool) |>
+  summarize(mean=mean(logTime),sd=sd(logTime))
+```
+
+The mean for Illustrator appears to be larger than the mean for InDesign.
+
+Conduct an independent-samples $t$-test on the log-transformed Time response, using the Welch version for unequal variances and comment.
+
+```{r}
+t.test(logTime~Tool,data=dt,var.equal=FALSE)
+```
+
+We reject the null hypothesis that the true difference in means is equal to 0.
+
+Conduct an exact nonparametric Mann-Whitney $U$ test on the Time response and comment.
+
+```{r}
+wilcox_test(Time~Tool,data=dt,distribution="exact")
+```
+
+We reject the null hypothesis that the samples were drawn from populations with the same distribution.
+

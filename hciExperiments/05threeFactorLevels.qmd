@@ -1,0 +1,68 @@
+
+# Differences in writing speed among three tools (Three levels of a factor in ANOVA)
+
+We'll examine three levels of a factor, which is an alphabet system used for writing. The three levels are named for the text entry systems, EdgeWrite, Graffiti, and Unistrokes.
+
+```{r}
+alpha<-read_csv("alphabets.csv")
+alpha$Subject<-as.factor(alpha$Subject)
+alpha$Alphabet<-as.factor(alpha$Alphabet)
+summary(alpha)
+```
+
+Plot the three text entry systems.
+```{r}
+ggplot(alpha,aes(Alphabet,WPM,fill=Alphabet)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+```
+
+Identify the average words per minute written with EdgeWrite.
+
+```{r}
+mean(alpha[alpha$Alphabet=="EdgeWrite",]$WPM)
+```
+
+Conduct a Shapiro-Wilk test for normality on each method.
+
+```{r}
+shapiro.test(alpha$WPM[alpha$Alphabet=="EdgeWrite"])
+shapiro.test(alpha$WPM[alpha$Alphabet=="Graffiti"])
+shapiro.test(alpha$WPM[alpha$Alphabet=="Unistrokes"])
+```
+
+Conduct a Shapiro-Wilk test for normality on the residuals of an ANOVA model stipulating that Alphabet affects WPM.
+
+```{r}
+m<-aov(WPM~Alphabet,data=alpha)
+shapiro.test(residuals(m))
+```
+
+Test for homoscedasticity.
+
+```{r}
+leveneTest(alpha$WPM~alpha$Alphabet,center="median")
+```
+
+Now test all three. The `mcp` function tests multiple means. The keyword `Tukey` means to do all the possible pairwise comparisons of Alphabet, i.e., Graffiti and EdgeWrite, Graffiti and Unistrokes, and EdgeWrite and Unistrokes. `m` is the oneway ANOVA model we created above.
+
+```{r}
+summary(multcomp::glht(m,multcomp::mcp(Alphabet="Tukey")),test=adjusted(type="holm"))
+```
+
+Conduct a nonparametric oneway ANOVA using the Kruskal-Wallis test to see if the samples have the same distribution. The null hypothesis is that the samples come from the same distribution.
+
+```{r}
+kruskal_test(alpha$WPM~alpha$Alphabet,distribution="asymptotic")
+```
+
+Conduct manual post hoc Mann-Whitney pairwise comparisons and adjust the $p$-values to take into account the possibility of false discovery.
+
+```{r}
+ewgf<-wilcox.test(alpha$WPM[alpha$Alphabet=="EdgeWrite"],alpha$WPM[alpha$Alphabet=="Graffiti"],paired=FALSE,exact=FALSE)
+ewun<-wilcox.test(alpha$WPM[alpha$Alphabet=="EdgeWrite"],alpha$WPM[alpha$Alphabet=="Unistrokes"],paired=FALSE,exact=FALSE)
+gfun<-wilcox.test(alpha$WPM[alpha$Alphabet=="Graffiti"],alpha$WPM[alpha$Alphabet=="Unistrokes"],paired=FALSE,exact=FALSE)
+p.adjust(c(ewgf$p.value,ewun$p.value,gfun$p.value),method="holm")
+```
+

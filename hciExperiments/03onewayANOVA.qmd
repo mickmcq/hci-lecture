@@ -1,0 +1,207 @@
+
+# ANOVA
+ANOVA stands for analysis of variance and is a way to generalize the $t$-test to more groups.
+
+## How long does it take to perform tasks on two IDEs?
+
+```{r}
+ide2 <- read_csv("ide2.csv")
+ide2$Subject <- factor(ide2$Subject) # convert to nominal factor
+ide2$IDE <- factor(ide2$IDE) # convert to nominal factor
+summary(ide2)
+
+#. view descriptive statistics by IDE
+plyr::ddply(ide2, ~ IDE, function(data) summary(data$Time))
+plyr::ddply(ide2, ~ IDE, summarise, Time.mean=mean(Time), Time.sd=sd(Time))
+
+#. graph histograms and a boxplot
+ggplot(ide2,aes(Time,fill=IDE)) +
+  geom_histogram(binwidth=50,position=position_dodge()) +
+  scale_fill_brewer(palette="Paired") +
+  theme_tufte(base_size=7)
+ggplot(ide2,aes(IDE,Time,fill=IDE)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+
+#. independent-samples t-test (suitable? maybe not, because...)
+t.test(Time ~ IDE, data=ide2, var.equal=TRUE)
+```
+
+## Testing ANOVA assumptions
+
+```{r}
+#. Shapiro-Wilk normality test on response
+shapiro.test(ide2[ide2$IDE == "VStudio",]$Time)
+shapiro.test(ide2[ide2$IDE == "Eclipse",]$Time)
+
+#. but really what matters most is the residuals
+m = aov(Time ~ IDE, data=ide2) # fit model
+shapiro.test(residuals(m)) # test residuals
+par(pin=c(2.75,1.25),cex=0.5)
+qqnorm(residuals(m)); qqline(residuals(m)) # plot residuals
+```
+
+## Kolmogorov-Smirnov test for log-normality
+Fit the distribution to a lognormal to estimate fit parameters
+then supply those to a K-S test with the lognormal distribution fn (see ?plnorm).
+See ?distributions for many other named probability distributions.
+
+```{r}
+library(MASS)
+fit <- fitdistr(ide2[ide2$IDE == "VStudio",]$Time,
+	       "lognormal")$estimate
+ks.test(ide2[ide2$IDE == "VStudio",]$Time, "plnorm",
+	meanlog=fit[1], sdlog=fit[2], exact=TRUE)
+fit <- fitdistr(ide2[ide2$IDE == "Eclipse",]$Time,
+	       "lognormal")$estimate
+ks.test(ide2[ide2$IDE == "Eclipse",]$Time, "plnorm",
+	meanlog=fit[1], sdlog=fit[2], exact=TRUE)
+
+#. tests for homoscedasticity (homogeneity of variance)
+library(car)
+leveneTest(Time ~ IDE, data=ide2, center=mean) # Levene's test
+leveneTest(Time ~ IDE, data=ide2, center=median) # Brown-Forsythe test
+
+#. Welch t-test for unequal variances handles
+#. the violation of homoscedasticity. but not
+#. the violation of normality.
+t.test(Time ~ IDE, data=ide2, var.equal=FALSE) # Welch t-test
+```
+
+## Data transformation
+
+```{r}
+#. create a new column in ide2 defined as log(Time)
+ide2$logTime <- log(ide2$Time) # log transform
+head(ide2) # verify
+
+#. explore for intuition-building
+ggplot(ide2,aes(logTime,fill=IDE)) +
+  geom_histogram(binwidth=0.2,position=position_dodge()) +
+  scale_fill_brewer(palette="Paired") +
+  theme_tufte(base_size=7)
+ggplot(ide2,aes(IDE,logTime,fill=IDE)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+
+#. re-test for normality
+shapiro.test(ide2[ide2$IDE == "VStudio",]$logTime)
+shapiro.test(ide2[ide2$IDE == "Eclipse",]$logTime)
+m <- aov(logTime ~ IDE, data=ide2) # fit model
+shapiro.test(residuals(m)) # test residuals
+par(pin=c(2.75,1.25),cex=0.5)
+qqnorm(residuals(m)); qqline(residuals(m)) # plot residuals
+
+#. re-test for homoscedasticity
+leveneTest(logTime ~ IDE, data=ide2, center=median) # Brown-Forsythe test
+
+#. independent-samples t-test (now suitable for logTime)
+t.test(logTime ~ IDE, data=ide2, var.equal=TRUE)
+```
+
+## What if ANOVA assumptions don't hold? (Nonparametric equivalent of independent-samples t-test)
+
+## Mann-Whitney U test
+
+```{r}
+library(coin)
+wilcox_test(Time ~ IDE, data=ide2, distribution="exact")
+wilcox_test(logTime ~ IDE, data=ide2, distribution="exact") # note: same result
+```
+
+## How long does it take to do tasks on one of three tools? (One-way ANOVA preparation)
+
+```{r}
+#. read in a data file with task completion times (min) now from 3 tools
+ide3 <- read_csv("ide3.csv")
+ide3$Subject <- factor(ide3$Subject) # convert to nominal factor
+ide3$IDE <- factor(ide3$IDE) # convert to nominal factor
+summary(ide3)
+
+#. view descriptive statistics by IDE
+plyr::ddply(ide3, ~ IDE, function(data) summary(data$Time))
+plyr::ddply(ide3, ~ IDE, summarise, Time.mean=mean(Time), Time.sd=sd(Time))
+
+ide3 |>
+  group_by(IDE) |>
+  summarize(median=median(Time),mean=mean(Time),sd=sd(Time))
+
+#. explore new response distribution
+ggplot(ide3,aes(Time,fill=IDE)) +
+  geom_histogram(binwidth=50,position=position_dodge()) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+ggplot(ide3,aes(IDE,Time,fill=IDE)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+
+#. test normality for new IDE
+shapiro.test(ide3[ide3$IDE == "PyCharm",]$Time)
+m <- aov(Time ~ IDE, data=ide3) # fit model
+shapiro.test(residuals(m)) # test residuals
+par(pin=c(2.75,1.25),cex=0.5)
+qqnorm(residuals(m)); qqline(residuals(m)) # plot residuals
+
+#. test log-normality of new IDE
+fit <- fitdistr(ide3[ide3$IDE == "PyCharm",]$Time, "lognormal")$estimate
+ks.test(ide3[ide3$IDE == "PyCharm",]$Time,
+	"plnorm", meanlog=fit[1], sdlog=fit[2], exact=TRUE) # lognormality
+
+#. compute new log(Time) column and re-test
+ide3$logTime <- log(ide3$Time) # add new column
+shapiro.test(ide3[ide3$IDE == "PyCharm",]$logTime)
+m <- aov(logTime ~ IDE, data=ide3) # fit model
+shapiro.test(residuals(m)) # test residuals
+par(pin=c(2.75,1.25),cex=0.5)
+qqnorm(residuals(m)); qqline(residuals(m)) # plot residuals
+
+#. test homoscedasticity
+leveneTest(logTime ~ IDE, data=ide3, center=median) # Brown-Forsythe test
+```
+
+## Can we transform data so it fits assumptions? (One-way ANOVA, suitable now to logTime)
+
+```{r}
+m <- aov(logTime ~ IDE, data=ide3) # fit model
+anova(m) # report anova
+
+#. post hoc independent-samples t-tests
+library(multcomp)
+summary(glht(m, mcp(IDE="Tukey")), test=adjusted(type="holm")) # Tukey means compare all pairs
+#. note: equivalent to this using lsm instead of mcp
+library(emmeans)
+summary(glht(m, lsm(pairwise ~ IDE)), test=adjusted(type="holm"))
+```
+
+## What if we can't transform data to fit ANOVA assumptions? (Nonparametric equivalent of one-way ANOVA)
+
+```{r}
+#. Kruskal-Wallis test
+kruskal_test(Time ~ IDE, data=ide3, distribution="asymptotic") # can't do exact with 3 levels
+kruskal_test(logTime ~ IDE, data=ide3, distribution="asymptotic") # note: same result
+#. for reporting Kruskal-Wallis as chi-square, we can get N with nrow(ide3)
+
+#. manual post hoc Mann-Whitney U pairwise comparisons
+#. note: wilcox_test we used above doesn't take two data vectors, so use wilcox.test
+vs.ec <- wilcox.test(ide3[ide3$IDE == "VStudio",]$Time,
+		    ide3[ide3$IDE == "Eclipse",]$Time, exact=FALSE)
+vs.py <- wilcox.test(ide3[ide3$IDE == "VStudio",]$Time,
+		    ide3[ide3$IDE == "PyCharm",]$Time, exact=FALSE)
+ec.py <- wilcox.test(ide3[ide3$IDE == "Eclipse",]$Time,
+		    ide3[ide3$IDE == "PyCharm",]$Time, exact=FALSE)
+p.adjust(c(vs.ec$p.value, vs.py$p.value, ec.py$p.value), method="holm")
+
+#. alternative approach is using PMCMRplus for nonparam pairwise comparisons
+if (!require(PMCMRplus)) {
+  install.packages("PMCMRplus",dependencies=TRUE)
+  library(PMCMRplus)
+}
+kwAllPairsConoverTest(Time ~ IDE, data=ide3, p.adjust.method="holm")
+```
+
+The above test was reported by W. J. Conover and R. L. Iman (1979), _On multiple-comparisons
+     procedures_, Tech. Rep. LA-7677-MS, Los Alamos Scientific Laboratory. 
+

@@ -1,0 +1,66 @@
+---
+title: "Course Notes<br>on<br>HCI Experiments"
+date: "`r Sys.Date()`"
+author: Mick McQuaid
+pdf-engine: lualatex
+format:
+  html:
+    toc: true
+    embed-resources: true
+    include-in-header: \pgfplotsset{compat=1.18}
+bibliography: master.bib
+mainfont: Tex Gyre Schola
+monofont: JetBrainsMono Nerd Font
+mathfont: Tex Gyre Schola Math
+---
+
+Following are my course notes from a 2018 Coursera course called *Designing, Running, and Analyzing Experiments*, taught by Jacob Wobbrock, a prominent HCI scholar. Note that Wobbrock is in no way responsible for any errors or deviations from his presentation.
+
+These course notes are an example of *reproducible research* and *literate programming*. They are reproducible research because the same file that generated this html document also ran all the experiments. This is an example of literate programming in the sense that the code, pictures, equations, and narrative are all encapsulated in one file. The source file for this project, along with the data files, are enough for you to reproduce the results and reproduce the documentation. All the source material is available in my github account, although in an obscure location therein.
+
+
+```{r}
+options(readr.show_col_types=FALSE) # supress column type messages
+library(tidyverse)
+library(ggthemes)
+```
+
+{{< include 01proportions.qmd >}}
+
+{{< include 02indsamples.qmd >}}
+
+{{< include 03onewayANOVA.qmd >}}
+
+{{< include 04moreOneway.qmd >}}
+
+{{< include 05threeFactorLevels.qmd >}}
+
+{{< include 06pairedSamples.qmd >}}
+
+{{< include 07factorialANOVA.qmd >}}
+
+{{< include 08interactions.qmd >}}
+
+{{< include 09glm.qmd >}}
+
+{{< include 10moreGLM.qmd >}}
+
+{{< include 11withinSubj.qmd >}}
+
+{{< include 12mixedmodels.qmd >}}
+
+<!--
+
+How many people prefer website A over website B?
+How many people prefer website A, website B, or website C?
+How many males vs females prefer website A over website B?
+How many males vs females prefer website A, website B, or website C?
+On average, how many pages of website A vs B did people view?
+On average, how long did people take to complete a task based on which of two tools they used?
+On average, how long did people take to complete a task based on which of three tools they used?
+On average, how long did people take to complete a task based on which of two tools they used (another pair of tools)?
+On average, how many words per minute did people achieve writing with three different text entry systems?
+On average, how long does it take to find contacts depending on whether you search or scroll?
+Which takes more effort, searching or scrolling for contacts?
+Which is more error-prone, searching or scrolling for contacts?
+-->

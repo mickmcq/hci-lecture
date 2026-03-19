@@ -1,0 +1,30 @@
+
+# How do groups compare in reading performance? (Independent samples $t$-test)
+Here we are asking which group read more pages on a particular website.
+
+```{r}
+pgviews <- read_csv("pgviews.csv")
+pgviews$Subject <- factor(pgviews$Subject)
+pgviews$Site <- factor(pgviews$Site)
+summary(pgviews)
+tail(pgviews)
+
+#. descriptive statistics by Site
+plyr::ddply(pgviews, ~ Site, function(data) summary(data$Pages))
+plyr::ddply(pgviews, ~ Site, summarise, Pages.mean=mean(Pages), Pages.sd=sd(Pages))
+
+#. graph histograms and a boxplot
+ggplot(pgviews,aes(Pages,fill=Site,color=Site)) +
+  geom_bar(alpha=0.5,position="identity",color="white") +
+  scale_color_grey() +
+  scale_fill_grey() +
+  theme_tufte(base_size=7)
+ggplot(pgviews,aes(Site,Pages,fill=Site)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=7)
+
+#. independent-samples t-test
+t.test(Pages ~ Site, data=pgviews, var.equal=TRUE)
+```
+

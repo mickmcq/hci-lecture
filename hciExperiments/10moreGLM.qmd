@@ -1,0 +1,159 @@
+
+# More experiments without normally distributed errors (More generalized linear models)
+
+## Preference between touchpads vs trackballs by non / disabled people and males / females
+
+This study examines whether participants of either sex with or without a disability prefer touchpads or trackballs. Start by examining the data and determining how many participants are involved.
+
+```{r}
+dps<-read_csv("deviceprefssex.csv")
+dps$Subject<-as.factor(dps$Subject)
+dps$Disability<-as.factor(dps$Disability)
+dps$Sex<-as.factor(dps$Sex)
+dps$Pref<-as.factor(dps$Pref)
+summary(dps)
+```
+
+Use binomial regression to examine Pref by Disability and Sex. Report the $p$-value of the interaction of Disability$\times$Sex.
+
+```{r}
+contrasts(dps$Disability) <- "contr.sum"
+contrasts(dps$Sex) <- "contr.sum"
+m<-glm(Pref ~ Disability*Sex, data=dps, family=binomial)
+Anova(m, type=3)
+```
+
+Now use multinomial regression for the same task and report the corresponding $p$-value.
+
+```{r}
+#. library(nnet)
+contrasts(dps$Disability) <- "contr.sum"
+contrasts(dps$Sex) <- "contr.sum"
+m<-multinom(Pref~Disability*Sex, data=dps)
+Anova(m, type=3)
+```
+
+Now conduct post-hoc binomial tests for each Disability$\times$Sex combination.
+
+```{r}
+m0<-binom.test(sum(dps[dps$Sex == "M" & dps$Disability == "0",]$Pref == "touchpad"),
+               nrow(dps[dps$Sex == "M" & dps$Disability == "0",]),p=1/2)
+m1<-binom.test(sum(dps[dps$Sex == "M" & dps$Disability == "1",]$Pref == "touchpad"),
+               nrow(dps[dps$Sex == "M" & dps$Disability == "1",]),p=1/2)
+
+f0<-binom.test(sum(dps[dps$Sex == "F" & dps$Disability == "0",]$Pref == "touchpad"),
+               nrow(dps[dps$Sex == "F" & dps$Disability == "0",]),p=1/2)
+f1<-binom.test(sum(dps[dps$Sex == "F" & dps$Disability == "1",]$Pref == "touchpad"),
+               nrow(dps[dps$Sex == "F" & dps$Disability == "1",]),p=1/2)
+
+p.adjust(c(m0$p.value, m1$p.value, f0$p.value,f1$p.value), method="holm")
+```
+
+## Handwriting recognition speed between different tools and right-handed vs left-handed people
+
+This study examined three handwriting recognizers, A, B, and C and participants who are either right-handed or left-handed. The response is the number of incorrectly recognized handwritten words out of every 100 handwritten words. Examine the data and tell how many participants were involved.
+
+```{r}
+hw<-read_csv("hwreco.csv")
+hw$Subject<-factor(hw$Subject)
+hw$Recognizer<-factor(hw$Recognizer)
+hw$Hand<-factor(hw$Hand)
+summary(hw)
+```
+
+Create an interaction plot of Recognizer on the $x$-axis and Hand as the traces and tell how many times the traces cross.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(hw,interaction.plot(Recognizer,Hand,Errors,
+			      ylim=c(0,max(hw$Errors))))
+```
+
+Test whether the Errors of each Recognizer fit a Poisson distribution. First fit the Poisson distribution using `fitdist()`, then test the fit using `gofstat()`. The null hypothesis of this test is that the data do not deviate from a Poisson distribution.
+
+```{r}
+#. library(fitdistrplus)
+fit<-fitdist(hw[hw$Recognizer == "A",]$Errors,
+              "pois", discrete=TRUE)
+gofstat(fit)
+fit<-fitdist(hw[hw$Recognizer == "B",]$Errors,
+              "pois", discrete=TRUE)
+gofstat(fit)
+fit<-fitdist(hw[hw$Recognizer == "C",]$Errors,
+              "pois", discrete=TRUE)
+gofstat(fit)
+```
+
+Now use Poisson regression to examine Errors by Recommender and Hand. Report the $p$-value for the Recognizer$\times$Hand interaction.
+
+```{r}
+#. library(car)
+contrasts(hw$Recognizer) <- "contr.sum"
+contrasts(hw$Hand) <- "contr.sum"
+m<-glm(Errors ~ Recognizer*Hand, data=hw, family=poisson)
+Anova(m, type=3)
+```
+
+Conduct planned comparisons between left and right errors for each recognizer. Using `glht()` and `lsm()` will give all comparisons and we only want three so don't correct for multiple comparisons automatically. That would overcorrect. Instead, extract the three relevant $p$-values manually and and use `p.adjust()` to correct for those.
+
+```{r}
+#. library(multcomp) # for glht
+#. library(lsmeans) # for lsm
+summary(glht(m, lsm(pairwise ~ Recognizer * Hand)),
+        test=adjusted(type="none"))
+
+p.adjust(c(0.001925,0.095955,0.243171),method="holm")
+```
+
+The above analyses suggest that the error counts were Poisson-distributed.
+The above analyses suggest that there was a significant Recognizer$\times$Hand interaction.
+The above analyses suggest that for recognizer A, there were significantly more errors for right-handed participants than for left-handed participants.
+
+## Ease of booking international or domestic flights on three different services
+
+This study describes flight bookings using one of three services, Expedia, Orbitz, or Priceline. Each booking was either International or Domestic and the Ease of each interaction was recorded on a 7 point Likert scale where 7 was easiest. Examine the data and determine the number of participants in the study.
+
+```{r}
+bf<-read_csv("bookflights.csv")
+bf$Subject<-factor(bf$Subject)
+bf$International<-factor(bf$International)
+bf$Website<-factor(bf$Website)
+bf$International<-factor(bf$International)
+bf$Ease<-as.ordered(bf$Ease)
+summary(bf)
+```
+
+Draw an interaction plot with Website on the x-axis and International as the traces. Determine how many times the traces cross.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(bf,interaction.plot(Website,International,as.numeric(Ease),
+			      ylim=c(0,max(as.numeric(bf$Ease)))))
+```
+
+Use ordinal logistic regression to examine Ease by Website and International. Report the $p$-value of the Website main effect.
+
+```{r}
+#. library(MASS) # provides polr()
+#. library(car) # provides Anova()
+#. set sum-to-zero contrasts for the Anova call
+contrasts(bf$Website) <- "contr.sum"
+contrasts(bf$International) <- "contr.sum"
+m <- polr(Ease ~ Website*International, data=bf, Hess=TRUE)
+Anova(m, type=3)
+```
+
+Conduct three pairwise comparisons of Ease between domestic and international for each service. Report the largest adjusted $p$-value. Use the same technique as above where you extracted the relevant unadjusted $p$-values manually and used `p.adjust()` to adjust them.
+
+```{r}
+summary(as.glht(pairs(lsmeans(m, pairwise ~ Website * International))),
+        test=adjusted(type="none"))
+
+p.adjust(c(1.44e-10,1.35e-12,0.474476),method="holm")
+```
+
+The above analyses indicate a significant main effect of Website on Ease.
+The above analyses indicate a significant interaction between Website and International.
+Expedia was perceived as significantly easier for booking international flights than domestic flights.
+Orbitz, on the other hand, was perceived as significantly easier for booking domestic flights than international flights.
+

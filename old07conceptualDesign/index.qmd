@@ -1,0 +1,58 @@
+---
+title: "HCI:<br>Conceptual Design"
+author: Mick McQuaid
+date: today
+bibliography: master.bib
+format:
+  revealjs:
+    logo: iSchoolLogo.png
+    theme: moon
+    css: style.css
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    controls: true
+    controls-layout: bottom-right
+    center: true
+---
+
+::: {.r-fit-text}
+Week SEVEN
+:::
+
+# Today
+- Q and A from last time
+- Design Critique (Mick)
+- Discuss Readings
+- Conceptual Design Exercises
+- Figma Exercise
+
+# Conceptual Design
+Instead of droning on about this topic, I'd like to do the exercises in the chapters. In particular, let's do three storyboards, one for each perspective (emotional, interaction, and ecological) as described in Exercise 17-2 on pages 371--372. Let's take an hour to do this, so about fifteen minutes per sketch, with a short break after each one to share with the other groups.
+
+# Readings
+
+Readings last week include @Hartson2019: Ch 12, 13, 14
+
+Readings this week include @Hartson2019: Ch 15, 16, 17, @Norman2013: Ch 3, 4
+
+# Assignments
+none
+
+# References
+
+::: {#refs}
+:::
+
+---
+
+::: {.r-fit-text}
+END
+:::
+
+# Colophon
+
+This slideshow was produced using `quarto`
+
+Fonts are *League Gothic* and *Lato*
+

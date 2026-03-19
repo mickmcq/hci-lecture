@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Mick McQuaid">
+  <meta name="dcterms.date" content="2025-01-23">
+  <title>Human Computer Interaction: Perception</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-ab7a322b4ca39adb1086c9e0171297e3.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Human Computer Interaction:<br>Perception</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Mick McQuaid 
+</div>
+</div>
+</div>
+
+  <p class="date">2025-01-23</p>
+</section>
+<section class="slide level2 center">
+
+<div class="r-fit-text">
+<p>Week TWO</p>
+</div>
+</section>
+<section id="today" class="title-slide slide level1 center">
+<h1>Today</h1>
+<ul>
+<li>Q and A from last time (actually last semester)</li>
+<li>Example Article presentation (Mick)</li>
+<li>Groups</li>
+<li>Perception</li>
+<li>Perception Discussion (Victor)</li>
+<li><span class="citation" data-cites="Norman2023">Norman (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span></li>
+</ul>
+</section>
+
+<section>
+<section id="q-and-a-from-last-time" class="title-slide slide level1 center">
+<h1>Q and A from last time</h1>
+<p>It didn’t work! (There are two empty responses and nothing else!)</p>
+<p>As a result, we’ll look at last semester’s Q&amp;A.</p>
+</section>
+<section id="bringing-it-together" class="slide level2 center">
+<h2>Bringing it together</h2>
+<p>How does this material tie holistically into HCI and Design (Thinking)</p>
+</section>
+<section id="natural-vs-artificial-old-vs-new" class="slide level2 center">
+<h2>Natural vs Artificial; Old vs New</h2>
+<p>This leads me to ask? Is the question of natural vs artificial in the same category as the prompt - “Is old considered inferior?” A lot of times people attribute natural to being superior and artificial to inferior. Although one can argue that ‘old is superior’ in some situations but for some reason and maybe psychologically, we tend to resist new technology and designs. We always lean towards the old way of doing things.</p>
+<aside class="notes">
+<ul>
+<li>resistance to change</li>
+<li>superiority of natural</li>
+<li>labeling things as natural</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading" class="slide level2 center">
+<h2>Reading!</h2>
+<p>Looking forward to reading Norman’s new book, Design for a Better World.</p>
+</section>
+<section id="materialism" class="slide level2 center">
+<h2>Materialism</h2>
+<p>Is it possible to survive in today’s world without contributing to materialism in ANY way?</p>
+<aside class="notes">
+<p>How do you define materialism? Is it growth and planned obsolescence? Is it lack of spiritualism? Is it emphasis on products?</p>
+<p>Can’t have a career if you’re too far outside the mainstream. In my high school, exactly one student had parents who forbade all television (similar to banning social media today but much more rare). She dressed strangely and somehow looked different, and at our twenty year reunion she had no career or even job.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="combating-societys-ills" class="slide level2 center">
+<h2>Combating society’s ills</h2>
+<p>What can we do in society to combat the issues brought up today? In order to fix America, we need change. However, any change that is suggested is labeled as socialism. Examples include improving education, improving healthcare, more regulation to ensure a cleaner environment. How much does societal and cultural perspectives shape our understanding of what is considered “modern”?</p>
+<aside class="notes">
+<p>“What can designers do?” is the question Norman will try to answer in later chapters.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="questions-lead-to-design" class="slide level2 center">
+<h2>Questions lead to design?</h2>
+<p>I am wondering where some of the questions lead to (eg. artificial vs natural), and how they are gonna effect design.</p>
+<aside class="notes">
+<p>Is this practical or will it just be food for thought? Norman will try, in ensuing chapters, to make it practical for designers but, to set the stage, he believes he has to show that design is a bigger picture idea than what the average designer may think.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="regulatory-environment" class="slide level2 center">
+<h2>Regulatory environment</h2>
+<p>If we start focusing on Humanity Center Design, does this mean we need to start building out regulations that are ethical for design? How do you know what is ethically correct, when there are 8+ different ethical standards out there?</p>
+<aside class="notes">
+<p>Norman has long championed the idea that designers need to be more like engineers, with standards that qualify them. There are increasing numbers of certifications for designers, but Norman thinks we could go further.</p>
+<p>Certainly, the notion of ethics is controversial and people may try to manipulate ethical standards for their own gain. For example, major corporations resist ethics regulations and often spend more money on publicity campaigns to promote an ethical image than on the actual struggle to maintain ethical standards. This is because, in the USA today, profit trumps all other considerations. Can anything stand in the way of profit as our main consideration in life?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="difference-between-humanity-and-human" class="slide level2 center">
+<h2>Difference between humanity and human</h2>
+<p>I am curious how humanity-centered design differs from human-centered design. I expect I will learn more reading Norman, 2023.</p>
+<aside class="notes">
+<p>How is the collective different from the individual? Many billionaires are buying up properties that will soon be physically under water due to climate change. They see these things as disposable luxuries and seem to believe they can buy their way out of climate change. Can they?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="in-class-presentations" class="title-slide slide level1 center">
+<h1>In class presentations</h1>
+<p><span class="math inline">\(\langle\)</span> pause for example article presentation by Mick <span class="math inline">\(\rangle\)</span></p>
+</section>
+
+<section id="groups" class="title-slide slide level1 center">
+<h1>Groups</h1>
+<p>Are you all in groups now? Are you satisfied with your groups? Let’s make sure you’re on track right now.</p>
+</section>
+
+<section>
+<section id="perception" class="title-slide slide level1 center">
+<h1>Perception</h1>
+
+</section>
+<section id="human-capabilities" class="slide level2 center">
+<h2>Human Capabilities</h2>
+<ul>
+<li>What are our limits?</li>
+<li>What are we on average?</li>
+<li>What state are we in?</li>
+<li>…</li>
+</ul>
+<p>We can think about human capabilities from different perspectives. Can you think of others besides the list above?</p>
+</section>
+<section id="limits-averages-and-states" class="slide level2 center">
+<h2>Limits, averages, and states</h2>
+<p>What can you say about the previous list? For example, limits might include the limits of what a person can see or remember. The average might include what “most” people can see and remember, whatever “most” means. The state we are in might be bright sunlight or a loud nightclub or sitting in front of a computer in a dark room, all of which affect our limits temporarily.</p>
+</section>
+<section id="some-limits" class="slide level2 center">
+<h2>Some limits</h2>
+<ul>
+<li>Magical number seven, from <span class="citation" data-cites="Miller1956">Miller (<a href="#/references" role="doc-biblioref" onclick="">1956</a>)</span></li>
+<li>Resolving power of the human eye in lines per inch at distance</li>
+<li>Color blindness</li>
+</ul>
+</section>
+<section id="chunking" class="slide level2 center">
+<h2>Chunking</h2>
+
+<img data-src="fiMagicalNumber.jpg" class="r-stretch"></section>
+<section id="details-of-chunking" class="slide level2 center">
+<h2>Details of chunking</h2>
+<p>The preceding list shows several common limits you might need to be aware of when designing digital artifacts. <span class="citation" data-cites="Miller1956">Miller (<a href="#/references" role="doc-biblioref" onclick="">1956</a>)</span> found that people chunked items in short term memory into groups of seven, plus or minus two, as shown in the previous frame. That might suggest a limit for what you ask people to remember.</p>
+</section>
+<section id="jobs-focused-public-attention-on-resolving-power" class="slide level2 center">
+<h2>Jobs focused public attention on resolving power</h2>
+
+<img data-src="fiJobsRetina.png" class="r-stretch"><aside class="notes">
+<p>Steve Jobs, depicted here at the iPhone introduction, famously introduced the so-called retina display with a discussion of the resolving power of the human eye in lines per inch at a given distance to arrive at the optimal effective resolution for a smartphone display, typically held at a given distance from the eye.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-typical-test-for-color-blindness" class="slide level2 center">
+<h2>A typical test for color blindness</h2>
+
+<img data-src="fiColorBlindness.png" class="r-stretch"><aside class="notes">
+<p>About eight percent of Northern European males in your audience probably suffer from red-green color blindness, for example, and mobile apps exist specifically to help people identify colors.</p>
+<p>This frame shows an example of a color blindness test from the Color blindness article on Wikipedia. If you are not color blind, you should see the number 74. If you are red-green color blind, you should see the number 21. If you have total color blindness, you should see no numbers. By the way, Wikipedia reports that several famous artists throughout history are thought to have been color blind, so color blindness should not preclude a career as an artist or designer.</p>
+<p>One note on Wikipedia is that I refer to it a lot, in contrast to instructors who note that there is a lot of misinformation on Wikipedia and ask you to refrain from using it. I view Wikipedia as valuable but flawed, and I believe there is a skill you can develop with experience of using it and triangulating with other sources to overcome the misinformation problem. Wikipedia is often a good starting point for a search even for poorly researched articles. It just shouldn’t be the ending point.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="some-findings-of-gestalt-psychology-1927" class="slide level2 center">
+<h2>Some findings of Gestalt psychology, 1927</h2>
+
+<img data-src="fiGestaltPrinc1.png" class="r-stretch"><aside class="notes">
+<p><span class="citation" data-cites="Wertheimer1938">Wertheimer (<a href="#/references" role="doc-biblioref" onclick="">1938</a>)</span>, originally published in German in the 1920s, introduced Gestalt principles to an English-speaking audience. Some views of Gestalt principles of perception are shown in this and the following frames.</p>
+<p>The Gestalt psychologists were enormously influential in spreading these principles, first in Germany, where they met with artists of the Bauhaus as well as psychologists working in other specialties, then all over the world as they fled the Nazis and settled in different countries. You have probably encountered the Gestalt principles in an Intro to Psychology class, and will find that designers use them everywhere, even unconsciously, so you might as well do it consciously.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-view-of-gestalt-principles" class="slide level2 center">
+<h2>A view of Gestalt principles</h2>
+
+<img data-src="fiGestaltPrinc2.jpg" class="r-stretch"><aside class="notes">
+<p>As an exercise, try to identify the Gestalt principle illustrated in each element of this frame. This is an exercise you can repeat with your own designs or those you encounter.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="more-on-gestalt-principles" class="slide level2 center">
+<h2>More on Gestalt principles</h2>
+
+<img data-src="fiGestaltPrinc3.png" class="r-stretch"><aside class="notes">
+<p>This frame gives names for the principles and you may notice that some of these names differ from the names you may have seen elsewhere (and some are misspelled). Bear in mind that all of these are translations from the German and may arise from different perspectives on what the words mean. One of the most interesting Gestalt principles has the German name Prägnanz, which is often translated as <em>figural goodness</em> and refers to the property that your brain will try to make sense of ambiguous figures and fit them into a familiar form.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="an-example-of-colorbrewer-usage" class="slide level2 center">
+<h2>An example of Colorbrewer usage</h2>
+
+<img data-src="fiColorbrewer.png" class="r-stretch"><aside class="notes">
+<p>Colorbrewer is an idea and an application and a website and the basis for several tools, conceived by geography professor Cynthia Brewer. The main idea is that people have an easier time interpreting information represented by some colors than by others.</p>
+<p>Brewer and her students have conducted countless experiments with colored maps, asking participants quantitative questions about information depicted by the maps. They’ve kept a careful record of how well participants answered questions using different color schemes, and developed a set of color palettes representing the most successful combinations.</p>
+<p>The <a href="http://colorbrewer2.org">colorbrewer</a> website, shown in this frame, shows the control panel on the left and the result on the right. The user is asked to tell the number of data classes to be represented on the map. Then the user has to decide whether their data is sequential, diverging, or qualitative. Next, on the basis of these choices, a set of color schemes is presented to choose from. Further choices offered include whether the color scheme should be colorblind safe, print friendly, or photocopy safe. You get a depiction of the color scheme in the map on the right hand side, and a list of the colors in either hexadecimal, RGB, or CMYK format.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="you-dont-notice-the-gorilla-when-counting" class="slide level2 center">
+<h2>You don’t notice the gorilla when counting</h2>
+
+<img data-src="fiBasketballPassing.png" class="r-stretch"><aside class="notes">
+<p>Inattention blindness is depicted in this frame. In this famous experiment, the participant is asked to watch two basketball teams, one wearing white and the other wearing black. The participant is asked to count the number of passes made by one of the teams, but not the passes made by the other team. After a few seconds, a person in a gorilla costume walks through the scene but the participant is so intent on the counting task as to not see the gorilla!</p>
+<p>You can find many examples of similar experiments with similar results online by searching for inattention blindness or cognitive overload. One of my favorites is shown on Youtube where a researcher on the sidewalk asks a random person for help with a map. As soon as the random person starts looking at the map and trying to make sense of it, a pair of workmen holding a large mirror pass between the two. Unbeknownst to the random person, a confederate is hiding behind the mirror with the same map folded in the same orientation. The confederate replaces the researcher, who walks on behind the mirror. The confederate is of a different race and gender than the researcher, but the video evidence suggests that the random person does not know the difference. As a side note, there may be a serious ethical issue with this experiment because the random person is drawn into it without informed consent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="an-influential-and-controversial-book" class="slide level2 center">
+<h2>An influential and controversial book</h2>
+
+<img data-src="fiThinkingFastSlow1.jpg" class="r-stretch"><aside class="notes">
+<p>This frame depicts the cover of a famous book by Nobel Laureate Daniel Kahneman, based on research he conducted with Amos Tversky, who sadly passed away before the Nobel prize could be awarded jointly to them. The book covers work in cognitive biases, prospect theory, and happiness. The book is controversial because of the difficulty other researchers have faced in replicating its results.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="being-watched-by-a-picture-influences-you" class="slide level2 center">
+<h2>Being watched by a picture influences you</h2>
+
+<img data-src="fiThinkingFastSlow2.jpg" class="r-stretch"><aside class="notes">
+<p>One interesting experiment reported in the book suggests that being watched by eyes in a picture can influence your behavior. The researchers found an office with a kitchen where people were supposed to put money in a box every time they took milk from the refrigerator. Over the box was a framed picture. The researchers manipulated the picture, changing it for a different one every week. The two kinds of subjects for the picture were flowers and eyes watching the viewer. As shown in Figure <span class="math inline">\(\ref{fiThinkingFastSlow2.jpg}\)</span>, people were more apt to put money in the box while they were being watched! Could this be conscious behavior? The researchers thought not and sought to explain this behavior as unconscious and based on a dichotomy between two systems vying for control of the human mind.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="two-systems-controlling-you" class="slide level2 center">
+<h2>Two systems controlling you</h2>
+
+<img data-src="fiThinkingFastSlow3.jpg" class="r-stretch"><aside class="notes">
+<p>This frame depicts the two systems the researchers hypothesized, System 1 and System 2. System 1 is fast, unconscious, automatic, controls everyday decisions, and is error prone. This is the system they hypothesized to be responsible for the milk money behavior. The other system, System 2, is slow, conscious, effortful, responsible for complex decisions, and is reliable. Many of their experiments sought to isolate these two systems and learn of their characteristics. There is some support in neurology for these claims, although my source is packed away as I write this and I can’t cite it now.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="causes-and-consequences-of-cognitive-ease" class="slide level2 center">
+<h2>Causes and consequences of cognitive ease</h2>
+
+<img data-src="fiThinkingFastSlow4.jpg" class="r-stretch"><aside class="notes">
+<p>The book includes an important figure for human centered computing professionals, shown in this frame. This is a model of the causes and consequences of cognitive ease, a state designers often try to achieve in devising interfaces to computer-based tools to support cognitive work. This model gives us some ideas of things we can do as designers on the left, as well as some potential metrics for determining our success in design on the right.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="critique-of-kahneman" class="slide level2 center">
+<h2>Critique of Kahneman</h2>
+<p>The common critique of Kahneman is that the experiments can’t be replicated, in particular much of the research on priming. For example, a blog post at <a href="https://replicationindex.com/2020/12/30/a-meta-scientific-perspective-on-thinking-fast-and-slow/">replication index</a> summarizes some of the critiques.</p>
+</section>
+<section id="an-example-of-an-optical-illusion" class="slide level2 center">
+<h2>An example of an optical illusion</h2>
+
+<img data-src="fiCogIllusions.png" class="r-stretch"><aside class="notes">
+<p>Cognitive illusions and biases are everywhere. <span class="citation" data-cites="Pohl2004">Pohl (<a href="#/references" role="doc-biblioref" onclick="">2004</a>)</span> reports on a whole catalog of them. Wikipedia devotes an article to a list of cognitive biases at <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases">cognitive biases</a>. This frame shows an example of an optical illusion where, if you stare at it intently, you are likely to see it move although it is a static picture.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="readings" class="title-slide slide level1 center">
+<h1>Readings</h1>
+<p>Readings last week included <span class="citation" data-cites="Hartson2019">Hartson and Pyla (<a href="#/references" role="doc-biblioref" onclick="">2019</a>)</span>: Ch 1, 2, 4 and <span class="citation" data-cites="Norman2013">Norman (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span>: Ch 1. These are pretty serious readings and you need to carve out time to devote to them. In addition, the readings in future weeks have to be done before class, not after. We’re only saving these readings for after class because it’s the first week.</p>
+<p>Readings this week include <span class="citation" data-cites="Johnson2020">Johnson (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>: Ch 1–5</p>
+<aside class="notes">
+<p>I once worked with a group of junior Naval officers who were required by their commander to be responsible for all the information in their email and military message traffic, some 5,000 items per day. The group got together and devised a strategy of dividing up the material and briefing each other on the points of importance, so that no one person had to read 5,000 items, which would have been physically impossible anyway. You could use a similar divide and conquer strategy on our reading material.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="discussion-of-readings-led-by-victor" class="slide level2 center">
+<h2>Discussion of readings (led by Victor)</h2>
+</section></section>
+<section id="assignment" class="title-slide slide level1 center">
+<h1>Assignment</h1>
+<p>Milestone 0</p>
+</section>
+
+<section>
+<section id="norman2023-ii-meaningful" class="title-slide slide level1 center">
+<h1><span class="citation" data-cites="Norman2023">Norman (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>, II: Meaningful</h1>
+
+</section>
+<section id="meaning-is-elusive" class="slide level2 center">
+<h2>Meaning is elusive</h2>
+<ul>
+<li>Specialized terminology is legalistic, technical, governmental.</li>
+<li>Unintentional lack of clarity (experts addressing public)</li>
+<li>Intentional (software licenses, web-based accounts)</li>
+<li>Methods: tiny windows, use of all uppercase text</li>
+</ul>
+</section>
+<section id="scientists-explaining-climate-change" class="slide level2 center">
+<h2>Scientists explaining climate change</h2>
+<ul>
+<li>Scientists dwell on facts that don’t grab attention</li>
+<li>Others make dramatic demonstrations, e.g., Manhattan’s painted boundary</li>
+<li>Norman advocates simplifying language to explain complexity</li>
+<li>Designers should use rough sketches before making detailed designs</li>
+</ul>
+</section>
+<section id="measurement" class="slide level2 center">
+<h2>Measurement</h2>
+<ul>
+<li>In physical science, measurement is an essential first step</li>
+<li>People try to measure productivity because it’s easy to measure</li>
+<li>Productivity measures don’t include quality</li>
+<li><em>Not everything that can be counted counts, and not everything that counts can be counted</em></li>
+<li>Difficulty, expense prohibit many measurements</li>
+<li>We measure what’s easy and cheap to measure and what matters to the ruling class</li>
+</ul>
+</section>
+<section id="measuring-what-matters-to-people" class="slide level2 center">
+<h2>Measuring what matters to people</h2>
+<ul>
+<li>Hard to do in a lab if including context</li>
+<li>Hard to replicate if context is included</li>
+<li>Scientists often measure young (WEIRD) university students</li>
+<li>Economists use wrong underlying assumptions, e.g., rational behavior</li>
+<li>Economic measures often ignore disease, natural disasters, wars, and trade barriers</li>
+</ul>
+</section>
+<section id="economic-measures" class="slide level2 center">
+<h2>Economic measures</h2>
+<ul>
+<li>GDP hides progress in health, education, and happiness indices</li>
+<li>Assumption: people maximize utility! Do you believe that?</li>
+<li>Satisficing (Nobel prize winning concept) violates utility maximization</li>
+<li>Manipulation is everywhere, e.g., three item choices</li>
+<li>Marketing is manipulation</li>
+</ul>
+</section>
+<section id="cost-benefit-analysis-and-risk-management" class="slide level2 center">
+<h2>Cost-benefit analysis and risk management</h2>
+<ul>
+<li>Use money as standard for comparison</li>
+<li>Yet one cost is loss of human life</li>
+<li>Hard to evaluate as money, yet people do in effect</li>
+<li>Norman says to stop using money as the standard</li>
+</ul>
+</section>
+<section id="values-of-humanity-vs-artificial-measures" class="slide level2 center">
+<h2>Values of Humanity vs Artificial Measures</h2>
+<ul>
+<li>Cost Benefit Analysis and Risk Management tend to favor more expensive buildings, businesses, and homes</li>
+<li>Wealthy always win cost benefit analyses and risk mgt analyses</li>
+<li>If low-income people lose their homes, they may lose their jobs as a result</li>
+<li>Are people equal in the eyes of cost benefit / risk mgt? No, says Norman</li>
+</ul>
+</section>
+<section id="gdp" class="slide level2 center">
+<h2>GDP</h2>
+<ul>
+<li>Alternatives require subjective measures</li>
+<li>Objective is “better” than subjective even though the things you most care about in the world are probably measured subjectively</li>
+<li>One article said GDP was up, another said people were down … Why the discrepancy?</li>
+<li>Norman says it’s because GDP has nothing to do with our lives</li>
+</ul>
+</section>
+<section id="criticisms-of-gdp-top-three" class="slide level2 center">
+<h2>Criticisms of GDP (top three)</h2>
+<ul>
+<li>Emphasizes material output without considering overall well-being</li>
+<li>Counts cost and waste as economic benefits</li>
+<li>Summarizes economic status of a nation as a single number, hiding complexity: opaque, invisible, mysterious, secretive, confusing</li>
+<li>Spending measured by GDP includes causing pollution and cleaning up pollution, as well as large police forces and repairing broken windows</li>
+</ul>
+</section>
+<section id="replacing-gdp" class="slide level2 center">
+<h2>Replacing GDP</h2>
+<p>World Economic forum offers five measures</p>
+<ul>
+<li>Good jobs</li>
+<li>Well-being</li>
+<li>Environment (including sustainability)</li>
+<li>Fairness (and equity)</li>
+<li>Health</li>
+</ul>
+</section>
+<section id="normans-list" class="slide level2 center">
+<h2>Norman’s list</h2>
+<ul>
+<li>Inclusiveness</li>
+<li>Resilience</li>
+<li>Education</li>
+<li>Societal values</li>
+<li>Quality of governance</li>
+<li>Happiness</li>
+<li>Freedom from hunger</li>
+</ul>
+</section>
+<section id="other-measures" class="slide level2 center">
+<h2>Other measures</h2>
+<ul>
+<li>Gini Index</li>
+<li>GPI (Genuine Progress Indicator)</li>
+<li>HDI (Human Development Index)</li>
+<li>Unfortunately, all use money as the basis</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="fiSeventeenGoals.png" class="r-stretch"><aside class="notes">
+<p>The UN has a website devoted to these seventeen goals and goes into much detail about how to measure them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="measurement-scales" class="slide level2 center">
+<h2>Measurement scales</h2>
+<ul>
+<li>Ratio (e.g., height, weight, Kelvin temperature)</li>
+<li>Interval (e.g., Celsius temperature, Fahrenheit temperature)</li>
+<li>Ordinal (e.g., apples ordered by redness, Mohs hardness scale)</li>
+</ul>
+</section>
+<section id="oecd-measure-of-a-better-life" class="slide level2 center">
+<h2>OECD measure of a better life</h2>
+<ul>
+<li>Organization for Economic Cooperation and Development</li>
+<li>Eleven categories of items</li>
+<li>Website lets you manipulate importance of each category</li>
+</ul>
+</section>
+<section id="information-dashboards" class="slide level2 center">
+<h2>Information Dashboards</h2>
+<ul>
+<li>Often work well at a glance</li>
+<li>Automobile dashboards have changed over time</li>
+<li>Helpful when you need to measure numerous items at the same time</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+
+<img data-src="fiAircraftCockpit.jpg" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="fiEcologyThreats.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="fiSocialThreats.png" class="r-stretch"></section>
+<section class="slide level2 center">
+
+
+<img data-src="fiDoughnutModel.png" class="r-stretch"></section>
+<section id="behavioral-economics" class="slide level2 center">
+<h2>Behavioral Economics</h2>
+<ul>
+<li>Formerly disavowed by <em>utility theory</em> economists</li>
+<li>Proponents won Nobel Prizes: Herbert Simon, Daniel Kahneman, Richard Thaler</li>
+<li>Now more mainstream</li>
+</ul>
+</section></section>
+<section>
+<section id="stories-are-better-than-numbers" class="title-slide slide level1 center">
+<h1>Stories are better than numbers</h1>
+<ul>
+<li>Measurements give facts</li>
+<li>Stories provide meaning</li>
+<li>Meaningful stories are easy to remember</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p>“It doesn’t matter how complex something is. If people find it meaningful and understandable, they will judge it to be “simple.” “Complexity is a fact of the world, whereas simplicity is in the mind.”</p>
+<p>Excerpt From <em>Design for a Better World</em> Don Norman</p>
+</section></section>
+<section id="tutorials" class="title-slide slide level1 center">
+<h1>Tutorials</h1>
+
+</section>
+
+<section>
+<section id="references" class="title-slide slide level1 smaller scrollable">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Hartson2019" class="csl-entry" role="listitem">
+Hartson, Rex, and Pardha Pyla. 2019. <em>The UX Book, 2nd Edition</em>. Cambridge, MA: Morgan Kaufman.
+</div>
+<div id="ref-Johnson2020" class="csl-entry" role="listitem">
+Johnson, Jeff. 2020. <em>Designing with the Mind in Mind, 3rd Edition</em>. Cambridge, MA: Morgan Kaufman.
+</div>
+<div id="ref-Miller1956" class="csl-entry" role="listitem">
+Miller, George A. 1956. <span>“The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Processing Information.”</span> <em>The Psychological Review</em> 63: 81–97.
+</div>
+<div id="ref-Norman2013" class="csl-entry" role="listitem">
+Norman, Donald A. 2013. <em>The Design of Everyday Things, 2nd Edition</em>. Basic Books.
+</div>
+<div id="ref-Norman2023" class="csl-entry" role="listitem">
+———. 2023. <em>Design for a Better World</em>. Cambridge, MA: <span>MIT</span> Press.
+</div>
+<div id="ref-Pohl2004" class="csl-entry" role="listitem">
+Pohl, Rüdiger F., ed. 2004. <em>Cognitive Illusions: A Handbook on Fallacies and Biases in Thinking, Judgement and Memory</em>. New York: Psychology Press.
+</div>
+<div id="ref-Wertheimer1938" class="csl-entry" role="listitem">
+Wertheimer, Max. 1938. <span>“Laws of Organization in Perceptual Forms.”</span>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="r-fit-text">
+<p>END</p>
+</div>
+</section></section>
+<section id="colophon" class="title-slide slide level1 center">
+<h1>Colophon</h1>
+<p>This slideshow was produced using <code>quarto</code></p>
+<p>Fonts are <em>League Gothic</em> and <em>Lato</em></p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="iSchoolLogo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

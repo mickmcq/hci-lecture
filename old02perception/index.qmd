@@ -1,0 +1,406 @@
+---
+title: "Human Computer Interaction:<br>Perception"
+author: Mick McQuaid
+date: today
+bibliography: master.bib
+format:
+  revealjs:
+    logo: iSchoolLogo.png
+    theme: moon
+    css: style.css
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    controls: true
+    controls-layout: bottom-right
+    center: true
+---
+
+::: {.r-fit-text}
+Week TWO
+:::
+
+# Today
+
+- Q and A from last time (actually last semester)
+- Example Article presentation (Mick)
+- Groups
+- Perception
+- Perception Discussion (Victor)
+- @Norman2023
+
+# Q and A from last time
+It didn't work! (There are two empty responses and nothing else!)
+
+As a result, we'll look at last semester's Q&A.
+
+## Bringing it together
+How does this material tie holistically into HCI and Design (Thinking)
+
+## Natural vs Artificial; Old vs New
+This leads me to ask? Is the question of natural vs artificial in the same category as the prompt - "Is old
+considered inferior?" A lot of times people attribute natural to being superior and artificial to inferior. Although one
+can argue that 'old is superior' in some situations but for some reason and maybe psychologically, we tend to
+resist new technology and designs. We always lean towards the old way of doing things.
+
+::: {.notes}
+- resistance to change
+- superiority of natural
+- labeling things as natural
+:::
+
+## Reading!
+Looking forward to reading Norman's new book, Design for a Better World.
+
+## Materialism
+Is it possible to survive in today's world without contributing to materialism in ANY way?
+
+::: {.notes}
+How do you define materialism? Is it growth and planned obsolescence? Is it lack of spiritualism? Is it emphasis on products?
+
+Can't have a career if you're too far outside the mainstream. In my high school, exactly one student had parents who forbade all television (similar to banning social media today but much more rare). She dressed strangely and somehow looked different, and at our twenty year reunion she had no career or even job.
+:::
+
+## Combating society's ills
+What can we do in society to combat the issues brought up today?
+In order to fix America, we need change. However, any change that is suggested is labeled as socialism.
+Examples include improving education, improving healthcare, more regulation to ensure a cleaner environment.
+How much does societal and cultural perspectives shape our understanding of what is considered "modern"?
+
+::: {.notes}
+"What can designers do?" is the question Norman will try to answer in later chapters.
+:::
+
+## Questions lead to design?
+I am wondering where some of the questions lead to (eg. artificial vs natural), and how they are gonna effect
+design.
+
+::: {.notes}
+Is this practical or will it just be food for thought? Norman will try, in ensuing chapters, to make it practical for designers but, to set the stage, he believes he has to show that design is a bigger picture idea than what the average designer may think.
+:::
+
+## Regulatory environment
+If we start focusing on Humanity Center Design, does this mean we need to start building out regulations that are
+ethical for design? How do you know what is ethically correct, when there are 8+ different ethical standards out
+there?
+
+::: {.notes}
+Norman has long championed the idea that designers need to be more like engineers, with standards that qualify them. There are increasing numbers of certifications for designers, but Norman thinks we could go further.
+
+Certainly, the notion of ethics is controversial and people may try to manipulate ethical standards for their own gain. For example, major corporations resist ethics regulations and often spend more money on publicity campaigns to promote an ethical image than on the actual struggle to maintain ethical standards. This is because, in the USA today, profit trumps all other considerations. Can anything stand in the way of profit as our main consideration in life?
+:::
+
+## Difference between humanity and human
+I am curious how humanity-centered design differs from human-centered design. I expect I will learn more reading
+Norman, 2023.
+
+::: {.notes}
+How is the collective different from the individual? Many billionaires are buying up properties that will soon be physically under water due to climate change. They see these things as disposable luxuries and seem to believe they can buy their way out of climate change. Can they?
+:::
+
+# In class presentations
+$\langle$ pause for example article presentation by Mick $\rangle$
+
+# Groups
+Are you all in groups now? Are you satisfied with your groups? Let's make sure you're on track right now.
+
+# Perception
+
+## Human Capabilities
+
+- What are our limits?
+-  What are we on average?
+-  What state are we in?
+-  ...
+
+We can think about human capabilities from different perspectives. Can you think of others besides the list above?
+
+## Limits, averages, and states
+What can you say about the previous list? For example, limits might include the limits of what a person can see or remember. The average might include what "most" people can see and remember, whatever "most" means. The state we are in might be bright sunlight or a loud nightclub or sitting in front of a computer in a dark room, all of which affect our limits temporarily.
+
+## Some limits
+- Magical number seven, from @Miller1956
+- Resolving power of the human eye in lines per inch at distance
+- Color blindness
+
+## Chunking
+![](fiMagicalNumber.jpg)
+
+## Details of chunking
+The preceding list shows several common limits you might need to be aware of when designing digital artifacts.
+@Miller1956 found that people chunked items in short term memory into groups of seven, plus or minus two, as shown in the previous frame. That might suggest a limit for what you ask people to remember.
+
+## Jobs focused public attention on resolving power
+![](fiJobsRetina.png)
+
+::: {.notes}
+Steve Jobs, depicted here at the iPhone introduction, famously introduced the so-called retina display with a discussion of the resolving power of the human eye in lines per inch at a given distance to arrive at the optimal effective resolution for a smartphone display, typically held at a given distance from the eye.
+:::
+
+## A typical test for color blindness
+![](fiColorBlindness.png)
+
+::: {.notes}
+About eight percent of Northern European males in your audience probably suffer from red-green color blindness, for example, and mobile apps exist specifically to help people identify colors.
+
+This frame shows an example of a color blindness test from the Color blindness article on Wikipedia. If you are not color blind, you should see the number 74. If you are red-green color blind, you should see the number 21. If you have total color blindness, you should see no numbers. By the way, Wikipedia reports that several famous artists throughout history are thought to have been color blind, so color blindness should not preclude a career as an artist or designer.
+
+One note on Wikipedia is that I refer to it a lot, in contrast to instructors who note that there is a lot of misinformation on Wikipedia and ask you to refrain from using it. I view Wikipedia as valuable but flawed, and I believe there is a skill you can develop with experience of using it and triangulating with other sources to overcome the misinformation problem. Wikipedia is often a good starting point for a search even for poorly researched articles. It just shouldn't be the ending point.
+:::
+
+## Some findings of Gestalt psychology, 1927
+![](fiGestaltPrinc1.png)
+
+::: {.notes}
+@Wertheimer1938, originally published in German in the 1920s, introduced Gestalt principles to an English-speaking audience. Some views of Gestalt principles of perception are shown in this and the following frames.
+
+The Gestalt psychologists were enormously influential in spreading these principles, first in Germany, where they met with artists of the Bauhaus as well as psychologists working in other specialties, then all over the world as they fled the Nazis and settled in different countries. You have probably encountered the Gestalt principles in an Intro to Psychology class, and will find that designers use them everywhere, even unconsciously, so you might as well do it consciously.
+:::
+
+## A view of Gestalt principles
+![](fiGestaltPrinc2.jpg)
+
+::: {.notes}
+As an exercise, try to identify the Gestalt principle illustrated in each element of this frame. This is an exercise you can repeat with your own designs or those you encounter.
+:::
+
+## More on Gestalt principles
+![](fiGestaltPrinc3.png)
+
+::: {.notes}
+This frame gives names for the principles and you may notice that some of these names differ from the names you may have seen elsewhere (and some are misspelled). Bear in mind that all of these are translations from the German and may arise from different perspectives on what the words mean. One of the most interesting Gestalt principles has the German name Prägnanz, which is often translated as *figural goodness* and refers to the property that your brain will try to make sense of ambiguous figures and fit them into a familiar form.
+:::
+
+## An example of Colorbrewer usage
+![](fiColorbrewer.png)
+
+::: {.notes}
+Colorbrewer is an idea and an application and a website and the basis for several tools, conceived by geography professor Cynthia Brewer. The main idea is that people have an easier time interpreting information represented by some colors than by others.
+
+Brewer and her students have conducted countless experiments with colored maps, asking participants quantitative questions about information depicted by the maps. They've kept a careful record of how well participants answered questions using different color schemes, and developed a set of color palettes representing the most successful combinations.
+
+The [colorbrewer](http://colorbrewer2.org) website, shown in this frame, shows the control panel on the left and the result on the right. The user is asked to tell the number of data classes to be represented on the map. Then the user has to decide whether their data is sequential, diverging, or qualitative. Next, on the basis of these choices, a set of color schemes is presented to choose from. Further choices offered include whether the color scheme should be colorblind safe, print friendly, or photocopy safe. You get a depiction of the color scheme in the map on the right hand side, and a list of the colors in either hexadecimal, RGB, or CMYK format.
+:::
+
+## You don't notice the gorilla when counting
+![](fiBasketballPassing.png)
+
+::: {.notes}
+Inattention blindness is depicted in this frame. In this famous experiment, the participant is asked to watch two basketball teams, one wearing white and the other wearing black. The participant is asked to count the number of passes made by one of the teams, but not the passes made by the other team. After a few seconds, a person in a gorilla costume walks through the scene but the participant is so intent on the counting task as to not see the gorilla!
+
+You can find many examples of similar experiments with similar results online by searching for inattention blindness or cognitive overload. One of my favorites is shown on Youtube where a researcher on the sidewalk asks a random person for help with a map. As soon as the random person starts looking at the map and trying to make sense of it, a pair of workmen holding a large mirror pass between the two. Unbeknownst to the random person, a confederate is hiding behind the mirror with the same map folded in the same orientation. The confederate replaces the researcher, who walks on behind the mirror. The confederate is of a different race and gender than the researcher, but the video evidence suggests that the random person does not know the difference. As a side note, there may be a serious ethical issue with this experiment because the random person is drawn into it without informed consent.
+:::
+
+## An influential and controversial book
+![](fiThinkingFastSlow1.jpg)
+
+::: {.notes}
+This frame depicts the cover of a famous book by Nobel Laureate Daniel Kahneman, based on research he conducted with Amos Tversky, who sadly passed away before the Nobel prize could be awarded jointly to them. The book covers work in cognitive biases, prospect theory, and happiness. The book is controversial because of the difficulty other researchers have faced in replicating its results.
+:::
+
+## Being watched by a picture influences you
+![](fiThinkingFastSlow2.jpg)
+
+::: {.notes}
+One interesting experiment reported in the book suggests that being watched by eyes in a picture can influence your behavior. The researchers found an office with a kitchen where people were supposed to put money in a box every time they took milk from the refrigerator. Over the box was a framed picture. The researchers manipulated the picture, changing it for a different one every week. The two kinds of subjects for the picture were flowers and eyes watching the viewer. As shown in Figure \ref{fiThinkingFastSlow2.jpg}, people were more apt to put money in the box while they were being watched! Could this be conscious behavior? The researchers thought not and sought to explain this behavior as unconscious and based on a dichotomy between two systems vying for control of the human mind.
+:::
+
+## Two systems controlling you
+![](fiThinkingFastSlow3.jpg)
+
+::: {.notes}
+This frame depicts the two systems the researchers hypothesized, System 1 and System 2. System 1 is fast, unconscious, automatic, controls everyday decisions, and is error prone. This is the system they hypothesized to be responsible for the milk money behavior. The other system, System 2, is slow, conscious, effortful, responsible for complex decisions, and is reliable. Many of their experiments sought to isolate these two systems and learn of their characteristics. There is some support in neurology for these claims, although my source is packed away as I write this and I can't cite it now.
+:::
+
+## Causes and consequences of cognitive ease
+![](fiThinkingFastSlow4.jpg)
+
+::: {.notes}
+The book includes an important figure for human centered computing professionals, shown in this frame. This is a model of the causes and consequences of cognitive ease, a state designers often try to achieve in devising interfaces to computer-based tools to support cognitive work. This model gives us some ideas of things we can do as designers on the left, as well as some potential metrics for determining our success in design on the right.
+:::
+
+## Critique of Kahneman
+The common critique of Kahneman is that the experiments can't be replicated, in particular much of the research on priming. For example, a blog post at [replication index](https://replicationindex.com/2020/12/30/a-meta-scientific-perspective-on-thinking-fast-and-slow/) summarizes some of the critiques.
+
+## An example of an optical illusion
+![](fiCogIllusions.png)
+
+::: {.notes}
+Cognitive illusions and biases are everywhere. @Pohl2004 reports on a whole catalog of them. Wikipedia devotes an article to a list of cognitive biases at [cognitive biases](https://en.wikipedia.org/wiki/List_of_cognitive_biases). This frame shows an example of an optical illusion where, if you stare at it intently, you are likely to see it move although it is a static picture.
+:::
+
+# Readings
+Readings last week included  @Hartson2019: Ch 1, 2, 4 and
+@Norman2013: Ch 1. These are pretty serious readings and you need to carve out time to devote to them. In addition, the readings in future weeks have to be done before class, not after. We're only saving these readings for after class because it's the first week.
+
+Readings this week include @Johnson2020: Ch 1--5
+
+::: {.notes}
+I once worked with a group of junior Naval officers who were required by their commander to be responsible for all the information in their email and military message traffic, some 5,000 items per day. The group got together and devised a strategy of dividing up the material and briefing each other on the points of importance, so that no one person had to read 5,000 items, which would have been physically impossible anyway. You could use a similar divide and conquer strategy on our reading material.
+:::
+
+## Discussion of readings (led by Victor)
+
+# Assignment
+Milestone 0
+
+# @Norman2023, II: Meaningful
+
+## Meaning is elusive
+- Specialized terminology is legalistic, technical, governmental.
+- Unintentional lack of clarity (experts addressing public)
+- Intentional (software licenses, web-based accounts)
+- Methods: tiny windows, use of all uppercase text
+
+## Scientists explaining climate change
+- Scientists dwell on facts that don't grab attention
+- Others make dramatic demonstrations, e.g., Manhattan's painted boundary
+- Norman advocates simplifying language to explain complexity
+- Designers should use rough sketches before making detailed designs
+
+## Measurement
+- In physical science, measurement is an essential first step
+- People try to measure productivity because it's easy to measure
+- Productivity measures don't include quality
+- *Not everything that can be counted counts, and not everything that counts can be counted*
+- Difficulty, expense prohibit many measurements
+- We measure what's easy and cheap to measure and what matters to the ruling class
+
+## Measuring what matters to people
+- Hard to do in a lab if including context
+- Hard to replicate if context is included
+- Scientists often measure young (WEIRD) university students
+- Economists use wrong underlying assumptions, e.g., rational behavior
+- Economic measures often ignore disease, natural disasters, wars, and trade barriers
+
+## Economic measures
+- GDP hides progress in health, education, and happiness indices
+- Assumption: people maximize utility! Do you believe that?
+- Satisficing (Nobel prize winning concept) violates utility maximization
+- Manipulation is everywhere, e.g., three item choices
+- Marketing is manipulation
+
+## Cost-benefit analysis and risk management
+- Use money as standard for comparison
+- Yet one cost is loss of human life
+- Hard to evaluate as money, yet people do in effect
+- Norman says to stop using money as the standard
+
+## Values of Humanity vs Artificial Measures
+- Cost Benefit Analysis and Risk Management tend to favor more expensive buildings, businesses, and homes
+- Wealthy always win cost benefit analyses and risk mgt analyses
+- If low-income people lose their homes, they may lose their jobs as a result
+- Are people equal in the eyes of cost benefit / risk mgt? No, says Norman
+
+## GDP
+- Alternatives require subjective measures
+- Objective is "better" than subjective even though the things you most care about in the world are probably measured subjectively
+- One article said GDP was up, another said people were down ... Why the discrepancy?
+- Norman says it's because GDP has nothing to do with our lives
+
+## Criticisms of GDP (top three)
+- Emphasizes material output without considering overall well-being
+- Counts cost and waste as economic benefits
+- Summarizes economic status of a nation as a single number, hiding complexity: opaque, invisible, mysterious, secretive, confusing
+- Spending measured by GDP includes causing pollution and cleaning up pollution, as well as large police forces and repairing broken windows
+
+## Replacing GDP
+World Economic forum offers five measures
+
+- Good jobs
+- Well-being
+- Environment (including sustainability)
+- Fairness (and equity)
+- Health
+
+## Norman's list
+- Inclusiveness
+- Resilience
+- Education
+- Societal values
+- Quality of governance
+- Happiness
+- Freedom from hunger
+
+## Other measures
+- Gini Index
+- GPI (Genuine Progress Indicator)
+- HDI (Human Development Index)
+- Unfortunately, all use money as the basis
+
+---
+
+![](fiSeventeenGoals.png)
+
+::: {.notes}
+The UN has a website devoted to these seventeen goals and goes into much detail about how to measure them.
+:::
+
+## Measurement scales
+- Ratio (e.g., height, weight, Kelvin temperature)
+- Interval (e.g., Celsius temperature, Fahrenheit temperature)
+- Ordinal (e.g., apples ordered by redness, Mohs hardness scale)
+
+## OECD measure of a better life
+- Organization for Economic Cooperation and Development
+- Eleven categories of items
+- Website lets you manipulate importance of each category
+
+## Information Dashboards
+- Often work well at a glance
+- Automobile dashboards have changed over time
+- Helpful when you need to measure numerous items at the same time
+
+---
+
+![](fiAircraftCockpit.jpg)
+
+---
+
+![](fiEcologyThreats.png)
+
+---
+
+![](fiSocialThreats.png)
+
+---
+
+![](fiDoughnutModel.png)
+
+## Behavioral Economics
+- Formerly disavowed by *utility theory* economists
+- Proponents won Nobel Prizes: Herbert Simon, Daniel Kahneman, Richard Thaler
+- Now more mainstream
+
+# Stories are better than numbers
+- Measurements give facts
+- Stories provide meaning
+- Meaningful stories are easy to remember
+
+---
+
+“It doesn't matter how complex something is. If people find it meaningful and understandable, they will judge it to be “simple.” “Complexity is a fact of the world, whereas simplicity is in the mind.”
+
+Excerpt From
+*Design for a Better World*
+Don Norman
+
+# Tutorials
+
+# References
+
+::: {#refs}
+:::
+
+---
+
+::: {.r-fit-text}
+END
+:::
+
+# Colophon
+
+This slideshow was produced using `quarto`
+
+Fonts are *League Gothic* and *Lato*
+

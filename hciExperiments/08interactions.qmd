@@ -1,0 +1,191 @@
+
+# Experiments with interaction effects
+
+This section reports on three experiments with possible interaction effects: Avatars, Notes, and Social media value. To work through the questions, you need the three `csv` files containing the data: `avatars.csv`, `notes.csv`, and `socialvalue.csv`.
+
+These experiments may be between-subjects, within-subjects, or mixed. To be a mixed factorial design, there would have to be at least two independent variables and at least one within-subjects factor and at least one between-subjects factor.
+
+## Sentiments about Avatars among males and females (Interaction effects)
+
+Thirty males and thirty females were shown an avatar that was either male or female and asked to write a story about that avatar. The number of positive sentiments in the story were summed. What kind of experimental design is this? [Answer: It is a $2\times 2$ between-subjects design with factors for Sex (M, F) and Avatar (M, F).]
+
+```{r}
+avatars <- read_csv("avatars.csv")
+avatars$Subject <- factor(avatars$Subject)
+summary(avatars)
+```
+
+What's the average number of positive sentiments for the most positive combination of Sex and Avatar?
+
+```{r}
+plyr::ddply(avatars,~Sex*Avatar,summarize,
+      Pos.mean=mean(Positives),
+      Pos.sd=sd(Positives))
+```
+
+Create an interaction plot with Sex on the X-Axis and Avatar as the traces. Do the lines cross? Do the same for reversed axes.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(avatars,interaction.plot(Sex,Avatar,Positives,
+			      ylim=c(0,max(avatars$Positives))))
+with(avatars,interaction.plot(Avatar,Sex,Positives,
+			      ylim=c(0,max(avatars$Positives))))
+```
+
+Conduct a factorial ANOVA on Positives by Sex and Avatar and report the largest $F$-statistic. Report which effects are significant.
+
+```{r}
+m<-ezANOVA(dv=Positives,between=c(Sex,Avatar),
+	   wid=Subject,data=avatars)
+m$ANOVA
+```
+
+Conduct planned pairwise comparisons using independent-samples $t$-tests. Ask whether females produced different numbers of positive sentiments for male vs female avatars. Then ask whether males did the same. Assume equal variances and use Holm's sequential Bonferroni procedure to correct for multiple comparisons.
+
+```{r}
+f<-t.test(avatars[avatars$Sex=="Female" & avatars$Avatar=="Male",]$Positives,
+	  avatars[avatars$Sex=="Female" & avatars$Avatar=="Female",]$Positives,
+	  var.equal=TRUE)
+f
+m<-t.test(avatars[avatars$Sex=="Male" & avatars$Avatar=="Male",]$Positives,
+	  avatars[avatars$Sex=="Male" & avatars$Avatar=="Female",]$Positives,
+	  var.equal=TRUE)
+m
+p.adjust(c(f$p.value,m$p.value),method="holm")
+```
+
+## Writing notes with builtin or addon apps on two phones (mixed factorial design)
+
+The `notes.csv` file describes a study in which iPhone and Android owners used a built-in note-taking app then a third-party note-taking app or vice versa. What kind of experimental design is this? (Answer: A $2 \times 2$ mixed factorial design with a between-subjects factor for Phone (iPhone, Android) and a within-subjects factor for Notes (Built-in, Add-on).)
+
+```{r}
+notes<-read_csv("notes.csv")
+notes$Subject<-factor(notes$Subject)
+notes$Order<-factor(notes$Order)
+summary(notes)
+```
+
+What's the average number of words recorded for the most heavily used combination of Phone and Notes?
+
+```{r}
+plyr::ddply(notes, ~Phone*Notes,summarize,
+	     Words.mean=mean(Words),Words.sd=sd(Words))
+```
+
+Create an interaction plot with Phone on the X-Axis and Notes as the traces. Do the lines cross? Do the same for reversed axes.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(notes,interaction.plot(Phone,Notes,Words,
+			    ylim=c(0,max(notes$Words))))
+with(notes,interaction.plot(Notes,Phone,Words,
+			    ylim=c(0,max(notes$Words))))
+```
+
+Test for an order effect in the presentation of order of the Notes factor. Report the $p$-value.
+
+```{r}
+m<-ezANOVA(dv=Words,between=Phone,within=Order,wid=Subject,data=notes)
+m$ANOVA
+```
+
+Conduct a factorial ANOVA on Words by Phone and Notes. Report the largest $F$-statistic.
+
+```{r}
+m<-ezANOVA(dv=Words,between=Phone,within=Notes,wid=Subject,data=notes)
+m$ANOVA
+```
+
+Conduct paired-samples $t$-tests to answer two questions. First, did iPhone user enter different numbers of words using the built-in notes app versus the add-on notes app? Second, same for Android. Assume equal variances and use Holm's sequential Bonferroni procedure to correct for multiple comparisons. Report the lowest adjusted $p$-value.
+
+```{r}
+notes.wide<-dcast(notes,Subject+Phone~Notes,value.var="Words")
+head(notes.wide)
+i<-t.test(notes.wide[notes.wide$Phone=="iPhone",]$'Add-on',
+	  notes.wide[notes.wide$Phone=="iPhone",]$'Built-in',
+	  paired=TRUE,var.equal=TRUE)
+i
+a<-t.test(notes.wide[notes.wide$Phone=="Android",]$'Add-on',
+	  notes.wide[notes.wide$Phone=="Android",]$'Built-in',
+	  paired=TRUE,var.equal=TRUE)
+a
+p.adjust(c(i$p.value,a$p.value),method="holm")
+```
+
+## Social media value judged by people after watching clips (two-by-two within subject design)
+
+The file socialvalue.csv describes a study of people viewing a pos or neg film clip then going onto social media and judging the value of the first 100 posts they see. The number of valued posts was recorded. What kind of experimental design is this? [Answer: A $2\times 2$ within-subject design with factors for Clip (positive, negative) and Social (Facebook, Twitter).]
+
+```{r}
+sv<-read_csv("socialvalue.csv")
+sv$Subject<-factor(sv$Subject)
+sv$Clip<-factor(sv$Clip)
+sv$Social<-factor(sv$Social)
+sv$ClipOrder<-factor(sv$ClipOrder)
+sv$SocialOrder<-factor(sv$SocialOrder)
+summary(sv)
+```
+
+What's the average number of valued posts for the most valued combination of Clip and Social?
+
+```{r}
+plyr::ddply(sv, ~Clip*Social,summarize, Valued.mean=mean(Valued),
+      Valued.sd=sd(Valued))
+```
+
+Create an interaction plot with Social on the $X$-Axis and Clip as the traces. Do the lines cross? Do the same for reversed axes.
+
+```{r fig.margin=FALSE}
+par(pin=c(2.75,1.25),cex=0.5)
+with(sv,interaction.plot(Social,Clip,Valued,
+			 ylim=c(0,max(sv$Valued))))
+with(sv,interaction.plot(Clip,Social,Valued,
+			 ylim=c(0,max(sv$Valued))))
+```
+
+Test for an order effect in the presentation of order of the ClipOrder or SocialOrder factor. Report the $p$-values.
+
+```{r}
+m<-ezANOVA(dv=Valued,within=c(ClipOrder,SocialOrder),wid=Subject,data=sv)
+m$ANOVA
+```
+
+Conduct a factorial ANOVA on Valued by Clip and Social. Report the largest $F$-statistic.
+
+```{r}
+m<-ezANOVA(dv=Valued,within=c(Clip,Social),wid=Subject,data=sv)
+m$ANOVA
+```
+
+Conduct paired-samples $t$-tests to answer two questions. First, on Facebook, were the number of valued posts different after watching a positive or negative clip. Second, same on Twitter.
+Assume equal variances and use Holm's sequential Bonferroni procedure to correct for multiple comparisons. Report the lowest adjusted $p$-value.
+
+```{r}
+sv.wide<-dcast(sv,Subject+Social~Clip,value.var="Valued")
+head(sv.wide)
+f<-t.test(sv.wide[sv.wide$Social=="Facebook",]$positive,
+	  sv.wide[sv.wide$Social=="Facebook",]$negative,
+	  paired=TRUE,var.equal=TRUE)
+f
+t<-t.test(sv.wide[sv.wide$Social=="Twitter",]$positive,
+	  sv.wide[sv.wide$Social=="Twitter",]$negative,
+	  paired=TRUE,var.equal=TRUE)
+t
+p.adjust(c(f$p.value,t$p.value),method="holm")
+```
+
+Conduct a nonparametric Aligned Rank Transform Procedure on Valued by Clip and Social.
+
+```{r}
+m<-art(Valued~Clip*Social+(1|Subject),data=sv)
+anova(m)
+```
+
+Conduct interaction contrasts to discover whether the difference on Facebook was itself different from the difference on Twitter. Report the $\chi^2$ statistic.
+
+```{r}
+testInteractions(artlm(m,"Clip:Social"),
+		 pairwise=c("Clip","Social"),adjustment="holm")
+```
+

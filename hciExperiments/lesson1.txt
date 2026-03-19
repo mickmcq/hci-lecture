@@ -1,0 +1,100 @@
+For our first experiment let's say 60
+people try two website alternatives and express their preference for
+which one they like best. Pretty simple. Perhaps website A Is the old
+version of the site, perhaps website B is a redesign,
+a new version of the site. What are the design considerations for
+such an experiment? Well, to begin with how many
+participants do we need? I said 60.
+Is that enough? Is that too many? The short answer is for
+most experiments more is better. More participants gives you more power,
+which is the ability to detect differences in the things you're comparing, but it
+depends on the size of those differences. If the things you're comparing are very
+different, then you need fewer subjects. If the things you are comparing are fairly
+similar you may need more subjects. With online experiments thousands or even hundreds of thousands
+of subjects are possible. We have to be a little bit careful. With enough people you can
+always detect differences because no two things
+are ever exactly the same. In fact, even if you tested the same
+website, the same design, the same interface of some kind against itself
+with hundreds of thousands of people you're likely to possibly see a difference
+simply because of measurement error and the variability that comes with measuring
+things across different people. So ask yourself for a difference to be meaningful to you how
+many subjects would you be convinced by? What would seem a reasonable number? If you could detect a difference with 60
+people would that be enough to convince you that that statistically significant
+difference is also a practical difference? We always must remember that
+statistical significance and practical significance based on practical
+differences are two different things. In every experiment there are at
+least four major considerations. I'm going to write them up here. We have to think about as we've
+just been discussing, participants. We also need to think about
+what I'll call the apparatus. We also need to think about
+the experiment procedure. And lastly the design, and the analysist that we're going to use for
+that experiment. And of course, we'll come to that
+after we discuss these others for our first experiment. Let's revisit participants. Who are they, where do they come from? How do they become part of our study? All these are questions
+related to sampling. Sampling and sampling theory is a deep
+topic that is beyond the scope of our current course, but sampling relates
+to how we select subjects for our study from a larger population
+about which we want to draw inferences. That is draw conclusions. There are many kinds of sampling. They fall generally into two categories. Probability sampling, and
+non probability sampling. Just like their name sound probability
+sampling is a technique usually based on random approaches that select people
+from larger populations randomly. Non probability sampling does not
+depend on randomness as much, but uses other approaches
+to acquire participants. It's common in design studies and
+HCI to use non probability sampling although probability sampling
+can be used as well. Some examples of non probability
+sampling are purpose of sampling, convenience sampling,
+and snowball sampling. Like their name suggests you get an idea
+of what each of those might mean and you can look them up for
+further information online. When we have our sample that is our set of
+subjects we want to draw inferences about a larger population, and that's what's
+our statistical test will help us do, but we want to ask In terms of our
+subjects what characteristics they have. Are there certain kinds of inclusion
+criteria for them to be part of our study? Are there exclusion criteria that would
+mean we won't include them in our study? For example, in our study of 60 people
+who are expressing a preference for one website or
+another maybe people already familiar with the old website
+are excluded from the study so we're getting fresh eyes on
+both versions of the website. That would be an example
+of exclusion criteria. For apparatus, we can ask what do
+we need in terms of equipment, space, and
+other resources to run the study? Is it in a lab? Is it a remote study, an online study? Do I need to build anything or have built
+something for people to test and try, and how will data be captured? Often, if we're doing test of
+computational artifacts we can write log files. The computer or device can write
+log files directly based on what the user is doing with the device,
+and we analyze those log files later. We might have just direct human
+observation where we make notes or record things based on what we see. A sort of over the shoulder approach or maybe through a remote
+connection to their terminal. We might also do video recording. These are just some of the ways
+that we might capture data. In terms of procedure we can
+ask what do participants do? What do they actually go through
+as they come into the study? Do they perform tasks,
+what kinds, and how many? How long do they take? It's hard to keep people in a lab for
+more than about an hour, and you certainly want to be kind to them
+and not make them stay there for too long as they will begin to get tired and you'll
+introduce fatigue effects into your study. Is there learning involved that
+we need to take account of? Do they get to practice something
+beforehand or be exposed for awhile beforehand before we start
+measuring what data that we want to count. For example, in our study how long do
+the participants use each website? Is that even controlled? What do they do on each site? Do they just have open exploration,
+or do we give them tasks like in a usability test where they follow
+a specific path that we want them to take. All of these are questions about
+the procedure of the study and the last and
+forth one design and analysis. This is design in the sense
+of experiment design. What's the formal design
+that we are using? How is it characterized, and
+then what does that mean for the analysis that we use? We'll come back to all these things. For now, let's think about what it would be like
+to run the study that we've discussed. Some considerations to take into account. Informed consent is very important. That's where you have the opportunity
+at the start of a study to tell your subjects what they're going
+to go through, what the purpose of it is, and what they can expect
+during their time with you. They're in your care, and
+it's very important to remember that you are in charge of their
+welfare during that time. You want to set clear expectations. What are they about to encounter? Is anything a potential risk? Getting their informed consent
+gives them the authority and autonomy to decide if they still want to
+take part in your study before it begins. Make sure the space you run a study in
+is accessible particularly to people for example in wheelchairs or who may be
+blind, or deaf, or have other impairments. You want to make sure at the end of your
+study that you debrief your participants. You tell them what this was all about, maybe give them more insight into how
+other participants have performed, and compliment them and thank them for
+their time and effort. You may want someone to MC
+the study who's separate from someone who's making observations,
+taking notes, or recording data. It's often hard to both MC the experiment,
+and be the one recording data. You have to ask yourself are you
+using some kind of test bed or a real world system? Are open tasks given or directed tasks? All of these are parts of what takes
+place while running the study.

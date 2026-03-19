@@ -1,0 +1,235 @@
+
+# Same person using two different tools (Paired samples $t$-test)
+
+Is it better to search or scroll for contacts in a smartphone contacts manager?
+Which takes more time? Which takes more effort? Which is more error-prone?
+Start by reading in data, converting to factors, and summarizing.
+
+```{r}
+srchscrl <- read_csv("srchscrl.csv")
+srchscrl$Subject <- factor(srchscrl$Subject)
+srchscrl$Order   <- factor(srchscrl$Order)
+srchscrl$Technique   <- factor(srchscrl$Technique)
+#. srchscrl$Errors   <- factor(srchscrl$Errors,ordered=TRUE,levels=c(0,1,2,3,4))
+summary(srchscrl)
+```
+
+```{r results="asis"}
+library(xtable)
+options(xtable.comment=FALSE)
+options(xtable.booktabs=TRUE)
+xtable(head(srchscrl),caption="First rows of data")
+```
+
+View descriptive statistics by Technique. There are several ways to do this. The following uses the `plyr` package.
+```{r}
+plyr::ddply(srchscrl, ~ Technique,
+      function(data) summary(data$Time))
+plyr::ddply(srchscrl, ~ Technique,
+      summarise, Time.mean=mean(Time), Time.sd=sd(Time))
+```
+
+Another approach is to use the `dplyr` package. Be aware that it conflicts with `plyr` so you should try to avoid using both. If you must use both, as I did above, it may make the most sense to call particular functions from the `plyr` package rather than load the package. This is what I did with `plyr::ddply()` above.
+
+```{r}
+srchscrl |>
+  group_by(Technique) |>
+  summarize(mean=mean(Time),sd=sd(Time))
+```
+
+You can explore the Time response by making histograms or boxplots.
+One approach is to use the `ggplot2` package and put the histograms together in one frame. The `ggplot2` package allows for a remarkable variety of options.
+
+```{r fig.margin=FALSE}
+ggplot(srchscrl,aes(Time,fill=Technique)) +
+  geom_histogram(bins=30,alpha=0.9,position=position_dodge()) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+```
+
+We can use the same package for boxplots. Boxplots show the median as a bold line in the middle of the box. The box itself ranges from the first quartile (starting at the 25th percentile) to the third quartile (terminating at the 75th percentile). The whiskers run from the minimum to the maximum, where these are defined as the 25th percentile minus 1.5 times the interquartile range and the 75th percentile plus 1.5 times the interquartile range. The interquartile range is the width of the box. Dots outside the whiskers show outliers.
+
+```{r fig.margin=FALSE}
+ggplot(srchscrl,aes(Technique,Time,fill=Technique)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+```
+
+We would rather use parametric statistics if ANOVA assumptions are met. Recall that we can test for normality, normality of residuals, and homoscedasticity. In the case of a within-subjects experiment, we can also test for order effects which is one way to test the independence assumption. First test whether these times seem to be drawn from a normal distribution.
+
+```{r}
+shapiro.test(srchscrl[srchscrl$Technique == "Search",]$Time)
+shapiro.test(srchscrl[srchscrl$Technique == "Scroll",]$Time)
+```
+
+In both cases we fail to reject the null hypothesis, which is that the Time data are drawn from a normal distribution. Note that we fail to reject at $\alpha=0.05$ but that in the case of the Scroll technique we would reject at $\alpha=0.1$.
+
+Fit a model for testing residuals---the Error function is used
+to indicate within-subject effects, i.e., each Subject was
+exposed to all levels of Technique. generally, Error(S/(A*B*C))
+means each S was exposed to every level of A, B, C and S
+is a column encoding subject ids.
+
+```{r}
+m <- aov(Time ~ Technique + Error(Subject/Technique),
+	data=srchscrl)
+```
+
+The above-specified model has residuals---departures of the observed data from the data that would be expected if the model were accurate.
+
+Now we can test the residuals of this model for normality and also examine a QQ plot for normality. The QQ plot shows the theoretical line to which the residuals should adhere if they are normally distributed. Deviations from that line are indications of non-normality. First test by Subject.
+
+```{r fig.margin=TRUE}
+shapiro.test(residuals(m$Subject))
+qqnorm(residuals(m$Subject)) 
+qqline(residuals(m$Subject))
+```
+
+We fail to reject the null hypothesis of normality and the QQ plot looks normal. So far, so good.
+
+Next test by Subject:Technique.
+
+```{r fig.margin=TRUE}
+shapiro.test(residuals(m$'Subject:Technique'))
+qqnorm(residuals(m$'Subject:Technique'))
+qqline(residuals(m$'Subject:Technique'))
+```
+
+We fail to reject the null hypothesis of normality and the QQ plot looks normal. We're getting there.
+
+We're still checking the ANOVA assumptions. Next thing to test is homoscedasticity, the assumption of equal variance. For this we use the Brown-Forsythe test, a variant of Levene's test that uses the median instead of the mean, providing greater robustness against non-normal data.
+
+```{r}
+leveneTest(Time ~ Technique, data=srchscrl, center=median)
+```
+
+This experiment used counterbalancing to ward off the possibility of an order effect. An order effect results from learning or fatigue or some other factor based on the order in which the tests were run. We would like to not have that happen and one solution is to have half the subjects do task A first and half the subjects do task B first. This is the simplest form of counterbalancing. It becomes more problematic if there are more than two tasks.
+
+For a paired-samples $t$-test we must use a wide-format table; most
+R functions do not require a wide-format table, but the `dcast()` function
+offers a quick way to translate long-format into wide-format when
+we need it.
+
+A wide-format table has one subject in every row. A long-format table has one observation in every row. Most R functions use long-format tables.
+
+```{r}
+library(reshape2)
+srchscrl.wide.order <- dcast(srchscrl, Subject ~ Order,
+			     value.var="Time")
+```
+
+```{r results="asis"}
+xtable(head(srchscrl.wide.order),
+       caption="First rows of wide order")
+```
+
+Now conduct a $t$-test to see if order has an effect.
+```{r}
+t.test(srchscrl.wide.order$"1", srchscrl.wide.order$"2",
+       paired=TRUE, var.equal=TRUE)
+```
+
+We fail to reject the null hypothesis that the responses do not differ according to order. To phrase this in a more readable (!) way, we have evidence that the order does not matter.
+
+## Running the paired $t$-test
+
+It now makes sense to use a paired $t$-test since the ANOVA assumptions have been satisfied. This is a parametric test of Time where we pair subjects by technique. Again, we need the wide-format table to conduct a paired test. The wide-format table has one row for each subject rather than one row for each observation.
+
+```{r}
+srchscrl.wide.tech = dcast(srchscrl, Subject ~ Technique,
+			   value.var="Time")
+```
+
+```{r results="asis"}
+xtable(head(srchscrl.wide.tech),
+       caption="First rows of wide technique")
+```
+
+```{r}
+t.test(srchscrl.wide.tech$Search, srchscrl.wide.tech$Scroll,
+       paired=TRUE, var.equal=TRUE)
+```
+
+This supports the intuition we developed doing the histogram and boxplots only now we have a valid statistical test to support this intuition.
+
+Suppose we did not satisfy the ANOVA assumptions.
+Then we would conduct the nonparametric equivalent of paired-samples t-test.
+
+## Exploring a Poisson-distributed factor
+
+Explore the Errors response; error counts are often Poisson-distributed.
+
+```{r}
+plyr::ddply(srchscrl, ~ Technique, function(data)
+      summary(data$Errors))
+plyr::ddply(srchscrl, ~ Technique, summarise,
+      Errors.mean=mean(Errors), Errors.sd=sd(Errors))
+```
+
+```{r}
+ggplot(srchscrl,aes(Errors,fill=Technique)) +
+  geom_histogram(bins=20,alpha=0.9,position=position_dodge()) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+ggplot(srchscrl,aes(Technique,Errors,fill=Technique)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+```
+
+Try to fit a Poisson distribution for count data. Note that `ks.test()`
+only works for continuous distributions, but Poisson distributions 
+are discrete, so use fitdist, not fitdistr, and test with gofstat.
+
+```{r}
+if(!require(fitdistrplus)) {
+  install.packages("fitdistrplus",dependencies=TRUE)
+  library(fitdistrplus)
+}
+fit = fitdist(srchscrl[srchscrl$Technique == "Search",]$Errors,
+	      "pois", discrete=TRUE)
+gofstat(fit) # goodness-of-fit test
+fit = fitdist(srchscrl[srchscrl$Technique == "Scroll",]$Errors,
+	      "pois", discrete=TRUE)
+gofstat(fit) # goodness-of-fit test
+```
+
+Conduct a Wilcoxon signed-rank test on Errors.
+```{r}
+wilcoxsign_test(Errors ~ Technique | Subject,
+		data=srchscrl, distribution="exact")
+```
+
+Note: the term afer the "|" indicates the within-subjects blocking term for matched pairs.
+
+## Examining a Likert scale response item
+
+Now also examine Effort, the ordinal Likert scale response (1-7).
+
+```{r}
+plyr::ddply(srchscrl, ~ Technique, function(data)
+      summary(data$Effort))
+plyr::ddply(srchscrl, ~ Technique, summarise,
+      Effort.mean=mean(Effort), Effort.sd=sd(Effort))
+```
+
+```{r}
+ggplot(srchscrl,aes(Effort,fill=Technique)) +
+  geom_histogram(bins=20,alpha=0.9,position=position_dodge()) +
+  scale_fill_brewer(palette="Blues") +
+  theme_tufte(base_size=8)
+ggplot(srchscrl,aes(Technique,Effort,fill=Technique)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Set3") +
+  geom_dotplot(show.legend=FALSE,binaxis='y',stackdir='center',dotsize=1) +
+  theme_tufte(base_size=8)
+```
+
+Our response is ordinal within-subjects, so use nonparametric Wilcoxon signed-rank.
+
+```{r}
+wilcoxsign_test(Effort ~ Technique | Subject,
+		data=srchscrl, distribution="exact")
+```
+

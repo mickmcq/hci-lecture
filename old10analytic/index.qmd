@@ -1,0 +1,74 @@
+---
+title: "HCI:<br>Analytic Evaluation"
+author: Mick McQuaid
+date: today
+bibliography: master.bib
+format:
+  revealjs:
+    logo: iSchoolLogo.png
+    theme: moon
+    css: style.css
+    transition: slide
+    background-transition: fade
+    preview-links: auto
+    controls: true
+    controls-layout: bottom-right
+    center: true
+---
+
+::: {.r-fit-text}
+Week TEN
+:::
+
+# Today
+
+# Q and A from last time
+
+All the questions were about Figma!
+
+##
+
+![](fiTitanicFigma.png)
+
+::: {.notes}
+I personally think Nudelman is completely wrong but it is a catchy graphic. Nudelman's claim is that chatbox interfaces are the future and Figma isn't equipped to handle them. I think chat interfaces are poor interfaces and that the industry is yet to hit on the best interface for an AI-first application. Figma may be doomed when that day comes. But it will depend, in part, on what that interface is. None of knows right now what it will be.
+:::
+
+# Discussion
+
+# Design Critique
+
+Julia
+
+# Article Presentation
+Let's look at `Morris2025.pdf`
+
+# Analytic Evaluation
+
+Let's look at [HCI experiments](https://mickmcquaid.com/stats/studyGuide/week13.html)
+
+# Readings
+
+Readings last week include @Hartson2019: Ch 22--24
+Readings this week include @Hartson2019: Ch 25--26
+
+# Assignments
+Milestone 4
+
+# References
+
+::: {#refs}
+:::
+
+---
+
+::: {.r-fit-text}
+END
+:::
+
+# Colophon
+
+This slideshow was produced using `quarto`
+
+Fonts are *League Gothic* and *Lato*
+

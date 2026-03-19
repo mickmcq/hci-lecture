@@ -1,0 +1,191 @@
+# How many prefer this over that? (Tests of proportions)
+
+## How many prefer website A over B? (One sample test of proportions in two categories)
+
+Sixty subjects were asked whether they preferred website A or B. Their answer and a subject ID were recorded. Read the data and describe it.
+
+```{r}
+prefsAB <- read_csv("prefsAB.csv")
+tail(prefsAB) # displays the last few rows of the data frame
+prefsAB$Subject <- factor(prefsAB$Subject) # convert to nominal factor
+prefsAB$Pref <- factor(prefsAB$Pref) # convert to nominal factor
+summary(prefsAB)
+ggplot(prefsAB,aes(Pref)) +
+  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+  theme_tufte(base_size=7)
+```
+
+Is the difference between preferences significant? A default $\chi^2$ test examines the proportions in two bins, expecting them to be equally apportioned.
+
+To do the $\chi^2$ test, first crosstabulate the data with `xtabs()`.
+
+```{r}
+#. Pearson chi-square test
+prfs <- xtabs( ~ Pref, data=prefsAB)
+prfs # show counts
+chisq.test(prfs)
+```
+
+We don't really need an exact binomial test yet because the $\chi^2$ test told us enough: that the difference is not likely due to chance. That was only because there are only two choices. If there were more than two, we'd need a binomial test for every pair if the $\chi^2$ test turned up a significant difference. This binomial test just foreshadows what we'll need when we face three categories.
+
+```{r}
+#. binomial test
+#. binom.test(prfs,split.table=Inf)
+binom.test(prfs)
+```
+
+## How many prefer website A, B, or C? (One sample test of proportions in three categories)
+
+First, read in and describe the data.
+Convert Subject to a factor because R reads any numerical data as, well, numeric, but we don't want to treat it as such. R interprets any data with characters as a factor. We want Subject to be treated as a factor.
+
+```{r}
+prefsABC <- read_csv("prefsABC.csv")
+head(prefsABC) # displays the first few rows of the data frame
+prefsABC$Subject <- factor(prefsABC$Subject)
+prefsABC$Pref <- factor(prefsABC$Pref)
+summary(prefsABC)
+par(pin=c(2.75,1.25),cex=0.5)
+ggplot(prefsABC,aes(Pref))+
+  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1")+
+  theme_tufte(base_size=7)
+```
+
+You can think of the three websites as representing three bins and the preferences as filling up those bins. Either each bin gets one third of the preferences or there is a discrepancy. The Pearson $\chi^2$ test functions as an omnibus test to tell whether there is any discrepancy in the proportions of the three bins.
+
+```{r}
+prfs <- xtabs( ~ Pref, data=prefsABC)
+prfs # show counts
+chisq.test(prfs)
+```
+
+A multinomial test can test for other than an even distribution across bins. Here's an example with a one third distribution in each bin.
+
+```{r}
+if (!require(XNomial)) {
+  install.packages("XNomial",dependencies=TRUE)
+  library(XNomial)
+}
+xmulti(prfs, c(1/3, 1/3, 1/3), statName="Prob")
+```
+
+Now we don't know which pair(s) differed so it makes sense to conduct post hoc binomial tests with correction for multiple comparisons. The correction, made by `p.adjust()`, is because the more hypotheses we check, the higher the probability of a Type I error, a false positive. That is, the more hypotheses we test, the higher the probability that one will appear true by chance. Wikipedia has more detail in its "Multiple Comparisons Problem" article.
+
+Here, we test separately for whether each one has a third of the preferences.
+
+```{r}
+aa <- binom.test(sum(prefsABC$Pref == "A"),
+		nrow(prefsABC), p=1/3)
+bb <- binom.test(sum(prefsABC$Pref == "B"),
+		nrow(prefsABC), p=1/3)
+cc <- binom.test(sum(prefsABC$Pref == "C"),
+		nrow(prefsABC), p=1/3)
+p.adjust(c(aa$p.value, bb$p.value, cc$p.value), method="holm")
+```
+
+The adjusted $p$-values tell us that A and C differ significantly from a third of the preferences.
+
+## How many males vs females prefer website A over B? (Two-sample tests of proportions in two categories)
+
+Revisit our data file with 2 response categories, but now with sex (M/F).
+
+```{r}
+prefsABsex <- read_csv("prefsABsex.csv")
+tail(prefsABsex)
+prefsABsex$Subject <- factor(prefsABsex$Subject)
+prefsABsex$Pref <- factor(prefsABsex$Pref)
+prefsABsex$Sex <- factor(prefsABsex$Sex)
+summary(prefsABsex)
+```
+
+Plotting is slightly more complicated by the fact that we want to represent two groups. There are many ways to do this, including stacked bar charts, side-by-side bars, or the method chosen here, using `facet_wrap(~Sex)` to cause two separate plots based on Sex to be created.
+
+```{r}
+ggplot(prefsABsex,aes(Pref)) +
+  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+  facet_wrap(~Sex) +
+  theme_tufte(base_size=7)
+```
+
+Although we can guess by looking at the above plot that the difference for females is significant and the difference for males is not, a Pearson chi-square test provides some statistical evidence for this hunch.
+
+```{r}
+prfs <- xtabs( ~ Pref + Sex, data=prefsABsex) # the '+' sign indicates two vars
+prfs
+chisq.test(prfs)
+```
+
+## What if the data are lopsided? (G-test, alternative to chi-square)
+
+Wikipedia tells us that the $G$-test dominates the $\chi^2$ test when $O_i>2E_i$ in the formula
+
+$$\chi^2=\sum_i \frac{(O_i-E_i)^2}{E_i}$$
+
+where $O_i$ is the observed and $E_i$ is the expected proportion in the $i$th bin.
+This situation may occur in small sample sizes. For large sample sizes, both tests give the same conclusion. In our case, we're on the borderline for this rule in the bin where 29 females prefer B. All females would have to prefer B for the rule to dictate a switch to the $G$-test.
+
+```{r}
+if (!require(RVAideMemoire)) {
+  install.packages("RVAideMemoire",dependencies=TRUE)
+  library(RVAideMemoire)
+}
+G.test(prfs)
+
+#. Fisher's exact test
+fisher.test(prfs)
+```
+
+## How many males vs females prefer website A, B, or C? (Two-sample tests of proportions in three categories)
+
+Revisit our data file with 3 response categories, but now with sex (M/F).
+
+```{r}
+prefsABCsex <- read_csv("prefsABCsex.csv")
+head(prefsABCsex)
+prefsABCsex$Subject <- factor(prefsABCsex$Subject)
+prefsABCsex$Pref <- factor(prefsABCsex$Pref)
+prefsABCsex$Sex <- factor(prefsABCsex$Sex)
+summary(prefsABCsex)
+ggplot(prefsABCsex,aes(Pref)) +
+  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+  facet_wrap(~Sex) +
+  theme_tufte(base_size=7)
+
+#. Pearson chi-square test
+prfs <- xtabs( ~ Pref + Sex, data=prefsABCsex)
+prfs
+chisq.test(prfs)
+
+#. G-test
+G.test(prfs)
+
+#. Fisher's exact test
+fisher.test(prfs)
+```
+
+Now conduct manual post hoc binomial tests for (m)ales---do any prefs for A--C significantly differ from chance for males?
+
+```{r}
+ma <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "M",]$Pref == "A"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "M",]), p=1/3)
+mb <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "M",]$Pref == "B"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "M",]), p=1/3)
+mc <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "M",]$Pref == "C"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "M",]), p=1/3)
+#. correct for multiple comparisons
+p.adjust(c(ma$p.value, mb$p.value, mc$p.value), method="holm")
+```
+
+Next, conduct manual post hoc binomial tests for (f)emales---do any prefs for A--C significantly differ from chance for females?
+
+```{r}
+fa <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "F",]$Pref == "A"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "F",]), p=1/3)
+fb <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "F",]$Pref == "B"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "F",]), p=1/3)
+fc <- binom.test(sum(prefsABCsex[prefsABCsex$Sex == "F",]$Pref == "C"),
+		nrow(prefsABCsex[prefsABCsex$Sex == "F",]), p=1/3)
+#. correct for multiple comparisons
+p.adjust(c(fa$p.value, fb$p.value, fc$p.value), method="holm")
+```
+

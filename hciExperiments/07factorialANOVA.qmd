@@ -1,0 +1,284 @@
+
+# People doing tasks on different phones in different postures (Factorial ANOVA)
+
+The scenario is text entry on smartphone keyboards: iPhone and Galaxy, in different postures: sitting, walking, standing.
+
+The statistics employed include
+Factorial ANOVA,
+repeated measures ANOVA,
+main effects,
+interaction effects,
+the Aligned Rank Transform for nonparametric ANOVAs.
+
+This is a $3 \times 2$ mixed factorial design. It is mixed in the sense that there is a between-subjects factor (Keyboard) and a within-subjects factor (Posture).
+It is balanced in the sense that there are twelve persons using each Keyboard and they are each examined for all three levels of Posture.
+
+## Read and describe the data
+
+```{r}
+mbltxt <- read_csv("mbltxt.csv")
+head(mbltxt)
+mbltxt <- within(mbltxt, Subject <- as.factor(Subject))
+mbltxt <- within(mbltxt, Keyboard <- as.factor(Keyboard))
+mbltxt <- within(mbltxt, Posture <- as.factor(Posture))
+mbltxt <- within(mbltxt, Posture_Order <- as.factor(Posture_Order))
+summary(mbltxt)
+```
+
+## Explore the WPM (words per minute) data
+
+```{r}
+s <- mbltxt |>
+  group_by(Keyboard,Posture) |>
+  summarize(
+    WPM.median=median(WPM),
+    WPM.mean=mean(WPM),
+    WPM.sd=sd(WPM)
+  )
+s
+```
+
+## Histograms for both factors
+
+```{r}
+ggplot(mbltxt,aes(WPM,fill=Keyboard)) +
+  geom_histogram(bins=20,alpha=0.9,position="dodge",show.legend=FALSE) +
+  scale_color_brewer() +
+  scale_fill_brewer() +
+  facet_grid(Keyboard~Posture) +
+  theme_tufte(base_size=8)
+```
+
+## Boxplot of both factors
+
+```{r}
+ggplot(mbltxt,aes(Keyboard,WPM,fill=Keyboard)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Blues") +
+  facet_wrap(~Posture) +
+  theme_tufte(base_size=7)
+```
+
+## An interaction plot
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(mbltxt,
+     interaction.plot(Posture, Keyboard, WPM,
+                      ylim=c(0, max(mbltxt$WPM))))
+```
+
+## Test for a Posture order effect
+
+This is to ensure that counterbalancing worked.
+
+```{r}
+if (!require(ez)) {
+  install.packages("ez",dependencies=TRUE)
+  library(ez)
+}
+m <- ezANOVA(dv=WPM,
+            between=Keyboard,
+            within=Posture_Order,
+            wid=Subject,
+            data=mbltxt)
+m$Mauchly
+```
+
+Wikipedia tells us that
+"Sphericity is an important assumption of a repeated-measures ANOVA. It refers to the condition where the variances of the differences between all possible pairs of within-subject conditions (i.e., levels of the independent variable) are equal. The violation of sphericity occurs when it is not the case that the variances of the differences between all combinations of the conditions are equal. If sphericity is violated, then the variance calculations may be distorted, which would result in an $F$-ratio that would be inflated." (from the Wikipedia article on Mauchly's sphericity test)
+
+Mauchly's test of sphericity above tells us that there is *not* a significant departure from sphericity, so we can better rely on the $F$-statistic in the following ANOVA, the purpose of which is to detect any order effect that would interfere with our later results.
+
+```{r}
+m$ANOVA
+```
+
+The $F$-statistic for Posture_Order is very small, indicating that there is not an order effect. That gives us the confidence to run the ANOVA test we wanted to run all along.
+
+# Differences between people's performance and within a person's performance (Two-way mixed factorial ANOVA)
+
+Since a mixed factorial design by definition has both a between-subjects and a within-subjects factor, we don't need to also mention that this is a repeated measures test.
+
+```{r}
+m <- ezANOVA(dv=WPM,
+            between=Keyboard,
+            within=Posture,
+            wid=Subject,
+            data=mbltxt)
+m$Mauchly
+```
+
+In this case, sphericity *is* violated, so we need to additionally apply the Greenhouse-Geisser correction or the less conservative Huyn-Feldt correction. Nevertheless, let's look at the uncorrected ANOVA table. Later, we'll compare it with the uncorrected version provided by the `aov()` function.
+
+```{r}
+m$ANOVA
+```
+
+Note that "ges" in the ANOVA table is the generalized eta-squared measure
+of effect size, $\eta^2_G$, preferred to eta-squared or partial eta-squared. 
+See Roger Bakeman (2005) "Recommended effect size statistics for repeated measures designs", *Behavior Research Methods*, 37 (3) pages 379--384. There, he points out that the usual $\eta^2$ is the ratio of effect to total variance:
+
+$$\eta^2=\frac{SS_{\text{effect}}}{SS_{\text{total}}}$$
+
+where $SS$ is sum of squares. This is similar to the $R^2$ measure typically reported for regression results. The generalized version is alleged to compensate for the deficiencies that $\eta^2$ shares with $R^2$, mainly that it can be improved by simply adding more predictors. The generalized version looks like this:
+
+$$\eta^2_G=\frac{SS_{\text{effect}}}{\delta \times SS_{\text{effect}} + \sum SS_{\text{measured}}}$$
+
+Here $\delta=0$ if the effect involves one or more measured factors and $\delta=1$ if the effect involves only manipulated factors. (Actually it is a little more complicated---here I'm just trying to convey a crude idea that $\eta^2_G$ ranges between 0 and 1 and that, as it approaches 1, the size of the effect is greater. Oddly enough, it is common to report effect sizes as simply small, medium, or large.)
+
+Now compute the corrected degrees of freedom for each corrected effect.
+
+```{r}
+pos <- match(m$'Sphericity Corrections'$Effect,
+            m$ANOVA$Effect) # positions of within-Ss efx in m$ANOVA
+m$Sphericity$GGe.DFn <- m$Sphericity$GGe * m$ANOVA$DFn[pos] # Greenhouse-Geisser
+m$Sphericity$GGe.DFd <- m$Sphericity$GGe * m$ANOVA$DFd[pos]
+m$Sphericity$HFe.DFn <- m$Sphericity$HFe * m$ANOVA$DFn[pos] # Huynh-Feldt
+m$Sphericity$HFe.DFd <- m$Sphericity$HFe * m$ANOVA$DFd[pos]
+m$Sphericity
+```
+
+The above table shows the Greenhouse Geisser correction to the numerator (GGe.DFn) and denominator (GGe.DFd) degrees of freedom and the resulting $p$-values (p[GG]). The Greenhouse Geiser epsilon statistic ($\epsilon$) is shown as GGe. There is an analogous set of measures for the less conservative Huynh-Feldt correction. Note that you could calculate a more conservative $F$-statistic using the degrees of freedom given even though a corrected $F$-statistic is not shown for some reason.
+
+## ANOVA results from `aov()`
+The uncorrected results from the `ez` package are the same as the `aov()` function in base R, shown below.
+
+```{r}
+m <- aov(WPM ~ Keyboard * Posture + Error(Subject/Posture),
+        data=mbltxt) # fit model
+summary(m)
+```
+
+## Manual post hoc pairwise comparisons
+Because the ANOVA table showed a significant interaction effect and the significance of that interaction effect was borne out by the small p[GG] value, it makes sense to conduct post hoc pairwise comparisons. These require reshaping the data to a wide format because the $t$ test expects data in that format.
+
+```{r}
+mbltxt.wide <- dcast(mbltxt, Subject + Keyboard ~ Posture,
+                    value.var="WPM")
+head(mbltxt.wide)
+sit <- t.test(mbltxt.wide$Sit ~ Keyboard, data=mbltxt.wide)
+std <- t.test(mbltxt.wide$Stand ~ Keyboard, data=mbltxt.wide)
+wlk <- t.test(mbltxt.wide$Walk ~ Keyboard, data=mbltxt.wide)
+p.adjust(c(sit$p.value, std$p.value, wlk$p.value), method="holm")
+```
+
+The above $p$-values indicate significant differences for all three.
+
+## Compare iPhone 'sit' and 'walk'
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+tst<-t.test(mbltxt.wide[mbltxt.wide$Keyboard == "iPhone",]$Sit,
+       mbltxt.wide[mbltxt.wide$Keyboard == "iPhone",]$Walk,
+       paired=TRUE)
+tst
+par(pin=c(2.75,1.25),cex=0.5)
+boxplot(mbltxt.wide[mbltxt.wide$Keyboard == "iPhone",]$Sit,
+        mbltxt.wide[mbltxt.wide$Keyboard == "iPhone",]$Walk,
+        xlab="iPhone.Sit vs. iPhone.Walk", ylab="WPM")
+```
+
+# What if ANOVA assumptions aren't met? (Nonparametric approach to factorial ANOVA)
+
+The rest of this section concerns a nonparametric approach developed at the University of Washington.
+
+## The Aligned Rank Transform (ART) procedure
+[http://depts.washington.edu/aimgroup/proj/art/](http://depts.washington.edu/aimgroup/proj/art/)
+
+## Explore the Error_Rate data
+
+```{r}
+s <- mbltxt |>
+  group_by(Keyboard,Posture) |>
+  summarize(
+    WPM.median=median(Error_Rate),
+    WPM.mean=mean(Error_Rate),
+    WPM.sd=sd(Error_Rate)
+  )
+s
+```
+
+## Histograms of Error_Rate
+
+```{r}
+ggplot(mbltxt,aes(Error_Rate,fill=Keyboard)) +
+  geom_histogram(bins=20,alpha=0.9,position="dodge",show.legend=FALSE) +
+  scale_color_brewer() +
+  scale_fill_brewer() +
+  facet_grid(Keyboard~Posture) +
+  theme_tufte(base_size=8)
+```
+
+## Box plots of Error_Rate
+
+```{r}
+ggplot(mbltxt,aes(Keyboard,Error_Rate,fill=Keyboard)) +
+  geom_boxplot(show.legend=FALSE) +
+  scale_fill_brewer(palette="Greens") +
+  facet_wrap(~Posture) +
+  theme_tufte(base_size=7)
+```
+
+## Interaction plot of Error_Rate
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(mbltxt,
+     interaction.plot(Posture, Keyboard, Error_Rate,
+                      ylim=c(0, max(mbltxt$Error_Rate))))
+```
+
+## Aligned Rank Transform on Error_Rate
+
+```{r}
+if (!require(ARTool)) {
+  install.packages("ARTool",dependencies=TRUE)
+  library(ARTool) # for art, artlm
+}
+m <- art(Error_Rate ~ Keyboard * Posture + (1|Subject), data=mbltxt) # uses LMM
+anova(m) # report anova
+```
+
+## Examine the normality assumption
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+shapiro.test(residuals(m)) # normality?
+qqnorm(residuals(m)); qqline(residuals(m)) # seems to conform
+```
+
+## Interaction plot
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(mbltxt,
+     interaction.plot(Posture, Keyboard, Error_Rate,
+		      ylim=c(0, max(mbltxt$Error_Rate)))) # for convenience
+```
+
+## Conduct post hoc pairwise comparisons within each factor
+
+```{r}
+#. library(emmeans) # instead of lsmeans
+#. for backward compatibility, emmeans provides an lsmeans() function
+lsmeans(artlm(m, "Keyboard"), pairwise ~ Keyboard)
+lsmeans(artlm(m, "Posture"), pairwise ~ Posture)
+#. Warning: don't do the following in ART!
+#lsmeans(artlm(m, "Keyboard : Posture"), pairwise ~ Keyboard : Posture)
+```
+
+The above contrast-testing method is invalid for cross-factor pairwise comparisons in ART.
+and you can't just grab aligned-ranks for manual $t$-tests. instead, use `testInteractions()` 
+from the `phia` package to perform "interaction contrasts." See `vignette("art-contrasts")`.
+
+```{r}
+library(phia)
+testInteractions(artlm(m, "Keyboard:Posture"),
+                 pairwise=c("Keyboard", "Posture"), adjustment="holm")
+```
+
+In the output, A-B : C-D is interpreted as a difference-of-differences, i.e., the difference 
+between (A-B | C) and (A-B | D). In words, is the difference between A and B significantly 
+different in condition C from condition D?
+

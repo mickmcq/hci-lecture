@@ -1,0 +1,218 @@
+
+# Experiments with people in groups doing tasks with different tools (Mixed models)
+
+Mixed models contain both fixed effects and random effects. Following are linear mixed models and generalized linear mixed models examples. Recall that linear models have normally distributed residuals while generalized linear models may have residuals following other distributions.
+
+## Searching to find facts and effort of searching (A linear mixed model)
+
+Load `websearch3.csv`. It describes a test of the number of searches required to find out a hundred facts and the perceived effort of searching.
+How many subjects participated?
+
+```{r}
+ws<-read_csv("websearch3.csv")
+ws<-within(ws,Subject<-factor(Subject))
+ws<-within(ws,Order<-factor(Order))
+ws<-within(ws,Engine<-factor(Engine))
+tail(ws)
+summary(ws)
+```
+
+What was the average number of Search instances for each Engine?
+
+```{r}
+ws |>
+  group_by(Engine) |>
+  summarize(median=median(Searches),
+	    avg=mean(Searches),
+	    sd=sd(Searches))
+plyr::ddply(ws,~Engine,summarize,avg=mean(Searches))
+```
+
+Conduct a linear mixed model analysis of variance on Search by Engine and report the $p$-value.
+
+```{r}
+library(lme4) # for lmer
+library(lmerTest)
+#. library(car) # for Anova
+contrasts(ws$Engine) <- "contr.sum"
+m <- lmer(Searches ~ Engine + (1|Subject), data=ws)
+Anova(m, type=3, test.statistic="F")
+```
+
+Conduct simultaneous pairwise comparisons among all levels of Engine, despite the previous $p$-value. Report the adjusted(by Holm's sequential Bonferroni procedure) $p$-values.
+
+```{r}
+#. library(multcomp)
+summary(glht(m, mcp(Engine="Tukey")),
+	test=adjusted(type="holm")) # Tukey means compare all pairs
+```
+
+## People judging social media posts after viewing clips (Another linear mixed model)
+
+The file `socialvalue.csv` describes a study of people viewing a positive or negative film clip then going onto social media and judging the value (1 or 0) of the first hundred posts they see. The number of valued posts was recorded. Load the file and tell how many participated.
+
+```{r}
+sv<-read_csv("socialvalue.csv")
+sv<-within(sv,Subject<-factor(Subject))
+sv<-within(sv,Clip<-factor(Clip))
+sv<-within(sv,Social<-factor(Social))
+sv<-within(sv,ClipOrder<-factor(ClipOrder))
+sv<-within(sv,SocialOrder<-factor(SocialOrder))
+summary(sv)
+tail(sv)
+```
+
+How many more posts were valued on Facebook than on Twitter after seeing a positive clip?
+
+```{r}
+out<-plyr::ddply(sv,~Clip*Social,summarize,ValuedAvg=mean(Valued))
+out
+68.75-58.5625
+```
+
+Conduct a linear mixed model analysis of variance on Valued by Social and Clip. Report the $p$-value of the interaction effect.
+
+```{r}
+#. library(lme4) # for lmer
+#. library(lmerTest)
+#. library(car) # for Anova
+contrasts(sv$Social) <- "contr.sum"
+contrasts(sv$Clip) <- "contr.sum"
+m <- lmer(Valued ~ (Social * Clip) + (1|Subject), data=sv)
+Anova(m, type=3, test.statistic="F")
+```
+
+Conduct planned pairwise comparisons of how the clips may have influenced judgments about the value of social media. Report whether the number of valued posts differed after seeing a positive versus negative clip.
+
+```{r}
+#. library(multcomp) # for glht
+#. library(emmeans) # for lsm
+summary(glht(m, lsm(pairwise ~ Social * Clip)),test=adjusted(type="none"))
+p.adjust(c(0.00017,0.59374),method="holm")
+```
+
+## People watching teasers in different orders and judging (Yet another linear mixed model)
+
+The file `teaser.csv` describes a study in which people watched teasers for different genres and reported whether they liked them. Load the file and tell the number of participants.
+
+```{r}
+te<-read_csv("teaser.csv")
+te<-within(te,Subject<-factor(Subject))
+te<-within(te,Order<-factor(Order))
+te<-within(te,Teaser<-factor(Teaser))
+tail(te)
+par(pin=c(2.75,1.25),cex=0.5)
+boxplot(Liked~Teaser,data=te)
+```
+
+Investigate order effects.
+
+```{r}
+contrasts(te$Order) <- "contr.sum"
+m <- glmer(Liked ~ Order + (1|Subject), data=te, family=binomial, nAGQ=0)
+Anova(m, type=3)
+```
+
+Conduct a linear mixed model analysis of variance.
+
+```{r}
+contrasts(te$Teaser) <- "contr.sum"
+m <- glmer(Liked ~ Teaser + (1|Subject), data=te, family=binomial, nAGQ=0)
+Anova(m, type=3)
+```
+
+```{r}
+#. library(multcomp)
+summary(glht(m, mcp(Teaser="Tukey")),
+	test=adjusted(type="holm")) # Tukey means compare all pairs
+```
+
+## Finding number of unique words used in posts by males and females (A generalized linear mixed model)
+
+The file `vocab.csv` describes a study in which 50 posts by males and females were analyzed for the number of unique words used. Load the file and tell the number of participants.
+
+```{r}
+vo<-read_csv("vocab.csv")
+vo<-within(vo,Subject<-factor(Subject))
+vo<-within(vo,Sex<-factor(Sex))
+vo<-within(vo,Order<-factor(Order))
+vo<-within(vo,Social<-factor(Social))
+tail(vo)
+```
+
+Create an interaction plot and see how often the lines cross.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+with(vo,interaction.plot(Social,Sex,Vocab,ylim=c(0,max(vo$Vocab))))
+```
+
+Perform Kolmogorov-Smirnov goodness-of-fit tests on Vocab for each level of Social using exponential distributions.
+
+```{r}
+#. library(MASS)
+fit = fitdistr(vo[vo$Social == "Facebook",]$Vocab, "exponential")$estimate
+ks.test(vo[vo$Social == "Facebook",]$Vocab, "pexp", rate=fit[1], exact=TRUE)
+fit = fitdistr(vo[vo$Social == "Twitter",]$Vocab, "exponential")$estimate
+ks.test(vo[vo$Social == "Twitter",]$Vocab, "pexp", rate=fit[1], exact=TRUE)
+fit = fitdistr(vo[vo$Social == "Gplus",]$Vocab, "exponential")$estimate
+ks.test(vo[vo$Social == "Gplus",]$Vocab, "pexp", rate=fit[1], exact=TRUE)
+```
+
+Use a generallized linear mixed model to conduct a test of order effects on Vocab.
+
+```{r}
+contrasts(vo$Sex) <- "contr.sum"
+contrasts(vo$Order) <- "contr.sum"
+m <- glmer(Vocab ~ Sex*Order + (1|Subject), data=vo, family=Gamma(link="log"))
+Anova(m, type=3)
+```
+
+Conduct a test of Vocab by Sex and Social using a generalized linear mixed model.
+
+```{r}
+contrasts(vo$Sex) <- "contr.sum"
+contrasts(vo$Social) <- "contr.sum"
+m = glmer(Vocab ~ Sex*Social + (1|Subject), data=vo, family=Gamma(link="log"))
+Anova(m, type=3)
+```
+
+Perform post hoc pairwise comparisons among levels of Social adjusted with Holm's sequential Bonferroni procedure.
+
+```{r}
+#. library(multcomp)
+summary(glht(m, mcp(Social="Tukey")),
+	test=adjusted(type="holm")) # Tukey means compare all pairs
+```
+
+## Judging search effort among different search engines (Another generalized linear mixed model)
+
+Recode Effort from `websearch3.csv` as an ordinal response.
+
+```{r}
+ws<-within(ws,Effort<-factor(Effort))
+ws<-within(ws,Effort<-ordered(Effort))
+summary(ws)
+```
+
+Conduct an ordinal logistic regression to determine Effort by Engine, using a generalized linear mixed model.
+
+```{r}
+library(ordinal) # provides clmm
+#. library(RVAideMemoire) # provides Anova.clmm
+ws2<-data.frame(ws)
+m<-clmm(Effort~Engine + (1|Subject),data=ws2)
+Anova.clmm(m,type=3)
+```
+
+Perform pairwise comparisons of Engine on Effort.
+
+```{r}
+par(pin=c(2.75,1.25),cex=0.5)
+plot(as.numeric(Effort) ~ Engine,data=ws2)
+#. library(lme4)
+#. library(multcomp)
+m <- lmer(as.numeric(Effort)~Engine + (1|Subject), data=ws2)
+summary(glht(m,mcp(Engine="Tukey")),test=adjusted(type="holm"))
+```
+

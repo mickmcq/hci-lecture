@@ -1,0 +1,144 @@
+
+# Same person using different tools (Within subjects studies)
+
+## Two search engines compared
+
+```{r}
+ws<-read_csv("websearch2.csv")
+```
+
+How many subjects took part in this study?
+
+```{r}
+ws$Subject<-factor(ws$Subject)
+ws$Engine<-factor(ws$Engine)
+summary(ws)
+tail(ws)
+```
+
+Thirty subjects participated.
+
+What is the average number of searches for the engine with the largest average number of searches?
+
+```{r}
+ws |>
+  group_by(Engine) |>
+  summarize(avg=mean(Searches))
+```
+Bing had 166 searches on average.
+
+What is the $p$-value (four digits) from a paired-samples $t$-test of order effect?
+
+```{r}
+#. library(reshape2)
+ws.wide.order <- dcast(ws,Subject ~ Order, value.var="Searches")
+tst<-t.test(ws.wide.order$"1",ws.wide.order$"2",paired=TRUE,var.equal=TRUE)
+tst
+```
+The $p$-value is 0.7343
+
+What is the $t$-statistic (two digits) for a paired-samples $t$-test of Searches by Engine?
+
+```{r}
+#. library(reshape2)
+ws.wide.engine <- dcast(ws,Subject ~ Engine, value.var="Searches")
+tst<-t.test(ws.wide.engine$"Bing",ws.wide.engine$"Google",paired=TRUE,var.equal=TRUE)
+tst
+```
+The $t$-statistic is 2.50.
+
+What is the $p$-value (four digits) from a Wilcoxon signed-rank test on Effort?
+
+```{r}
+#. library(coin)
+wilcoxsign_test(Effort~Engine|Subject,data=ws,distribution="exact")
+```
+The $p$-value is 0.5016.
+
+## Same but with three search engines
+
+```{r}
+ws3<-read_csv("websearch3.csv")
+```
+
+How many subjects took part in this study?
+```{r}
+summary(ws3)
+ws3$Subject<-as.factor(ws3$Subject)
+ws3$Order<-as.factor(ws3$Order)
+ws3$Engine<-as.factor(ws3$Engine)
+tail(ws3)
+```
+
+Again, thirty subjects participated.
+
+What is the average number of searches for the engine with the largest average number of searches?
+
+```{r}
+plyr::ddply(ws3,~ Engine,summarize, Mean=mean(Searches))
+```
+Yahoo required 172.40 searches on average.
+
+Find Mauchly's $W$ criterion (four digits) as a value of violation of sphericity.
+
+```{r}
+#. library(ez)
+m = ezANOVA(dv=Searches, within=Order, wid=Subject, data=ws3)
+m$Mauchly
+```
+Mauchly's $W = 0.9416$, indicating that there is no violation of sphericity.
+
+Conduct the appropriate ANOVA and give the $p$-value of the $F$-test (four digits).
+
+```{r}
+m$ANOVA
+```
+The relevant $p$-value is 0.3208.
+
+Conduct a repeated measures ANOVA on Searches by Engine and give the Mauchly's $W$ criterion (four digits).
+
+```{r}
+#. library(ez)
+m <- ezANOVA(dv=Searches, within=Engine, wid=Subject, data=ws3)
+m$Mauchly
+```
+Mauchly's $W = 0.9420$, indicating that there is no violation of sphericity.
+
+Conduct the appropriate ANOVA and give the $p$-value of the $F$-test (four digits).
+
+```{r}
+m$ANOVA
+```
+The relevant $p$-value is 0.0656.
+
+Conduct post-hoc paired sample $t$-tests among levels of Engine, assuming equal variances and using "holm" to correct for multiple comparisons. What is the smallest $p$-value (four digits)?
+```{r}
+#. library(reshape2)
+ws3.wide.engine <- dcast(ws3,Subject~Engine,value.var="Searches")
+bi.go<-t.test(ws3.wide.engine$Bing,ws3.wide.engine$Google,paired=TRUE,var.equal=TRUE)
+bi.ya<-t.test(ws3.wide.engine$Bing,ws3.wide.engine$Yahoo,paired=TRUE,var.equal=TRUE)
+go.ya<-t.test(ws3.wide.engine$Google,ws3.wide.engine$Yahoo,paired=TRUE,var.equal=TRUE)
+p.adjust(c(bi.go$p.value,bi.ya$p.value,go.ya$p.value),method="holm")
+```
+The smallest $p$-value is 0.0507.
+
+Conduct a Friedman (nonparametric) test on Effort. Find the $\chi^2$ statistic (four digits).
+
+```{r}
+#. library(coin)
+friedman_test(Effort~Engine|Subject,data=ws3,distribution="asymptotic")
+```
+$\chi^2=8.0182$
+
+Conduct post hoc pairwise Wilcoxon signed-rank tests on Effort by Engine with "holm" for multiple comparison correction. Give the smallest $p$-value (four digits).
+
+```{r}
+#. library(reshape2)
+ws3.wide.effort <- dcast(ws3,Subject~Engine,value.var="Effort")
+bi.go<-wilcox.test(ws3.wide.effort$Bing,ws3.wide.effort$Google,paired=TRUE,exact=FALSE)
+bi.ya<-wilcox.test(ws3.wide.effort$Bing,ws3.wide.effort$Yahoo,paired=TRUE,exact=FALSE)
+go.ya<-wilcox.test(ws3.wide.effort$Google,ws3.wide.effort$Yahoo,paired=TRUE,exact=FALSE)
+p.adjust(c(bi.go$p.value,bi.ya$p.value,go.ya$p.value),method="holm")
+```
+The smallest $p$-value is 0.0309.
+
