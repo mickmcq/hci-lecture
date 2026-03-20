@@ -1,0 +1,34 @@
+---
+title: "01 Intro"
+---
+
+# [Week ONE]{.r-fit-text}
+
+# Intros
+- Valle: ux research director at indeed and mom.
+- Mick: associate professor of instruction and dad. 
+- You: say something interesting about yourself as we go around the room.
+
+::: {.notes}
+These are speaker notes
+:::
+
+# Today 
+- Syllabus
+- Canvas
+- Mick's website
+- Overview of our textbook 
+
+##
+![](fiHornbaekCover.jpg)
+
+# Pause to look at these items
+
+# [END]{.r-fit-text}
+
+# Colophon
+
+This slideshow was produced using `quarto`
+
+Fonts are *Roboto*, *Roboto Light*, and *Victor Mono Nerd Font*
+
