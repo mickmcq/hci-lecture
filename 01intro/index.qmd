@@ -22,13 +22,6 @@ These are speaker notes
 ##
 ![](fiHornbaekCover.jpg)
 
-# Pause to look at these items
+# 〈Pause to look at these items〉
 
-# [END]{.r-fit-text}
-
-# Colophon
-
-This slideshow was produced using `quarto`
-
-Fonts are *Roboto*, *Roboto Light*, and *Victor Mono Nerd Font*
-
+{{< include endMatter.md >}}
