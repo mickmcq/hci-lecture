@@ -17,7 +17,7 @@ These are speaker notes
 - Syllabus
 - Canvas
 - Mick's website
-- Overview of our textbook 
+- Overview of our textbook, @Hornbaek2025
 
 ##
 ![](fiHornbaekCover.jpg)

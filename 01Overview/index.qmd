@@ -1,0 +1,101 @@
+---
+title: 01 Overview
+---
+
+# [Week ONE]{.r-fit-text}
+
+# Hornbæk's New Book
+
+## Starts with an Overview of HCI
+
+TBA
+
+# Don Norman's newest book
+I want to depart a bit from past practice, where I used to always try to teach the same material as the other instructor for this course. I'm deeply moved by a recent book called *Design for a Better World*, so I'd like to take some time each week to discuss it.
+
+## Artificial
+Don Norman tells us that most of what we experience is artificial. Do you believe that? Stop to consider the things you think of as natural versus the things you think of as artificial.
+
+## Artificial things
+
+- manicured lawns---they make life easier for some organisms and harder for others
+- organization of work---originated with the construction of the pyramids and often mistaken for natural
+- profit motive---generally considered the natural point of business, regardless of its harm to people and the Earth
+
+## Norman frames choice as design
+Norman puts design at the center of human activity, saying that when we make choices, we are designing things. Do you believe that? Are other perspectives equally valid? In the film, *The Graduate* (1967), a man tells the eponymous character that he need remember only one word, *plastics*. I've heard similar advice about the word *sales*, and *the web*, and *AI* $\ldots$
+
+## Designers have a special responsibility
+We design things that fill landfills because they are hard to repair or reuse or because they are meant to become obsolete, because of the values we champion through our designs.
+
+## History doesn't repeat but must be learned from
+Do you believe that? What is your view of history? Mostly WEIRD (Western, Educated, Industrial, Rich, Democratic)? What were you taught? Western enslavement of others to build a dominant position in the material world?
+
+## Modernity
+The Chicago World's Fair of 1933 spelled out modernity's principles as the themes: "Science discovers, genius invents, industry applies, and man adapts ..."
+
+Humanity has become a second-class citizen to technology through the philosophy of modernity.
+
+## Design for real people in real situations
+"There are professions more harmful than design, but only a very few of them" says Norman, paraphrasing Victor Papanek in *Design for the Real World*. He blames the designer for gaudy, expensive, resource-wasteful stuff. Do you believe that? What do you expect to design? For whom will you design?
+
+## The philosophy of modernity emphasizes the new
+The old is inferior. Do you believe that?
+
+The philosophy of modernity emphasizes science, technology, rational thought, with a less emphasis on people, humanity, and nature.
+
+::: {.notes}
+The concept of modernity became popular during the Great Depression (roughly 1929 to 1939). It was a time of terrible poverty and rethinking of values. It led to decades of optimism about technology and technology's ability to make our lives better. If you have known anyone who grew up during that time, e.g., my parents, you can easily see how it shaped their values.
+:::
+
+## Why do I resonate with Norman's ideas?
+I lived through the *Reagan Revolution*, a time when the president convinced the people that, if we empower the rich, they will take care of everyone else through *trickle-down*. Is that what happened?
+
+::: {.notes}
+Most economists agree that it did not. In fact, we are at the end of the era when people thought that way. If you believe in *trickle-down* you are part of a very small minority. Yet, in the USA, we've just elected a president who preaches it! Seventy-seven million people voted for him (and seventy-five million for his opponent) yet surveys show that people overwhelmingly disbelieve *trickle-down* economics.
+:::
+
+## Artificial perception of time
+Norman poses two questions:
+
+1. Why look at the calendar to determine the change of seasons instead of looking at the weather?
+2. Why look at the clock to decide when to eat instead of relying on our stomach's feelings?
+
+::: {.notes}
+There is nothing natural about four seasons. This is an idea imposed by the WEIRD on everyone else, who defined anywhere from two to six seasons, sometimes, as in the case of Australian Aborigines, differing from village to village. Uniformity was a goal of modernity.
+
+The demands of industry lead to the regulation of life by clocks.
+:::
+
+## Capitalism went wrong
+If I say that, am I automatically a communist? Do I need Karl Marx to know that industry avoids the true cost of manufacturing? Industry releases poison into the air and water. People pay through illness and poor living conditions. Industry does not pay for wearing out roads with heavy trucks. Industry does not pay for infrastructure it needs, except through taxes borne by everyone.
+
+You have lived through the economic collapse of 2008 and the government bailout, and have lived with the consequences ever since. Is it wrong to say capitalism has failed and needs to be repaired? Or is the only repair to rebel and adopt the discredited model of the Soviets?
+
+::: {.notes}
+The novel *The Godfather* has the space to explore many things too detailed for the movie of the same name. One is the Godfather's trucking company, which exceeds the weight limits of the roads it traverses by bribing officials. The Godfather's road construction company then also bribes officials to get the contracts to repair the roads damaged by its own trucks.
+:::
+
+## An aside: is it anti-American to try to repair America?
+
+- We have the industrial world's shortest life expectancy---we used to have the longest
+- We have the industrial world's highest child poverty rate---we used to have the lowest
+- We have the industrial world's lowest literacy rate---we used to have the highest
+
+::: {.notes}
+I've recently checked the first two and verified that they are still true. I have not checked the third.
+:::
+
+
+## Previewing Norman's book
+- Meaningful---many governing metrics are unintelligible to the *average* person
+- Sustainable---many artifacts we design are unsustainable, not renewable, not reusable
+- Humanity Centered---designers must collaborate with people meet their needs
+
+These themes are tackled in order in the following sections (and in our following weeks).
+
+::: {.notes}
+These themes reflect what design should be and is currently not. If you believe what Norman says, these could become your mantras!
+:::
+
+{{< include endMatter.md >}} 
