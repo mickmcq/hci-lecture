@@ -8,11 +8,56 @@ subtitle: Human-Computer Interaction
 # Intro
 User interfaces are the only part that real people interact with in real settings doing real "tasks". Therefore, the study of user interfaces has contributions from computer science, electrical engineering, design, and psychology.
 
-## Forms
+# Forms
 - Englebart: specified augmenting human intellect
 - Shneiderman: identified direct manipulation
 - Weiser: stipulated that the interface should *disappear*
 - ... many others ...
+
+# Elements
+The DIRA model specifies four elements of an interface
+
+- Devices, such as mice, keyboards, touchscreens, eye trackers
+- Interaction Techniques, mapping input to solutions for interaction problems
+- Representations, how things appear
+- Assemblies, organizations of representations
+
+# Interaction Styles
+These are combinations of the elements specified in the DIRA model
+
+## Command-Line
+- Our textbook is a bit out-of-date
+- It says that the command line is entering text and obtaining responses only in text, without interaction capabilities
+- The next frame shows a contemporary command-line interface
+- There are two "window-panes"
+- The left pane shows the user highlighting response text, which is a directory that can be opened by clicking
+- The right pane shows a graphical image, the cover of our textbook
+
+## Kitty: a terminal emulator
+![Terminal as an example of a rich command-line interface.](fiTerminalExample.png)
+
+## Forms
+- Groups of widgets such as checkboxes or radio buttons for user input
+- Advantages: structured, easily understood
+- Disadvantages: restrictive (double-edged sword)
+
+## Menus
+- Grouped series of options
+- Obeys Hick's law, that the time to choose is proportional to the log of the number of choices plus one, all multiplied by an empirically found constant
+- Can be cumbersome
+- Grouping often accomplished by card sort
+- Part of the WIMP paradigm (Windows, Icons, Menus, and Pointers) that dominate desktop computing
+
+## GUIs (graphical user interfaces)
+- Enable direct manipulation of onscreen objects
+- Example: dragging a picture of a file to a trash can
+- Hallmarks are low floor and low ceiling of performance
+
+## Reality-based interaction
+- Mobile devices such as smartphones and smartwatches
+- Mixed reality (used to be called augmented reality)
+
+# Design objectives
 
 {{< include endMatter.md >}}
 
