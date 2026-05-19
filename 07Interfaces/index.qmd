@@ -1,0 +1,18 @@
+---
+title: User Interfaces
+subtitle: Human-Computer Interaction
+---
+
+[Week SEVEN]{.r-fit-text}
+
+# Intro
+User interfaces are the only part that real people interact with in real settings doing real "tasks". Therefore, the study of user interfaces has contributions from computer science, electrical engineering, design, and psychology.
+
+## Forms
+- Englebart: specified augmenting human intellect
+- Shneiderman: identified direct manipulation
+- Weiser: stipulated that the interface should *disappear*
+- ... many others ...
+
+{{< include endMatter.md >}}
+
