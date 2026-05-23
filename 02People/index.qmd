@@ -1,6 +1,5 @@
-
 ---
-title: User Interfaces
+title: People
 subtitle: Human-Computer Interaction
 ---
 
@@ -16,25 +15,27 @@ You can't design for people you don't understand. It's tempting to think that if
 Think of a specific example: a moment, an interface, a product (doesn't have to be a computer)
 
 # Indeed Example
-screenshot
+![](fiIndeed.png)
 
 # Perception
 How users make sense of the information available to them
+
 - Gestalt laws
 - Saliency & clutter
 - Affordance
 
 ## Gestalt
 Users group information.
+
 - Proximity — elements close together read as a group
 - Similarity — elements that look alike read as related
 - Common area — elements inside a boundary belong together
 - Continuation — elements connected by a line or flow read as a sequence
 
-### example
-screenshot
+## Example
+![](fiBadGestalt.png)
+
 Prompt: What reads as belonging together here? Do you think that was how it was intended?
 
+{{< include endMatter.md >}}
 
-
-------------------------------------------------------------------------

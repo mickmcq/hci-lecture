@@ -1856,17 +1856,12 @@ display:block!important;
 </div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Moving average filters, using</li>
+<li>Moving average filters, using <span class="math display">\[\overline{X}=\frac{1}{n} \sum_{i=1}^n X_i\]</span></li>
 </ul>
 </div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li><span class="math display">\[\overline{X}=\sum_{i=t-n}^t X_i\]</span></li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>and assuming noise has mean zero, averages the filtered value, <span class="math inline">\(X\)</span>, over a few samples, <span class="math inline">\(i\)</span>, from time <span class="math inline">\(t-n\)</span> to the current time <span class="math inline">\(t\)</span></li>
+<li>and assuming noise has mean zero, averages the filtered value, <span class="math inline">\(X\)</span>, over a few samples, <span class="math inline">\(i\)</span>, from some time labeled <span class="math inline">\(1\)</span> to the <span class="math inline">\(n\)</span>th sample from the current time (I think the book gives a wrong formula)</li>
 </ul>
 </div>
 <div class="fragment fade-in-then-semi-out">
@@ -1875,6 +1870,9 @@ display:block!important;
 </ul>
 </div>
 </div>
+</section>
+<section id="more-on-mitigating-sensor-problems" class="slide level2">
+<h2>More on mitigating sensor problems</h2>
 </section></section>
 <section id="end" class="title-slide slide level1 center">
 <h1><span class="r-fit-text">END</span></h1>

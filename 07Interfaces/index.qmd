@@ -142,9 +142,12 @@ Input devices sense user movements and states while interaction techniques help 
 - Noise can be mitigated with filtering and typical filtering categories include
 - Frequency-based filters, for example a low-pass filter gets rid of low frequency signals
 - Moving average filters, using
-- $$\overline{X}=\sum_{i=t-n}^t X_i$$
-- and assuming noise has mean zero, averages the filtered value, $X$, over a few samples, $i$, from time $t-n$ to the current time $t$
+  $$\overline{X}=\frac{1}{n} \sum_{i=1}^n X_i$$
+- and assuming noise has mean zero, averages the filtered value, $X$, over a few samples, $i$, from some time labeled $1$ to the $n$th sample from the current time (I think the book gives a wrong formula)
 - Drawback is that sampling must be high-frequency to avoid lagginess
+
+## More on mitigating sensor problems
+
 
 {{< include endMatter.md >}}
 
