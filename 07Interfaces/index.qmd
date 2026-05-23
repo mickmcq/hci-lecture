@@ -3,7 +3,9 @@ title: User Interfaces
 subtitle: Human-Computer Interaction
 ---
 
-[Week SEVEN]{.r-fit-text}
+# [Week SEVEN]{.r-fit-text}
+
+Part V of @Hornbaek2025
 
 # Intro
 User interfaces are the only part that real people interact with in real settings doing real "tasks". Therefore, the study of user interfaces has contributions from computer science, electrical engineering, design, and psychology.
@@ -26,7 +28,7 @@ The DIRA model specifies four elements of an interface
 These are combinations of the elements specified in the DIRA model
 
 ## Command-Line
-- Our textbook is a bit out-of-date
+- Our textbook is a bit out-of-date on this
 - It says that the command line is entering text and obtaining responses only in text, without interaction capabilities
 - The next frame shows a contemporary command-line interface
 - There are two "window-panes"
@@ -58,6 +60,55 @@ These are combinations of the elements specified in the DIRA model
 - Mixed reality (used to be called augmented reality)
 
 # Design objectives
+Design objectives come from three sources
+
+- Understanding of people
+- Theories of interaction
+- Attributes and structural qualities of the user interface
+
+## Example objective: Supporting novice, intermediate, and expert performance
+- For novices, the system should be easy to learn
+- For intermediate users, the system should be easy to become proficient
+- For expert users, the system should support optimal performance
+
+## Aside: the performance floor and the performance ceiling
+- The floor is entry level and can be high (bad) or low (good)
+- The ceiling is what is attainable and can be high (good) or low (bad)
+- It's difficult to have both a low floor and a high ceiling, which is the most desirable state
+- The supports that give you a low floor get in the way of expert users
+- Possible remedy: *training wheels* that are removed in a dynamic interface
+
+## Example objectives: Usability and Accessibility
+- Usability concerns whether users achieve goals with efficiency, effectiveness, and satisfaction, so usability can be an objective
+- Accessibility achieves equivalent usability between user groups (is this a controversial definition?)
+
+## Example objective: structure and attributes of the interface
+Key attributes include
+
+- Explorability
+- Discoverability
+- Consistency
+
+## Aside: Trade-offs between objectives
+Common trade-offs include
+
+- Speed vs accuracy
+- Recognition vs recall
+- Familiarity vs novelty
+- Those who work vs those who reap benefits
+
+# Design space analysis
+The design space is all that matters in a design---analyzing it occurs at different unit levels
+
+- Morphological analysis considers technical variables constituting an interface
+- Joint system analysis considers the parameters of the joint human-computer experience
+- Questions, options, and criteria (QOC) method considers questions mapped to design options and objectives
+
+# Summary of Ch 23
+- User interfaces are what the user comes into contact with when using an interactive system.
+- User interfaces comprise input devices, interaction techniques, representations, and assemblies.
+- There are five main styles of interaction: command line, form, menu, GUI, and reality-based user interfaces.
+- The design of user interfaces involves balancing trade-offs between relevant criteria.
 
 {{< include endMatter.md >}}
 
