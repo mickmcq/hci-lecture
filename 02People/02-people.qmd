@@ -1,0 +1,40 @@
+
+---
+title: User Interfaces
+subtitle: Human-Computer Interaction
+---
+
+# [Week TWO]{.r-fit-text}
+
+Part II of @Hornbaek2025
+
+# Intro
+You can't design for people you don't understand. It's tempting to think that if you're designing something new, or trying to shift a habit, you can start from how you want people to act. But people bring their existing perception, memory, attention, and mental models to everything they touch. So, you meet them where you know they are.
+
+## Have you ever used something and thought: *"Did anyone actually try this before they shipped it?"*
+
+Think of a specific example: a moment, an interface, a product (doesn't have to be a computer)
+
+# Indeed Example
+screenshot
+
+# Perception
+How users make sense of the information available to them
+- Gestalt laws
+- Saliency & clutter
+- Affordance
+
+## Gestalt
+Users group information.
+- Proximity — elements close together read as a group
+- Similarity — elements that look alike read as related
+- Common area — elements inside a boundary belong together
+- Continuation — elements connected by a line or flow read as a sequence
+
+### example
+screenshot
+Prompt: What reads as belonging together here? Do you think that was how it was intended?
+
+
+
+------------------------------------------------------------------------
