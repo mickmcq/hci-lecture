@@ -10,13 +10,13 @@ Part V of @Hornbaek2025
 # Intro
 User interfaces are the only part that real people interact with in real settings doing real "tasks". Therefore, the study of user interfaces has contributions from computer science, electrical engineering, design, and psychology.
 
-# Forms
+## Forms
 - Englebart: specified augmenting human intellect
 - Shneiderman: identified direct manipulation
 - Weiser: stipulated that the interface should *disappear*
 - ... many others ...
 
-# Elements
+## Elements
 The DIRA model specifies four elements of an interface
 
 - Devices, such as mice, keyboards, touchscreens, eye trackers
@@ -24,7 +24,7 @@ The DIRA model specifies four elements of an interface
 - Representations, how things appear
 - Assemblies, organizations of representations
 
-# Interaction Styles
+## Interaction Styles
 These are combinations of the elements specified in the DIRA model
 
 ## Command-Line
@@ -59,7 +59,7 @@ These are combinations of the elements specified in the DIRA model
 - Mobile devices such as smartphones and smartwatches
 - Mixed reality (used to be called augmented reality)
 
-# Design objectives
+## Design objectives
 Design objectives come from three sources
 
 - Understanding of people
@@ -97,18 +97,54 @@ Common trade-offs include
 - Familiarity vs novelty
 - Those who work vs those who reap benefits
 
-# Design space analysis
+## Design space analysis
 The design space is all that matters in a design---analyzing it occurs at different unit levels
 
 - Morphological analysis considers technical variables constituting an interface
 - Joint system analysis considers the parameters of the joint human-computer experience
 - Questions, options, and criteria (QOC) method considers questions mapped to design options and objectives
 
-# Summary of Ch 23
+## Summary of Ch 23
 - User interfaces are what the user comes into contact with when using an interactive system.
 - User interfaces comprise input devices, interaction techniques, representations, and assemblies.
 - There are five main styles of interaction: command line, form, menu, GUI, and reality-based user interfaces.
 - The design of user interfaces involves balancing trade-offs between relevant criteria.
+
+# Input devices (Ch 24)
+- Differ from interaction techniques (how?)
+- Success of an input device depends on correctly translating what the user does into some sort of computation
+
+::: {.notes}
+Input devices sense user movements and states while interaction techniques help a user accomplish fundamental operations using input devices and displays, according to p 405. But isn't "displays" too limited here? What other signals are used by interaction techniques?
+:::
+
+## Example: Fitts's law in menu bars
+- Fitts's law predicts the time it takes to point at something based on the something's size and distance, formalized as
+- $$T=a+b \log_2\left(\frac{D}{W}+1\right)$$
+- where $a$ and $b$ are empirically discovered constants, $D$ is distance, and $W$ is width (size)
+- If a menu bar is at the top of the display, an item on it has effectively infinite size (width) because, no matter how hard you drive the input device (e.g., mouse or trackpad), it is stopped by the display edge
+
+## Sensing
+- All input devices depending on sensing something in the real world and translating that something into some sort of computable signal
+- More specifically, translating some sort of energy into an electrical signal
+- Principles for sensing can be mechanical, electrical, sonic, optical, radiation, magnetic, gravitational, or chemical
+- Example: capacitive touch compared to resistive touch, where capacitive allows multi-touch and greater precision than resistive, its predecessor
+
+## Sensing hardware
+- Every devices that senses has to have at least a sensor (duh), a microcontroller, and some kind of rig to keep them together
+- The sensor is governed by a transfer function
+- The next frame shows four examples of problematic transfer functions: low resolution, narrow operating range, low sensitivity, and noise
+
+##
+![](fiProblematicTransfer.png)
+
+## Mitigating sensor problems
+- Noise can be mitigated with filtering and typical filtering categories include
+- Frequency-based filters, for example a low-pass filter gets rid of low frequency signals
+- Moving average filters, using
+- $$\overline{X}=\sum_{i=t-n}^t X_i$$
+- and assuming noise has mean zero, averages the filtered value, $X$, over a few samples, $i$, from time $t-n$ to the current time $t$
+- Drawback is that sampling must be high-frequency to avoid lagginess
 
 {{< include endMatter.md >}}
 
