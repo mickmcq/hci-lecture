@@ -8,11 +8,11 @@ subtitle: Human-Computer Interaction
 Part II of @Hornbaek2025
 
 # Intro
-You can't design for people you don't understand. It's tempting to think that if you're designing something new, or trying to shift a habit, you can start from how you want people to act. But people bring their existing perception, memory, attention, and mental models to everything they touch. So, you meet them where you know they are.
+You can't design for people you don't understand. It's tempting to think that if you're designing something new, or trying to shift a habit, you can start from how you *want* people to act. But people bring their existing perception, memory, attention, and mental models to everything they touch. So, you meet them where you know they are.
 
 ## Have you ever used something and thought: *"Did anyone actually try this before they shipped it?"*
 
-Think of a specific example: a moment, an interface, a product (doesn't have to be a computer)
+Prompt: Think of a specific example: a moment, an interface, a product (doesn't have to be a computer)
 
 # Indeed Example
 ![](fiIndeed.png)
@@ -27,15 +27,76 @@ How users make sense of the information available to them
 ## Gestalt
 Users group information.
 
-- Proximity — elements close together read as a group
-- Similarity — elements that look alike read as related
-- Common area — elements inside a boundary belong together
-- Continuation — elements connected by a line or flow read as a sequence
+- Proximity: elements close together read as a group
+- Similarity: elements that look alike read as related
+- Common area: elements inside a boundary belong together
+- Continuation: elements connected by a line or flow read as a sequence
 
 ## Example
 ![](fiBadGestalt.png)
 
 Prompt: What reads as belonging together here? Do you think that was how it was intended?
+
+## Gestalt problems
+Prompt: What are some Gestalt problems in an interface?
+
+- Most layout problems aren't spacing problems or color problems; they're Gestalt problems. The visual structure is communicating something the designer didn't intend.
+
+## Saliency & Clutter
+Not everything on the screen has equal weight.
+
+- Saliency: visual uniqueness prompting something to be noticed
+- Clutter: when everything competes for notice, nothing gets noticed
+
+## Example
+coming soon
+
+Prompt: What do you notice first? What should you notice first?
+
+## Saliency problems
+Prompt: What are some saliency problems in an interface?
+
+- If you can't identify the most salient element on a screen in less than 2 seconds, users probably can't either. That's a design problem, not a user problem.
+
+## Affordance
+What's interactive, and what's not?
+
+- Affordance: something that invites interaction
+- Perceived affordance: whether the user understands that invitation
+
+## Example
+coming soon
+
+Prompt: Where should you click or tap? Why do you know that?
+
+## Affordance problems
+Prompt: What are some affordance problems in an interface?
+
+- The gap between affordance and perceived affordance invites interaction failures.
+
+# Motor Control
+Why the physical act of using an interface is a design variable, not a given
+
+- Fitts' Law
+- Hick-Hyman Law 
+
+## Fitts' Law
+The farther away and the smaller the target, the longer it takes to hit.
+
+## Hick-Hyman Law
+More choices means slower decisions, but the relationship is logarithmic, not linear.
+
+## Motor control problems
+Prompt: Think about an app or tool you use on your phone with one hand. 
+
+- Where do you make the most errors?
+- Is there anything you avoid doing because it's too hard or error-prone?
+- Did the designers account for how you actually holding the device?
+
+# Cognition
+Why users fail at things that seemed obvious
+
+
 
 {{< include endMatter.md >}}
 
