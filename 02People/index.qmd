@@ -103,8 +103,16 @@ Understanding how users initiate, aim, and execute physical actions lets designe
 ## Fitts' Law
 The farther away and the smaller the target, the longer it takes to hit.
 
+- Targets that are large and close get hit faster and with fewer errors.
+- Targets that are small or far away get hit slower and with more errors.
+- So: Make important things big and close, and make dangerous things small and far. 
+
 ## Hick-Hyman Law
 More choices means slower decisions, but the relationship is logarithmic, not linear.
+
+- Doubling the number of options doesn't double decision time, but it does increase it.
+- The real cost of extra choices is hesitation, abandonment, and decision fatigue.
+- Reducing options is about surfacing the *right* options.
 
 ## Motor control problems
 ::: {.callout-tip title="Prompt"}
@@ -128,37 +136,39 @@ These are a few of the more salient aspects of cognition that pop up in HCI regu
 :::
 
 ## Mental Models
-Users have a theory of how something works (or should work) and they behave based on their theory.
+Users show up with an existing theory of how your system should work, built from prior experience with other tools, and they will act on that theory (not on yours) until the design gives them a strong enough reason to update it.
 
 - Mental model: a user's internal understanding of how a system works
 - System model: how the system actually works
-- The gap between them is where errors, confusion, and frustration live
 
-::: {.notes}
-This means it's important to design a system that matches the model they already have, or at least doesn't violate it catastrophically.
-:::
+## Mental Models
+The gap between the user's mental model and the designer's system model is where errors, confusion, and frustration live.
 
 ## Cognitive Load
-The amount of mental effort a task requires
+Every design imposes a mental cost on the user, and when that cost exceeds what working memory can handle, users give up or make mistakes.
 
 - Intrinsic load: complexity inherent to the task itself
 - Extraneous load: complexity added by poor design
 - Good design minimizes extraneous load so users can spend their budget on the task
 
 ## Memory
-Users shouldn't have to remember things your interface could just show them.
+Because working memory is small, fragile, and constantly interrupted, good designs minimize what users have to hold in their heads by keeping relevant information visible, persistent, and where users expect to find it.
 
-- Working memory: what the user is actively holding in mind right now — small and fragile
-- Long-term memory: what users bring from prior experience — powerful but slow to update
-- Recognition beats recall: it's easier to recognize an option than to remember it exists
+- Working memory: what the user is actively holding in mind right now (small and fragile)
+- Long-term memory: what users bring from prior experience (powerful but slow to update)
+
+## Memory
+Recognition beats recall. It's easier to recognize an option than to remember it exists
 
 ## Decision Making
-Users make decisions quickly, under uncertainty, with incomplete information — and so do designers.
+Users rarely evaluate all available options before choosing, which means that defaults, framing, and the order choices are presented in shape outcomes just as much as the choices themselves.
 
 - Users don't optimize. They "satisfice": they pick the first option that seems good enough
 - Defaults matter enormously: most users never change them
 - Framing effects: how a choice is presented changes what people choose, independent of the options themselves
 
+## Some cognition fails
+examples coming soon!
 
 
 {{< include endMatter.md >}}
