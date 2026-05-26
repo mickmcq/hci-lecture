@@ -120,7 +120,8 @@ Understanding how users think, make decisions, and remember lets designers build
 
 - Mental models
 - Cognitive load
-- Attention
+- Memory
+- Decision Making
 
 ::: {.notes}
 These are a few of the more salient aspects of cognition that pop up in HCI regularly.
