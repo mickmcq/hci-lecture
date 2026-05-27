@@ -1604,10 +1604,44 @@ display:block!important;
 <section id="fitts-law" class="slide level2">
 <h2>Fitts’ Law</h2>
 <p>The farther away and the smaller the target, the longer it takes to hit.</p>
+<div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Targets that are large and close get hit faster and with fewer errors.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Targets that are small or far away get hit slower and with more errors.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>So: Make important things big and close, and make dangerous things small and far.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="hick-hyman-law" class="slide level2">
 <h2>Hick-Hyman Law</h2>
 <p>More choices means slower decisions, but the relationship is logarithmic, not linear.</p>
+<div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Doubling the number of options doesn’t double decision time, but it does increase it.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>The real cost of extra choices is hesitation, abandonment, and decision fatigue.</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Reducing options is about surfacing the <em>right</em> options.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="motor-control-problems" class="slide level2">
 <h2>Motor control problems</h2>
@@ -1661,7 +1695,12 @@ display:block!important;
 </div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Attention</li>
+<li>Memory</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out">
+<ul>
+<li>Decision Making</li>
 </ul>
 </div>
 </div>
@@ -1681,7 +1720,7 @@ display:block!important;
 </section>
 <section id="mental-models" class="slide level2">
 <h2>Mental Models</h2>
-<p>Users have a theory of how something works (or should work) and they behave based on their theory.</p>
+<p>Users show up with an existing theory of how your system should work, built from prior experience with other tools, and they will act on that theory (not on yours) until the design gives them a strong enough reason to update it.</p>
 <div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
@@ -1693,71 +1732,51 @@ display:block!important;
 <li>System model: how the system actually works</li>
 </ul>
 </div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>The gap between them is where errors, confusion, and frustration live</li>
-</ul>
 </div>
-</div>
-<aside class="notes">
-<p>This means it’s important to design a system that matches the model they already have, or at least doesn’t violate it catastrophically.</p>
-<style type="text/css">
-span.MJX_Assistive_MathML {
-position:absolute!important;
-clip: rect(1px, 1px, 1px, 1px);
-padding: 1px 0 0 0!important;
-border: 0!important;
-height: 1px!important;
-width: 1px!important;
-overflow: hidden!important;
-display:block!important;
-}</style></aside>
+</section>
+<section id="mental-models-1" class="slide level2">
+<h2>Mental Models</h2>
+<p>The gap between the user’s mental model and the designer’s system model is where errors, confusion, and frustration live.</p>
 </section>
 <section id="cognitive-load" class="slide level2">
 <h2>Cognitive Load</h2>
-<p>The amount of mental effort a task requires</p>
+<p>Every design imposes a mental cost on the user, and when that cost exceeds what working memory can handle, users give up or make mistakes.</p>
 <div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Intrinsic load: complexity inherent to the task itself</li>
+<li>Task effort:</li>
 </ul>
 </div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Extraneous load: complexity added by poor design</li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>Good design minimizes extraneous load so users can spend their budget on the task</li>
+<li>State effort:</li>
 </ul>
 </div>
 </div>
 </section>
 <section id="memory" class="slide level2">
 <h2>Memory</h2>
-<p>Users shouldn’t have to remember things your interface could just show them.</p>
+<p>Because working memory is small, fragile, and constantly interrupted, good designs minimize what users have to hold in their heads by keeping relevant information visible, persistent, and where users expect to find it.</p>
 <div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Working memory: what the user is actively holding in mind right now — small and fragile</li>
+<li>Working memory: what the user is actively holding in mind right now (small and fragile)</li>
 </ul>
 </div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
-<li>Long-term memory: what users bring from prior experience — powerful but slow to update</li>
-</ul>
-</div>
-<div class="fragment fade-in-then-semi-out">
-<ul>
-<li>Recognition beats recall: it’s easier to recognize an option than to remember it exists</li>
+<li>Long-term memory: what users bring from prior experience (powerful but slow to update)</li>
 </ul>
 </div>
 </div>
 </section>
+<section id="memory-1" class="slide level2">
+<h2>Memory</h2>
+<p>Recognition beats recall. It’s easier to recognize an option than to remember it exists</p>
+</section>
 <section id="decision-making" class="slide level2">
 <h2>Decision Making</h2>
-<p>Users make decisions quickly, under uncertainty, with incomplete information — and so do designers.</p>
+<p>Users rarely evaluate all available options before choosing, which means that defaults, framing, and the order choices are presented in shape outcomes just as much as the choices themselves.</p>
 <div>
 <div class="fragment fade-in-then-semi-out">
 <ul>
@@ -1775,6 +1794,28 @@ display:block!important;
 </ul>
 </div>
 </div>
+</section>
+<section id="some-cognition-fails" class="slide level2">
+<h2>Some cognition fails</h2>
+<p>examples coming soon!</p>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<p>Designing for non-ideal users: The chapters describe perception, motor control, and cognition as they work in healthy young adults. Real users include people who are tired, stressed, multitasking, aging, disabled, or under cognitive load from other parts of their lives.</p>
+<p>How would design change if we treated the non-ideal user as the default rather than the edge case?</p>
+</section>
+<section id="discussion-1" class="slide level2">
+<h2>Discussion</h2>
+<p>The AI inflection point: All three chapters were written assuming the user is the one doing the perceiving, moving, and thinking. AI agents now do some of this on behalf of users.</p>
+<p>Which concepts from these chapters still apply when an agent is acting on your behalf? Which become obsolete? Which take on new meaning?</p>
+</section>
+<section id="discussion-2" class="slide level2">
+<h2>Discussion</h2>
+<p>Whose model wins: Perception relies on user expectations. Motor control relies on learned patterns. Cognition relies on mental models. All three are slow to change. New technologies (VR, voice, AI agents, brain-computer interfaces) ask users to update all three simultaneously.</p>
+<p>Why do some new interaction paradigms succeed (touchscreens) while others struggle (3D TV, Google Glass)? Is it about the technology, or about how much it asks the user to relearn?</p>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section id="end" class="title-slide slide level1 center">
 <h1><span class="r-fit-text">END</span></h1>

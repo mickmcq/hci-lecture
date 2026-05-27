@@ -170,5 +170,43 @@ Users rarely evaluate all available options before choosing, which means that de
 examples coming soon!
 
 
+## Small Group Discussion
+
+Designing for non-ideal users:
+The chapters describe perception, motor control, and cognition as they work in healthy young adults. Real users include people who are tired, stressed, multitasking, aging, disabled, or under cognitive load from other parts of their lives. 
+
+How would design change if we treated the non-ideal user as the default rather than the edge case?
+
+## Small Group Discussion
+
+The AI inflection point:
+All three chapters were written assuming the user is the one doing the perceiving, moving, and thinking. AI agents now do some of this on behalf of users. 
+
+Which concepts from these chapters still apply when an agent is acting on your behalf? Which become obsolete? Which take on new meaning?
+
+## Small Group Discussion
+
+Whose model wins:
+Perception relies on user expectations. Motor control relies on learned patterns. Cognition relies on mental models. All three are slow to change. New technologies (VR, voice, AI agents, brain-computer interfaces) ask users to update all three simultaneously. 
+
+Why do some new interaction paradigms succeed (touchscreens) while others struggle (3D TV, Google Glass)? Is it about the technology, or about how much it asks the user to relearn?
+
+## Small Group Discussion
+
+Ethics of understanding people:
+Every concept in these chapters can be used to help users or to exploit them. Saliency directs attention, but to what? Fitts' Law makes targets easier to hit, including ones you didn't mean to. Defaults reduce decision load, and shape outcomes. 
+
+Is there a meaningful distinction between "designing for human limitations" and "designing to exploit them"? Who decides?
+
+## Small Group Activity
+
+something using Google Material Design
+
+## Small Group Activity
+
+something related to perception, motor control, cognition design decisions in AI tools 
+
+---
+
 {{< include endMatter.md >}}
 
