@@ -147,9 +147,8 @@ The gap between the user's mental model and the designer's system model is where
 ## Cognitive Load
 Every design imposes a mental cost on the user, and when that cost exceeds what working memory can handle, users give up or make mistakes.
 
-- Intrinsic load: complexity inherent to the task itself
-- Extraneous load: complexity added by poor design
-- Good design minimizes extraneous load so users can spend their budget on the task
+- Task effort:
+- State effort: 
 
 ## Memory
 Because working memory is small, fragile, and constantly interrupted, good designs minimize what users have to hold in their heads by keeping relevant information visible, persistent, and where users expect to find it.
