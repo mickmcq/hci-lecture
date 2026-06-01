@@ -1,0 +1,43 @@
+---
+title: People
+subtitle: Human-Computer Interaction
+---
+
+# [Week THREE]{.r-fit-text}
+
+Part II of @Hornbaek2025
+
+# Intro
+Last week we discussed people's mechanics: perception, motor control, cognition. But people also have **needs** they're trying to satisfy, **experiences** they're actively constructing, **collaborators** they're constantly coordinating with, and **communication channels** that reshape every interaction they have. 
+
+This week we'll shift the question from *how do people process information* to *why do systems fail even when they're technically correct*? 
+
+# Case Study: Google+
+![](fiGoogle+.png)
+::: {.notes}
+Google+ was Google's response to Facebook (rolled out in 2011, sunset in 2019). 
+:::
+
+# Why did Google+ fail?
+A lot of reasons for its failure have to do with not taking the time to understand their target audience. 
+
+- They tied employee bonuses to the success of Google+, so that extrinsic rewards shifted attention to scoring points and undermined the intrinsic motivation to build something genuinely good.
+- They conflated their engineers' workflows with their target end-users' by assuming organizing information would have mass appeal.
+- All of their target users' relationships were already on Facebook. Getting people to switch required convincing their entire network to move simultaneously.
+- They kept matching Facebook on pragmatic features while Facebook was satisfying hedonic needs like relatedness, identity, stimulation. 
+
+::: {.notes}
+https://www.forbes.com/sites/stevedenning/2015/04/17/five-reasons-why-google-died/
+:::
+
+# Needs & Motivations
+Understanding what drives people to engage with technology (and what erodes that drive) lets designers build systems that support genuine motivation rather than hijack it.
+
+
+
+
+
+---
+
+{{< include endMatter.md >}}
+
