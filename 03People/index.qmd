@@ -7,37 +7,223 @@ subtitle: Human-Computer Interaction
 
 Part II of @Hornbaek2025
 
-# Intro
-Last week we discussed people's mechanics: perception, motor control, cognition. But people also have **needs** they're trying to satisfy, **experiences** they're actively constructing, **collaborators** they're constantly coordinating with, and **communication channels** that reshape every interaction they have. 
+*Needs · Experience · Collaboration · Communication*
 
-This week we'll shift the question from *how do people process information* to *why do systems fail even when they're technically correct*? 
+# Intro
+
+Last week we discussed people's mechanics: perception, motor control, cognition. But people also have **needs** they're trying to satisfy, **experiences** they're actively constructing, **collaborators** they're constantly coordinating with, and **communication channels** that reshape every interaction they have.
+
+This week we'll shift the question from *how do people process information* to *why do systems fail even when they're technically correct*?
 
 # Case Study: Google+
+
 ![](fiGoogle+.png)
-::: {.notes}
-Google+ was Google's response to Facebook (rolled out in 2011, sunset in 2019). 
-:::
 
 # Why did Google+ fail?
-A lot of reasons for its failure have to do with not taking the time to understand their target audience. 
+
+A lot of reasons for its failure have to do with not taking the time to understand their target audience.
 
 - They tied employee bonuses to the success of Google+, so that extrinsic rewards shifted attention to scoring points and undermined the intrinsic motivation to build something genuinely good.
 - They conflated their engineers' workflows with their target end-users' by assuming organizing information would have mass appeal.
 - All of their target users' relationships were already on Facebook. Getting people to switch required convincing their entire network to move simultaneously.
-- They kept matching Facebook on pragmatic features while Facebook was satisfying hedonic needs like relatedness, identity, stimulation. 
-
-::: {.notes}
-https://www.forbes.com/sites/stevedenning/2015/04/17/five-reasons-why-google-died/
-:::
+- They were matching Facebook on pragmatic features while Facebook was satisfying hedonic needs like relatedness, identity, stimulation.
 
 # Needs & Motivations
-Understanding what drives people to engage with technology (and what erodes that drive) lets designers build systems that support genuine motivation rather than hijack it.
 
+## What drives people to use technology?
+A **need** is a biologically or socially grounded driver of behavior, not just a preference.
 
+- **Self-Determination Theory (SDT)**: three basic needs: autonomy, competence, relatedness
+- **Motivation** runs on a continuum: amotivation → extrinsic → intrinsic
+- **Overjustification effect**: external rewards can undermine intrinsic motivation
+- Unexpected positive feedback boosts intrinsic motivation; deadlines and surveillance erode it
 
+## Gamification through the SDT lens
+Gamification = game mechanics (points, badges, streaks, leaderboards) applied to non-game contexts
 
+- Works best for simple tasks and early engagement, when extrinsic motivation is already dominant
+- SDT's question: will the reward feel **controlling** or **informational**?
+- Controlling rewards threaten autonomy; informational feedback supports competence
 
----
+##
+
+::: {.callout-tip title="In the wild"}
+🎤 *Does Duolingo build the underlying habit, or does it become the goal itself?*
+
+![](fiGamificationDuolingo.png)
+:::
+
+## 
+
+::: {.callout-warning title="Not so fast..."}
+- **Cameron & Pierce (1994)** meta-analysis: the undermining effect of rewards is small and limited to narrow conditions
+- **Deci, Koestner & Ryan (1999)** countered: tangible, expected, contingent rewards *do* reliably undermine intrinsic motivation, but verbal rewards don't
+- Current consensus: real but **conditional** - reward type, expectedness, and how controlling it feels all matter
+- Design takeaway: don't cite "rewards kill motivation" as a law; ask whether the reward reads as controlling or informational
+:::
+
+## Behavior change by design
+
+- Fogg's model: behavior requires **motivation + ability + trigger** occurring together
+- Reducing friction raises *ability*, so even weak motivation converts to action
+- **Nudging** (Thaler & Sunstein): alter choice architecture without restricting options through defaults, ordering, framing
+- Caveat: The same toolkit scales from helpful prompt to outright manipulation, where the dividing line is **transparency**
+
+## Dark patterns
+Dark patterns are UI elements that **benefits the service** by coercing, steering, or deceiving users into unintended decisions.
+
+- **Roach motel** — trivially easy to subscribe, deliberately painful to cancel
+- **Confirmshaming** — "No thanks, I don't want to save money"
+- **Hidden costs** — fees revealed only at the final checkout step
+- **Trick questions & misdirection** — pre-ticked boxes, consent-banner visual games
+- The SDT connection: dark patterns don't just deceive; they attack **autonomy** directly, which is why they damage long-term trust even when they lift short-term conversion
+
+##
+
+::: {.callout-tip title="In the wild"}
+![](fiTicketmaster.jpg)
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A fitness app adds a streak counter to your daily workout log. According to SDT, when would this *help* your motivation, and when would it *hurt*? What's the difference?
+:::
+
+# Experience
+
+## Experiencing ≠ Experience
+
+- **Experiencing**: moment-to-moment feeling during use
+- **Experience**: the account you construct afterward and share with others
+- **Peak–end rule**: remembered experience is anchored to the peak and the ending
+- **Duration neglect**: length of the experience barely affects the remembered rating
+- Only the *remembered* experience predicts repeat use and recommendation
+
+## Hedonic vs. Pragmatic quality
+
+- **Pragmatic**: does it help me accomplish goals?
+- **Hedonic**: stimulation, identification, evocation
+- Hassenzahl: both jointly determine appeal; users are not efficiency maximizers
+- Tractinsky: aesthetics shifted *perceived usability* after use; objective usability didn't
+
+##
+
+::: {.callout-warning title="Not so fast..."}
+The "beautiful is usable" effect has caveats: **Hassenzahl & Monk (2010)** found the aesthetics–usability link is largely mediated by an overall "goodness" halo, and later replications show weaker, context-dependent effects. And **Diefenbach et al.** found hedonic and pragmatic scales correlate at r ≈ 0.62. The two dimensions may not be as separable as AttrakDiff assumes.
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Think of a product whose ending experience was notably good or bad. How does the peak–end rule explain how you feel about it now, and whether you'd return?
+:::
+
+# Collaboration
+
+## The social–technical gap
+
+- Ackerman: human activity is flexible, nuanced, contextualized; systems can't fully support the social world
+- Technology enforces rules; social activity negotiates around them. The gap is **structural**
+- **Articulation work**: coordination *around* the work (scheduling, negotiating, organizing) that systems don't see
+- **Awareness**: knowing what collaborators are doing; presence cues improve groups via the *feeling of co-presence*, not just information
+
+##
+
+::: {.callout-tip title="In the wild"}
+🎤 *What articulation work disappeared when hallway conversations moved to Slack? What tools tried to replace it, and did they?*
+:::
+
+## Why collaborative systems keep failing
+Grudin's failure modes from 1994 are still predictive today:
+
+- **Work/benefit disparity** — those who do the work aren't those who benefit
+- **Critical mass** — prisoner's dilemma; rational defection poisons the whole
+- **Disruption of social processes** — implicit politics made explicit
+- **Exception handling** — systems model the ideal workflow, not the actual one
+- **Adoption process failure** — rollout without engaging actual users
+
+##
+
+::: {.callout-tip title="In the wild"}
+![](fiEpic.png)
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Pick a collaborative tool that was abandoned somewhere you've worked or studied. Which of Grudin's failure modes best explains it?
+:::
+
+# Communication
+
+## What changes when communication is mediated?
+
+- Face-to-face carries cues we rarely notice: gaze, pause, gesture, tone
+- CMC strips or restructures them; the channel shapes the behavior
+- **Conversation analysis**: turn-taking, adjacency pairs, repair, common ground (the hidden machinery)
+- **Social presence**: the sense of *being with* someone; drives trust and self-disclosure
+- Nowak & Biocca: near-realistic avatars produced *lower* felt presence than cartoon-like ones — unmet expectations backfire
+
+## 
+
+::: {.callout-warning title="Not so fast..."}
+- **Media richness theory** (richer media for more equivocal tasks) has famously weak empirical support: **Dennis & Kinney (1998)** found matching richness to task didn't improve performance. **Channel expansion theory** (Carlson & Zmud) says that experience with a channel changes its effective richness; fits the data better
+- **Theory of mind in LLMs** is an active fight: **Kosinski (2023)** claimed GPT-4 passes false-belief tasks; **Ullman (2023)** showed trivial task alterations break the performance, suggesting pattern-matching rather than genuine mental-state modeling
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Recall a text-based miscommunication that wouldn't have happened in person. Which missing cue caused it? Is that a design opportunity or a limit of the medium?
+:::
+
+# Discussions
+
+## Is behavior change through design ethical? Where's the line?
+
+Dark patterns and nudges exist on a spectrum from gentle prompt to outright manipulation. Where do we draw the line, and who draws it?
+
+*Behavioral economics and HCI have given designers powerful tools to change what people do, often without users' awareness. The question isn't whether this happens, but whether that's acceptable, and under what conditions.*
+
+## Can experiences be designed or only influenced?
+
+The book says "experience is not literally designed." But UX is an entire profession. Who's right?
+
+*Hassenzahl and the book argue experience emerges from individual inference, not from the interface. But billions of dollars are spent on "UX design." Is that money well spent, or is "designing experience" a category error?*
+
+## Collaborative systems keep failing for the same reasons. Is this inevitable?
+
+Grudin's 1994 list still explains most enterprise software failures today. Why haven't we solved these problems after 30 years of better tools?
+
+*Slack, Teams, Notion, Figma — we have vastly better collaborative technology. Yet the failures Grudin described still recur. Is this a design problem, an organizational problem, or something structural about how humans cooperate?*
+
+## How should AI systems handle turn-taking and repair?
+
+Conversational AI violates CA norms constantly. Should it? Should users adapt instead?
+
+*Conversation analysis shows human conversation has deep structure — turn construction, adjacency pairs, repair sequences, common ground. Current LLMs violate these norms regularly. Should AI systems be designed to follow human conversational norms, or should users develop new literacies around AI communication?*
+
+# Activities
+
+## Activity 1: SDT Audit (~35 min)
+
+**Task** — Pick any consumer app (social media, fitness, productivity, games). Audit it against SDT's three needs: autonomy, competence, and relatedness.
+
+**Produce** — A 3-column table (one column per need) with specific UI features labeled as *supporting* or *threatening* each need. Add one row for "gamification elements" and rate whether they enhance or undermine intrinsic motivation.
+
+**Time** — 30 min group work · 5 min class share-out
+
+**Debrief** — Which need was hardest to evaluate? What does that reveal about how the app was built?
+
+## Activity 2: AI as CMC Partner (~40 min)
+
+**Task** — As a group, converse with an LLM about a topic someone knows well. Deliberately attempt three CA techniques: (1) initiate a repair when the AI is wrong, (2) test an adjacency pair, (3) try to establish common ground.
+
+**Produce** — Annotate 3–5 exchanges per CA mechanism, marking where the AI succeeded or failed. Propose one design change per failure.
+
+**Time** — 15 min conversation + annotation · 20 min design discussion · 5 min share-out
+
+**Debrief** — Is the problem with AI turn-taking a *technical* limitation, or a *design choice*? How would you know the difference?
 
 {{< include endMatter.md >}}
-

@@ -7,24 +7,25 @@ subtitle: Human-Computer Interaction
 
 Part II of @Hornbaek2025
 
+*Perception · Motor Control · Cognition*
+
 # Intro
-You can't design for people you don't understand. It's tempting to think that if you're designing something new, or trying to shift a habit, you can start from how you *want* people to act. But people bring their existing perception, memory, attention, and mental models to everything they touch. So, you meet them where you know they are.
 
-## Have you ever used something and thought: 
+You can't design for people you don't understand. It's tempting to start from how you **want** people to act, but people bring their existing perception, motor habits, and mental models to everything they touch, and those systems don't renegotiate on your schedule.
 
-*"Did anyone actually try this before they shipped it?"*
+This week's question: *what does the human processing pipeline (seeing, moving, thinking) let designers predict before anything ships?*
 
-::: {.callout-tip title="Prompt"}
-Think of a specific example: a moment, an interface, a product (doesn't have to be a computer)
-:::
+# Case Study: Healthcare.gov
 
-# What went wrong with the Healthcare.gov rollout?
 ![](fiHealthcaregov.png)
+
 # What went wrong with the Healthcare.gov rollout?
+
 Aside from the obvious (not anticipating the volume)
 
-- They required users to create an account before browsing any plans, so the registration system bottlenecked under the load of curious browsers who had no way to evaluate the product first.
-- They underestimated the proportion of users who were "uncommitted shoppers" wanting to compare options before investing effort, surfacing a basic mismatch between the system functionality and how users actually behave when shopping for insurance.
+- They required users to **create an account before browsing any plans**, so the registration system bottlenecked under the load of curious browsers who had no way to evaluate the product first
+- They underestimated the proportion of users who were **"uncommitted shoppers"** wanting to compare options before investing effort — a basic mismatch between system functionality and how people actually behave when shopping for insurance
+- The designers' model was *citizens completing enrollment*; the users' model was *shopping site* — and the user's model always shows up first
 
 ::: {.notes}
 https://medium.com/remembering-health-care-before-the-aca/the-promise-failure-and-potential-of-healthcare-gov-e28a649d1ea3
@@ -32,153 +33,125 @@ https://medium.com/remembering-health-care-before-the-aca/the-promise-failure-an
 https://medium.com/@bishr_tabbaa/small-is-beautiful-the-launch-failure-of-healthcare-gov-5e60f20eb967
 :::
 
+<!-- ~4 min -->
+
 # Perception
-Understanding how users see, hear, and process sensory information lets designers present information in ways that align with human limits and capabilities.
 
-- Gestalt laws
-- Saliency vs. clutter
-- Affordance
+## Gestalt: seeing is grouping
+Users automatically organize visual information into meaningful **"wholes"**. 
 
-## Gestalt
-Users automatically group and organize information into meaningful "wholes".
+- **Proximity** — elements close together read as a group
+- **Similarity** — elements that look alike read as related
+- **Common area** — elements inside a boundary belong together
+- **Continuation** — elements connected by a line or flow read as a sequence
+- The layout makes claims about what belongs together *whether the designer intended those claims or not*
 
-- Proximity: elements close together read as a group
-- Similarity: elements that look alike read as related
-- Common area: elements inside a boundary belong together
-- Continuation: elements connected by a line or flow read as a sequence
+## 
+
+::: {.callout-tip title="In the wild"}
+🎤![](fiCraigslist.png)
+:::
 
 ::: {.notes}
-These are a few common principles especially relevant in HCI. 
+What kind of perception fail is this? 
+Every element here has the same visual weight. There is no grouping signal. Users navigate this by reading, not by perceiving structure.
 :::
-
-## Gestalt 
-
-::: {.callout-tip title="Prompt"}
-Can you think of some Gestalt problems in a design?
-:::
-
-## Gestalt 
-Most layout problems aren't spacing problems or color problems; they're Gestalt problems where the visual structure is communicating something the designer didn't intend.
 
 ## Saliency vs. Clutter
 Users automatically prioritize visually distinctive elements, so designers can leverage this to guide users toward what matters most.
 
-- Saliency: visual uniqueness prompting something to be noticed
-- Clutter: when everything competes for notice, nothing gets noticed
+- **Saliency** — visual uniqueness prompting something to be noticed; users prioritize distinctive elements automatically
+- **Clutter** — when everything competes for notice, nothing gets noticed
+- Saliency has a **budget**: roughly one "loudest thing" per screen 
+- The 2-second test: if *you* can't identify the most salient element in under 2 seconds, users can't either 
 
-## Saliency vs. Clutter
+## 
 
-::: {.callout-tip title="Prompt"}
-Can you think of some saliency or clutter problems in a design?
-:::
-
-## Saliency vs. Clutter
-If you can't identify the most salient element on a screen in less than 2 seconds, users probably can't either. That's a design problem, not a user problem.
-
-## Affordance
-The visual properties of an interface element should intuitively signal how it can be interacted with, so users never have to guess whether something is clickable, draggable, or purely decorative.
-
-- Affordance: something that invites interaction
-- Perceived affordance: whether the user understands that invitation
-
-## Affordance 
-
-::: {.callout-tip title="Prompt"}
-Can you think of some affordance problems in a design?
-:::
-
-## Affordance
-When affordance and perceived affordance don't match, users either click what isn't clickable or miss what is.
-
-## Some perception fails
+::: {.callout-tip title="In the wild"}
 ![](fiSaliency.png)
+:::
 
 ::: {.notes}
 What kind of perception fail is this? 
 No proximity grouping. No consistent similarity signal. Figure and ground compete. A user looking for specific information has no perceptual path to follow — they have to read everything
 :::
 
-## Some perception fails
-![](fiCraigslist.png)
-::: {.notes}
-What kind of perception fail is this? 
-Every element here has the same visual weight. There is no grouping signal. Users navigate this by reading, not by perceiving structure.
+## Affordance
+The visual properties of an interface element should intuitively signal how it can be interacted with.
+
+- **Affordance** — a property that invites interaction; a relationship between a thing and a person 
+- **Perceived affordance** — whether the user understands that invitation exists
+- When the two don't match, users either **click what isn't clickable or miss what is**
+- The interface goal: users never have to guess whether something is clickable, draggable, or purely decorative
+
+## Affordance
+::: {.callout-warning title="Not so fast..."}
+- **Don Norman** now argues the field misuses the term, and prefers **signifiers**: the perceivable cues that *communicate* an affordance (revised *Design of Everyday Things*, 2013)
+- The affordance is the possibility of action; the signifier is what tells you it's there
 :::
 
-# Motor Control
-Understanding how users initiate, aim, and execute physical actions lets designers build interfaces that work with the body's natural mechanics rather than fighting them.
+## [Concept check]{.r-fit-text}
 
-- Fitts' Law
-- Hick-Hyman Law 
+::: {.callout-note title="Pause and think"}
+Open any app on your phone. In 2 seconds: What's the most salient element? Is it the most *important* one? Now find one grouping the layout implies that the designer probably didn't intend.
+:::
+
+<!-- ~13 min -->
+
+# Motor Control
 
 ## Fitts' Law
 The farther away and the smaller the target, the longer it takes to hit.
 
-- Targets that are large and close get hit faster and with fewer errors.
-- Targets that are small or far away get hit slower and with more errors.
-- So: Make important things big and close, and make dangerous things small and far. 
+- One of the few genuine *laws* in HCI: a mathematical model that still predicts pointing on devices Fitts never imagined
+- Screen **edges and corners** are effectively infinite targets 
+- Design rule: make important things **big and close**, and dangerous things **small and far**
+
+::: {.callout-warning title="Not so fast..."}
+Fitts modeled a stylus on a desk. **Bi, Li & Zhai (2013)** showed finger touch breaks the model at small sizes; finger imprecision adds an error floor Fitts' Law doesn't predict. Don't assume desktop pointing math transfers cleanly to thumbs on glass.
+:::
+
+##
+
+::: {.callout-tip title="In the wild"}
+![](fiFittsLaw.jpeg)
+:::
 
 ## Hick-Hyman Law
-More choices means slower decisions, but the relationship is logarithmic, not linear.
+More choices means slower decisions, but the relationship is **logarithmic, not linear**.
 
-- Doubling the number of options doesn't double decision time, but it does increase it.
-- The real cost of extra choices is hesitation, abandonment, and decision fatigue.
-- Reducing options is about surfacing the *right* options.
+- Doubling the options doesn't double decision time, but it does increase it
+- The real cost of extra choices: **hesitation, abandonment, decision fatigue**
+- Reducing options is about surfacing the *right* options, not minimalism for its own sake
 
-## Motor control problems
-::: {.callout-tip title="Prompt"}
-Think about an app or tool you use on your phone with one hand. 
+::: {.callout-warning title="Not so fast..."}
+- Hick-Hyman holds for choices among **known, equally likely options** — a familiar menu, a keypad
+- It does *not* cleanly model decisions requiring reading, comparison, or judgment (**NN/g** flags this as one of the most-misapplied laws in UX); visual search of an *unfamiliar* menu scales roughly linearly, not logarithmically
 :::
 
-- Where do you make the most errors?
-- Is there anything you avoid doing because it's too hard or error-prone?
-- Did the designers account for how you actually holding the device?
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Think about an app you use on your phone one-handed. Where do you make the most errors? What do you avoid doing entirely because it's too error-prone? Did the designers account for how you're actually holding the device?
+:::
+
+<!-- ~19 min -->
 
 # Cognition
-Understanding how users think, make decisions, and remember lets designers build interfaces that reduce  load and match the way people actually construct meaning from the world.
-
-- Mental models
-- Cognitive load
-- Memory
-- Decision Making
-
-::: {.notes}
-These are a few of the more salient aspects of cognition that pop up in HCI regularly.
-:::
 
 ## Mental Models
-Users show up with an existing theory of how your system should work, built from prior experience with other tools, and they will act on that theory (not on yours) until the design gives them a strong enough reason to update it.
+Users show up with an existing theory of how a system should work.
 
-- Mental model: a user's internal understanding of how a system works
-- System model: how the system actually works
+- **Mental model** — the user's internal theory of how a system works, built from prior experience with other tools
+- **System model** — how the system actually works
+- Users act on *their* theory, not yours, until the design gives them a strong enough reason to update it 
+- The gap between the two models is where **errors, confusion, and frustration live**
 
-## Mental Models
-The gap between the user's mental model and the designer's system model is where errors, confusion, and frustration live.
+##
 
-## Cognitive Load
-Every design imposes a mental cost on the user, and when that cost exceeds what working memory can handle, users give up or make mistakes.
-
-- Task effort: The mental energy required by the demands of the task itself (i.e., its complexity, novelty, or cognitive load). Harder tasks require more task effort
-- State effort: The mental energy required to maintain performance despite your current physiological condition (such as fatigue, stress, sleep loss, or illness). A degraded state requires more state effort to produce the same output. 
-
-## Memory
-Because working memory is small, fragile, and constantly interrupted, good designs minimize what users have to hold in their heads by keeping relevant information visible, persistent, and where users expect to find it.
-
-- Working memory: what the user is actively holding in mind right now (small and fragile)
-- Long-term memory: what users bring from prior experience (powerful but slow to update)
-
-## Memory
-Recognition beats recall. It's easier to recognize an option than to remember it exists
-
-## Decision Making
-Users rarely evaluate all available options before choosing, which means that defaults, framing, and the order choices are presented in shape outcomes just as much as the choices themselves.
-
-- Users don't optimize. They "satisfice": they pick the first option that seems good enough
-- Defaults matter enormously: most users never change them
-- Framing effects: how a choice is presented changes what people choose, independent of the options themselves
-
-## Some cognition fails
+::: {.callout-tip title="In the wild"}
 ![](fiSlackNotifications.png)
+:::
 
 ::: {.notes}
 https://slack.engineering/how-slack-rebuilt-notifications/
@@ -186,50 +159,101 @@ What kind of cognition fail is this?
 - "Four conflicting mental models: Desktop and mobile each had their own preference systems, with different options and behaviors. A “nothing” setting on mobile meant something entirely different from “Off” on desktop. Users couldn’t predict what would happen when they changed a setting."
 :::
 
-## Some cognition fails
-![](fiCookieConsent.png)
-::: {.notes}
-What kind of cognition fail is this? 
-This is an intentional cognition fail, meaning that it was designed on purpose expecting most users to "satisfice" as the framing and default shape the choice more than the actual options do.  
+## Cognitive Load
+Every design imposes a mental cost; when that cost exceeds working memory, users **give up or make mistakes**.
+
+- **Task effort** — mental energy demanded by the task itself (complexity, novelty). Harder tasks require more task effort
+- **State effort** — mental energy required to maintain performance despite your current condition (fatigue, stress, sleep loss, illness). A degraded state costs more to produce the *same* output
+- Designers budget for task effort and implicitly assume users arrive fresh, but the same flow is not "simple" at 2 a.m., in a hospital waiting room, or mid-crisis
+
+##
+
+::: {.callout-tip title="In the wild"}
+🎤 *Products used almost exclusively by people in a degraded state: insurance claims after an accident, airline rebooking during a cancellation, password reset (you're already failing). These should be our simplest interfaces, and are frequently the worst.*
 :::
 
-## Small Group Discussion
+## Memory
+Because working memory is small, fragile, and constantly interrupted, good designs minimize what users have to hold in their heads by keeping relevant information visible, persistent, and where users expect to find it.
 
-**Designing for non-ideal users:**
-The chapters describe perception, motor control, and cognition as they work in healthy young adults. Real users include people who are tired, stressed, multitasking, aging, disabled, or under cognitive load from other parts of their lives. 
+- **Working memory** — what the user is actively holding right now: small, fragile, constantly interrupted
+- **Long-term memory** — what users bring from prior experience: powerful but slow to update
+- Good designs minimize what users hold in their heads: keep relevant information **visible, persistent, and where users expect it**
+- **Recognition beats recall** — it's easier to recognize an option than to remember it exists
 
-How would design change if we treated the non-ideal user as the default rather than the edge case?
+##
 
-## Small Group Discussion
+::: {.callout-tip title="In the wild"}
+🎤 *Any flow that shows information on one screen and demands it on the next: verification codes memorized while app-switching, error messages that vanish before you can act, wizards that hide your earlier answers.*
+:::
 
-**The AI inflection point:**
-All three chapters were written assuming the user is the one doing the perceiving, moving, and thinking. AI agents now do some of this on behalf of users. 
+## Decision Making
+Users rarely evaluate all available options before choosing, which means that defaults, framing, and the order choices are presented in shape outcomes just as much as the choices themselves.
 
-Which concepts from these chapters still apply when an agent is acting on your behalf? Which become obsolete? Which take on new meaning?
+- Users **satisfice** rather than optimize: pick the first option that clears the bar, then stop looking
+- **Defaults** matter enormously: most users never change them
+- **Framing effects**: how a choice is presented changes what people choose, independent of the options themselves
+- Combine satisficing + defaults + ordering, and the designer makes most of the user's decisions *before the user arrives*
 
-## Small Group Discussion
+##
 
-**Whose model wins:**
-Perception relies on user expectations. Motor control relies on learned patterns. Cognition relies on mental models. All three are slow to change. New technologies (VR, voice, AI agents, brain-computer interfaces) ask users to update all three simultaneously. 
+::: {.callout-tip title="In the wild"}
+![](fiDecisionMaking.jpeg)
+:::
 
-Why do some new interaction paradigms succeed (touchscreens) while others struggle (3D TV, Google Glass)? Is it about the technology, or about how much it asks the user to relearn?
+## [Concept check]{.r-fit-text}
 
-## Small Group Discussion
+::: {.callout-note title="Pause and think"}
+A cookie banner: bright "Accept all" button, grey "Manage preferences" link, pre-expanded benefits copy. Name every concept from today's lecture it exploits (there are at least four).
+:::
 
-**Ethics of understanding people:**
-Every concept in these chapters can be used to help users or to exploit them. Saliency directs attention, but to what? Fitts' Law makes targets easier to hit, including ones you didn't mean to. Defaults reduce decision load, and shape outcomes. 
+<!-- ~30 min -->
 
-Is there a meaningful distinction between "designing for human limitations" and "designing to exploit them"? Who decides?
+# Discussions
 
-## Small Group Activity
+## What if the non-ideal user were the default?
 
-something using Google Material Design
+The chapters describe perception, motor control, and cognition as they work in healthy, rested young adults. Real users are tired, stressed, multitasking, aging, disabled, or under load from the rest of their lives.
 
-## Small Group Activity
+*Microsoft's Inclusive Design toolkit argues disability is contextual — a parent holding a baby has one working arm. If state effort means the "same" task costs a degraded user more, is the standard-user assumption underneath every law in this lecture a simplification or a defect?*
 
-something related to perception, motor control, cognition design decisions in AI tools 
+## Which of these concepts survive AI agents?
 
----
+All three chapters assume the user does the perceiving, moving, and thinking. AI agents now do some of this on the user's behalf.
+
+*Fitts' Law is meaningless to an agent calling an API — but the human still verifies what the agent did. Which concepts become obsolete, which migrate to the verification step, and which take on entirely new meaning?*
+
+## Why do some interaction paradigms win and others die?
+
+Perception relies on expectations, motor control on learned patterns, cognition on mental models — all three slow to change. New technologies (VR, voice, AI agents, BCIs) ask users to update all three at once.
+
+*Touchscreens succeeded; 3D TV and Google Glass struggled. Is it the technology, or how much relearning it demands — and can this framework predict whether conversational AI sticks?*
+
+## Is "designing for human limitations" different from exploiting them?
+
+Saliency directs attention — to what? Fitts' Law makes targets easier to hit — including ones you didn't mean to. Defaults reduce decision load — and shape outcomes.
+
+*You just watched the cookie-consent slide use today's vocabulary as an attack toolkit. Propose a test that separates help from exploitation — then decide who gets to administer it.*
+
+# Activities
+
+## Activity 1: Reverse-Engineer Material Design (~35 min)
+
+**Task** — In groups of 3–4, pick two components from Google's Material Design 3 spec (m3.material.io): one obvious (buttons, dialogs), one less so (chips, bottom sheets). Identify which perception and motor-control principles from today the spec is silently enforcing.
+
+**Produce** — A two-column table: *spec rule* (48dp minimum touch target, elevation levels, 8dp spacing grid) → *the human mechanism it serves* (Fitts' Law, common-area grouping, signifiers, saliency budget). Minimum 6 rows, plus one spec rule you think is wrong or overcautious — with your argument.
+
+**Time** — 25 min group work · 10 min share-out
+
+**Debrief** — What did Material get right that flat design got wrong? What does the spec still leave to designer judgment?
+
+## Activity 2: AI Interface Audit (~40 min)
+
+**Task** — In groups of 3–4, pick one AI tool you actually use (ChatGPT, Claude, Copilot, Gemini). Walk one real task through it and audit the *interface* — not the model — against today's concepts: What's salient? What signifies what the tool can do? What must the user hold in working memory? What's the default, and who does it serve?
+
+**Produce** — An annotated screenshot (or quick sketch) marking 5+ findings, each labeled with the concept it violates or exploits — plus the single worst finding rewritten as a design recommendation.
+
+**Time** — 25 min audit · 10 min design discussion · 5 min share-out
+
+**Debrief** — What did every group find regardless of tool? Is that convergence a paradigm problem rather than a product problem?
 
 {{< include endMatter.md >}}
-
