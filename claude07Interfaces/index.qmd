@@ -10,7 +10,7 @@ Part V of @Hornbaek2025
 # Intro
 User interfaces are the only part that real people interact with in real settings doing real "tasks". Therefore, the study of user interfaces has contributions from computer science, electrical engineering, design, and psychology.
 
-## Ways of seeing interfaces
+## Forms
 - Englebart: specified augmenting human intellect
 - Shneiderman: identified direct manipulation
 - Weiser: stipulated that the interface should *disappear*
@@ -104,7 +104,7 @@ Common trade-offs include
 :::
 
 ## Design space analysis
-The *design space* is everything that matters in a design---analyzing it occurs at different unit levels
+The design space is all that matters in a design---analyzing it occurs at different unit levels
 
 - Morphological analysis considers technical variables constituting an interface
 - Joint system analysis considers the parameters of the joint human-computer experience
@@ -126,7 +126,7 @@ Input devices sense user movements and states while interaction techniques help 
 
 ## Example: Fitts's law in menu bars
 - Fitts's law predicts the time it takes to point at something based on the something's size and distance, formalized as
-- $$T=a+b \log_2\left(\frac{2D}{W}\right)$$
+- $$T=a+b \log_2\left(\frac{D}{W}+1\right)$$
 - where $a$ and $b$ are empirically discovered constants, $D$ is distance, and $W$ is width (size)
 - If a menu bar is at the top of the display, an item on it has effectively infinite size (width) because, no matter how hard you drive the input device (e.g., mouse or trackpad), it is stopped by the display edge
 
@@ -166,11 +166,11 @@ Input devices sense user movements and states while interaction techniques help 
 - Especially useful for continuous sensing, such as a mouse
 
 ## The €1 filter
-- @Casiez2012 found an elegant solution named, adorably, the €1 (one Euro) filter
+- Casiez et al. [@Casiez2012] found an elegant solution named, adorably, the €1 (one Euro) filter
 - Idea: shrink $\alpha$ as the cursor moves faster
   $$\alpha=\frac{1}{1+\frac{\tau}{T_e}}$$
 - Move quickly and the cursor stays responsive; move slowly and accuracy stays high
-- The book goes into a bit more detail
+- The book gives the remaining equations, but they are garbled in my copy, so trust the intuition over the typesetting
 
 ::: {.notes}
 The €1 filter is genuinely worth showing students because it is short enough to implement in an afternoon and is used widely in gesture and touch systems.
@@ -231,9 +231,6 @@ Three recurring issues summarize the whole sensing pipeline
 - The CRT paints pixels in a raster scan; combining the pen's light sensor with the scan's timing reveals the tip's location
 - Famously used to select links in an early hypertext system
 
-## SAGE: the most expensive US gov't project of the 1950s
-![light guns pointed SAGE displays](fiSageConsoles.png)
-
 ## Direct control: resistive touchscreen
 - Two flexible sheets separated by an insulator (e.g., an air gap)
 - Pressing them together at a point completes horizontal and vertical traces, locating the touch
@@ -258,9 +255,6 @@ Three recurring issues summarize the whole sensing pipeline
 - Move the mouse on a table and the cursor mirrors the motion
 - Evolution of the mechanism: two wheels $\to$ rolling ball $\to$ optical sensors (no moving parts)
 - Usually carries buttons and a scroll wheel to provide extra information
-
-## The first mouse
-![The earliest mouse was built by Bill English from Doug Englebart's sketches](fiFirstMouse.jpg)
 
 ## Indirect control: touchpad
 - Move a fingertip on a surface (resistive or capacitive) to drive the cursor
@@ -287,9 +281,6 @@ Three recurring issues summarize the whole sensing pipeline
 - *Switch bouncing*: contacts chatter before settling, risking false extra triggers
 - Fixed with *debouncing*, in hardware or software
 - Eyebrow switches let some nonspeaking users with motor disabilities communicate---but they are noisy and error-prone, and interfaces must be designed accordingly
-
-## A classroom switch kit retails for £2,400
-![Some colorful switches for accessibility](fiSwitches.png)
 
 ## Accelerometers and gyroscopes
 - An **accelerometer** measures the rate of change of velocity
@@ -325,9 +316,6 @@ Three recurring issues summarize the whole sensing pipeline
 - The eye--mind hypothesis: what people look at is what they are thinking about---so gaze can proxy for attention (given a suitable task)
 - Used in market research, usability testing, and eye-typing (Ch 26)
 
-## A $20,000 pair of Tobii eye tracking glasses
-![A man wears eyetracking glasses](fiTobiiGlasses.png)
-
 ## Hand and finger tracking
 - Estimates the location of hands and fingers in 3D space
 - Optical markers on the hands, tracked by high-resolution cameras, give high-accuracy, low-latency data---the research workhorse (e.g., studying mid-air 10-finger typing)
@@ -338,14 +326,6 @@ Three recurring issues summarize the whole sensing pipeline
 - A *microphone array* localizes sound, enabling location-directed feedback
 - Fun aside: the 1986 Famicom *Legend of Zelda* used the controller's microphone---shout and certain big-eared enemies vanish---long before speech recognition was feasible
 - Speech recognition turns utterances into hypotheses of what was said: isolated words or continuous phrases, used for voice control and dictation
-
-##
-
-::: {.callout-note title="Aside: contemporary speech recognition"}
-- Whisper has been a popular AI speech to text solution recently
-- Dozens of vibe-coded GUI wrappers around Whisper can be found on GitHub
-- But ... iOS 27's built in speech recog engine beats Whisper on most benchmarks
-:::
 
 ## Expanding the limits of sensing
 - Early input was switch-based: a mechanical switch is highly certain, rarely triggered by accident
@@ -365,7 +345,7 @@ Three recurring issues summarize the whole sensing pipeline
 - Each offers different opportunities and challenges---no device is best for every interaction context
 
 # Displays (Ch 25)
-- A pure display is an output device: it transfers information from the system to the user
+- A display is an output device: it transfers information from the system to the user
 - Covers visual screens, haptic (feel) devices, audio---anything rendering information in a modality humans perceive
 - Defining objective: transform digital information into analog information that people can accurately perceive
 - It must match the human perceptual system---no point rendering sound we cannot hear or detail finer than the eye can resolve
@@ -509,18 +489,6 @@ Encoding starts by asking what *type* of value we are showing
   - inFORM: a $30\times30$ grid of motorized pins users can touch, push, and explore---buttons, handles, dynamic widgets
 - **Digital fabrication** (e.g., the FreeD milling tool) treats making physical objects as a form of output
 
-##
-
-::: {.callout-note title="Aside: A display used to scam"}
-![the docuPAD is a large table-top interactive display](fiDocuPad.png)
-:::
-
-##
-
-::: {.callout-note title="Aside: Gemini's take on docuPAD"}
-![Gemini display of docuPAD search results](fiDocuPadBenefits.png){width="60%"}
-:::
-
 ## Summary of Ch 25
 - Displays turn digital information into physical phenomena users can perceive accurately
 - The key consideration is matching the display to human perception---a poor match means information is perceived wrongly or not at all
@@ -548,7 +516,6 @@ Interaction techniques help users
 - It builds a Voronoi diagram over the targets, so every pixel maps to exactly one target
 - Selection time dropped from 1.25 s (point cursor) to 0.9 s
 - But the benefit vanishes as targets get denser---an empirical study reveals the technique's operating range
-- ![A Voronoi Diagram](fiVoronoiDiagram.png){width="40%"}
 :::
 
 ## Why we need interaction techniques
@@ -584,7 +551,7 @@ Common objectives: performance, experience, learnability, mobility, ergonomics, 
   $$v_{out}=f_{CD}(v_{in})\times v_{in}$$
 - A fixed gain forces a compromise: low gain cannot reach distant targets without clutching; high gain cannot hit a single pixel
 - So most gain functions are **speed-dependent**---up to 24% faster than a constant gain
-- @Casiez2011 reverse-engineered the gain curves in shipping operating systems and found large, surprising differences
+- Casiez and Roussel [@Casiez2011] reverse-engineered the gain curves in shipping operating systems and found large, surprising differences
 
 ## Selection and manipulation
 - Simple selection is usually a click or tap---but the target may be small, occluded by the finger, or hard to hold still
@@ -669,14 +636,14 @@ Common objectives: performance, experience, learnability, mobility, ergonomics, 
 - Design should incentivize starting and persisting, not just ultimate performance
 
 # Commands and navigation (Ch 27)
-- The words attached to tools and systems matter---@Chapanis1965 flagged this over 50 years ago
+- The words attached to tools and systems matter---Chapanis [@Chapanis1965] flagged this over 50 years ago
 - A wrong word sends a user to the wrong option; poor organization sends them to the wrong place
 - Two styles of interface here
   - **Commands**: the user issues instructions (central concern: *naming*)
   - **Navigation**: the user explores to discover commands and information (central concern: *organization*)
 
 ## Naming objects and actions
-- The **vocabulary problem** [@Furnas1987]: ask two people to name a command and they agree with probability less than $0.2$
+- The **vocabulary problem** (Furnas et al. [@Furnas1987]): ask two people to name a command and they agree with probability less than $0.2$
 - So no single command name works well for many users
 - Useful concepts
   - *Information scent*: how well a word suggests what it leads to
@@ -756,7 +723,7 @@ A design vocabulary for discussing a notation's qualities
 - **Recognition** ("knowledge in the world"): pick a relevant item from a set (what menus do)
 - **Recall** ("knowledge in the head"): produce a name spontaneously (what web search does)
 - Recognition is easier; recall scales and costs no display space but needs practice
-- @Sparrow2011 found that believing information had been saved made people remember it worse
+- Sparrow et al. [@Sparrow2011]: believing information had been saved made people remember it worse
 - Neither commands nor navigation is universally better---it depends on users, tasks, and context
 
 ## Summary of Ch 27
@@ -809,14 +776,14 @@ Shneiderman's three properties [@Shneiderman1983]
 - The canonical example: drag a file's icon to the trash can
 
 ## What makes interaction "direct"?
-- @Hutchins1985: $\text{directness} = \text{distance} + \text{engagement}$
+- Hutchins et al. [@Hutchins1985]: $\text{directness} = \text{distance} + \text{engagement}$
 - **Distance**: the mental effort to translate goals into actions and evaluate results (Norman's gulfs of execution and evaluation)
 - **Engagement**: feeling like an agent acting directly in a *model world*, not shouting commands to an intermediary in another room
 - Benefits: recognition over recall, concrete metaphors, and pointing over typing
 
 ## Limits of direct manipulation
 - Not a panacea---a poorly designed GUI makes visual search the bottleneck, and pointing can be slower than typing
-- @Frohlich1993: the empirical evidence is mixed; design and task together decide whether low distance pays off
+- Frohlich [@Frohlich1993]: the empirical evidence is mixed; design and task together decide whether low distance pays off
 - Hard cases: referring to previous actions, repetitive actions (scripting wins), and concurrent actions (only one pointer)
 
 ## Anatomy of a GUI
@@ -835,12 +802,6 @@ Shneiderman's three properties [@Shneiderman1983]
 - **Visual hierarchy**: use cues (proximity, common region, color) to group elements and signal reading order---the Gestalt laws help
 - **Grid lines** are the most important organizing principle; *grid alignment* correlates with perceived complexity (fewer grid lines look simpler)
 - **Visual guidance**: match visual flow to the task flow; avoid *perceptual clutter*; use negative (white) space to guide attention
-
-##
-
-::: {.callout-note title="Aside: influential perceptual principles"}
-![The word Gestalt spelled out with Gestalt principles](fiGestaltPrinc1.png){width="75%"}
-:::
 
 ## Icons and metaphors
 - An icon may be overloaded: object, action, target, and status all at once (the trash can again)
@@ -862,7 +823,7 @@ Shneiderman's three properties [@Shneiderman1983]
 # Reality-based interaction (Ch 29)
 - Interfaces have stayed remarkably constant since the 1980s GUI---still keyboards, mice, and WIMP
 - The desktop paradigm assumes a stationary user, one user at a time, indirect input, and no special role for the surroundings
-- **Reality-based interaction** [@Jacob2008] states positive aims via four human capabilities to exploit
+- **Reality-based interaction** (Jacob et al. [@Jacob2008]) states positive aims via four human capabilities to exploit
   - Naive physics, body awareness and skills, environment awareness and skills, and social awareness and skills
 
 ## Four interfaces that break desktop assumptions
@@ -874,7 +835,7 @@ Shneiderman's three properties [@Shneiderman1983]
 ##
 
 ::: {.callout-note title="Aside: an early vision of ubiquitous computing"}
-- @Weiser1991 imagined computing at three scales---*tabs, pads, boards*---matching the surfaces already in a room
+- Weiser [@Weiser1991] imagined computing at three scales---*tabs, pads, boards*---matching the surfaces already in a room
 - ParcTab: a palm-sized device used as a remote pointer, for voting, and for context-aware paging
 - ParcPad: a "scrap computer" to be grabbed when needed
 - LiveBoard: a large pen-input surface for informal, multi-user meetings
@@ -895,7 +856,7 @@ Shneiderman's three properties [@Shneiderman1983]
 ## Small-screen interaction
 - The viewport is smaller than the content---panning and zooming are essential
 - Fingers occlude the display: which pixel did you mean?
-- @Holz2010 found users aim using the finger's *perceived* outline and nail, from an imagined top-down view---a systematic bias software can correct
+- Holz and Baudisch [@Holz2010] found users aim using the finger's *perceived* outline and nail, from an imagined top-down view---a systematic bias software can correct
 - Techniques: touch offset, caret offset, the magnifying glass
 - Small screens raise real accessibility issues for aging users and those with impairments
 
@@ -952,12 +913,6 @@ Shneiderman's three properties [@Shneiderman1983]
   - Control is always fully physical
   - Physical representations both reflect the model and act as controls
 
-##
-
-::: {.callout-note title="The MVC paradigm"}
-![model view controller diagram](fiMVCregisFrey.png){width="40%"}
-:::
-
 ## Pros and cons of tangible UIs
 - Pros
   - Leverage hand and body skills; support parallel and multi-user work (space-multiplexing)
@@ -974,7 +929,7 @@ Shneiderman's three properties [@Shneiderman1983]
 - The key insight: rapid response to head motion matters more than stereoscopy (the kinetic depth effect)
 
 ## The reality--virtuality continuum
-- @Milgram1994: virtual and real form a *graded* relationship, not all-or-none
+- Milgram and Kishino [@Milgram1994]: virtual and real form a *graded* relationship, not all-or-none
 - Real environment → augmented reality → augmented virtuality → virtual environment
 - They defined six interface classes (a monitor "window on the world", immersive video, optical see-through, video see-through, and so on)
 - The continuum overemphasizes vision---MR can also be auditory or haptic; *substitutional reality* replaces a real object with a virtual one
@@ -1004,10 +959,10 @@ Shneiderman's three properties [@Shneiderman1983]
   - Users fatigue quickly when holding their arms up
 
 ## Should we imitate reality or go beyond it?
-- @Hollan1992 questioned the "belief in the efficacy of imitating face-to-face communication"
+- Hollan and Stornetta [@Hollan1992] questioned the "belief in the efficacy of imitating face-to-face communication"
 - Their analogy: a *crutch* makes the best of a bad situation; a *shoe*---especially a running shoe---enhances our natural condition
 - So interfaces can *enhance, compensate, and augment*, not just mimic
-- @Willett2022 borrowed "superpowers" from science fiction; @Won2015 let people control a third arm in VR within five minutes
+- Willett et al. [@Willett2022] borrowed "superpowers" from science fiction; Won et al. [@Won2015] let people control a third arm in VR within five minutes
 - Mimicking reality is a great starting point but a limiting general strategy
 
 ## Summary of Ch 29
