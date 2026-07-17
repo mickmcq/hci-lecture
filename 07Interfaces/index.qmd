@@ -376,11 +376,23 @@ Three recurring issues summarize the whole sensing pipeline
 - SensaBubble shoots scented bubbles you can project information onto until they burst
 - The tongue-display unit (1969): a $12\times12$ electrode array renders visual information on the tongue, which is packed with receptors
 
+##
+
+::: {.callout-note title="Aside: A contemporary tongue display artifact"}
+![A rice-grain sized molecular chemistry model to be put on the tongue of a blind chemist](fiChemicalModel.png){width="50%"}
+:::
+
 ## Why displaying a battery level is surprisingly hard
 - A rainbow color scale is a poor choice---colors have no natural ordering
 - Different hues (red, yellow, blue) do not convey quantity
 - Color *value* (intensity) is better in principle, but halving the RGB value is not perceived as half
 - The lesson: even a trivial-seeming display decision is complex (tools like ColorBrewer help)
+
+##
+
+::: {.callout-note title="Aside: The ColorBrewer web interface"}
+![ColorBrewer2.org](fiColorBrewer.png){width="40%"}
+:::
 
 ## Encoding and rendering
 - **Encoding** turns digital information into something a display can show
