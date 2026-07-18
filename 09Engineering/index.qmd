@@ -152,6 +152,10 @@ An interactive system can
 Three examples of the wider systems HCI must consider: O'Hara et al. let surgeons interact with image data by gesture in sterile settings, which required attending to the sociotechnical realities of surgery; Su and Liu moved a hospital off paper nursing forms by first understanding existing processes and information flows; Pu et al. sensed whole-home gestures from Wi-Fi Doppler shifts, benefiting the wider system (the house) by using an existing subsystem (its network).
 :::
 
+##
+
+![A simple interactive system: a user coupled to a computer, embedded in a context, relying on sensor, display, and computation subsystems.](fiInteractiveSystem.png){width="82%"}
+
 ## Systems thinking
 - *Systems thinking* is a holistic approach for reasoning about systems---not how to *build* one, but how to consider its important aspects
 - It arose in engineering as system design became a cross-disciplinary team activity spanning the whole *lifecycle*: design, integration, management, maintenance, and disposal
@@ -199,6 +203,30 @@ PreHeat senses and predicts room usage to heat homes more efficiently. It weaves
 - **System diagram**: how data are stored, transformed, and sequenced through activities and states
 - **Process diagram**: serial and parallel steps---the flow chart and swim-lane diagram are examples
 - **Communication diagram**: the flow of information between people or entities
+
+##
+
+![*Task diagram*: a hierarchy of tasks, each augmented with a plan for its steps and dependencies (here, updating software in an organization).](fiTaskDiagram.png){width="80%"}
+
+##
+
+![*Information diagram*: a hierarchy of documents and how they relate.](fiInformationDiagram.png){width="66%"}
+
+##
+
+![*Organizational diagram*: people and roles---here, sysadmins and engineers form a cross-disciplinary DevOps team.](fiOrgDiagram.png){width="80%"}
+
+##
+
+![*System diagram*: the flow of data between activities (top) and the states and transitions of the process (bottom).](fiSystemDiagram.png){width="58%"}
+
+##
+
+![*Process diagram*: a swim-lane flow chart, with lanes for each role and bars marking forks and joins.](fiProcessDiagram.png){width="82%"}
+
+##
+
+![*Communication diagram*: the numbered flow of information between people deciding whether to approve a software update.](fiCommunicationDiagram.png){width="78%"}
 
 ## Principles for legal and ethical systems
 - Systems thinking pushes us to look *beyond technology*: deployed systems must be lawful and must not cause harm
@@ -311,6 +339,10 @@ Running example used throughout the chapter: a wearable device that couples affe
 - A common mistake: jumping to the *how* before understanding the *what*
 - Two modeling tools: **function structures** and **FAST diagrams**
 
+##
+
+![Design engineering as information processing: requirements and design resources feed a *transformation* from functional description to detailed description to a working system, closed by verification and validation.](fiInfoProcessing.png){width="72%"}
+
 ## Function structures
 - Describe each function as an active verb plus a noun---"push button," "select shape"
 - Start from the *overall function*, modeling its interaction with the environment as flows of *energy, materials, and signals*
@@ -318,12 +350,36 @@ Running example used throughout the chapter: a wearable device that couples affe
 - Sometimes the *user* sits inside the boundary, performing functions the whole depends on
 - Structures *nest*: `Couple Affection` breaks into supplying energy, sensing, modulating, sending, receiving, and displaying affection
 
+##
+
+![The overall function with flows of energy, materials, and signals; the rounded rectangle is the technical boundary of the system.](fiFunctionStructure.png){width="72%"}
+
+##
+
+![Nesting the overall function: four main functions and the flows of energy, materials, and signals between them.](fiFunctionBreakdown.png){width="60%"}
+
+##
+
+![The affection device's overall function, `Couple Affection`, decomposed into sensing, modulating, sending, receiving, and displaying affection.](fiAffectionDecomp.png){width="80%"}
+
 ## FAST diagrams
 - *FAST* = function analysis system technique
 - The horizontal axis is *abstraction*: functions to the left are more abstract, to the right more concrete
 - The vertical axis is *time*: the ordering of functions
 - Read left-to-right it answers "*how* do you carry out this function?"; right-to-left, "*why*?"
 - `Couple Affection` → `Communicate Affection` and `Perceive Affection` → `Sense User Action`, `Modulate Signal`, `Transmit Signal`...
+
+##
+
+![The grammar of a FAST diagram: abstraction runs left (why) to right (how); the vertical axis is time.](fiFastGrammar.png){width="70%"}
+
+##
+
+![A high-level FAST diagram for the affection device---`Couple Affection` decomposed left-to-right into ever more concrete functions.](fiFastDiagram.png){width="70%"}
+
+##
+
+![FAST diagrams also drive *lifecycle analysis*---decomposing every phase from procuring parts through use, support, and disposal.](fiLifecycleFast.png){width="42%"}
 
 ## Controllable and uncontrollable parameters
 - Functions can be tagged with *parameters*, driving another pass at the requirements
@@ -339,12 +395,24 @@ Running example used throughout the chapter: a wearable device that couples affe
 - Generate *combinations* by picking one carrier per function
 - With $n$ functions each mapping to $k$ solutions there are $k^n$ combinations---too many to enumerate, so judgment selects a promising subset
 
+##
+
+![A *morphological chart*: each row maps a function to candidate carriers; a combination picks one per row (here, battery + touch + LEDs).](fiMorphChart.png){width="56%"}
+
 ## Concept selection
 - Score each concept against weighted *criteria*
 - Each criterion gets a weighting (1--5); each concept is scored (1--5) per criterion; multiply and sum
 - Final score is a linear combination $c_1 v_1 + c_2 v_2 + \cdots + c_n v_n$
 - Calibrate against an *ideal* concept (perfect on every criterion) or a *datum* (an existing or competitor product)
 - Converting a raw quantity (battery life, weight) into a value uses a mapping function---linear, reversed, nonlinear, or discrete
+
+##
+
+![Two concepts scored against weighted criteria, with an ideal for calibration. Concept 2 wins on aggregate (36 vs 28)---yet scores worst on *accuracy*, the highest-weighted criterion.](fiConceptScoring.png){width="72%"}
+
+##
+
+![Mapping a raw quantity to a value: a zero-intercept linear function (left), a reversed one for a quantity like weight (middle), and a nonlinear function (right).](fiQuantityValue.png){width="86%"}
 
 ## Use scores with caution
 - Scoring is simple and ties the design directly to the requirements---but it is *error-prone*
@@ -369,6 +437,10 @@ Running example used throughout the chapter: a wearable device that couples affe
   - **Use**: performance vs generalizability vs flexibility
   - **Post-production**: service, part replacement, and software upgrades
 - Function structure models make this early modularization easy
+
+##
+
+![A computer peripheral's function structure, clustered by functional affinity into four modules: user-interface board, logic board, power cord and transformer, and software driver.](fiPeripheral.png){width="62%"}
 
 ## Embodiment and detailed design
 - **Embodiment design** follows the chosen concept: design sketches, prototypes, component layouts, and the identification of critical software modules and electronics
