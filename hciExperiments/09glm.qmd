@@ -43,8 +43,8 @@ Analyze Pref by Sex using multinomial logistic regression, aka nominal logistic 
 The annotation `type=3` is borrowed from SAS and refers to one of three ways of handling an unbalanced design. This experimental design is unbalanced because there are more males than females being tested. This way of handling the unbalanced design is only valid if there are significant interactions, as hinted by the gross differences between the preceding histograms.
 
 ```{r}
-library(nnet) # provides multinom()
-#. library(car) # provides Anova()
+pacman::p_load(nnet) # provides multinom()
+#. pacman::p_load(car) # provides Anova()
 #. set sum-to-zero contrasts for the Anova call
 contrasts(prefsABCsex$Sex) <- "contr.sum"
 m<-multinom(Pref~Sex, data=prefsABCsex)
@@ -125,8 +125,8 @@ The boxplots (these are Tufte-style boxplots) are not encouraging. We may not fi
 We analyze Effort Likert ratings by Technique using ordinal logistic regression.
 
 ```{r}
-#. library(MASS) # provides polr()
-#. library(car) # provides Anova()
+#. pacman::p_load(MASS) # provides polr()
+#. pacman::p_load(car) # provides Anova()
 srchscrlvce$Effort <- ordered(srchscrlvce$Effort)
 #. set sum-to-zero contrasts for the Anova call
 contrasts(srchscrlvce$Technique) <- "contr.sum"
@@ -172,7 +172,7 @@ These boxplots are very encouraging. There appears to be a clear difference betw
 Now verify that these data are Poisson-distributed with a goodness-of-fit test for each technique. If the results are *not* significant, we expect that the data do not deviate significantly from what we would expect of a Poisson distribution.
 
 ```{r}
-#. library(fitdistrplus)
+#. pacman::p_load(fitdistrplus)
 fit<-fitdist(srchscrlvce[srchscrlvce$Technique == "Search",]$Errors,
               "pois", discrete=TRUE)
 gofstat(fit)
@@ -201,7 +201,7 @@ Because the Analysis of Deviance table shows a significant $\chi^2$ value and co
 conduct pairwise comparisons among levels of Technique.
 
 ```{r}
-#. library(multcomp)
+#. pacman::p_load(multcomp)
 summary(glht(m, mcp(Technique="Tukey")), test=adjusted(type="holm"))
 ```
 

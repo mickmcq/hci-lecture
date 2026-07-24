@@ -48,7 +48,7 @@ then supply those to a K-S test with the lognormal distribution fn (see ?plnorm)
 See ?distributions for many other named probability distributions.
 
 ```{r}
-library(MASS)
+pacman::p_load(MASS)
 fit <- fitdistr(ide2[ide2$IDE == "VStudio",]$Time,
 	       "lognormal")$estimate
 ks.test(ide2[ide2$IDE == "VStudio",]$Time, "plnorm",
@@ -59,7 +59,7 @@ ks.test(ide2[ide2$IDE == "Eclipse",]$Time, "plnorm",
 	meanlog=fit[1], sdlog=fit[2], exact=TRUE)
 
 #. tests for homoscedasticity (homogeneity of variance)
-library(car)
+pacman::p_load(car)
 leveneTest(Time ~ IDE, data=ide2, center=mean) # Levene's test
 leveneTest(Time ~ IDE, data=ide2, center=median) # Brown-Forsythe test
 
@@ -106,7 +106,7 @@ t.test(logTime ~ IDE, data=ide2, var.equal=TRUE)
 ## Mann-Whitney U test
 
 ```{r}
-library(coin)
+pacman::p_load(coin)
 wilcox_test(Time ~ IDE, data=ide2, distribution="exact")
 wilcox_test(logTime ~ IDE, data=ide2, distribution="exact") # note: same result
 ```
@@ -169,10 +169,10 @@ m <- aov(logTime ~ IDE, data=ide3) # fit model
 anova(m) # report anova
 
 #. post hoc independent-samples t-tests
-library(multcomp)
+pacman::p_load(multcomp)
 summary(glht(m, mcp(IDE="Tukey")), test=adjusted(type="holm")) # Tukey means compare all pairs
 #. note: equivalent to this using lsm instead of mcp
-library(emmeans)
+pacman::p_load(emmeans)
 summary(glht(m, lsm(pairwise ~ IDE)), test=adjusted(type="holm"))
 ```
 
@@ -195,10 +195,7 @@ ec.py <- wilcox.test(ide3[ide3$IDE == "Eclipse",]$Time,
 p.adjust(c(vs.ec$p.value, vs.py$p.value, ec.py$p.value), method="holm")
 
 #. alternative approach is using PMCMRplus for nonparam pairwise comparisons
-if (!require(PMCMRplus)) {
-  install.packages("PMCMRplus",dependencies=TRUE)
-  library(PMCMRplus)
-}
+pacman::p_load(PMCMRplus)
 kwAllPairsConoverTest(Time ~ IDE, data=ide3, p.adjust.method="holm")
 ```
 

@@ -7,10 +7,10 @@ format:
   html:
     toc: true
     embed-resources: true
-    include-in-header: \pgfplotsset{compat=1.18}
+    css: victormono.css
 bibliography: master.bib
 mainfont: Tex Gyre Schola
-monofont: JetBrainsMono Nerd Font
+monofont: VictorMono Nerd Font
 mathfont: Tex Gyre Schola Math
 ---
 
@@ -20,9 +20,9 @@ These course notes are an example of *reproducible research* and *literate progr
 
 
 ```{r}
+install.packages("pacman") # install a package manager
+pacman::p_load(tidyverse, ggthemes) # use the package manager to install a large bundle of packages, the tidyverse, and another package, ggthemes
 options(readr.show_col_types=FALSE) # supress column type messages
-library(tidyverse)
-library(ggthemes)
 ```
 
 {{< include 01proportions.qmd >}}

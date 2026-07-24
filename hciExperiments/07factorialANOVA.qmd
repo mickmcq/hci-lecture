@@ -73,10 +73,7 @@ with(mbltxt,
 This is to ensure that counterbalancing worked.
 
 ```{r}
-if (!require(ez)) {
-  install.packages("ez",dependencies=TRUE)
-  library(ez)
-}
+pacman::p_load(ez)
 m <- ezANOVA(dv=WPM,
             between=Keyboard,
             within=Posture_Order,
@@ -232,10 +229,7 @@ with(mbltxt,
 ## Aligned Rank Transform on Error_Rate
 
 ```{r}
-if (!require(ARTool)) {
-  install.packages("ARTool",dependencies=TRUE)
-  library(ARTool) # for art, artlm
-}
+pacman::p_load(ARTool) # for art, artlm
 m <- art(Error_Rate ~ Keyboard * Posture + (1|Subject), data=mbltxt) # uses LMM
 anova(m) # report anova
 ```
@@ -260,7 +254,7 @@ with(mbltxt,
 ## Conduct post hoc pairwise comparisons within each factor
 
 ```{r}
-#. library(emmeans) # instead of lsmeans
+#. pacman::p_load(emmeans) # instead of lsmeans
 #. for backward compatibility, emmeans provides an lsmeans() function
 lsmeans(artlm(m, "Keyboard"), pairwise ~ Keyboard)
 lsmeans(artlm(m, "Posture"), pairwise ~ Posture)
@@ -273,7 +267,7 @@ and you can't just grab aligned-ranks for manual $t$-tests. instead, use `testIn
 from the `phia` package to perform "interaction contrasts." See `vignette("art-contrasts")`.
 
 ```{r}
-library(phia)
+pacman::p_load(phia)
 testInteractions(artlm(m, "Keyboard:Posture"),
                  pairwise=c("Keyboard", "Posture"), adjustment="holm")
 ```

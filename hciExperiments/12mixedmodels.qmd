@@ -31,9 +31,9 @@ plyr::ddply(ws,~Engine,summarize,avg=mean(Searches))
 Conduct a linear mixed model analysis of variance on Search by Engine and report the $p$-value.
 
 ```{r}
-library(lme4) # for lmer
-library(lmerTest)
-#. library(car) # for Anova
+pacman::p_load(lme4) # for lmer
+pacman::p_load(lmerTest)
+#. pacman::p_load(car) # for Anova
 contrasts(ws$Engine) <- "contr.sum"
 m <- lmer(Searches ~ Engine + (1|Subject), data=ws)
 Anova(m, type=3, test.statistic="F")
@@ -42,7 +42,7 @@ Anova(m, type=3, test.statistic="F")
 Conduct simultaneous pairwise comparisons among all levels of Engine, despite the previous $p$-value. Report the adjusted(by Holm's sequential Bonferroni procedure) $p$-values.
 
 ```{r}
-#. library(multcomp)
+#. pacman::p_load(multcomp)
 summary(glht(m, mcp(Engine="Tukey")),
 	test=adjusted(type="holm")) # Tukey means compare all pairs
 ```
@@ -73,9 +73,9 @@ out
 Conduct a linear mixed model analysis of variance on Valued by Social and Clip. Report the $p$-value of the interaction effect.
 
 ```{r}
-#. library(lme4) # for lmer
-#. library(lmerTest)
-#. library(car) # for Anova
+#. pacman::p_load(lme4) # for lmer
+#. pacman::p_load(lmerTest)
+#. pacman::p_load(car) # for Anova
 contrasts(sv$Social) <- "contr.sum"
 contrasts(sv$Clip) <- "contr.sum"
 m <- lmer(Valued ~ (Social * Clip) + (1|Subject), data=sv)
@@ -85,8 +85,8 @@ Anova(m, type=3, test.statistic="F")
 Conduct planned pairwise comparisons of how the clips may have influenced judgments about the value of social media. Report whether the number of valued posts differed after seeing a positive versus negative clip.
 
 ```{r}
-#. library(multcomp) # for glht
-#. library(emmeans) # for lsm
+#. pacman::p_load(multcomp) # for glht
+#. pacman::p_load(emmeans) # for lsm
 summary(glht(m, lsm(pairwise ~ Social * Clip)),test=adjusted(type="none"))
 p.adjust(c(0.00017,0.59374),method="holm")
 ```
@@ -122,7 +122,7 @@ Anova(m, type=3)
 ```
 
 ```{r}
-#. library(multcomp)
+#. pacman::p_load(multcomp)
 summary(glht(m, mcp(Teaser="Tukey")),
 	test=adjusted(type="holm")) # Tukey means compare all pairs
 ```
@@ -150,7 +150,7 @@ with(vo,interaction.plot(Social,Sex,Vocab,ylim=c(0,max(vo$Vocab))))
 Perform Kolmogorov-Smirnov goodness-of-fit tests on Vocab for each level of Social using exponential distributions.
 
 ```{r}
-#. library(MASS)
+#. pacman::p_load(MASS)
 fit = fitdistr(vo[vo$Social == "Facebook",]$Vocab, "exponential")$estimate
 ks.test(vo[vo$Social == "Facebook",]$Vocab, "pexp", rate=fit[1], exact=TRUE)
 fit = fitdistr(vo[vo$Social == "Twitter",]$Vocab, "exponential")$estimate
@@ -180,7 +180,7 @@ Anova(m, type=3)
 Perform post hoc pairwise comparisons among levels of Social adjusted with Holm's sequential Bonferroni procedure.
 
 ```{r}
-#. library(multcomp)
+#. pacman::p_load(multcomp)
 summary(glht(m, mcp(Social="Tukey")),
 	test=adjusted(type="holm")) # Tukey means compare all pairs
 ```
@@ -198,8 +198,8 @@ summary(ws)
 Conduct an ordinal logistic regression to determine Effort by Engine, using a generalized linear mixed model.
 
 ```{r}
-library(ordinal) # provides clmm
-#. library(RVAideMemoire) # provides Anova.clmm
+pacman::p_load(ordinal) # provides clmm
+#. pacman::p_load(RVAideMemoire) # provides Anova.clmm
 ws2<-data.frame(ws)
 m<-clmm(Effort~Engine + (1|Subject),data=ws2)
 Anova.clmm(m,type=3)
@@ -210,8 +210,8 @@ Perform pairwise comparisons of Engine on Effort.
 ```{r}
 par(pin=c(2.75,1.25),cex=0.5)
 plot(as.numeric(Effort) ~ Engine,data=ws2)
-#. library(lme4)
-#. library(multcomp)
+#. pacman::p_load(lme4)
+#. pacman::p_load(multcomp)
 m <- lmer(as.numeric(Effort)~Engine + (1|Subject), data=ws2)
 summary(glht(m,mcp(Engine="Tukey")),test=adjusted(type="holm"))
 ```

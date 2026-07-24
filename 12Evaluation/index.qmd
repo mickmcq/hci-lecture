@@ -1,0 +1,131 @@
+---
+title: Evaluation (2 of 3)
+subtitle: Human-Computer Interaction
+---
+
+# [Week TWELVE]{.r-fit-text}
+
+Part VIII (b) of @Hornbaek2025 (Ch 43)
+
+# Intro
+I'm going to depart a bit from the textbook this week. This is a result of many years of seeing students struggle with experiments and the vocabulary and technical big picture surrounding them. I'm going to ask you to analyze a bunch old experiments. I'm going to talk about what might lead to these analyses.
+
+# Experiments
+There are many ways of finding things out in the world of HCI. At one time in history, *experiments* were the main way. Now, there are many ways to find things out. @Olson2014, available freely online, catalogs literally dozens of techniques for finding things out in HCI, including experiments.
+
+## How experiments are typically presented
+Experiments are often presented in terms of categories of analysis. For instance:
+
+- One-sample tests of proportions in $n$ categories
+- Chi-square tests
+- Independent samples $t$-test
+- One-way ANOVA
+- Paired samples $t$-test
+- Factorial ANOVA
+- ...
+
+## The problem with the traditional presentation
+- Students don't have a background in data analysis
+- We give them *emergency room data analysis* to help them get through a class
+- Students wind up shying away from conducting experiments or conduct poorly thought out experiments
+
+## An alternative presentation
+- Start with questions the student wants to ask
+- "How many prefer this over that?"
+- "Do these $n$ groups differ in their preference?"
+- What if the data are lopsided?
+- What if we study the same person using different tools?
+- ...
+
+## Assumption
+- You've at least skimmed Chapter 43 of @Hornbaek2025
+- You have a general idea of what an experiment is from reading that chapter
+- What I want to do is to guide you through a series of examples taken from the history of HCI
+- You can use these examples as templates for similar experiments
+- You should keep the zip file I give you handy as a reference
+- It's only a good reference if you first practice with it
+
+# Analyzing an experiment
+
+## First steps
+- First, I want you to download the zip file `hciExperiments.zip`.
+- Next I want you to download two pieces of relevant software: R and RStudio (the process described below)
+- When you unzip the `hciExperiments.zip` file, you will find datasets within it that you can use.
+- You will also find an `index.html` file you can open in a browser to see how the various examples should play out
+- The rest of the week should be spent working through some of the examples in the zip file, so that you can quickly get up to speed when you have your own data.
+
+## The first step is to download and unzip the file
+- Find it under `Files > hciExperiments.zip` in Canvas
+- Download it and move it to a place where you can easily find it, such as a folder named `HCI`
+- Unzip it, which will give you a folder named `hciExperiments` within the above folder
+- You will use this as your working directory so make sure to remember the path to it
+
+## The next step is to install R
+- Google the letter R in a browser---usually one of the first hits is for the R language for data analysis
+- To download R, you have to choose a "mirror", one of the many sites that hosts R
+- Being in Texas, I always choose the mirror in Tennessee, which is the geographically closest to me, but almost any mirror should work
+- If you're on a Mac, be sure to choose the right version, depending on whether you have an Intel or Apple Silicon processor
+
+##
+
+::: {.callout-note title="Why install R?"}
+
+- R is a free, open-source programming language for data analysis
+- Other data analysis software is mostly proprietary, such as SPSS, SAS, and Stata
+- R permits *reproducible research*, which means that you can share your data and the code you used to analyze it as one package that people can use to reproduce your results
+- R is used by most of the world's leading data scientists, so it gets updates faster than proprietary software
+:::
+
+## The next step is to install RStudio
+- Google RStudio in a browser (should lead you to [https://posit.co/products/open-source/rstudio](https://posit.co/products/open-source/rstudio))
+- There are many versions of RStudio available, but the free one is perfect for most purposes
+- The Posit website should autodetect your operating system and offer the right version
+
+##
+
+::: {.callout-warning title="About RStudio installation"}
+- You must install R before you install RStudio, because RStudio's installer will look for an existing installation of R
+- You must install RStudio on your local computer, not in the cloud
+  - If you have a Mac, you must drag the RStudio icon into your /Applications folder and launch it from there, otherwise you won't be able to save your work!
+  - If you're on Windows, it may offer to install in the cloud using Microsoft-specific terminology---you must avoid that
+:::
+
+## Now open the `index.html` file in a browser
+- This is a single page that contains all the examples
+- Down the right side is a table of contents
+- The entries are like "Question you might ask (technical name)"
+- For example, the first entry is "How many prefer this over that? (Tests of proportions)"
+- Nested under that first entry are different, more specific names, such as "How many prefer website A over B? (One sample test of proportions in two categories)"
+
+##
+
+::: {.callout-tip title="Ligatures in the index.html file"}
+
+- The left facing arrow means *gets* as in "The data frame prefsAB *gets* the data in the file `prefsAB.csv`"
+- The reason it's a left facing arrow is because I'm using a feature called *ligatures*. I actually type a less than sign followed by a dash and it's displayed as a single left facing arrow
+- In general, when I type certain pairs of keys, the ligature system in the font combines them into a single character
+- Why? Because I find it easier on the eyes. YMMV
+- There are other ligatures in this file, for example, a double equal sign, obtained by typing two equal signs in a row, is displayed as a very long equal sign. It's a test for equality
+- A single equal sign is an assignment operator, meaning *gets*, just like the left facing arrow
+:::
+
+## The first code chunk
+- The initial code chunk in the file sets some parameters:
+- First, install `pacman`, a package manager
+- Second, use pacman to install or load the tidyverse, a large set of R packages
+- Third, suppress some annoying messages for the duration of the session
+
+## The second code chunk
+- The second code chunk in the file reads the data frame from a file, then examines its *tail* (the last few rows)
+- Notice that the file has to be in your working directory
+- So how do you change your working directory?
+- In RStudio, say Session > Set Working Directory > Choose Directory...
+- I always set it to `~/courses/hci/hciExperiments` when I'm working on this material, but it must be where you unzipped `hciExperiments.zip`
+
+## The rest
+- I'm going to end this lecture here
+- The remaining lectures for this week will toggle between displaying the `index.html` file and the RStudio window
+- As a result, I need you to have completed the steps discussed in this lecture, so you can follow along on the remaining lectures
+
+{{< include endMatter.md >}}
+

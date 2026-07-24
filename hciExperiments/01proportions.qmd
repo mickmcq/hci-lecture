@@ -62,10 +62,7 @@ chisq.test(prfs)
 A multinomial test can test for other than an even distribution across bins. Here's an example with a one third distribution in each bin.
 
 ```{r}
-if (!require(XNomial)) {
-  install.packages("XNomial",dependencies=TRUE)
-  library(XNomial)
-}
+pacman::p_load(XNomial) # install and load a package with the xmulti function
 xmulti(prfs, c(1/3, 1/3, 1/3), statName="Prob")
 ```
 
@@ -125,10 +122,7 @@ where $O_i$ is the observed and $E_i$ is the expected proportion in the $i$th bi
 This situation may occur in small sample sizes. For large sample sizes, both tests give the same conclusion. In our case, we're on the borderline for this rule in the bin where 29 females prefer B. All females would have to prefer B for the rule to dictate a switch to the $G$-test.
 
 ```{r}
-if (!require(RVAideMemoire)) {
-  install.packages("RVAideMemoire",dependencies=TRUE)
-  library(RVAideMemoire)
-}
+pacman::p_load(RVAideMemoire)
 G.test(prfs)
 
 #. Fisher's exact test

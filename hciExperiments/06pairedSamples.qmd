@@ -15,7 +15,7 @@ summary(srchscrl)
 ```
 
 ```{r results="asis"}
-library(xtable)
+pacman::p_load(xtable)
 options(xtable.comment=FALSE)
 options(xtable.booktabs=TRUE)
 xtable(head(srchscrl),caption="First rows of data")
@@ -114,7 +114,7 @@ we need it.
 A wide-format table has one subject in every row. A long-format table has one observation in every row. Most R functions use long-format tables.
 
 ```{r}
-library(reshape2)
+pacman::p_load(reshape2)
 srchscrl.wide.order <- dcast(srchscrl, Subject ~ Order,
 			     value.var="Time")
 ```
@@ -183,10 +183,7 @@ only works for continuous distributions, but Poisson distributions
 are discrete, so use fitdist, not fitdistr, and test with gofstat.
 
 ```{r}
-if(!require(fitdistrplus)) {
-  install.packages("fitdistrplus",dependencies=TRUE)
-  library(fitdistrplus)
-}
+pacman::p_load(fitdistrplus)
 fit = fitdist(srchscrl[srchscrl$Technique == "Search",]$Errors,
 	      "pois", discrete=TRUE)
 gofstat(fit) # goodness-of-fit test

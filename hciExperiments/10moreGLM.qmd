@@ -26,7 +26,7 @@ Anova(m, type=3)
 Now use multinomial regression for the same task and report the corresponding $p$-value.
 
 ```{r}
-#. library(nnet)
+#. pacman::p_load(nnet)
 contrasts(dps$Disability) <- "contr.sum"
 contrasts(dps$Sex) <- "contr.sum"
 m<-multinom(Pref~Disability*Sex, data=dps)
@@ -72,7 +72,7 @@ with(hw,interaction.plot(Recognizer,Hand,Errors,
 Test whether the Errors of each Recognizer fit a Poisson distribution. First fit the Poisson distribution using `fitdist()`, then test the fit using `gofstat()`. The null hypothesis of this test is that the data do not deviate from a Poisson distribution.
 
 ```{r}
-#. library(fitdistrplus)
+#. pacman::p_load(fitdistrplus)
 fit<-fitdist(hw[hw$Recognizer == "A",]$Errors,
               "pois", discrete=TRUE)
 gofstat(fit)
@@ -87,7 +87,7 @@ gofstat(fit)
 Now use Poisson regression to examine Errors by Recommender and Hand. Report the $p$-value for the Recognizer$\times$Hand interaction.
 
 ```{r}
-#. library(car)
+#. pacman::p_load(car)
 contrasts(hw$Recognizer) <- "contr.sum"
 contrasts(hw$Hand) <- "contr.sum"
 m<-glm(Errors ~ Recognizer*Hand, data=hw, family=poisson)
@@ -97,8 +97,8 @@ Anova(m, type=3)
 Conduct planned comparisons between left and right errors for each recognizer. Using `glht()` and `lsm()` will give all comparisons and we only want three so don't correct for multiple comparisons automatically. That would overcorrect. Instead, extract the three relevant $p$-values manually and and use `p.adjust()` to correct for those.
 
 ```{r}
-#. library(multcomp) # for glht
-#. library(lsmeans) # for lsm
+#. pacman::p_load(multcomp) # for glht
+#. pacman::p_load(lsmeans) # for lsm
 summary(glht(m, lsm(pairwise ~ Recognizer * Hand)),
         test=adjusted(type="none"))
 
@@ -134,8 +134,8 @@ with(bf,interaction.plot(Website,International,as.numeric(Ease),
 Use ordinal logistic regression to examine Ease by Website and International. Report the $p$-value of the Website main effect.
 
 ```{r}
-#. library(MASS) # provides polr()
-#. library(car) # provides Anova()
+#. pacman::p_load(MASS) # provides polr()
+#. pacman::p_load(car) # provides Anova()
 #. set sum-to-zero contrasts for the Anova call
 contrasts(bf$Website) <- "contr.sum"
 contrasts(bf$International) <- "contr.sum"

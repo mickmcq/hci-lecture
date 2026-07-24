@@ -10,6 +10,7 @@ summary(pgviews)
 tail(pgviews)
 
 #. descriptive statistics by Site
+pacman::p_load(plyr)
 plyr::ddply(pgviews, ~ Site, function(data) summary(data$Pages))
 plyr::ddply(pgviews, ~ Site, summarise, Pages.mean=mean(Pages), Pages.sd=sd(Pages))
 

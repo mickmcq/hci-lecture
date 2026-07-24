@@ -1,0 +1,51 @@
+/* Embed VictorMono Nerd Font so code blocks render consistently on any
+   machine, not only where the font happens to be installed locally.
+   Faces are subset to Latin + common symbols and compressed to woff2.
+   The family name matches Quarto's generated monofont rule
+   (pre, code, kbd, samp { font-family: "VictorMono Nerd Font" }), so no
+   other CSS needs to change. With embed-resources: true, Quarto inlines
+   these woff2 files as base64 into the self-contained HTML. */
+
+@font-face {
+  font-family: "VictorMono Nerd Font";
+  src: url("fonts/VictorMono-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VictorMono Nerd Font";
+  src: url("fonts/VictorMono-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VictorMono Nerd Font";
+  src: url("fonts/VictorMono-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VictorMono Nerd Font";
+  src: url("fonts/VictorMono-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Force VictorMono for every code context. Bootstrap's reboot ships literal
+   `pre { font-family: SFMono-Regular, Menlo, ... }` and `code { ... }` rules
+   that win the cascade over Quarto's monofont rule, so the family must be set
+   here with !important to actually take effect. The calt/liga feature
+   settings then enable VictorMono's programming ligatures (R's <- and <<-,
+   plus ->, =>, ==, !=, >=, <=, ::). */
+pre, code, kbd, samp,
+pre.sourceCode, code.sourceCode,
+div.sourceCode, .sourceCode, .sourceCode span {
+  font-family: "VictorMono Nerd Font", monospace !important;
+  font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: "calt" 1, "liga" 1;
+}
+

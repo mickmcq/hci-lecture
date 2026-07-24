@@ -30,7 +30,7 @@ Bing had 166 searches on average.
 What is the $p$-value (four digits) from a paired-samples $t$-test of order effect?
 
 ```{r}
-#. library(reshape2)
+#. pacman::p_load(reshape2)
 ws.wide.order <- dcast(ws,Subject ~ Order, value.var="Searches")
 tst<-t.test(ws.wide.order$"1",ws.wide.order$"2",paired=TRUE,var.equal=TRUE)
 tst
@@ -40,7 +40,7 @@ The $p$-value is 0.7343
 What is the $t$-statistic (two digits) for a paired-samples $t$-test of Searches by Engine?
 
 ```{r}
-#. library(reshape2)
+#. pacman::p_load(reshape2)
 ws.wide.engine <- dcast(ws,Subject ~ Engine, value.var="Searches")
 tst<-t.test(ws.wide.engine$"Bing",ws.wide.engine$"Google",paired=TRUE,var.equal=TRUE)
 tst
@@ -50,7 +50,7 @@ The $t$-statistic is 2.50.
 What is the $p$-value (four digits) from a Wilcoxon signed-rank test on Effort?
 
 ```{r}
-#. library(coin)
+#. pacman::p_load(coin)
 wilcoxsign_test(Effort~Engine|Subject,data=ws,distribution="exact")
 ```
 The $p$-value is 0.5016.
@@ -82,7 +82,7 @@ Yahoo required 172.40 searches on average.
 Find Mauchly's $W$ criterion (four digits) as a value of violation of sphericity.
 
 ```{r}
-#. library(ez)
+#. pacman::p_load(ez)
 m = ezANOVA(dv=Searches, within=Order, wid=Subject, data=ws3)
 m$Mauchly
 ```
@@ -98,7 +98,7 @@ The relevant $p$-value is 0.3208.
 Conduct a repeated measures ANOVA on Searches by Engine and give the Mauchly's $W$ criterion (four digits).
 
 ```{r}
-#. library(ez)
+#. pacman::p_load(ez)
 m <- ezANOVA(dv=Searches, within=Engine, wid=Subject, data=ws3)
 m$Mauchly
 ```
@@ -113,7 +113,7 @@ The relevant $p$-value is 0.0656.
 
 Conduct post-hoc paired sample $t$-tests among levels of Engine, assuming equal variances and using "holm" to correct for multiple comparisons. What is the smallest $p$-value (four digits)?
 ```{r}
-#. library(reshape2)
+#. pacman::p_load(reshape2)
 ws3.wide.engine <- dcast(ws3,Subject~Engine,value.var="Searches")
 bi.go<-t.test(ws3.wide.engine$Bing,ws3.wide.engine$Google,paired=TRUE,var.equal=TRUE)
 bi.ya<-t.test(ws3.wide.engine$Bing,ws3.wide.engine$Yahoo,paired=TRUE,var.equal=TRUE)
@@ -125,7 +125,7 @@ The smallest $p$-value is 0.0507.
 Conduct a Friedman (nonparametric) test on Effort. Find the $\chi^2$ statistic (four digits).
 
 ```{r}
-#. library(coin)
+#. pacman::p_load(coin)
 friedman_test(Effort~Engine|Subject,data=ws3,distribution="asymptotic")
 ```
 $\chi^2=8.0182$
@@ -133,7 +133,7 @@ $\chi^2=8.0182$
 Conduct post hoc pairwise Wilcoxon signed-rank tests on Effort by Engine with "holm" for multiple comparison correction. Give the smallest $p$-value (four digits).
 
 ```{r}
-#. library(reshape2)
+#. pacman::p_load(reshape2)
 ws3.wide.effort <- dcast(ws3,Subject~Engine,value.var="Effort")
 bi.go<-wilcox.test(ws3.wide.effort$Bing,ws3.wide.effort$Google,paired=TRUE,exact=FALSE)
 bi.ya<-wilcox.test(ws3.wide.effort$Bing,ws3.wide.effort$Yahoo,paired=TRUE,exact=FALSE)
