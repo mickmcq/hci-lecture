@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>People</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="week2-understanding-people_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week2-understanding-people_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="week2-understanding-people_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="week2-understanding-people_files/libs/quarto-html/popper.min.js"></script>
+<script src="week2-understanding-people_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="week2-understanding-people_files/libs/quarto-html/anchor.min.js"></script>
+<link href="week2-understanding-people_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week2-understanding-people_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="week2-understanding-people_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="week2-understanding-people_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="week2-understanding-people_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">People</h1>
+<p class="subtitle lead">Human-Computer Interaction</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="week-two" class="level1">
+<h1><span class="r-fit-text">Week TWO</span></h1>
+<p>Part II of <span class="citation" data-cites="Hornbaek2025">@Hornbaek2025</span></p>
+<p><em>Perception · Motor Control · Cognition</em></p>
+</section>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>You can’t design for people you don’t understand. It’s tempting to start from how you <strong>want</strong> people to act, but people bring their existing perception, motor habits, and mental models to everything they touch, and those systems don’t renegotiate on your schedule.</p>
+<p>This week’s question: <em>what does the human processing pipeline (seeing, moving, thinking) let designers predict before anything ships?</em></p>
+</section>
+<section id="case-study-healthcare.gov" class="level1">
+<h1>Case Study: Healthcare.gov</h1>
+<p><img src="fiHealthcaregov.png" class="img-fluid"></p>
+</section>
+<section id="what-went-wrong-with-the-healthcare.gov-rollout" class="level1">
+<h1>What went wrong with the Healthcare.gov rollout?</h1>
+<p>Aside from the obvious (not anticipating the volume)</p>
+<ul>
+<li>They required users to <strong>create an account before browsing any plans</strong>, so the registration system bottlenecked under the load of curious browsers who had no way to evaluate the product first</li>
+<li>They underestimated the proportion of users who were <strong>“uncommitted shoppers”</strong> wanting to compare options before investing effort — a basic mismatch between system functionality and how people actually behave when shopping for insurance</li>
+<li>The designers’ model was <em>citizens completing enrollment</em>; the users’ model was <em>shopping site</em>. The user’s model always shows up first.</li>
+</ul>
+<div class="notes">
+<p>https://medium.com/remembering-health-care-before-the-aca/the-promise-failure-and-potential-of-healthcare-gov-e28a649d1ea3</p>
+<p>https://medium.com/<span class="citation" data-cites="bishr_tabbaa/small-is-beautiful-the-launch-failure-of-healthcare-gov-5e60f20eb967">@bishr_tabbaa/small-is-beautiful-the-launch-failure-of-healthcare-gov-5e60f20eb967</span></p>
+</div>
+</section>
+<section id="perception" class="level1">
+<h1>Perception</h1>
+<section id="perception-is-not-a-camera" class="level2">
+<h2 class="anchored" data-anchor-id="perception-is-not-a-camera">Perception is not a camera</h2>
+<ul>
+<li><strong>The naive view:</strong> the eye is a camera, the display is the photo, perception is passive playback.</li>
+<li><strong>The chapter’s view:</strong> perception actively <em>constructs</em> a percept from three ingredients.</li>
+<li><strong>Sensory information:</strong> the raw transduction of light, sound, and contact into neural events.</li>
+<li><strong>Expectation:</strong> priors from years of experience that fill in the blanks the senses leave.</li>
+<li><strong>Attention:</strong> the strategic choice of what slice of the scene to process right now.</li>
+<li><strong>Consequence:</strong> the same pixels produce different experiences in different users. Design does not fully determine what people see.</li>
+</ul>
+</section>
+<section id="the-three-ingredients-of-a-percept" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-ingredients-of-a-percept">The three ingredients of a percept</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Perception</strong> is the ability to collect and organize information about the environment through physiological sensory systems. In HCI it is understood through three interacting components:</p>
+<ul>
+<li><strong>sensory information</strong> (what the senses transduce)</li>
+<li><strong>expectation</strong> (priors from prior experience)</li>
+<li><strong>attention</strong> (the strategic sampling of the scene)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="why-a-constructed-percept-changes-your-design" class="level2">
+<h2 class="anchored" data-anchor-id="why-a-constructed-percept-changes-your-design">Why a constructed percept changes your design</h2>
+<ul>
+<li><strong>A UI communicates only through perception:</strong> it is the entire channel from machine to user. Get it wrong and nothing else matters.</li>
+<li><strong>Experts see differently from novices:</strong> experienced users lean on <strong>long-term memory</strong> and expectation; novices are driven by raw visual features. Your design meets both.</li>
+<li><strong>Prior products train your users:</strong> people arrive expecting the back button top-left, the primary action bottom-right. Fighting those priors costs you.</li>
+<li><strong>Perception is active:</strong> users move, explore, and re-strategize. <strong>Norman’s</strong> perceived affordance lives here: the question is not “does it afford clicking” but “does the user <em>perceive</em> that clicking here is useful?”</li>
+<li><strong>Design rule:</strong> design for the percept users will construct, not the pixels you shipped.</li>
+</ul>
+</section>
+<section id="visual-saliency" class="level2">
+<h2 class="anchored" data-anchor-id="visual-saliency">Visual saliency</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Visual saliency</strong> is the probability that a graphical element attracts visual attention during the first few seconds of viewing a display. It depends on the element’s visual features relative to the rest of the display, on user expectations, and on the user’s attentional strategy.</p>
+</div>
+</div>
+</section>
+<section id="spending-your-saliency-budget" class="level2">
+<h2 class="anchored" data-anchor-id="spending-your-saliency-budget">Spending your saliency budget</h2>
+<ul>
+<li><strong>Uniqueness wins attention:</strong> an element pops out when it is unique in a <strong>visual primitive</strong>: color, size, shape, orientation, or motion.</li>
+<li><strong>Feature search vs conjunctive search:</strong> if the target is unique in one feature, users find it in under 100 ms, peripherally. If it needs a <em>combination</em> of features, they must fixate item by item, which is slow (<strong>Treisman &amp; Gelade</strong>).</li>
+<li><strong>Clutter is saliency’s evil twin (Rosenholtz):</strong> clutter is the state where everything tries to be salient, so nothing is. Congest every feature and you destroy the ability to guide the eye.</li>
+<li><strong>The Post-it test:</strong> if you cannot pick a color, size, or shape that would make a new note stand out on the screen, the screen is cluttered.</li>
+<li><strong>Design rule:</strong> spend your saliency budget. Make the one thing that matters unique; make everything else recede.</li>
+</ul>
+</section>
+<section id="grouping-the-gestalt-principles" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-the-gestalt-principles">Grouping: the Gestalt principles</h2>
+<ul>
+<li><strong>Proximity:</strong> elements close together read as a group.</li>
+<li><strong>Common area:</strong> elements inside the same enclosed region read as a group.</li>
+<li><strong>Similarity:</strong> elements alike in color, size, or orientation read as a group.</li>
+<li><strong>Continuation:</strong> elements along a continuous flow read as a group.</li>
+<li><strong>Payoff (Brumby &amp; Zhuang):</strong> visual grouping speeds menu search, but only with a few larger groups. Many tiny groups dilute the effect.</li>
+</ul>
+</section>
+<section id="some-perception-fails" class="level2">
+<h2 class="anchored" data-anchor-id="some-perception-fails">Some perception fails</h2>
+<!-- IMAGE: An ungrouped settings menu, 20 items in one flat column with no spacing, headings, or dividers. -->
+</section>
+<section id="some-perception-fails-1" class="level2">
+<h2 class="anchored" data-anchor-id="some-perception-fails-1">Some perception fails</h2>
+<!-- IMAGE: A dashboard using red/green as the only status encoding, shown as a red-green colorblind simulation where the two states are indistinguishable. -->
+<div class="callout callout-style-default callout-warning callout-titled" title="Are the Gestalt 'laws' really laws?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Are the Gestalt ‘laws’ really laws?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Wertheimer</strong> and the Gestalt school presented grouping as fixed perceptual laws.</li>
+<li>The chapter itself pushes back: they behave more like <strong>heuristics</strong> than physical laws, and they ignore that perception is active and task-dependent. <strong>Kieras &amp; Hornof’s</strong> active-vision work shows people organize the same display differently depending on the goal.</li>
+<li>Current consensus: grouping principles are robust <em>tendencies</em>, not guarantees.</li>
+<li>Design takeaway: use Gestalt to make your intended structure the <em>easy</em> reading, then test it; do not assume users must see what you grouped.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="concept-check" class="level2">
+<h2 class="anchored" data-anchor-id="concept-check"><span class="r-fit-text">Concept check</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Pause and think">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pause and think
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A finance app shows twelve equally bright, equally sized KPI tiles, each a different color. Users say they “can’t find anything.” Using saliency and clutter, explain what went wrong and name one change that would help.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="video-2-motor-control" class="level1 r-fit-text">
+<h1 class="r-fit-text">Video 2: Motor Control</h1>
+<p><em>Chapter 4 · aimed movement, Fitts’ Law, the speed-accuracy trade-off</em></p>
+<!-- Video 2 · ~0 min -->
+<section id="the-trade-off-underneath-every-click" class="level2">
+<h2 class="anchored" data-anchor-id="the-trade-off-underneath-every-click">The trade-off underneath every click</h2>
+<ul>
+<li>Recall the kiosk: the “pay” button was small and far. Now we can say <em>how much</em> that costs.</li>
+<li><strong>Aimed movement:</strong> any movement whose success is defined by hitting an external target: a button, a link, a key.</li>
+<li><strong>Speed-accuracy trade-off:</strong> the motor system cannot be both maximally fast and maximally accurate. Push speed, lose precision; demand precision, lose speed.</li>
+<li><strong>You can balance the two, but you cannot beat both at once.</strong> This tension is the engine of everything in this video.</li>
+</ul>
+</section>
+<section id="fitts-law" class="level2">
+<h2 class="anchored" data-anchor-id="fitts-law">Fitts’ Law</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fitts’ Law</strong> predicts the average time to acquire a target as a linear function of task difficulty:</p>
+<p><span class="math display">\[MT = a + b \cdot ID, \qquad ID = \log_2\left(\frac{D}{W} + 1\right)\]</span></p>
+<p>where <strong>D</strong> is the distance to the target, <strong>W</strong> is its width, <strong>ID</strong> is the index of difficulty (in bits), and <strong>a</strong>, <strong>b</strong> are empirically fitted constants. It is not a natural law; it is a statistical regularity <strong>Fitts</strong> discovered through experiment.</p>
+</div>
+</div>
+</section>
+<section id="what-fitts-buys-you-on-the-design-floor" class="level2">
+<h2 class="anchored" data-anchor-id="what-fitts-buys-you-on-the-design-floor">What Fitts buys you on the design floor</h2>
+<ul>
+<li><strong>Big and close is fast; small and far is slow.</strong> The whole law collapses to this, but now it is quantitative and testable.</li>
+<li><strong>Screen edges are infinitely deep targets:</strong> you cannot overshoot them, so their effective width is huge. This is why the Mac menu bar and corner hot-spots work.</li>
+<li><strong>Design the target to the hand:</strong> enlarge primary actions, move them near the cursor’s likely start, and interfaces get measurably faster.</li>
+<li><strong>It powers real systems:</strong> key-target resizing in phone keyboards and layout-optimization algorithms that challenge QWERTY (<strong>MacKenzie</strong>, <strong>Zhai</strong>) are Fitts’ Law applied.</li>
+<li><strong>Throughput lets you compare devices:</strong> you can rank a stylus vs a mouse across the <em>whole</em> difficulty range, not at one lucky data point.</li>
+<li><strong>Design rule:</strong> every millisecond you save on a frequent target multiplies across millions of clicks.</li>
+</ul>
+</section>
+<section id="worked-example-reading-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="worked-example-reading-the-model">Worked example: reading the model</h2>
+<!-- IMAGE: Fitts' scatter plot of movement time (ms) vs index of difficulty (bits), points on a straight line, fitted MT = 12.8 + 94.7 x ID, R-squared = 0.967. -->
+<ul>
+<li>Fitts’ own stylus data fit <strong>MT = 12.8 + 94.7 × ID</strong> with R² = 0.967: a near-perfect straight line.</li>
+<li><strong>ID = 1 bit</strong> predicts about 107 ms; <strong>ID = 7 bits</strong> predicts about 676 ms. Difficulty and time rise together, and linearly once you use ID.</li>
+<li><strong>Intuition for ID:</strong> it is roughly how many target-widths fit into the distance, or how many candidate targets you <em>could</em> have hit on the way.</li>
+</ul>
+</section>
+<section id="some-target-acquisition-fails" class="level2">
+<h2 class="anchored" data-anchor-id="some-target-acquisition-fails">Some target-acquisition fails</h2>
+<!-- IMAGE: A mobile web page with a tiny "X" close button 8 px wide in the corner, finger hovering, mis-tap highlighting an ad instead. -->
+<div class="callout callout-style-default callout-warning callout-titled" title="One Fitts' Law, or several?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>One Fitts’ Law, or several?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The clean <strong>MT = a + b·ID</strong> is presented as settled, and it is the most-tested model in HCI.</li>
+<li>But throughput has <em>no</em> agreed definition: <strong>MacKenzie</strong> ties it to average ID over MT; <strong>Zhai</strong> ties it to the slope 1/b alone. Each throws away different information.</li>
+<li>The model is also brittle: fit it on 5 to 10 cm targets and it may not generalize to 10 to 20 cm; 2D and touch need extensions (<strong>MacKenzie</strong>), and corrective-submovement models (<strong>Meyer et al.</strong>) explain what the average hides.</li>
+<li>Design takeaway: use Fitts’ Law to reason and to compare within a study; do not quote one lab’s a and b as universal constants.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="concept-check-1" class="level2">
+<h2 class="anchored" data-anchor-id="concept-check-1"><span class="r-fit-text">Concept check</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Pause and think">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pause and think
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A “delete account” button and a “save” button sit side by side, same size. Using Fitts’ Law and the speed-accuracy trade-off, argue for a layout that keeps saving fast while making accidental deletion unlikely. What did you change: D, W, or both?</p>
+</div>
+</div>
+<!-- Video 2 · ~20 min -->
+<!-- ==== END VIDEO 2 ==== -->
+<!-- ==== VIDEO 3: Cognition (~40 min, double-length: memory + reasoning) ==== -->
+</section>
+</section>
+<section id="video-3-cognition" class="level1 r-fit-text">
+<h1 class="r-fit-text">Video 3: Cognition</h1>
+<p><em>Chapter 5 · memory, mental models, decisions</em></p>
+<!-- Video 3 · ~0 min · Part A: Memory -->
+<section id="why-memory-is-a-design-problem" class="level2">
+<h2 class="anchored" data-anchor-id="why-memory-is-a-design-problem">Why memory is a design problem</h2>
+<ul>
+<li>Back at the kiosk, imagine it flashed a 6-digit code and asked you to retype it two screens later. That is a memory demand, and it is where interfaces quietly break.</li>
+<li>Memory is <strong>not</strong> a hard disk. It is not veridical storage and retrieval; it is reconstruction, biased toward what is useful now.</li>
+<li>Several distinct memory systems run at once (<strong>Squire</strong>): working memory, and long-term memory split into declarative (facts, events) and non-declarative (skills, priming, conditioning).</li>
+<li>Design implication we are building toward: <strong>stop making users remember.</strong></li>
+</ul>
+</section>
+<section id="working-memory" class="level2">
+<h2 class="anchored" data-anchor-id="working-memory">Working memory</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Working memory (WM)</strong> is the temporary maintenance and manipulation of the representations needed for the action at hand. It is set apart from long-term memory by being sharply limited in both capacity and time: items fade quickly unless actively rehearsed.</p>
+</div>
+</div>
+</section>
+<section id="designing-around-a-tiny-scratchpad" class="level2">
+<h2 class="anchored" data-anchor-id="designing-around-a-tiny-scratchpad">Designing around a tiny scratchpad</h2>
+<ul>
+<li><strong>The number is small:</strong> once thought to be <strong>Miller’s</strong> 7 ± 2, now estimated at roughly 3 to 5 items in young adults (<strong>Cowan</strong>). Design for the low end.</li>
+<li><strong>Rehearsal is the cost:</strong> holding items active is effortful and taxing, which is exactly why users feel drained by clunky flows.</li>
+<li><strong>Interruptions are expensive:</strong> the more disruptive the interruption, the more it destroys whatever WM was holding. Every task switch costs a few hundred milliseconds and risks dropped state.</li>
+<li><strong>The single takeaway for design:</strong> avoid relying on working memory. Put the code on the same screen as the field; carry state forward; never make people hold a value across steps.</li>
+</ul>
+</section>
+<section id="recall-vs-recognition" class="level2">
+<h2 class="anchored" data-anchor-id="recall-vs-recognition">Recall vs recognition</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Recall</strong> is retrieving a memory trace by self-generated cues, with nothing shown (<strong>free recall</strong>), or aided by an external cue (<strong>cued recall</strong>). <strong>Recognition</strong> is the extreme, easy case of cued recall: the whole item is presented and the user only has to confirm they have seen it before.</p>
+</div>
+</div>
+</section>
+<section id="why-recognition-wins" class="level2">
+<h2 class="anchored" data-anchor-id="why-recognition-wins">Why recognition wins</h2>
+<ul>
+<li><strong>Recognition is cheap; recall is expensive.</strong> People recognize hundreds of faces and icons effortlessly but struggle to recall the same items cold.</li>
+<li><strong>This is why the GUI beat the command line:</strong> menus and icons let users <em>recognize</em> the option; command languages force effortful <em>free recall</em> (<strong>Norman</strong>).</li>
+<li><strong>Knowledge-in-the-world beats knowledge-in-the-head:</strong> show the options instead of demanding memorized commands, and you offload cognition onto the display.</li>
+<li><strong>But externalizing has a cost:</strong> lean on the world too hard (passwords on sticky notes) and knowledge-in-the-head atrophies.</li>
+<li><strong>Encoding-retrieval symmetry:</strong> people retrieve better when the retrieval context matches encoding; change the login screen’s look and the password gets harder to summon.</li>
+<li><strong>Design rule:</strong> let users choose from what is shown, not summon from memory.</li>
+</ul>
+</section>
+<section id="some-memory-fails" class="level2">
+<h2 class="anchored" data-anchor-id="some-memory-fails">Some memory fails</h2>
+<!-- IMAGE: A checkout that shows a one-time passcode, then navigates to a separate screen with an empty code field and no way back to view it. -->
+<div class="callout callout-style-default callout-warning callout-titled" title="Is it seven, or four, or three?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Is it seven, or four, or three?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Generations of design guidance repeated <strong>Miller’s</strong> “magical number 7 ± 2” as a hard limit on how many items a menu or nav bar may hold.</li>
+<li><strong>Cowan</strong> and others argue the real ceiling is closer to 3 to 5, and that WM is not a set of “slots” at all but activation in an associative network that fades.</li>
+<li>Current consensus: the exact number depends on chunking, content, and rehearsal; treat any fixed magic number with suspicion.</li>
+<li>Design takeaway: do not defend “seven items per menu” as law. Chunk aggressively, keep the working set tiny, and never make users hold values in their heads.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="concept-check-2" class="level2">
+<h2 class="anchored" data-anchor-id="concept-check-2"><span class="r-fit-text">Concept check</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Pause and think">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pause and think
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A signup flow emails a verification code, then opens a new tab with the code field, hiding the email. Which memory system is being overloaded, and what is the one-line fix that turns a recall task into a recognition task?</p>
+</div>
+</div>
+<!-- Video 3 · ~20 min · end Part A -->
+</section>
+</section>
+<section id="cognition-part-b-reasoning-and-decisions" class="level1 r-fit-text">
+<h1 class="r-fit-text">Cognition, Part B: Reasoning and Decisions</h1>
+<p><em>Still Chapter 5 · mental models, System 1/2, heuristics</em></p>
+<!-- Video 3 · ~22 min · Part B: Reasoning -->
+<section id="users-cannot-see-inside-the-machine" class="level2">
+<h2 class="anchored" data-anchor-id="users-cannot-see-inside-the-machine">Users cannot see inside the machine</h2>
+<ul>
+<li>The kiosk was opaque: users could not tell whether their tap registered, what the error meant, or what would happen next. So they <em>guessed</em>.</li>
+<li>A computer is a non-transparent system. Cognition’s job in interaction is to reason about a box you cannot see into.</li>
+<li>Two tools people use: a <strong>mental model</strong> to simulate what the system will do, and fast <strong>heuristics</strong> to decide when reasoning is too costly.</li>
+<li>This is the video where AI matters most: agents and generative UIs are the most opaque systems users have ever faced.</li>
+</ul>
+</section>
+<section id="mental-models" class="level2">
+<h2 class="anchored" data-anchor-id="mental-models">Mental models</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>mental model</strong> is a memory-based representation of an interactive system, used for reasoning, inference, and prediction. It represents the system and how the user’s inputs change its state, letting the user simulate outcomes for parts of the system they cannot directly observe.</p>
+</div>
+</div>
+</section>
+<section id="when-the-users-model-clashes-with-the-system" class="level2">
+<h2 class="anchored" data-anchor-id="when-the-users-model-clashes-with-the-system">When the user’s model clashes with the system</h2>
+<ul>
+<li><strong>Models are fragmentary, not complete:</strong> untrained users rarely hold a coherent model. Knowledge is patchy: a few remembered episodes, some isolated facts (<strong>Mayer &amp; Gallini</strong>).</li>
+<li><strong>Users would rather try than reason:</strong> effortful simulation is avoided; people poke at the interface and watch what happens.</li>
+<li><strong>Failure is a model clash:</strong> most “user error” is the designer’s model and the user’s model disagreeing, exactly the kiosk problem.</li>
+<li><strong>AI raises the stakes:</strong> with an AI agent acting on your behalf, the user’s model of “what will it do” is thin and often wrong. A <strong>Bayesian-brain</strong> view says users constantly update predictions (“what will autocomplete do next?”), so systems must make their behavior <em>predictable and legible</em>.</li>
+<li><strong>Design rule:</strong> expose a conceptual model users can build; make state and consequences visible, especially for AI.</li>
+</ul>
+</section>
+<section id="system-1-system-2-and-heuristics" class="level2">
+<h2 class="anchored" data-anchor-id="system-1-system-2-and-heuristics">System 1, System 2, and heuristics</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Kahneman’s</strong> two systems: <strong>System 1</strong> is fast, intuitive, associative, and effortless; <strong>System 2</strong> is slow, deliberate, and effortful, monitoring System 1 and intervening when intuition is not enough. A <strong>heuristic</strong> is a System 1 rule of thumb that reaches a quick solution and, in doing so, introduces predictable <strong>biases</strong>.</p>
+</div>
+</div>
+</section>
+<section id="the-levers-behind-every-choice" class="level2">
+<h2 class="anchored" data-anchor-id="the-levers-behind-every-choice">The levers behind every choice</h2>
+<ul>
+<li><strong>Anchoring:</strong> choices center on a known reference; users reach for the app they already know.</li>
+<li><strong>Availability:</strong> whatever comes to mind fastest gets picked; PowerPoint gets used because it is top-of-mind, not because it is best.</li>
+<li><strong>Status quo and defaults:</strong> people stick with the prevailing option, so <strong>whoever sets the default holds real power.</strong></li>
+<li><strong>Prospect theory (Tversky &amp; Kahneman):</strong> choices are judged against a reference point, and losses hurt more than equivalent gains: loss aversion. Framing a change as a loss vs a gain flips behavior.</li>
+<li><strong>The ethical edge:</strong> the same levers power <strong>dark patterns</strong>: pre-ticked boxes, loss-framed “you’ll miss out” nags, decoy pricing.</li>
+<li><strong>Design rule:</strong> you cannot switch these biases off; you can only decide whether to exploit or respect them.</li>
+</ul>
+</section>
+<section id="some-decision-design-fails" class="level2">
+<h2 class="anchored" data-anchor-id="some-decision-design-fails">Some decision-design fails</h2>
+<!-- IMAGE: A subscription cancel flow with a pre-selected "stay subscribed" button styled prominently, and a tiny grey "cancel anyway" link, plus a loss-framed "you'll lose all your data" warning. -->
+<div class="callout callout-style-default callout-warning callout-titled" title="How solid is the System 1 story?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>How solid is the System 1 story?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Kahneman</strong> popularized System 1 / System 2 and a long list of priming and heuristic effects as robust findings.</li>
+<li>The <strong>replication crisis</strong> hit this literature hard: several classic social-priming results failed to replicate, and Kahneman himself publicly walked back parts of the priming chapter. <strong>Prospect theory</strong> and loss aversion, by contrast, have held up well across bargaining, consumer choice, and voting.</li>
+<li>Current consensus: the broad dual-process framing and loss aversion are useful; specific priming effects should be cited cautiously.</li>
+<li>Design takeaway: lean on well-replicated levers (defaults, loss framing, recognition) and treat one-off priming tricks as unproven.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="concept-check-3" class="level2">
+<h2 class="anchored" data-anchor-id="concept-check-3"><span class="r-fit-text">Concept check</span></h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Pause and think">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pause and think
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An AI assistant silently changes a document’s formatting when you accept a suggestion. Users are angry even though the edit was “correct.” Using mental models and legibility, explain the anger, then name one design change that repairs the user’s model.</p>
+</div>
+</div>
+<!-- Video 3 · ~40 min · end Part B -->
+<!-- ==== END VIDEO 3 ==== -->
+</section>
+</section>
+<section id="discussions" class="level1">
+<h1>Discussions</h1>
+<section id="when-is-it-fair-to-design-for-peoples-biases-rather-than-against-them" class="level2">
+<h2 class="anchored" data-anchor-id="when-is-it-fair-to-design-for-peoples-biases-rather-than-against-them">When is it fair to design <em>for</em> people’s biases rather than against them?</h2>
+<p>Defaults, loss framing, and recognition-over-recall all steer behavior whether or not the user notices.</p>
+<p><em>The same cognitive levers that make an interface effortless are the ones that power dark patterns. Where is the line between a helpful default and manipulation, and who gets to draw it? This is the central ethics-of-captology debate, and there is no clean answer.</em></p>
+</section>
+<section id="is-a-general-understanding-of-people-actually-possible-or-a-comforting-fiction" class="level2">
+<h2 class="anchored" data-anchor-id="is-a-general-understanding-of-people-actually-possible-or-a-comforting-fiction">Is a “general understanding of people” actually possible, or a comforting fiction?</h2>
+<p>The book argues theories of perception, memory, and motor control generalize across users and contexts; critics say every situation is too particular.</p>
+<p><em>Lincoln and Guba argued generalization smuggles in determinism and reductionism. Landauer said we should “get real” and just test with users. If general theory is weak, why teach Fitts and Cowan at all? If it is strong, why does user research still exist? Argue where the line sits.</em></p>
+</section>
+<section id="who-is-the-user-when-an-ai-agent-acts-on-your-behalf" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-the-user-when-an-ai-agent-acts-on-your-behalf">Who is “the user” when an AI agent acts on your behalf?</h2>
+<p>When an agent books, buys, or writes for you, the perceiving-deciding human is partly out of the loop.</p>
+<p><em>Every model in this deck assumes a human perceiving a display and choosing an action. An agent breaks that: perception, memory, and decision-making are split between person and machine. Does Fitts’ Law even apply when nobody points? Whose mental model matters when the human never sees the interface? Push on what “human-centered” means here.</em></p>
+</section>
+<section id="recognition-beats-recall-for-humans.-does-that-still-hold-when-the-interface-writes-itself" class="level2">
+<h2 class="anchored" data-anchor-id="recognition-beats-recall-for-humans.-does-that-still-hold-when-the-interface-writes-itself">Recognition beats recall for humans. Does that still hold when the interface writes itself?</h2>
+<p>We tell designers to show options so users can recognize, not recall. Generative UIs assemble a fresh, unfamiliar layout every time.</p>
+<p><em>If the interface is different on every visit, users cannot build the long-term memory that makes recognition and expectation work; every screen is a novice screen. Is a personalized, ever-changing UI a gift or a tax on cognition? When does adaptivity help, and when does consistency win?</em></p>
+</section>
+</section>
+<section id="activities" class="level1">
+<h1>Activities</h1>
+<section id="activity-1-saliency-and-fitts-audit-of-a-live-interface-35-min" class="level2">
+<h2 class="anchored" data-anchor-id="activity-1-saliency-and-fitts-audit-of-a-live-interface-35-min">Activity 1: Saliency and Fitts audit of a live interface (~35 min)</h2>
+<p><strong>Task:</strong> In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against Video 1 and Video 2.</p>
+<p><strong>Produce:</strong> An annotated screenshot table with at least 6 rows: for each, name the element, its intended importance, its actual saliency (what draws the eye first), and its Fitts cost (rough D and W for the primary action). Include at least one row flagged “this design decision is wrong, and here is our argument.”</p>
+<p><strong>Time:</strong> 25 min group work · 10 min share-out</p>
+<p><strong>Debrief:</strong> Where did saliency and Fitts <em>agree</em> that an element was mis-designed, and where did they conflict?</p>
+</section>
+<section id="activity-2-reverse-engineer-an-ai-assistants-mental-model-40-min" class="level2">
+<h2 class="anchored" data-anchor-id="activity-2-reverse-engineer-an-ai-assistants-mental-model-40-min">Activity 2: Reverse-engineer an AI assistant’s mental model (~40 min)</h2>
+<p><strong>Task:</strong> In groups of 3 to 4, take an AI feature you all use (autocomplete, a chat assistant, an agentic “do it for me” button) and map the mental model it invites versus the one it actually deserves.</p>
+<p><strong>Produce:</strong> A two-column table with at least 6 rows: “what users predict it will do” vs “what it actually does,” plus a legibility fix for each mismatch. End with one position statement: name one place the product <em>exploits</em> a heuristic (availability, status quo, loss framing) and argue whether that is acceptable.</p>
+<p><strong>Time:</strong> 28 min group work · 12 min share-out</p>
+<p><strong>Debrief:</strong> Which mismatch would cause the most damage if the assistant acted autonomously, and why?</p>
+</section>
+</section>
+<section id="wrap-up" class="level1 r-fit-text">
+<h1 class="r-fit-text">Wrap-up</h1>
+<ul>
+<li><strong>Perception</strong> is constructed from sensory information, expectation, and attention; spend your saliency budget and fight clutter.</li>
+<li><strong>Fitts’ Law</strong> makes the speed-accuracy trade-off quantitative: big and close is fast, small and far is slow.</li>
+<li><strong>Memory</strong> is reconstruction, not storage: design for recognition, not recall, and never lean on working memory.</li>
+<li><strong>Mental models</strong> and <strong>heuristics</strong> are how people cope with opaque systems, including AI: make behavior legible and predictable.</li>
+</ul>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Hornbæk, Kristensson &amp; Oulasvirta, <em>Introduction to Human-Computer Interaction</em>, Part II: Understanding People (Chapters 2 to 5).</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

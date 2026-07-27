@@ -1,0 +1,283 @@
+---
+title: User Research
+subtitle: Human-Computer Interaction
+---
+
+# [Week FIVE]{.r-fit-text}
+
+Part III of @Hornbaek2025
+
+*Unobtrusive Research · Representations of User Research*
+
+# Intro
+
+Last week we looked at **reactive** methods: interviews, field research, surveys, all methods that ask a user to perform for a researcher. This week let's explore what we can learn when nobody knows we are watching.
+
+This week's question: *when is the trace users leave behind more honest than the answer they would give you?*
+
+# Case Study: xxx
+
+
+# Why did the metric win?
+
+A team instrumented everything, watched one number go up, and shipped toward it.
+
+- They logged **time-on-page** because it was cheap and clean: so it quietly became the definition of "good"
+- They assumed **more minutes meant more value**: a mismatch between what the sensor captured and why users were really there
+- Long sessions can mean *delight* or mean *lost and confused*, and the log alone cannot tell you which
+- The model clash: the team's model was "engaged user"; a chunk of users were living the model "trapped user who cannot find the exit"
+
+# Unobtrusive Research
+
+## Reactivity
+
+::: {.callout-note}
+**Reactivity** is the impact of the research act itself on what is being studied: participants change their behavior or opinions because they were selected, informed, observed, or made aware of the study's purpose.
+:::
+
+- **Unobtrusive research:** noninterventional user research that aims not to change the activity it studies, also called **nonreactive**
+- **The core move:** infer things about users from traces and records they left for other reasons, not from a session you staged
+
+## Studying users without touching them
+
+- **Realism is the whole point:** you see interaction as it happens in the wild, with no sensitization to what you are looking for
+- Data can exist *before* the study even begins: logs, posts, videos, wear on a keypad
+- Closes the **say-do gap**: you get behavior, not a report of behavior
+- Cheap and vast: **Adar et al** studied web revisitation on 612,000 users, a scale no interview study reaches
+- **Webb et al** named the classic sources of nonreactive data: traces, both direct and indirect, and archival data (instrumenting people and places is one way to gather traces)
+
+## Log files
+
+::: {.callout-note}
+A **log file** is an automatic capture of interactions with a system in a file: clicks, key presses, movements, and application actions, recorded as they happen.
+:::
+
+- **Device events:** millisecond-level, like button-down and touch coordinates
+- **User interface events:** selections, dragging, shifts in focus
+- **Application events:** loading and editing content, tied to system functions
+- The **inference gap:** you record events low on this ladder and must reason *upward* to people, activity, and context
+
+## Climbing the inference ladder
+
+- **The leap can be impossible:** clicks say almost nothing about a user's emotions, so do not fake it
+- **The leap can pay off:** **undo** and **erase** actions in logs turned out to be highly predictive of severe usability problems
+- **Fitts in the wild:** **Chapuis et al** logged two million real pointing movements and found Fitts's law holds, but with huge unexplained variance from second tasks, display regions, and users who simply did not care about speed
+- The design rule: decide what inference the data can honestly support *before* you compute anything
+
+::: {.callout-warning title="Is unobtrusive really unbiased?"}
+- **Webb et al** and the say-do gap literature: unobtrusive data capture real behavior, free of the observer effect
+- **Adar et al** had to bolt on a survey to interpret their logs, and their data came only from users who opted into a search toolbar
+- Current read: nonreactive removes the observer, not selection bias, coverage gaps, or the interpretation problem
+- Design takeaway: do not sell log data as "objective truth"; ask what population it represents and what it cannot see; then triangulate
+:::
+
+## Archival data and content analysis
+
+::: {.callout-note}
+**Archival data** are materials that already exist and are simply gathered rather than collected: reviews, bug and error reports, and user-generated social media content. **Content analysis** is the systematic coding, aggregation, and description of that material.
+:::
+
+- **Manifest analysis:** stays on the surface properties of the data
+- **Latent analysis:** interprets deeper, inferring intention, context, and background
+- **Vieweg et al** coded roughly five million disaster tweets to see how people share information in an emergency
+- Good practice: multiple coders, documented coding schemes, and contextualized findings, for transparency and replicability
+
+## Why not do this all the time?
+
+- **The gap:** data made for another purpose may simply not contain what you need to know
+- **Interpretation:** time-on-page is an indicator, not a meaning, and whatever you *can* compute tends to dominate later decisions
+- **Ethics:** unobtrusive research is often covert, so consent is hard or impossible, and powerful predictions about users can be turned against them
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A team wants to know why users abandon a checkout flow. They have complete server logs of every click. What can the logs honestly tell them, what will they have to infer, and what second data source would you add before trusting a conclusion?
+:::
+
+# Representations of User Research
+
+# What to do with all the data
+
+A dataset does nothing on its own; it is a pile of observations. There are some second-order artifacts we can build *from* data: personas, scenarios, task models, requirements. How we represent research shapes which decisions become easy, exactly the way laying out a math problem well is half of solving it.
+
+## Personas
+
+::: {.callout-note}
+A **persona** is a description of an idealized, nonexisting person who stands in for a group or type of users: an archetype built as a fictional but representative individual, grounded in user research.
+:::
+
+- Popularized by **Cooper et al**; more a **synthesis** of data than a fiction
+- **Behavioral variables** are the engine: go past "Jane is 25" to "Jane is driven by social connection"
+- Built by clustering: group by role, map data snippets to variables, find the clusters, name the archetype
+- Statistically, a persona is a **summary statistic**: a mean, median, or mode of a distribution
+
+## When a persona earns its keep
+
+- **Fights elastic users:** a concrete individual stops the team bending "the user" to whatever the design needs
+- **Fights self-centeredness:** technology gets built by developers for developers unless someone else is in the room
+- **Forces prioritization and drives empathy:** you must pick which segments matter, and a person is easier to care about than a bar chart
+- **Traceability is the safeguard:** every characteristic should trace back to observed data, or the persona floats free
+
+::: {.callout-warning title="Not so fast..."}
+- **Cooper et al** present personas as a disciplined summary of clustered data
+- **Pruitt & Grudin** reported personas at Microsoft that were "designed by committee," poster-sized, unbelievable, and cut loose from the original data
+- **Jung et al** offer an automated, data-driven route (personas generated and kept updated from millions of interactions), which fixes grounding but not relevance
+- Current read: a persona is only as good as the clustering and traceability behind it; most are made on intuition
+- Design takeaway: demand the data trail behind a persona before you design for it
+:::
+
+## Scenarios
+
+::: {.callout-note}
+A **scenario** is a narrative account of an activity or task, told from the user's point of view, including a setting, actors with goals, available tools, and the sequence of actions and experiences that lead to an outcome.
+:::
+
+- Less structured than task analysis, and almost never **prescriptive**: they describe, they do not dictate
+- Their looseness is a feature: a good story lets you inhabit another person's experience
+- Written like stories: setting, actors, goals, tools, and crucially the actors' *thinking and reactions*
+
+## Scenarios stress-testing AI
+
+- **Wolf** used **explainability scenarios** for an aging-in-place monitoring system that watches an elder's daily activity
+- The scenario followed a daughter reading green, yellow, and red reports, then hitting a prediction she could not understand and a support chain that could not help
+- The takeaway for AI designers: one type of explanation does not suffice; explanations are **discursive**, spread across people and moments, not a single tidy answer
+- "Accuracy" alone does not build an explanation that actually works in someone's kitchen
+
+## Task analysis and HTA
+
+::: {.callout-note}
+**Task analysis** decomposes a task into hierarchically organized subtasks. **Hierarchical task analysis (HTA)** models two relationships between subtasks: order (A precedes B) and part-whole (B is a subtask of A), with each subtask requiring operations to complete.
+:::
+
+- A **task model** is the output: a sequence or a hierarchy of goals and subgoals
+- Sequential models are linear steps; HTA adds **plans, conditions, parallelism, and stop rules**
+- Empirical task analysis describes the real world; analytical task analysis is speculative, done during design or evaluation
+
+## What the hierarchy buys you
+
+- **Systematicity is the draw and the cost:** rigorous, but validating a full tree with stakeholders is slow
+- It exposes structure a linear list hides: a login is not "type, type, click" but nested clicking-and-typing operations
+- Feeds analytical evaluation later: cognitive walkthrough and keystroke-level models build directly on it
+- **Layout appropriateness:** weighting each task path by frequency and cost lets you compute how far a layout sits from optimal
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You interviewed twelve nurses about medication rounds. Would you first reach for a persona, a scenario, or a task analysis, and why? What would each one make visible that the other two would hide?
+:::
+
+## Rich pictures and context models
+
+::: {.callout-note}
+A **rich picture** is a loosely drawn diagram, from soft systems methodology, that captures the stakeholders, structures, processes, and concerns in a use situation, with no fixed syntax or notation.
+:::
+
+- Part of a family of **context models**: flow, sequence, artifact, cultural, and physical models
+- The unit is the **actor**: anything human or nonhuman that actively participates in the activity
+- A rich picture deliberately captures *some* of a situation's messiness, not a full system or a solution
+
+## Why draw the mess on purpose
+
+- **Monk & Howard** used rich pictures to surface concerns a clean flowchart erases: noise, closing time, "am I earning enough?"
+- The lack of syntax is the point: stakeholders can quote actors, sketch worries, and show tension without a legend
+- It is a **synthesis and communication** tool, not an analysis you validate line by line
+- Use it early to align a room on what the situation even *is* before anyone proposes a fix
+
+## Requirements
+
+::: {.callout-note}
+**User requirements** express criteria for a system's functioning from the user's perspective, based on data and traceable. Each should carry a **verification criterion**: a concrete way to tell whether the product fulfills it.
+:::
+
+- Unlike system requirements, user requirements are **user-centered**, not feature lists
+- **Traceability:** you know which observations each requirement rests on
+- A good criterion is measurable: "95% of representative users complete task A within time T with no significant error"
+- Vague criteria such as "Feature F is easy to use" are a trap: fulfillment becomes a matter of opinion
+
+## Requirements as a contract
+
+- Requirements can be **contractual**: the client and developer agree on what the system must do, and neither side can move the goalposts afterward
+- **Triangulate:** cross-check a requirement across contextual inquiry, focus groups, and interviews before you commit to it
+- **Use cases and user stories** are the elicitation vehicles: preconditions, goal, flow of events, post-conditions
+- Precision is not bureaucracy here; it is the thing that lets you ever declare the product done
+
+## Can a representation be both valid and informative?
+
+::: {.callout-note}
+The **realist** view treats a representation as a proposition about users that can be true or false. The **instrumentalist** view treats it as a tool whose only job is to inspire good design, where even exaggeration is fine if it helps.
+:::
+
+- Realist: "Segment A has a high need for security" is a claim, and a wrong claim makes the design fail
+- Instrumentalist: in creative work, being tied too tightly to reality can be a liability
+- Real projects serve both at once: data get selected, redescribed, and augmented, exactly how personas and scenarios are made
+
+## Living with the tension
+
+- Every representation is an **inferential leap** away from raw data: necessary, but it can cut the analyst loose from the ground
+- Unsubstantiated leaps are not just wrong, they can be **damaging**: they erase or oversimplify real user groups
+- The authors' resolution: hold onto **verifiability** and **traceability** even in instrumentalist work
+- **Verifiability:** can the claim be cross-checked against independent observations? 
+- **Traceability:** can you show the reasoning from data to claim?
+
+::: {.callout-warning title="Does automation dissolve the debate?"}
+- **Jung et al** generate personas straight from millions of logged interactions, promising representations that are grounded and always up to date
+- The realist worry: a fluent, auto-generated "Samantha, 25, watches 2 minutes of video" can read as more valid than the thin behavioral data underneath it warrants
+- The instrumentalist worry: automation optimizes for plausibility, which is not the same as inspiration
+- Design takeaway: automation can improve traceability, but someone still has to ask whether the representation is *true enough* to bet a design on
+:::
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your team writes the persona "Marcus, a privacy-anxious freelancer." Is that a realist claim or an instrumentalist prop? What single piece of documentation would let a skeptical stakeholder trust it, and what verification criterion would turn it into a real requirement?
+:::
+
+# Discussions
+
+## When is the trace more honest than the answer, and when is it just cheaper?
+
+Unobtrusive data promise behavior over self-report, but they were made for other purposes.
+
+*The say-do gap is real: people misremember and manage their image. Yet logs and archives carry their own lies of omission, and "we used real behavior" can launder a badly biased sample into an authoritative-sounding finding. Where is the line between honest realism and convenient data?*
+
+## Whoever chooses the metric chooses the product: who should that be?
+
+The opening case turned on one logged number quietly becoming the definition of success.
+
+*"Whatever can be computed comes to dominate later decisions." That is a claim about power, not just measurement. If the metric shapes the product and the metric is chosen by whoever can instrument it, then engineers, not users or ethicists, are setting values by default. Is that acceptable, and what would change it?*
+
+## Should a persona ever exaggerate?
+
+The instrumentalist says embellishment is fine if it inspires; the realist says a false claim about users breaks the design.
+
+*This is a live fault line in practice. Exaggerated personas can force diversity and empathy, or they can encode a designer's bias as if it were data. When, concretely, is a "less accurate but more useful" representation the right call, and who gets hurt when it is wrong?*
+
+## When an AI generates your personas and scenarios, what is left to trust?
+
+Large models will happily produce a fluent persona or a vivid scenario from a prompt, or from real transcripts.
+
+*This engages everything today: reactivity, traceability, realist vs. instrumentalist. A generated persona is maximally informative and minimally grounded; its confidence is decoupled from its evidence. Can traceability survive when the representation's author is a model, and what would you need to see before you designed for an AI-written user?*
+
+# Activities
+
+## Activity 1: Diagnose the inference gap (~35 min)
+
+**Task:** In groups of 3 to 4, take a real logged metric your group knows (streak counter, time-on-page, "active users," scroll depth) and reverse-engineer what it can and cannot honestly prove about users.
+
+**Produce:** A three-column table with at least six rows: the logged event, the inference a team is tempted to draw, and the alternative explanation the log cannot rule out. Include one row where your group argues the metric is actively dangerous to optimize, with your reasoning.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Which of your dangerous metrics is some real product optimizing right now?
+
+## Activity 2: Audit an AI-generated persona (~40 min)
+
+**Task:** In groups of 3 to 4, prompt an AI model to generate two personas for a product you know, once with only a one-line brief and once "based on" a few real user quotes you write yourselves.
+
+**Produce:** An annotated comparison of the two personas with at least five findings: mark each claim as traceable, plausible-but-unsupported, or fabricated. End with one position statement: is an AI-generated persona a realist claim or an instrumentalist prop, and would you let it drive a real design decision? Defend it.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Did grounding the prompt in real quotes make the persona more *true*, or just more convincing?
+
+{{< include endMatter.md >}}

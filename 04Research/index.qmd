@@ -11,231 +11,270 @@ Part III of @Hornbaek2025
 
 # Intro
 
-For three weeks we've been building a general model of the human — perception, motor control, cognition, motivation. That model is powerful, but it's patchy: it tells you people satisfice and hate latency; it does not tell you what *your* users do on a Tuesday.
+For three weeks we've been building a general model of the human, which is powerful and a good starting point, but it's not specific to *your* users.
 
 This week's question: *you are not your user, so how do you find out who is, and what they do?*
 
-# Case Study: Quibi
+# Case Study: Uber
 
-<!-- IMAGE: Quibi app on a phone in portrait/landscape "Turnstyle" split, or the launch-day press image -->
+![](fiUber.jpg)
+# What did Uber miss?
 
-# Why did Quibi fail?
+Uber got off to a rocky start with women. Because the all-male cofounders designed for themselves.
 
-$1.75 billion, Hollywood's best content, and a shutdown six months after launch.
+- They designed for convenience instead of safety. Uber assumed riders primarily valued speed, price, and ease of use over safety.
+- They didn't deeply understand women's lived experiences. Women often approach transportation differently than men because of the risk of harassment or assault.
+- They optimized for business metrics instead of trust, which is essential in a marketplace.
 
-- They asked people *"would you watch premium short-form video on your phone?"* — and people said yes. Classic **say–do gap**: stated preference, not observed behavior
-- They designed for a **context** — commutes, coffee lines, in-between moments — and launched into April 2020, when nobody had one. Context isn't a backdrop; it's a variable
-- They built for the founders' taste and the survey deck, not for observed practice: no screenshots, no sharing, no TV casting — every behavior users *actually* exhibited with mobile video was blocked
-- The one-line model clash: leadership's model was *TV, but shorter*; users' model was *TikTok, but worse*
+# You are not the user
 
-::: {.callout-tip title="In the wild"}
-🎤 *A time your team (or a team you watched) shipped something because a survey or an exec said users wanted it — and the logs told a different story within a month. The specific shape: what people SAID vs. what the data SHOWED, and what it cost to find out the expensive way.*
+This is the founding commitment of user research. Three reasons it's hard, and each one previews a method this week.
+
+- **The say-do gap:** what people say they do and what they actually do diverge. Self-reported internet use correlates weakly with logged behavior (**Scharkow**).
+- **Tacit knowledge:** much of what drives behavior cannot be put into words. Ask someone how they ride a bike.
+- **The future is unimaginable:** no user of a batch system could have specified a GUI. People are poor predictors of their own future use.
+
+::: {.callout-note}
+User research is the set of empirical methods for obtaining, analyzing, and representing knowledge about users, their activities, their contexts, and the systems they already use, in order to inform design.
 :::
 
-<!-- ~4 min -->
+# No method is free
 
-# You Are Not the User
+Every method trades off three things you cannot maximize at once (**McGrath**).
 
-## Why user research exists
+- **Realism:** how close to the naturally occurring situation. Field research wins here.
+- **Precision:** how much control and detail. Lab and structured methods win here.
+- **Generalizability:** how well it extends to other people and settings. Surveys win here.
 
-- **You are not the user** — designers and developers are systematically unrepresentative; basing decisions on your own opinion is a bias, not a shortcut
-- **Say–do gap** — what users say diverges from what they do; self-reported internet use correlates poorly with logged use, and a recent meta-analysis (**Parry et al., 2021**) puts self-report/log agreement at only moderate levels
-- **Tacit knowledge** — much of what drives behavior can't be articulated (**Polanyi**): ask someone how they type their password and watch them fail to explain
-- **Future blindness** — users can't articulate needs for technology they haven't experienced; no batch-computing user asked for a GUI
-- **Work is kept invisible** — **Suchman (1995)**: making work practices visible can shift power in an organization, so people hide them
+Because every method is biased in its own way, the fix is **triangulation:** combine methods with different weaknesses so they cover for each other. Hold this throughline: interviews, field research, and surveys each buy one corner of the triangle and pay for the others.
 
-## What do we gather knowledge about?
+# Interviews
 
-- **PACT** (**Benyon**): **People** (skills, motivations, beliefs), **Activities** (what they actually do), **Contexts** (physical, social, organizational, historical, cultural), **Technologies** (what they use now)
-- **Design-neutral descriptions** — understand first, design later; user research is applied empirical science, not brainstorming
-- **The is–ought problem** — no description of what users *do* logically entails what you *should* build; data informs, it does not decide
-- Research also **persuades**: a designer with interview data and models beats a designer with vibes in every stakeholder meeting
+## The neutral interview
 
-## Who counts as "the user"?
+- **Interview:** a planned, systematic conversation to elicit a user's first-person view of a chosen theme, distinct from everyday talk by its preparation, focus, and recording.
+- **Open-ended (responsive):** questions adapt to answers; **structured:** fixed script, closer to a survey; **micro-phenomenological:** tiny content-free questions unfolding one lived experience.
+- **Question types (Rubin & Rubin):** main questions (tour, grounded, comparison), probes ("go on..."), and follow-ups that clarify, get concrete, and surface variation.
+- **Listen, do not talk:** the interviewer spends more time listening than in any normal conversation.
 
-- Three steps, all failure-prone: define the **target audience** (behavioral, technological, demographic criteria) → identify **other stakeholders** → **sample**
-- **Stakeholders** aren't users but are affected: **Mitchell et al. (1997)** — sort them by **power**, **legitimacy**, **urgency**; some are latent, some dormant (lawyers appear only after the accident)
-- **Extreme users** (**Pullin & Newell, 2008**) — designing from the edges of ability distributions produced the tape recorder and easy-grip kitchen tools
-- **Lead users** — early adopters with stronger needs preview the mainstream's future
-- Defining the user is a **political decision**: are you designing for everyone, or for people who look like your managers?
+::: {.callout-note}
+A leading question is one that implies a "right" answer and injects the interviewer's prejudice into the interviewee's response, for example "Don't you think autocorrect should be on by default?"
+:::
 
-## [Concept check]{.r-fit-text}
+## Staying neutral is harder than it sounds
+
+The rule is easy to state but brutal in practice, especially when you built the thing you are asking about.
+
+- **Kill the bias in wording:** "How much did you like it?" becomes "Tell me about your experience using it."
+- **Handle "why?" with care:** it pushes people to rationalize and can make them defensive; use it sparingly.
+- **Do not ask people to forecast:** "Is handwriting recognition useful?" invites speculation. Ask "How are you using it right now?"
+- **The hardest case is your own project:** if you are personally invested, be honest about whether you can even be neutral on the subject.
+
+## Some interview questions fail
+
+<!-- IMAGE: A slide showing three real biased questions side by side, each labeled with its flaw: leading, double-barreled, and future-hypothetical. -->
+
+## Concept check{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-Your team is building a scheduling tool for hospital nurses. The head of nursing offers to answer all your questions herself — "I know exactly what my nurses need." Using this section's vocabulary, name two distinct reasons this offer should worry you, and one stakeholder group nobody has mentioned yet.
-:::
-
-<!-- ~11 min -->
-
-# Choosing Methods
-
-## No method is innocent
-
-- **McGrath (1995)**: all methods are flawed; every choice trades off **realism** (is the situation like the real one?), **precision** (how exact is the measurement?), and **generalizability** (does it hold beyond this sample?)
-- You cannot maximize all three — field studies buy realism at the cost of control; surveys buy generalizability at the cost of depth
-- Methods differ on **open-ended vs. close-ended** (let the data speak vs. predefined categories) and **first-person vs. third-person** (ethnography vs. log analysis)
-- Quibi callback: surveys were high-generalizability, zero-realism — and the question they answered wasn't the one that mattered
-
-## Triangulation and quality
-
-- **Triangulation** (**McGrath**): combine methods with *different* weaknesses so they compensate for each other — interviews + logs, surveys + observation
-- Only about half of UX studies triangulate at all (**Pettersson et al., 2018**); the other half inherit one method's blind spots wholesale
-- Four marks of methodological quality: **validity** (are the conclusions justified?), **reliability** (same result on repeat?), **transparency** (can others inspect the chain of evidence?), **ethics** (obligations to participants, clients, and society)
-
-::: {.callout-warning title="Not so fast... is user research even worth it?"}
-- The field treats "know the user" (**Hansen, 1971**) as an axiom, and ROI cases at HP were estimated at $6M–$125M per project (**Harper**)
-- **Norman (2005)**, *Human-Centered Design Considered Harmful*, countered: chasing every user signal produces incoherent, feature-creeped systems — and users happily adapt to valuable tools that ignored them (the violin was not user-tested)
-- Current consensus: user research reliably improves and de-risks designs; it rarely produces radical innovation on its own
-- Design takeaway: treat user research as evidence that informs judgment — not as a requirements vending machine
-:::
-
-## [Concept check]{.r-fit-text}
-
-::: {.callout-note title="Pause and think"}
-A startup wants to know whether freelancers would trust an AI agent to send invoices on their behalf. They plan a 5,000-person survey. Using realism–precision–generalizability, what does the survey miss, and what single second method would you triangulate with — and why that one?
-:::
-
-<!-- ~17 min -->
-
-# Interviews Are a Craft
-
-## Talking to people is not research
-
-- Everyday conversation is unplanned, unrecorded, and aimed at rapport — not at understanding the other person's world; interviews are **systematic** conversation
-- Three families: **structured** (fixed schedule — easy to run, easy to compare), **semi-structured / open-ended** (the HCI workhorse), **unstructured** (rare in HCI)
-- Interviews access **beliefs, attitudes, experiences** — not frequencies; never interview to learn how *often* people do something (that's the say–do gap again)
-- **Ames & Naaman (2007)** interviewed 13 Flickr users and overturned the assumption that tagging is self-promotion — people also tag for their own memory; two dimensions: sociality × function
-- The stance: *"don't argue, never give advice"* — and listen more than you talk
-
-## Question craft
-
-- **Main questions** map to themes: tour ("walk me through..."), grounded ("the last file you downloaded..."), experience, comparison, stage questions
-- **Probes** keep talk flowing ("tell me more", echoing their words); **follow-ups** deepen it (clarify, get concrete, compare, check variation)
-- Kill **leading questions** ("How much did you like it?"), **double-barreled questions** (two topics, one question), and **judgmental wording**
-- Ask about the **present, not the future** — "would you use X?" invites speculation; "is X useful to you right now?" invites evidence
-- Use **"why?" sparingly** (**Rubin & Rubin**) — it demands justification, makes people defensive, and buys you a rationalization, not a reason
-
-::: {.callout-tip title="In the wild"}
-🎤 *A recording of (or story about) a real interview question that went wrong — ideally one of your own. The specific shape: the leading question as asked, the answer it produced, and the moment you realized the data was worthless.*
+Rewrite this into a neutral, single-topic question you could actually ask a user: "Don't you find the new onboarding both faster and clearer than the old one?" Name every flaw you removed.
 :::
 
 ## Contextual inquiry
 
-- **Holtzblatt & Beyer**: watch users do work that matters to them *while* talking about it — interview woven into observation, 1.5–2 hours
-- Four principles: **context** (be where the activity is), **partnership** (master–apprentice: the user does the talking), **interpretation** (build meaning together, listen for "no... but... maybe"), **focus** (go deep where the energy is)
-- The killer probe: when they generalize ("I usually just..."), pull them back to the concrete — *"show me how"*, *"tell me about the last time"*
-- This is the standard answer to tacit knowledge: what can't be said can often be **acted out**
+- **Contextual inquiry (Holtzblatt & Beyer):** watch users do a real activity in its setting and talk to them about it as they go, blending observation and interview.
+- **Master and apprentice:** the user does the work and the talking; you are the nosy apprentice trying to learn the craft.
+- **Concreteness over abstraction:** when they say "I usually do it this way," you say "show me the last time you did it."
+- **Four principles:** context, partnership, interpretation, focus.
 
-## From talk to insight
-
-- **Analysis expands meaning** (what did "liven up my feed" actually mean?) then **condenses it** (coding into patterns); do it soon after each interview, not at the end
-- **Affinity diagramming** (**Kawakita's KJ method**; **Lucero, 2015**): notes → clusters → walk the wall → document; collaborative bottom-up coding
-- **Thematic analysis** (**Braun & Clarke, 2006**): familiarize → code generously → generate themes → review → define → report; themes are *constructed* relative to your question, not found under a rock
-
-::: {.callout-warning title="Not so fast... how many interviews are 'enough'?"}
-- **Guest, Bunce & Johnson (2006)**: saturation arrived by ~12 interviews — cited thousands of times as a magic number
-- **Braun & Clarke (2021)** countered: for reflexive thematic analysis, "saturation" is incoherent — meaning is generated by the analyst, so it can't run out; **Malterud et al. (2016)** propose "information power" instead
-- Current consensus: sample size depends on question breadth, data richness, and analysis method — not a universal constant
-- Design takeaway: never justify n=12 by citation alone; justify it by what your question needs
+::: {.callout-note}
+Contextual inquiry trades generalizability and precise task timing for realism and a full understanding of a few users' activity in situ.
 :::
 
-## [Concept check]{.r-fit-text}
+## Why watching beats only asking
+
+Contextual inquiry exists because asking alone hits the say-do gap and the tacit-knowledge wall. Being present lets the artifacts, the room, and the interruptions jog what a bare interview would miss.
+
+- **Tacit knowledge gets acted out:** people who cannot describe how they use autocorrect will show you if you watch.
+- **Context supplies the cues:** the devices, layout, and colleagues that a retrospective interview strips away.
+
+::: {.callout-warning title="Do interviews tell you what users do?"}
+- **Rubin & Rubin, Holtzblatt & Beyer:** interviews give privileged access to how users think and what things mean to them.
+- **Scharkow; and observed-vs-reported studies:** self-reports of behavior diverge from logs and direct observation. In one handwashing study, far more people say they wash than are observed doing it.
+- Current read: interviews are strong evidence of *meaning and experience*, weak evidence of *behavior and frequency*.
+- Design takeaway: do not cite interview self-report as behavioral fact; triangulate it with observation or logs.
+:::
+
+## Concept check{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-You're studying how people use password managers. An interviewee says: "Oh, I use it for everything, I never reuse passwords." Name the two chapter concepts that should make you distrust this answer, and the method you'd use to check it — without calling them a liar.
+Your team wants to know how often people actually use a rarely-touched "export" feature and how they feel about it. Which part should you get from an interview, and which part should you refuse to trust from the interview? Why?
 :::
 
-<!-- ~24 min -->
+# Field research
 
-# Into the Field
+## Observation in the field
 
-## Watching beats asking — sometimes
+- **Field research:** collecting data on users in their real-world context, with as little disturbance from your presence as possible.
+- **Etic (outsider) view:** count and time events from outside, for example how long people linger at an interactive shop window.
+- **Emic (insider) view:** immerse to describe the activity from the members' own perspective.
+- **Focus first (Spradley):** you cannot just "go and watch." Pick dimensions to attend to: space, actors, activities, objects, acts, events, time, goals, feelings.
 
-- **Field research** = collecting data on users in their real context; its superpower is **realism** — it captures what other methods structurally miss
-- **Etic** observation: outsider's view, countable events, minimal interference. **Emic** (ethnography): insider's view, meanings and practices
-- **MacKay (1999)** spent four months with air traffic controllers to understand their paper flight strips before a planned digitization — and found the paper *was* the safety system: cyclical checking, spatial arrangement, annotations "for the future"
-- Field research excels at **discrepancy problems**: the gap between how managers think work happens and how it actually gets done
-
-## Some paper that shouldn't be replaced
-
-<!-- IMAGE: air traffic control paper flight strips arranged on a control board -->
-
-## Doing observation well
-
-- **Focus** is a decision, not a default: **Spradley (1980)** gives nine dimensions — space, actors, activities, objects, acts, events, time, goals, feelings
-- **Site selection** shapes everything; orient with a floor plan; watch for **reactivity** — the observer changes the observed (imagine being shadowed by someone your boss hired)
-- **Shadowing** follows people instead of places: **González & Mark (2004)** found workers average under 2.5 minutes on email before switching
-- **Field notes** are the raw data: diaries are flexible but sporadic; **structured notes** enable patterns and counting; write **thick descriptions** fast — memory decays by lunch
-- Coding needs a **manual** with unambiguous definitions, and **inter-rater reliability** when you plan to count anything
-
-## Ethnography — and its limits
-
-- Three commitments (**Blomberg et al.**): the **member's point of view**, **descriptive** not prescriptive, **holistic** — include whatever *members* treat as relevant
-- Membership takes time: **Barrett et al. (2004)** logged 100+ hours with sysadmins to see how one engineer's misunderstanding contaminated an entire team's troubleshooting
-- **Rapid ethnography** (**Millen, 2000**): immersion only as long as it must be — narrower scope, multiple observers, key informants
-- Ethics sharpen in the field: covert observation may be illegal, pseudonyms and note security are non-negotiable, and vulnerable groups may be reachable *only* this way
-
-::: {.callout-warning title="Not so fast... must fieldwork end in 'implications for design'?"}
-- The practitioner default: fieldwork earns its cost by producing takeaway bullets designers can act on — rapid ethnography exists precisely to speed this up (**Millen, 2000**)
-- **Dourish (2006)**, *Implications for Design*, countered: judging ethnography by its bullet list misreads what it's for — the analytic understanding *is* the contribution, and compressing it blunts the work
-- Current consensus: the chapter's reframe — don't ask "should we do field research?", ask "can we succeed without it?"
-- Design takeaway: budget for translation — the representations we cover next week (personas, models, journey maps) are the bridge from thick description to design decision
+::: {.callout-note}
+Reactivity is the change in people's behavior caused by the observer's presence. Imagine your employer hired someone to sit and watch you work.
 :::
 
-## [Concept check]{.r-fit-text}
+## What presence gives you and costs you
+
+Field research buys realism: it captures collaboration, workarounds, and the gap between the official procedure and how work actually gets done. The cost is reactivity and effort.
+
+- **It surfaces non-obvious problems:** power structures, weather, interruptions, the mundane frictions no lab reveals.
+- **It exposes discrepancy problems:** where managers' picture of a system does not match the ground truth, and new work quietly lands on end-users.
+- **Capture is a craft:** field notes, a field diary, or structured notes; then thick description and a coding manual so two raters agree (inter-rater reliability).
+
+## Concept check{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-Your company wants to "digitize the whiteboard" that a warehouse team uses to coordinate shifts. Before anyone writes code, what would MacKay's flight-strip study tell you to look for — and would you observe etically, ethnographically, or both? Defend the choice in one sentence each.
+You have two hours to observe a busy call center. Would you go etic or emic, and name the one thing your choice will systematically cause you to miss?
 :::
 
-<!-- ~30 min -->
+## Ethnography
+
+- **Ethnography:** an emic method from anthropology; long immersion to describe an activity from the members' point of view.
+- **Members' point of view:** describe the meaning of the activity as experienced, in the members' own terms, not your imported vocabulary.
+- **Descriptive, not prescriptive; holistic:** include whatever the members consider relevant, not a pre-fixed list of variables.
+- **Rapid ethnography:** immerse only as long as you must; several observers, preselected informants, logs to fill gaps.
+
+::: {.callout-note}
+The classic ethnographic example: to a newcomer a print room is undifferentiated noise; to experienced operators the machine sounds decompose into a rich resource for monitoring each other's work (**Button & Sharrock**).
+:::
+
+## From rich description to a design decision
+
+Here is the catch the chapter is honest about. Realism makes field data vivid and contingent, which is exactly what makes it hard to turn into a general design implication.
+
+- **The "So what?" problem:** every observation is tied to unique circumstances; summarizing into "takeaway bullets" can blunt the very richness that gave it value.
+- **Its real payoff is strategic:** finding non-obvious problems, building models of practice, and giving stakeholders a story they can act on.
+- **Reframe the question:** not "should we do field research?" but "can we succeed without it?"
+
+::: {.callout-warning title="Does watching users actually inform design?"}
+- **MacKay; discrepancy-problem studies:** field research can catch failures that no other method would have surfaced.
+- **Norman:** human-centered design taken too literally yields incoherent, feature-crept systems, and users adapt to systems anyway.
+- **Dourish:** demanding "implications for design" from every field study is the wrong test; some studies exist to help us understand people.
+- Design takeaway: treat field research as sensitizing and strategic, not as a spec generator; pair it with other methods before you commit.
+:::
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You run a two-hour observation of nurses using a medication cart and it is spotless, no errors, everyone by the book. Name two reasons this "clean" session might be misleading, using terms from this section.
+:::
+
+# Surveys
+
+## Sampling for generalizability
+
+- **Survey:** a structured questionnaire everyone answers the same way, usually without you present; its distinctive strength is generalizability at scale.
+- **The sampling chain:** population, then sampling frame (who you can reach), then sample (who you invite), then respondents (who actually answer). Every step can leak bias.
+- **Randomization vs stratification:** sample at random, or set quotas so key groups are represented equally.
+- **Convenience and snowball sampling:** cheap and common in HCI, but they break the "every member equally likely" assumption.
+
+::: {.callout-note}
+Self-selection bias is the distortion introduced when the people who choose to respond differ systematically from those who do not, over-representing whoever had a reason to answer.
+:::
+
+## Why a big N can still lie
+
+Generalizability is the selling point, and it is exactly where surveys quietly fail. Scale multiplies a biased question or a skewed frame; it does not fix them.
+
+- **Response rate is not the real worry:** the worry is how non-respondents differ from respondents (**Oppenheim**). A 10% response rate can be fine or fatal depending on that gap.
+- **Sample size buys precision, not validity:** more people narrows your margin of error, not your bias.
+- **The mean HCI survey has around 371 respondents:** published studies run from 6 to 50,000, so "how many" is the wrong first question. "Who, and asked what?" comes first.
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You need results that generalize to all users of your app, but you can only recruit from your existing mailing list. Name the population, the sampling frame, and the single biggest threat to generalizing from what you collect.
+:::
+
+## Writing a question that measures what you think
+
+- **One question at a time:** "How satisfied are you with the system and its support?" is double-barreled; split it.
+- **Neutral, not leading:** "Do you agree that the site is usable?" becomes "Do you agree or disagree that the site is usable?" or better, a rating scale.
+- **Specific:** "the most" (most times? longest?), "computer" (which one?), and "last week" all mean different things to different people.
+- **Prefer validated instruments:** NASA-TLX, SUS-style usability items, the Technology Acceptance Model scales, rather than rolling your own.
+
+::: {.callout-note}
+Response biases distort answers systematically: acquiescence (agreeing regardless), social desirability (looking good), response-order and neutral-item effects, and demand bias (answering to fit the study's apparent purpose).
+:::
+
+## Reliability is not truth
+
+A validated scale measures a construct with several items and checks that they move together. Useful, but easy to over-trust.
+
+- **Cronbach's alpha:** internal consistency from 0 to 1; a rough floor of 0.7 for a scale. Custom HCI questionnaires often miss it while validated ones clear it.
+- **Consistency is not correctness:** a high alpha means your items agree with each other, not that they measure the right thing.
+- **De-situatedness:** the respondent is answering far in time and place from the moment you care about; diaries and experience sampling pull the question back toward the event.
+
+::: {.callout-warning title="Does a validated, high-response survey give you the truth?"}
+- **Ernala et al.:** asked 50,000 people about time on Facebook ten different ways; the "same" quantity shifted with the wording.
+- **Scharkow:** self-reported use tracks logged behavior only weakly.
+- **Oppenheim:** a good response rate does not rescue a biased frame; a biased frame with a great rate is still biased.
+- Design takeaway: use surveys to estimate distributions and attitudes at scale, triangulate anything behavioral against logs or observation, and pilot every question.
+:::
+
+## Concept check{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A Product Manager shows you a survey: 12,000 respondents, 92% "agree the new feature is useful," recruited via a banner inside the feature. Give two reasons that 92% might be worthless, naming the specific bias each time.
+:::
 
 # Discussions
 
-## Can AI-simulated "synthetic users" replace interviews?
+## If you are not the user, can you ever escape your own perspective?
 
-Vendors now sell LLM personas you can "interview" in minutes for the price of an API call.
+User research assumes empirical data beats the designer's intuition, yet the chapter admits empathy tends to fail and Norman warns that following users too closely breeds feature creep.
 
-*This is a live commercial reality, not a thought experiment — and it collides head-on with everything this week said about tacit knowledge, the say–do gap, and first-person experience. An LLM has read a million users' words but has never had a Tuesday. If interviews exist to access felt experience, what exactly is a synthetic user giving you — and is it better or worse than the designer's own imagination it replaces?*
+*Is rigorous user research a genuine correction to designer bias, or does it just launder the same biases through a method? Where is the line between listening to users and letting the loudest signal design your product?*
 
-## If users adapt to anything valuable, why fund user research at all?
+## When, if ever, is covert observation justified?
 
-Norman says human-centered design can produce incoherent systems, and history's best tools were never user-tested.
+Field research is strongest when people do not modify their behavior for the observer, but reactivity is reduced most by watching people who did not fully consent.
 
-*This attacks the week's founding axiom with the field's own founding father. The violin, the piano, and vi were iterated, not researched — yet the graveyard of products built on founder intuition (see: this week's case study) is vast. Where exactly is the line between healthy skepticism of user signals and the arrogance that costs $1.75 billion?*
+*Weigh the realism you gain against the autonomy you take. Would you run a covert study of a vulnerable group if it were the only way to surface a real harm? What would make it defensible, or never defensible?*
 
-## Defining "the user" is a political act — so who should get to do it?
+## When users act through an AI agent, who is "the user"?
 
-Every target-audience profile includes some people and quietly excludes others.
+More products put an AI agent between the person and the task, acting on their behalf, so the thing you observe is often the agent's behavior, not the human's.
 
-*The chapter says user-centered design should "fight the urge to design for managers or oneself," but someone still writes the profile — and profiles have budgets attached. Extreme users gave us the tape recorder; ignoring them gives us systems illiterate Uber drivers must rote-learn. Is inclusive sampling an ethical duty, a business strategy, or a luxury for teams with slack?*
+*Do interviews, contextual inquiry, and observation still target the right subject when an agent mediates or replaces the user's actions? What does "watching the user work" even mean when half the work is done by a model the user cannot see into?*
 
-## If people can't accurately report their own behavior, is covert observation justified?
+## Are LLM-simulated "synthetic users" user research or a category error?
 
-The say–do gap says asking fails; consent changes behavior; covert watching solves both — and violates something.
+Teams increasingly prompt a model to role-play respondents or interviewees instead of recruiting people, arguing it is faster and cheaper at scale.
 
-*This puts two of the week's principles in direct conflict: methodological validity (reactivity corrupts data) versus research ethics (people deserve to know they're being studied). Public-space video, virtual-world lurking, and log analysis all live in this gray zone. Where does legitimate unobtrusive research end and surveillance begin?*
+*A synthetic user has no tacit knowledge, no say-do gap, and no future it cannot imagine, because it has no behavior at all. Does simulating users reintroduce the exact "you are not the user" problem the field exists to solve, or is there a defensible use? Name where you would and would not trust it.*
 
 # Activities
 
-## Activity 1: The question clinic (~35 min)
+## Activity 1: Question teardown and rebuild (~35 min)
 
-**Task** — In groups of 3–4: you're given a brief (a grocery chain wants to understand how families plan weekly meals, to inform a new app). Draft an interview guide: 2 themes, 4 main questions, 2 planned follow-ups each. Then swap guides with another group and red-team theirs: hunt for leading, double-barreled, future-hypothetical, judgmental, and "why"-trap questions.
+**Task:** In groups of 3 to 4, take the provided set of eight flawed interview and survey questions (leading, double-barreled, vague, future-hypothetical, socially loaded) and diagnose then repair each one.
 
-**Produce** — A markup table with at least 6 rows: flawed question → named flaw (chapter vocabulary) → rewritten version. Plus one forced position: identify one interviewing "rule" from today's lecture your group thinks is wrong or overstated, with a two-sentence argument.
+**Produce:** A table with at least eight rows: original question, the specific flaw named, and a neutral rewrite. Plus one forced position: pick one question the chapter's rules would flag that you think is actually fine as written, and argue why.
 
-**Time** — 15 min writing · 10 min red-teaming the other group's guide · 10 min share-out
+**Time:** 25 min group work · 10 min share-out
 
-**Debrief** — Which flaw survived your own drafting and was only caught by the other group — and why did it feel like a good question when you wrote it?
+**Debrief:** Which flaw was hardest to fix without introducing a new one?
 
-## Activity 2: Contextual inquiry of AI use (~40 min)
+## Activity 2: Method-match for an AI feature (~40 min)
 
-**Task** — In groups of 3–4: one member (the "master") performs a real task they actually need to do using an AI assistant — drafting an email, debugging code, planning a trip. One member runs a contextual inquiry as the apprentice (context, partnership, interpretation, focus); the rest take structured field notes using Spradley dimensions. Rotate roles once if time allows.
+**Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
 
-**Produce** — An annotated observation sheet with at least 5 concrete observations, each tagged with a chapter concept (tacit knowledge, say–do gap, context, reactivity, workaround...). Plus one forced position: name one finding that would *not* have surfaced in a plain sit-down interview, and argue why.
+**Produce:** A table of three research questions mapped to methods with a one-line justification each, plus one place the say-do gap or reactivity would bite. Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
 
-**Time** — 25 min inquiry + notes (split across rotations) · 15 min share-out
+**Time:** 28 min group work · 12 min share-out
 
-**Debrief** — What tacit prompting practices did the "master" have that they could not articulate until you asked "show me"?
+**Debrief:** Where did two groups pick opposite methods for the same question, and who was right?
 
 {{< include endMatter.md >}}

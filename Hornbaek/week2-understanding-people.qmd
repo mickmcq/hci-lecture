@@ -203,8 +203,8 @@ Think about an app you use on your phone one-handed. Where do you make the most 
 ## Why recognition wins
 
 - **Recognition is cheap; recall is expensive.** People recognize hundreds of faces and icons effortlessly but struggle to recall the same items cold.
-- **This is why the GUI beat the command line:** menus and icons let users *recognize* the option; command languages force effortful *free recall* (**Norman**).
-- **Knowledge-in-the-world beats knowledge-in-the-head:** show the options instead of demanding memorized commands, and you offload cognition onto the display.
+- **This is why the GUI beat the command line:** menus and icons let users *recognize* the option; command languages force effortful *free recall*.
+- **Knowledge-in-the-world beats knowledge-in-the-head (Norman):** show the options instead of demanding memorized commands, and you offload cognition onto the display.
 - **But externalizing has a cost:** lean on the world too hard (passwords on sticky notes) and knowledge-in-the-head atrophies.
 - **Encoding-retrieval symmetry:** people retrieve better when the retrieval context matches encoding; change the login screen's look and the password gets harder to summon.
 - **Design rule:** let users choose from what is shown, not summon from memory.
@@ -238,7 +238,8 @@ A **mental model** is a memory-based representation of an interactive system, us
 
 ## When the user's model clashes with the system
 
-- **Models are fragmentary, not complete:** untrained users rarely hold a coherent model. Knowledge is patchy: a few remembered episodes, some isolated facts (**Mayer & Gallini**).
+- **Models are fragmentary, not complete:** untrained users rarely hold a coherent model. Knowledge is patchy: a few remembered episodes, some isolated facts.
+- **Good explanations build better models (Mayer & Gallini):** in a classic pump study, showing parts and steps together beat either alone for both recall and problem-solving.
 - **Users would rather try than reason:** effortful simulation is avoided; people poke at the interface and watch what happens.
 - **Failure is a model clash:** most "user error" is the designer's model and the user's model disagreeing, exactly the kiosk problem.
 - **AI raises the stakes:** with an AI agent acting on your behalf, the user's model of "what will it do" is thin and often wrong. A **Bayesian-brain** view says users constantly update predictions ("what will autocomplete do next?"), so systems must make their behavior *predictable and legible*.
