@@ -50,8 +50,7 @@ Self-determination theory holds that three basic psychological needs - autonomy,
 - **Competence shows up as** clear feedback, visible progress, and difficulty that scales with skill
 - **Relatedness shows up as** presence, shared activity, and knowing another person is there
 - **Hassenzahl** widened this to six needs for HCI: relatedness, meaning, stimulation, competence, popularity, security
-- **Measurement is real:** the PENS scale gauges competence, autonomy, and relatedness in games, so "needs" is not just hand-waving
-- The rule: name the need a feature serves *before* you build it; a feature that serves no need buys you no intrinsic motivation
+- The design rule: name the need a feature serves *before* you build it; a feature that serves no need buys you no intrinsic motivation
 
 ##
 
@@ -62,7 +61,7 @@ Self-determination theory holds that three basic psychological needs - autonomy,
 :::
 
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A fitness app adds a public leaderboard. Which of the three SDT needs might it feed, and which might it starve? For whom would the leaderboard help, and for whom would it kill the motivation to open the app at all?
@@ -80,8 +79,9 @@ A fitness app adds a public leaderboard. Which of the three SDT needs might it f
 
 - **The overjustification effect:** pay people for something they already enjoyed, and their intrinsic interest can drop once the reward stops
 - The behavior becomes controlled by the reward, which thins out autonomy
-- **Callback:** an extrinsic counter bolted onto an intrinsically social act
 - Design move: use extrinsic rewards to *start* a behavior, then help it internalize; unexpected positive feedback that signals competence tends to help, controlling rewards tend to hurt
+
+##
 
 ::: {.callout-warning title="Is the undermining effect even real?"}
 - **Deci, Koestner & Ryan** meta-analyzed 128 studies: tangible, expected rewards reliably undermine intrinsic motivation
@@ -90,7 +90,7 @@ A fitness app adds a public leaderboard. Which of the three SDT needs might it f
 - Design takeaway: do not cite "rewards always kill motivation" as a law; ask whether *this* reward reads as control or as competence feedback
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A language app currently gives XP for every lesson. A designer proposes cash rewards for hitting a weekly goal. Using the internalization continuum, predict what happens to a learner who was studying "because I want to travel." What would you propose instead?
@@ -113,10 +113,9 @@ Behavior change technology uses models of motivation to help people move toward 
 - **UbiFit Garden** grew flowers and butterflies on a phone's wallpaper as you exercised: ambient, glanceable, tied to the contemplation-to-action stages
 - The lesson: match the intervention to the *stage*; someone in precontemplation needs information and social proof, not a harder goal
 - **Nudging is everywhere:** the pre-checked box, the default privacy setting, the suggested tip amount
-- **Callback:** the streak is a nudge too, just one pointed at the designer's retention target rather than your goal
 - The honest question for any nudge: whose behavior is it changing, and toward whose goal?
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Pick the transtheoretical stage a person is in: "I know I should walk more but I am not going to start now." What single piece of information should the app show, and what should it absolutely not do?
@@ -139,18 +138,19 @@ Pick the transtheoretical stage a person is in: "I know I should walk more but I
 ## The ethics live on a knife edge
 
 - **Gamification cuts both ways:** points and badges can support competence, or, per SDT, cognitive evaluation can turn a reward into a controlling, amotivating experience
-- **Transparency is the pivot (Caraban):** a nudge the user can see and understand is far less ethically fraught than a hidden one
-- **Callback:** Snapstreaks sit right on this line, playful engagement to some, engineered compulsion aimed at minors to others
-- Design takeaway: if a mechanic only works when the user does not notice it, that is your ethics alarm
+- **Transparency is the pivot (Caraban et al):** a nudge the user can see and understand is far less ethically fraught than a hidden one
+- Design takeaway: if the mechanisc only work when the user does not notice it, that is your ethics alarm
+
+## 
 
 ::: {.callout-warning title="Not so fast..."}
-- **Fogg** and early persuasive-design work framed influence as basically benign, just applying persuasion to software
+- **Fogg** and early persuasive-design work intended influence to be benign and explicitly non-deceptive
 - **Gray and colleagues** and **Mathur and colleagues** documented how the same playbook scales into dark patterns at industrial scale
 - Current read: persuasive design and dark patterns are the same techniques pointed at different goals; intent and transparency, not mechanism, mark the line
 - Design takeaway: judge a persuasive feature by who benefits and whether the user can see it working, not by whether it is "just a nudge"
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A cancellation flow adds three "Are you sure?" screens, each offering a discount. Is this a helpful nudge or a dark pattern? Name the test you used to decide.
@@ -177,18 +177,38 @@ An experience is not a recording of moment-to-moment experiencing; it is an infe
 - Because decisions to return, recommend, or renew ride on the *remembered* experience, the peak and the end deserve disproportionate design attention
 - **Norman's riddle:** people will return to an experience they remember fondly even if the lived moments were rough, because the emotional sting fades faster than the story
 - Practical moves: end flows on a high note, soften the worst moment, do not assume a faster task is a better-remembered one
-- **Callback:** the streak's daily grind is forgettable; the panic of almost losing it is a vivid peak, which is exactly why it sticks
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A tax-filing app has a tedious 20-minute middle but ends with a cheerful "You are done, refund on the way!" animation. Using peak-end and duration neglect, predict how users will rate it versus a faster app that ends on a blank screen.
 :::
 
+## How experiences form over time
+
+- **Experiences are built, not captured:** McCarthy and Wright mapped the threads that assemble them, and they run in rough order
+- **Anticipation:** the expectations you bring before you ever touch the system
+- **Connecting and interpreting:** the raw first response, then making sense of it
+- **Reflecting:** judging the experience as a whole and figuring out why it felt that way
+- **Appropriating and recounting:** making it your own, then retelling it to yourself and others
+- The design point: experience starts before use and continues long after, so the story people tell later is part of the product
+
+##
+
+::: {.callout-note}
+McCarthy and Wright describe experience as a temporal process with six threads: anticipating, connecting, interpreting, reflecting, appropriating, and recounting. Attention to experience therefore has to cover moments that do not include the actual use of a system.
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Think about the last app you were excited to download. Which of the six threads was doing the most work before you opened it, and which one decides whether you recommend it to a friend?
+:::
+
 ## Pragmatic and hedonic quality
 
 - **Pragmatic quality:** how well the system helps you get the goal done, simple, practical, clear
-- **Hedonic quality (Hassenzahl):** what the system does for the self beyond the task
+- **Hedonic quality:** what the system does for the self beyond the task
 - **Stimulation:** novelty, curiosity, new capabilities
 - **Identification:** how the product lets you express who you are to others
 - **Evocation:** how it calls up memories and past relationships
@@ -204,6 +224,8 @@ A tax-filing app has a tedious 20-minute middle but ends with a cheerful "You ar
 - Consequence: aesthetics is not decoration, it is an input to how usable your product feels
 - But hold the causal claim loosely: it is a correlation, and beauty does not literally make a bad flow work
 
+##
+
 ::: {.callout-warning title="Not so fast..."}
 - **Tractinsky and colleagues** titled it "what is beautiful is usable," and the aesthetic-usability effect is real and replicated
 - **Diefenbach and colleagues** found pragmatic and hedonic ratings correlate at about r = 0.62 across AttrakDiff studies, so our instruments may not cleanly separate the two
@@ -211,7 +233,7 @@ A tax-filing app has a tedious 20-minute middle but ends with a cheerful "You ar
 - Design takeaway: use beauty to earn goodwill and patience, do not use it to excuse a broken task flow
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Two note apps do the same thing. One is plainer but a half-second faster per action; the other is gorgeous. Which will users call "easier to use," and what does that tell you about where to spend your next sprint?
@@ -221,13 +243,31 @@ Two note apps do the same thing. One is plainer but a half-second faster per act
 
 Articulation work and the social-technical gap, then common ground and theory of mind.
 
+## Two axes: time and space
+
+- The classic way to sort any collaborative tool: **when** people work together, and **where** they are
+- **Synchronous vs. asynchronous:** same time, like a video call, or not, like email, where you never know when it is read
+- **Co-located vs. remote:** same place, like a shared tabletop display, or apart, like a shared doc
+- **Four cells:** co-located synchronous (tabletop), co-located asynchronous (a public message board), remote synchronous (videoconferencing), remote asynchronous (email)
+- Why it matters: time and space drive how people coordinate, so moving a tool to a different cell changes the whole interaction
+
+::: {.callout-note}
+The two-axis model classifies collaborative systems along synchronous versus asynchronous and co-located versus remote, giving four quadrants that each call for different kinds of technological support.
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your team moves its daily standup from an in-person huddle (co-located, synchronous) to an async thread (remote, asynchronous). What do you gain, and what breaks that you now have to design around?
+:::
+
 ## Articulation work
 
 - **Articulation work:** the extra communicative effort of coordinating *how* a group works, on top of the work itself
 - Deciding who does what, in what order, when, and by which channel
 - **Ackerman's social-technical gap:** human activity is flexible, nuanced, and contextual, while software is rigid, scripted, and rule-bound
 - The gap is the divide between what we know we must support socially and what we can support technically
-- **Outeraction (Nardi):** the "you there?" pings that set up conditions for real exchange are not overhead, they are the glue
+- **Outeraction (Nardi et al):** the "you there?" pings that set up conditions for real exchange are not overhead, they are the glue
 
 ::: {.callout-note}
 Articulation work is the coordinating activity, extraneous to the task itself, that a group must do to make cooperative work possible; the social-technical gap is the persistent distance between that flexible social reality and what rigid systems can support.
@@ -239,7 +279,6 @@ Articulation work is the coordinating activity, extraneous to the task itself, t
 - **Critical mass and the prisoner's dilemma:** groupware only pays off if enough people use it, but individual incentives push the other way
 - **Disruption of social processes:** a system that logs everyone's stance can be politically toxic; an empty calendar slot does not mean you are free
 - **Exception handling:** real work runs on improvisation the system never modeled
-- **Callback:** the streak worked because both people paid in; a tool where only one side benefits dies
 
 ##
 
@@ -247,7 +286,12 @@ Articulation work is the coordinating activity, extraneous to the task itself, t
 ![](fiEpic.png)
 :::
 
-## Concept check{.r-fit-text}
+::: {.notes}
+source: https://pmc.ncbi.nlm.nih.gov/articles/PMC9759969/
+:::
+
+
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Your team adopts a tool where engineers must tag every task so managers get nice dashboards. Which of Grudin's failure modes is this, and what would make the engineers actually do it?
@@ -273,6 +317,8 @@ Common ground is the shared understanding collaborators must establish to act to
 - When a system looks human, people over-attribute a theory of mind it does not have, and collaboration breaks in surprising places
 - **Plant, do not resolve:** next week's user research exists partly because we cannot just ask a system, or a user, what they believe and get the truth
 
+##
+
 ::: {.callout-warning title="Do large language models have a theory of mind?"}
 - **Kosinski** reported that large language models pass classic false-belief (Sally-Anne) tasks, suggesting an emergent theory of mind
 - **Ullman** showed trivial rewordings break that performance, arguing it is pattern-matching, not belief attribution
@@ -280,7 +326,7 @@ Common ground is the shared understanding collaborators must establish to act to
 - Design takeaway: do not design collaboration that assumes the agent truly models the user's beliefs; keep grounding and confirmation explicit
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 An AI scheduling agent emails your colleagues to book a meeting "on your behalf." Where does common ground have to be established, and what happens the first time the agent misreads what everyone already assumed?
@@ -306,8 +352,10 @@ Computer-mediated communication removes many nonverbal cues; the cues-filtered-o
 
 - **Compensation is the story:** emoji, emoticons, punctuation ("??", ALL CAPS), and read receipts evolved to carry the missing tone
 - **Social information processing predicts** relationships form just as deep online, only slower, because nonverbal meaning has to be spelled out
-- **Callback:** the "Fine." problem is why "Fine 🙂" and "Fine." now feel like different messages
+- **IRL:** the "Fine." problem is why "Fine 🙂" and "Fine." now feel like different messages
 - Design implication: give people cheap ways to add stance and repair, do not assume text is emotionally neutral
+
+##
 
 ::: {.callout-warning title="Not so fast..."}
 - Early **cues-filtered-out** experiments concluded lean media are colder and inherently worse for relating
@@ -316,15 +364,33 @@ Computer-mediated communication removes many nonverbal cues; the cues-filtered-o
 - Design takeaway: do not assume more cues is always better; ask what the relationship needs and give tools to compensate
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A new work-chat tool strips all reactions and emoji "to keep things professional." Using social information processing, predict what users will do within a week, and what the tool loses.
 :::
 
+## The structure of conversation
+
+- **Conversation analysis** studies how people keep talk orderly: it is the toolkit behind the AI activity
+- **Turn-taking:** conversations run as turns, and each turn signals when someone else can jump in
+- **Adjacency pairs:** a first part sets up a required second, question then answer, "bye" then "goodbye"; drop the second and the speaker repairs
+- **Repair:** the moves we make to fix a misunderstanding, often flagged first ("wait, sorry") before the correction lands
+- Why it matters: agents handle speech well but stumble on turn-taking and repair, which is exactly where conversations with them break
+
+::: {.callout-note}
+Conversation analysis examines how order is achieved in talk through turn-taking, interactional sequences such as adjacency pairs, and repair, the mechanisms people use to correct misunderstandings.
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You ask a voice assistant a question and it answers a slightly different one. Which repair moves are available to you, and which can the assistant actually recognize? What does that predict for the rest of the conversation?
+:::
+
 ## Computers as social actors
 
-- **CASA (Nass):** people apply human social rules to computers automatically, even knowing better
+- **CASA (Nass et al):** people apply human social rules to computers automatically, even knowing better
 - In Nass's study, users were *politer* rating a computer on the same computer than on paper, as if not to hurt its feelings
 - **Anthropomorphic systems** deliberately give software human looks and manners, from Clippy to voice agents
 - Give a system a "personality" and people respond as they would to a person with that personality
@@ -337,14 +403,16 @@ The computers-as-social-actors framework holds that people automatically, often 
 
 - **Nowak & Biocca's surprise:** the *most* human-like avatar did not produce the most social presence; a near-cartoon face did, because a photoreal face raised expectations the agent could not meet
 - More human-looking sets a higher bar for behaving human, and the fall is harder when it fails
-- **The critique of anthropomorphism:** copying the human form can limit innovation (the first cars had reins before someone invented the wheel), can dampen users' sense of control and responsibility, and can blur what machines can actually do
+- **The critique of anthropomorphism:** copying the human form can limit innovation (the first cars had reins before someone invented the steering wheel), can dampen users' sense of control and responsibility, and can blur what machines can actually do
 - **The AI angle:** today's chatbots feel human enough to trigger CASA at full strength, so the expectation gap and the accountability blur are live design problems, not thought experiments
+
+##
 
 ::: {.callout-tip title="In the wild"}
 ![](fiClippy.png)
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A support chatbot is given a name, a face, and chatty small talk. By CASA and the Nowak & Biocca result, when does that help, and when does the human framing make its failures worse than a plain text box would?
@@ -374,7 +442,7 @@ An agent that books, buys, and messages for you has to hold common ground with y
 
 Grudin's 1994 list still explains most enterprise software failures today. Why haven't we solved these problems after 30 years of better tools?
 
-*Slack, Teams, Notion, Figma — we have vastly better collaborative technology. Yet the failures Grudin described still recur. Is this a design problem, an organizational problem, or something structural about how humans cooperate?*
+*Slack, Teams, Notion, Figma — we have vastly better collaborative technologies today than 30 years ago. Yet the failures Grudin described still recur. Is this a design problem, an organizational problem, or something structural about how humans cooperate?*
 
 ## Should communication systems make AI partners more human-like, or deliberately less?
 

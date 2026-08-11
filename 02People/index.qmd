@@ -24,7 +24,7 @@ This week's question: *what does the human processing pipeline (seeing, moving, 
 Aside from the obvious (not anticipating the volume)
 
 - They required users to **create an account before browsing any plans**, so the registration system bottlenecked under the load of curious browsers who had no way to evaluate the product first
-- They underestimated the proportion of users who were **"uncommitted shoppers"** wanting to compare options before investing effort — a basic mismatch between system functionality and how people actually behave when shopping for insurance
+- They underestimated the proportion of users who were **"uncommitted shoppers"** wanting to compare options before investing effort: a basic mismatch between system functionality and how people actually behave when shopping for insurance
 - The designers' model was *citizens completing enrollment*; the users' model was *shopping site*. The user's model always shows up first.
 
 ::: {.notes}
@@ -47,7 +47,7 @@ https://medium.com/@bishr_tabbaa/small-is-beautiful-the-launch-failure-of-health
 ## The three ingredients of a percept
 
 ::: {.callout-note}
-**Perception** is the ability to collect and organize information about the environment through physiological sensory systems. In HCI it is understood through three interacting components: 
+**Perception** is the ability to collect and organize information about the environment through physiological sensory systems. In HCI it is understood through three interacting components:
 
 - **sensory information** (what the senses transduce)
 - **expectation** (priors from prior experience)
@@ -84,17 +84,37 @@ https://medium.com/@bishr_tabbaa/small-is-beautiful-the-launch-failure-of-health
 - **Continuation:** elements along a continuous flow read as a group.
 - **Payoff (Brumby & Zhuang):** visual grouping speeds menu search, but only with a few larger groups. Many tiny groups dilute the effect.
 
-## 
+## The hard limits of the visual system
+
+::: {.callout-note}
+**Ware's windows of visibility** name the physiological limits every display fights:
+
+- **Spectrum and color:** we see roughly 380 to 780 nm, through just three cone types (trichromacy)
+- **Field of view:** about 190 degrees horizontal, 125 vertical
+- **Contrast:** the contrast sensitivity function sets which differences we can even detect
+- **Foveal vs peripheral:** sharp vision covers only about 2 degrees, a thumbnail at arm's length; everything else drops off fast
+:::
+
+## Design for color vision deficiency
+
+- **It is common:** red-green deficiency hits about **8% of men** of European descent (4 to 6.5% of Chinese and Japanese men), versus 0.4% of women.
+- **What breaks:** affected users can't reliably separate **green from red**, or blue from yellow, and there is no cure.
+- **The fix is design, not treatment:** never encode meaning in **color alone**; add shape, text, or position as a redundant channel.
+- **Periphery compounds it:** peripheral vision keeps color and shape but loses detail, so a tiny colored status dot in a corner is easy to miss.
+- **Design rule:** if stripping all color would make the screen unusable, you leaned on color too hard.
+
+##
 
 ::: {.callout-tip title="In the wild"}
 ![](fiSaliency.png)
 :::
 
 ::: {.notes}
-What kind of perception fail is this? 
-No proximity grouping. No consistent similarity signal. Figure and ground compete. A user looking for specific information has no perceptual path to follow — they have to read everything
+What kind of perception fail is this?
+No proximity grouping. No consistent similarity signal. Figure and ground compete. A user looking for specific information has no perceptual path to follow, so they have to read everything
 :::
 
+##
 
 ::: {.callout-warning title="Are the Gestalt 'laws' really laws?"}
 - **Wertheimer** and the Gestalt school presented grouping as fixed perceptual laws.
@@ -108,7 +128,6 @@ No proximity grouping. No consistent similarity signal. Figure and ground compet
 ::: {.callout-note title="Pause and think"}
 Open any app on your phone. In 2 seconds: What's the most salient element? Is it the most *important* one? Now find one grouping the layout implies that the designer probably didn't intend.
 :::
-
 
 # Motor Control
 
@@ -133,7 +152,7 @@ where **D** is the distance to the target, **W** is its width, **ID** is the ind
 - **Big and close is fast; small and far is slow.** The whole law collapses to this, but now it is quantitative and testable.
 - **Screen edges are infinitely deep targets:** you cannot overshoot them, so their effective width is huge. This is why the Mac menu bar and corner hot-spots work.
 - **Design the target to the hand:** enlarge primary actions, move them near the cursor's likely start, and interfaces get measurably faster.
-- **It powers real systems:** key-target resizing in phone keyboards and layout-optimization algorithms that challenge QWERTY (**MacKenzie**, **Zhai**) are Fitts' Law applied.
+- **It powers real systems:** key-target resizing in phone keyboards, and the layout-optimization algorithms that have challenged QWERTY are Fitts' Law applied.
 - **Throughput lets you compare devices:** you can rank a stylus vs a mouse across the *whole* difficulty range, not at one lucky data point.
 - **Design rule:** every millisecond you save on a frequent target multiplies across millions of clicks.
 
@@ -143,15 +162,6 @@ where **D** is the distance to the target, **W** is its width, **ID** is the ind
 ![](fiFittsLaw.jpeg)
 :::
 
-## Some target-acquisition fails
-
-::: {.callout-warning title="One Fitts' Law, or several?"}
-- The clean **MT = a + b·ID** is presented as settled, and it is the most-tested model in HCI.
-- But throughput has *no* agreed definition: **MacKenzie** ties it to average ID over MT; **Zhai** ties it to the slope 1/b alone. Each throws away different information.
-- The model is also brittle: fit it on 5 to 10 cm targets and it may not generalize to 10 to 20 cm; 2D and touch need extensions (**MacKenzie**), and corrective-submovement models (**Meyer et al.**) explain what the average hides.
-- Design takeaway: use Fitts' Law to reason and to compare within a study; do not quote one lab's a and b as universal constants.
-:::
-
 ## Hick-Hyman Law
 
 - More choices means slower decisions, but the relationship is **logarithmic, not linear**.
@@ -159,12 +169,25 @@ where **D** is the distance to the target, **W** is its width, **ID** is the ind
 - The real cost of extra choices: **hesitation, abandonment, decision fatigue**
 - Reducing options is about surfacing the *right* options, not minimalism for its own sake
 
-## 
+##
 
 ::: {.callout-warning title="Not so fast..."}
-- Hick-Hyman holds for choices among **known, equally likely options** — a familiar menu, a keypad
-- It does *not* cleanly model decisions requiring reading, comparison, or judgment (**NN/g** flags this as one of the most-misapplied laws in UX); visual search of an *unfamiliar* menu scales roughly linearly, not logarithmically
+- Hick-Hyman holds for choices among **known, equally likely options**: a familiar menu, a keypad
+- It does *not* cleanly model decisions that need reading, comparison, or judgment; searching an *unfamiliar*, randomly ordered menu scales roughly **linearly**, not logarithmically. Hick's Law is widely misapplied in UX, and **NN/g** recommends pairing it with grouping, chunking, and progressive disclosure rather than just cutting options
 :::
+
+## Steering law: pointing's cousin
+
+::: {.callout-note}
+**Steering law (Accot & Zhai)** predicts the time to move a cursor through a **tunnel** constraint:
+
+$$T = a + b \int_C \frac{ds}{W(s)}$$
+
+The narrower the tunnel W(s), the slower you must go. Difficulty grows with the *length* of the path, not the log of it like Fitts.
+:::
+
+- **Where it bites:** cascading submenus (steer along without slipping out), sliders, drag-along-a-path, drawing.
+- **Design rule:** widen the tunnel. Forgiving submenu hitboxes and "sticky" paths cut steering time directly.
 
 ## [Concept check]{.r-fit-text}
 
@@ -177,7 +200,7 @@ Think about an app you use on your phone one-handed. Where do you make the most 
 ## Why memory is a design problem
 
 - Memory is **not** a hard disk. It is not veridical storage and retrieval; it is reconstruction, biased toward what is useful now.
-- Several distinct memory systems run at once (**Squire**): working memory, and long-term memory split into declarative (facts, events) and non-declarative (skills, priming, conditioning).
+- Several distinct memory systems run at once: working memory, and long-term memory split into declarative (facts, events) and non-declarative (skills, priming, conditioning).
 - Design implication we are building toward: **don't make users remember.**
 
 ## Working memory
@@ -196,14 +219,14 @@ Think about an app you use on your phone one-handed. Where do you make the most 
 ## Recall vs recognition
 
 ::: {.callout-note}
-- **Recall** is retrieving a memory trace by self-generated cues, with nothing shown (**free recall**), or aided by an external cue (**cued recall**). 
+- **Recall** is retrieving a memory trace by self-generated cues, with nothing shown (**free recall**), or aided by an external cue (**cued recall**).
 - **Recognition** is the extreme, easy case of cued recall: the whole item is presented and the user only has to confirm they have seen it before.
 :::
 
 ## Why recognition wins
 
 - **Recognition is cheap; recall is expensive.** People recognize hundreds of faces and icons effortlessly but struggle to recall the same items cold.
-- **This is why the GUI beat the command line:** menus and icons let users *recognize* the option; command languages force effortful *free recall* (**Norman**).
+- **This is why the GUI beat the command line:** menus and icons let users *recognize* the option; command languages force effortful *free recall*.
 - **Knowledge-in-the-world beats knowledge-in-the-head:** show the options instead of demanding memorized commands, and you offload cognition onto the display.
 - **But externalizing has a cost:** lean on the world too hard (passwords on sticky notes) and knowledge-in-the-head atrophies.
 - **Encoding-retrieval symmetry:** people retrieve better when the retrieval context matches encoding; change the login screen's look and the password gets harder to summon.
@@ -224,6 +247,38 @@ Think about an app you use on your phone one-handed. Where do you make the most 
 A signup flow emails a verification code, then opens a new tab with the code field, hiding the email. Which memory system is being overloaded, and what is the one-line fix that turns a recall task into a recognition task?
 :::
 
+## Practice makes it automatic
+
+::: {.callout-note}
+The **power law of practice** ($RT = aP^{-b} + c$): performance improves with practice but with **diminishing returns**. Big early gains, then a long slow plateau.
+:::
+
+- **Skill stages:** **novice** (slow, erratic), **intermediate** (good enough, self-taught, often stuck), **expert** (thousands of hours of deliberate practice).
+- **Automaticity cuts both ways:** an automatic skill is fast and effortless, but also **ballistic**, it fires on cue and resists change.
+- **The design trap:** experts run on muscle memory, so a redesign that helps novices can wreck power users who have stopped looking.
+- **Design rule:** don't move the furniture on expert users without warning; their skill is stored in the old layout.
+
+## Multitasking is a resource conflict
+
+::: {.callout-note}
+Multitasking is a **resource-sharing problem** across attention, the motor system, and working memory. **Wickens' Multiple Resource Theory (MRT)** models it as a cube with three axes:
+
+- **Modality:** visual vs auditory
+- **Code:** spatial vs verbal
+- **Stage:** perception, cognition, or responding
+:::
+
+- **The rule:** two tasks that land in the **same slot** compete and degrade each other; tasks on different slots share more gracefully.
+- Wickens calls MRT a **rough but useful** heuristic, not a precise model.
+
+## What MRT means for design
+
+- **Classic conflict:** a phone game and a chat feed both want **vision** and the **hand**, so they can't truly run at once; attention just interleaves.
+- **Every switch costs:** you lose a few hundred milliseconds per task switch, and uncertainty about the ignored task piles up the longer you look away.
+- **People switch at natural breakpoints:** users postpone interruptions to subtask boundaries, so let them finish a chunk before interrupting.
+- **Offload to a free channel:** an **auditory** alert frees the eyes, which is why a notification sound beats a silent visual badge when hands and eyes are busy.
+- **Safety-critical version:** driving guidelines cap glances away from the road at about **2 seconds**, exactly the MRT logic.
+
 ## Users cannot see inside the machine
 
 - A computer is a non-transparent system. Cognition's job in interaction is to reason about a box you cannot see into.
@@ -238,10 +293,11 @@ A **mental model** is a memory-based representation of an interactive system, us
 
 ## When the user's model clashes with the system
 
-- **Models are fragmentary, not complete:** untrained users rarely hold a coherent model. Knowledge is patchy: a few remembered episodes, some isolated facts (**Mayer & Gallini**).
+- **Models are fragmentary, not complete:** untrained users rarely hold a coherent model. Knowledge is patchy: a few remembered episodes, some isolated facts.
+- **Good explanations build better models (Mayer & Gallini):** in a classic pump study, showing parts and steps together beat either alone for both recall and problem-solving.
 - **Users would rather try than reason:** effortful simulation is avoided; people poke at the interface and watch what happens.
-- **Failure is a model clash:** most "user error" is the designer's model and the user's model disagreeing, exactly the kiosk problem.
-- **AI raises the stakes:** with an AI agent acting on your behalf, the user's model of "what will it do" is thin and often wrong. A **Bayesian-brain** view says users constantly update predictions ("what will autocomplete do next?"), so systems must make their behavior *predictable and legible*.
+- **Failure is a model clash:** most "user error" is the designer's model and the user's model disagreeing, exactly the Healthcare.gov problem.
+- **AI raises the stakes:** with an AI agent acting on your behalf, the user's model of "what will it do" is thin and often wrong. 
 - **Design rule:** expose a conceptual model users can build; make state and consequences visible, especially for AI.
 
 ## System 1, System 2, and heuristics
@@ -255,7 +311,7 @@ A **mental model** is a memory-based representation of an interactive system, us
 - **Anchoring:** choices center on a known reference; users reach for the app they already know.
 - **Availability:** whatever comes to mind fastest gets picked; PowerPoint gets used because it is top-of-mind, not because it is best.
 - **Status quo and defaults:** people stick with the prevailing option, so **whoever sets the default holds real power.**
-- **Prospect theory (Tversky & Kahneman):** choices are judged against a reference point, and losses hurt more than equivalent gains: loss aversion. Framing a change as a loss vs a gain flips behavior.
+- **Prospect theory (Kahneman & Tversky):** choices are judged against a reference point, and losses hurt more than equivalent gains: loss aversion. Framing a change as a loss vs a gain flips behavior.
 - **The ethical edge:** the same levers power **dark patterns**: pre-ticked boxes, loss-framed "you'll miss out" nags, decoy pricing.
 - **Design rule:** you cannot switch these biases off; you can only decide whether to exploit or respect them.
 
@@ -310,7 +366,7 @@ We tell designers to show options so users can recognize, not recall. Generative
 
 ## Activity 1: Saliency and Fitts audit of a live interface (~35 min)
 
-**Task:** In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against Video 1 and Video 2.
+**Task:** In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against the Perception and Motor Control material.
 
 **Produce:** An annotated screenshot table with at least 6 rows: for each, name the element, its intended importance, its actual saliency (what draws the eye first), and its Fitts cost (rough D and W for the primary action). Include at least one row flagged "this design decision is wrong, and here is our argument."
 

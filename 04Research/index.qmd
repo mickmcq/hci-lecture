@@ -18,6 +18,7 @@ This week's question: *you are not your user, so how do you find out who is, and
 # Case Study: Uber
 
 ![](fiUber.jpg)
+
 # What did Uber miss?
 
 Uber got off to a rocky start with women. Because the all-male cofounders designed for themselves.
@@ -38,6 +39,35 @@ This is the founding commitment of user research. Three reasons it's hard, and e
 User research is the set of empirical methods for obtaining, analyzing, and representing knowledge about users, their activities, their contexts, and the systems they already use, in order to inform design.
 :::
 
+# Who is the user, then?
+
+If you are not the user, your first job is to say who is. That is a three-step commitment, before any method.
+
+- **Target audience:** the profiles of who the product is for, built from behavioral, technological, and demographic criteria.
+- **Other stakeholders:** people affected by the system without using it, like the parents of a child playing a mobile game.
+- **Sampling:** picking specific participants who represent that audience, balancing representativeness, variety, and cost.
+
+##
+
+::: {.callout-note}
+Identifying the user is a three-step commitment: specify the target audience, map the other stakeholders, then sample representatively. A failure at any step injects bias that is hard to detect and often only surfaces at deployment.
+:::
+
+## The stakeholders you forgot
+
+The people who wreck your design are often the ones who never made it onto your participant list.
+
+- **Stakeholder analysis** rank groups by power, legitimacy, and urgency so you don't just serve the loudest.
+- **Latent and dormant stakeholders:** some are affected only indirectly, or stay silent until a crisis, like legal experts after an accident.
+- **Managers sample badly:** they attend to the stakeholders who matter to them, not the ones who are most urgent.
+- **Uber again:** women riders were core to the audience but treated as an edge case, and safety was an urgent concern the all-male team never sampled for.
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You are designing a homework app for a school. Name three stakeholders who are not the students, and for one of them, argue why they might be more urgent than the students themselves.
+:::
+
 # No method is free
 
 Every method trades off three things you cannot maximize at once (**McGrath**).
@@ -46,7 +76,40 @@ Every method trades off three things you cannot maximize at once (**McGrath**).
 - **Precision:** how much control and detail. Lab and structured methods win here.
 - **Generalizability:** how well it extends to other people and settings. Surveys win here.
 
+##
+
+::: {.callout-note}
 Because every method is biased in its own way, the fix is **triangulation:** combine methods with different weaknesses so they cover for each other. Hold this throughline: interviews, field research, and surveys each buy one corner of the triangle and pay for the others.
+:::
+
+# Judging the work: is it valid?
+
+Choosing a method is only half the job. The other half is judging whether a study was done well. The textbook names four quality dimensions.
+
+- **Validity:** whether the conclusions you draw are actually justified.
+- **Reliability:** whether the method gives consistent results if you run it again.
+- **Transparency:** whether your design, data, and analysis are open and inspectable.
+- **Ethics:** whether collecting and reporting the data treats participants and society responsibly.
+
+##
+
+::: {.callout-note}
+Validity asks a different question than reliability: not "would I get the same answer again?" but "is this answer about the thing I think it is about?" A study can be perfectly reliable and completely invalid.
+:::
+
+## Reliable is not the same as valid
+
+Reliability is a tight cluster of darts. Validity is whether they landed on the right board at all. You can measure the wrong thing very consistently.
+
+- **Four flavors of validity:** internal (did your change cause the effect), construct (are you measuring what you claim), statistical conclusion (are the numbers trustworthy), external (does it generalize).
+- **The trap:** a survey scale with a high Cronbach's alpha is reliable, but if it is really measuring "wanting to please the researcher," it is invalid.
+- **Look ahead:** we meet the reliable-but-not-true version of this head-on in the surveys chapter.
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A team measures "user delight" with five questions and gets a very high Cronbach's alpha, so they call the scale trustworthy. Which quality dimension have they shown, and which have they not? What would you check next?
+:::
 
 # Interviews
 
@@ -54,8 +117,10 @@ Because every method is biased in its own way, the fix is **triangulation:** com
 
 - **Interview:** a planned, systematic conversation to elicit a user's first-person view of a chosen theme, distinct from everyday talk by its preparation, focus, and recording.
 - **Open-ended (responsive):** questions adapt to answers; **structured:** fixed script, closer to a survey; **micro-phenomenological:** tiny content-free questions unfolding one lived experience.
-- **Question types (Rubin & Rubin):** main questions (tour, grounded, comparison), probes ("go on..."), and follow-ups that clarify, get concrete, and surface variation.
+- **Question types:** main questions (tour, grounded, comparison), probes ("go on..."), and follow-ups that clarify, get concrete, and surface variation.
 - **Listen, do not talk:** the interviewer spends more time listening than in any normal conversation.
+
+##
 
 ::: {.callout-note}
 A leading question is one that implies a "right" answer and injects the interviewer's prejudice into the interviewee's response, for example "Don't you think autocorrect should be on by default?"
@@ -70,11 +135,18 @@ The rule is easy to state but brutal in practice, especially when you built the 
 - **Do not ask people to forecast:** "Is handwriting recognition useful?" invites speculation. Ask "How are you using it right now?"
 - **The hardest case is your own project:** if you are personally invested, be honest about whether you can even be neutral on the subject.
 
-## Some interview questions fail
+## 
 
-<!-- IMAGE: A slide showing three real biased questions side by side, each labeled with its flaw: leading, double-barreled, and future-hypothetical. -->
+::: {.callout-tip title="In the wild"}
+![](fiCarCrash.jpg)
+:::
 
-## Concept check{.r-fit-text}
+::: {.notes}
+https://www.simplypsychology.org/loftus-palmer.html
+https://unsplash.com/photos/a-car-that-has-crashed-into-another-car-XcjVef6uvYA
+:::
+
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Rewrite this into a neutral, single-topic question you could actually ask a user: "Don't you find the new onboarding both faster and clearer than the old one?" Name every flaw you removed.
@@ -98,6 +170,8 @@ Contextual inquiry exists because asking alone hits the say-do gap and the tacit
 - **Tacit knowledge gets acted out:** people who cannot describe how they use autocorrect will show you if you watch.
 - **Context supplies the cues:** the devices, layout, and colleagues that a retrospective interview strips away.
 
+##
+
 ::: {.callout-warning title="Do interviews tell you what users do?"}
 - **Rubin & Rubin, Holtzblatt & Beyer:** interviews give privileged access to how users think and what things mean to them.
 - **Scharkow; and observed-vs-reported studies:** self-reports of behavior diverge from logs and direct observation. In one handwashing study, far more people say they wash than are observed doing it.
@@ -105,10 +179,36 @@ Contextual inquiry exists because asking alone hits the say-do gap and the tacit
 - Design takeaway: do not cite interview self-report as behavioral fact; triangulate it with observation or logs.
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Your team wants to know how often people actually use a rarely-touched "export" feature and how they feel about it. Which part should you get from an interview, and which part should you refuse to trust from the interview? Why?
+:::
+
+## Turning talk into insight
+
+Collecting the interview is only half of it. Then you have to make sense of it, from the participant's perspective, not by jumping to a design.
+
+- **Coding:** tagging parts of a transcript with labels that capture what matters, either bottom-up from the data or top-down from theory.
+- **Expand, then condense:** first open up the possible meanings of what was said, then reduce them to patterns.
+- **Affinity diagramming (the KJ method, Kawakita):** cluster individual notes by similarity until themes emerge from the bottom up.
+- **Thematic analysis (Braun & Clarke):** a systematic six-step way to build and name themes from codes.
+
+::: {.callout-note}
+Analysis is where interview data becomes findings. The aim is to make sense of the participants' world in their own terms; any clever design idea is secondary.
+:::
+
+## From sticky notes to themes
+
+- **Affinity diagramming in practice:** write notes, cluster them, "walk the wall" merging and splitting, then document it, usually as a group.
+- **Braun & Clarke's six steps:** familiarize, generate codes, search for themes, review them, define and name them, write up.
+- **Themes are built, not found:** you construct them against your research question; they do not just fall out of the data.
+- **Analyze as a team:** multiple readers on the same transcript raise reliability by diluting one person's idiosyncratic reading.
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You have 30 transcripts and 400 sticky notes on the wall. In your own words, what is the difference between a code and a theme, and why can't you just count which words came up most often?
 :::
 
 # Field research
@@ -119,6 +219,8 @@ Your team wants to know how often people actually use a rarely-touched "export" 
 - **Etic (outsider) view:** count and time events from outside, for example how long people linger at an interactive shop window.
 - **Emic (insider) view:** immerse to describe the activity from the members' own perspective.
 - **Focus first (Spradley):** you cannot just "go and watch." Pick dimensions to attend to: space, actors, activities, objects, acts, events, time, goals, feelings.
+
+##
 
 ::: {.callout-note}
 Reactivity is the change in people's behavior caused by the observer's presence. Imagine your employer hired someone to sit and watch you work.
@@ -132,7 +234,7 @@ Field research buys realism: it captures collaboration, workarounds, and the gap
 - **It exposes discrepancy problems:** where managers' picture of a system does not match the ground truth, and new work quietly lands on end-users.
 - **Capture is a craft:** field notes, a field diary, or structured notes; then thick description and a coding manual so two raters agree (inter-rater reliability).
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 You have two hours to observe a busy call center. Would you go etic or emic, and name the one thing your choice will systematically cause you to miss?
@@ -157,14 +259,16 @@ Here is the catch the chapter is honest about. Realism makes field data vivid an
 - **Its real payoff is strategic:** finding non-obvious problems, building models of practice, and giving stakeholders a story they can act on.
 - **Reframe the question:** not "should we do field research?" but "can we succeed without it?"
 
+##
+
 ::: {.callout-warning title="Does watching users actually inform design?"}
 - **MacKay; discrepancy-problem studies:** field research can catch failures that no other method would have surfaced.
-- **Norman:** human-centered design taken too literally yields incoherent, feature-crept systems, and users adapt to systems anyway.
+- **Norman:** human-centered design taken too literally yields incoherent, disjointed systems, and users adapt to systems anyway.
 - **Dourish:** demanding "implications for design" from every field study is the wrong test; some studies exist to help us understand people.
 - Design takeaway: treat field research as sensitizing and strategic, not as a spec generator; pair it with other methods before you commit.
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 You run a two-hour observation of nurses using a medication cart and it is spotless, no errors, everyone by the book. Name two reasons this "clean" session might be misleading, using terms from this section.
@@ -179,6 +283,8 @@ You run a two-hour observation of nurses using a medication cart and it is spotl
 - **Randomization vs stratification:** sample at random, or set quotas so key groups are represented equally.
 - **Convenience and snowball sampling:** cheap and common in HCI, but they break the "every member equally likely" assumption.
 
+##
+
 ::: {.callout-note}
 Self-selection bias is the distortion introduced when the people who choose to respond differ systematically from those who do not, over-representing whoever had a reason to answer.
 :::
@@ -191,7 +297,17 @@ Generalizability is the selling point, and it is exactly where surveys quietly f
 - **Sample size buys precision, not validity:** more people narrows your margin of error, not your bias.
 - **The mean HCI survey has around 371 respondents:** published studies run from 6 to 50,000, so "how many" is the wrong first question. "Who, and asked what?" comes first.
 
-## Concept check{.r-fit-text}
+##
+
+::: {.callout-tip title="In the wild"}
+![](fiLitDigest.jpg)
+:::
+
+::: {.notes}
+https://mathcenter.oxford.emory.edu/site/math117/historicalBlunders/
+:::
+
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 You need results that generalize to all users of your app, but you can only recruit from your existing mailing list. Name the population, the sampling frame, and the single biggest threat to generalizing from what you collect.
@@ -216,6 +332,8 @@ A validated scale measures a construct with several items and checks that they m
 - **Consistency is not correctness:** a high alpha means your items agree with each other, not that they measure the right thing.
 - **De-situatedness:** the respondent is answering far in time and place from the moment you care about; diaries and experience sampling pull the question back toward the event.
 
+##
+
 ::: {.callout-warning title="Does a validated, high-response survey give you the truth?"}
 - **Ernala et al.:** asked 50,000 people about time on Facebook ten different ways; the "same" quantity shifted with the wording.
 - **Scharkow:** self-reported use tracks logged behavior only weakly.
@@ -223,7 +341,7 @@ A validated scale measures a construct with several items and checks that they m
 - Design takeaway: use surveys to estimate distributions and attitudes at scale, triangulate anything behavioral against logs or observation, and pilot every question.
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A Product Manager shows you a survey: 12,000 respondents, 92% "agree the new feature is useful," recruited via a banner inside the feature. Give two reasons that 92% might be worthless, naming the specific bias each time.
@@ -243,13 +361,7 @@ Field research is strongest when people do not modify their behavior for the obs
 
 *Weigh the realism you gain against the autonomy you take. Would you run a covert study of a vulnerable group if it were the only way to surface a real harm? What would make it defensible, or never defensible?*
 
-## When users act through an AI agent, who is "the user"?
-
-More products put an AI agent between the person and the task, acting on their behalf, so the thing you observe is often the agent's behavior, not the human's.
-
-*Do interviews, contextual inquiry, and observation still target the right subject when an agent mediates or replaces the user's actions? What does "watching the user work" even mean when half the work is done by a model the user cannot see into?*
-
-## Are LLM-simulated "synthetic users" user research or a category error?
+## Are LLM-simulated "synthetic users" user research or a category error (or something else)?
 
 Teams increasingly prompt a model to role-play respondents or interviewees instead of recruiting people, arguing it is faster and cheaper at scale.
 

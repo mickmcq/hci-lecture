@@ -15,17 +15,19 @@ Last week we looked at **reactive** methods: interviews, field research, surveys
 
 This week's question: *when is the trace users leave behind more honest than the answer they would give you?*
 
-# Case Study: xxx
+# Case Study: Wearable Sleep Tech 
+![](fiSleepTech.png)
 
+# Why does the sleep score backfire?
 
-# Why did the metric win?
+- The score is an **inference, not a measurement**: trackers tend to overestimate time asleep, struggle to separate sleep stages, and can log "asleep" when you were lying still and awake
+- **Whatever can be computed comes to dominate:** chasing a good score can itself worsen sleep, a pattern clinicians call **orthosomnia** 
+- The sensor does not see everyone equally: green-light **PPG** can misread heart rate more often on darker skin, so an "objective" score works better for some users than others
+- The model clash: the device's model is "your night is a readiness number"; your lived model is "I actually feel fine, or awful," and when they disagree the number often wins
 
-A team instrumented everything, watched one number go up, and shipped toward it.
-
-- They logged **time-on-page** because it was cheap and clean: so it quietly became the definition of "good"
-- They assumed **more minutes meant more value**: a mismatch between what the sensor captured and why users were really there
-- Long sessions can mean *delight* or mean *lost and confused*, and the log alone cannot tell you which
-- The model clash: the team's model was "engaged user"; a chunk of users were living the model "trapped user who cannot find the exit"
+::: {.notes}
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11592250/
+:::
 
 # Unobtrusive Research
 
@@ -43,7 +45,7 @@ A team instrumented everything, watched one number go up, and shipped toward it.
 - **Realism is the whole point:** you see interaction as it happens in the wild, with no sensitization to what you are looking for
 - Data can exist *before* the study even begins: logs, posts, videos, wear on a keypad
 - Closes the **say-do gap**: you get behavior, not a report of behavior
-- Cheap and vast: **Adar et al** studied web revisitation on 612,000 users, a scale no interview study reaches
+- Cheap and vast: **Adar et al** studied web revisitation at a scale no interview study can reach
 - **Webb et al** named the classic sources of nonreactive data: traces, both direct and indirect, and archival data (instrumenting people and places is one way to gather traces)
 
 ## Log files
@@ -61,15 +63,34 @@ A **log file** is an automatic capture of interactions with a system in a file: 
 
 - **The leap can be impossible:** clicks say almost nothing about a user's emotions, so do not fake it
 - **The leap can pay off:** **undo** and **erase** actions in logs turned out to be highly predictive of severe usability problems
-- **Fitts in the wild:** **Chapuis et al** logged two million real pointing movements and found Fitts's law holds, but with huge unexplained variance from second tasks, display regions, and users who simply did not care about speed
+- **Fitts in the wild:** **Chapuis et al** logged two million real pointing movements and found Fitts' law holds, but with huge unexplained variance from second tasks, display regions, and users who simply did not care about speed
 - The design rule: decide what inference the data can honestly support *before* you compute anything
+
+##
 
 ::: {.callout-warning title="Is unobtrusive really unbiased?"}
 - **Webb et al** and the say-do gap literature: unobtrusive data capture real behavior, free of the observer effect
 - **Adar et al** had to bolt on a survey to interpret their logs, and their data came only from users who opted into a search toolbar
 - Current read: nonreactive removes the observer, not selection bias, coverage gaps, or the interpretation problem
-- Design takeaway: do not sell log data as "objective truth"; ask what population it represents and what it cannot see; then triangulate
+- Design takeaway: do not sell log data as "objective, holistic truth"; ask what population it represents and what it cannot see; then triangulate
 :::
+
+## Instrumenting people, things, and places
+
+::: {.callout-note}
+**Instrumentation** equips people, things, or places with digital recording devices so they become measuring instruments: a second family of traces alongside log files.
+:::
+
+- **People:** phones and wearables carry accelerometers, GPS, and heart-rate sensors, so on-person sensing can track movement, location, even stress
+- **Things and places:** pressure tiles, noise and light sensors, and cameras turn a room into an instrument
+- **EmotionSense**: from realistic speech samples alone, a phone inferred emotion with about 71% accuracy
+- Complements log analysis: a log sees the interface, instrumentation sees the context around it
+
+## How deep can the inference go?
+
+- The pull: rich, continuous data from devices people already carry, with no lab and no interview
+- The catch: a sensor reading can predict a task or a state, but the reading itself says little about *why*, the same inference gap as logs
+- Instrumentation is weaker on direct access to the interface, stronger on context and everyday life
 
 ## Archival data and content analysis
 
@@ -88,7 +109,17 @@ A **log file** is an automatic capture of interactions with a system in a file: 
 - **Interpretation:** time-on-page is an indicator, not a meaning, and whatever you *can* compute tends to dominate later decisions
 - **Ethics:** unobtrusive research is often covert, so consent is hard or impossible, and powerful predictions about users can be turned against them
 
-## Concept check{.r-fit-text}
+##
+
+::: {.callout-tip title="In the wild"}
+![](fiStrava.png)
+:::
+
+::: {.notes}
+https://westoahu.hawaii.edu/cyber/global-weekly-exec-summary/strava-fitness-apps-global-heatmap-reveals-sensitive-military-locations/
+:::
+
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A team wants to know why users abandon a checkout flow. They have complete server logs of every click. What can the logs honestly tell them, what will they have to infer, and what second data source would you add before trusting a conclusion?
@@ -118,6 +149,8 @@ A **persona** is a description of an idealized, nonexisting person who stands in
 - **Forces prioritization and drives empathy:** you must pick which segments matter, and a person is easier to care about than a bar chart
 - **Traceability is the safeguard:** every characteristic should trace back to observed data, or the persona floats free
 
+## 
+
 ::: {.callout-warning title="Not so fast..."}
 - **Cooper et al** present personas as a disciplined summary of clustered data
 - **Pruitt & Grudin** reported personas at Microsoft that were "designed by committee," poster-sized, unbelievable, and cut loose from the original data
@@ -143,6 +176,24 @@ A **scenario** is a narrative account of an activity or task, told from the user
 - The takeaway for AI designers: one type of explanation does not suffice; explanations are **discursive**, spread across people and moments, not a single tidy answer
 - "Accuracy" alone does not build an explanation that actually works in someone's kitchen
 
+## Customer journeys
+
+::: {.callout-note}
+A **customer journey map** traces the events where a user encounters a service as a path through **touchpoints**, covering not just use but everything around it: ads, sign-up, onboarding, and after.
+:::
+
+- **Touchpoints:** the ordered moments where a customer meets the service
+- Unlike a scenario, the journey covers what happens *before and after* the product itself
+- **Three periods** (**Rosenbaum et al**): pre-service, service, and post-service
+- **Strategic actions:** what each group (manager, front-line staff, designer) must do to make a touchpoint succeed
+
+## Where the product is only a sliver
+
+- The actual use of the technology may be a minor part of the whole relationship
+- It reframes design around the arc from might-be customer to loyal customer, not a single screen
+- Surfaces failures a task analysis misses: the confusing ad, the abandoned signup, the angry post-service tweet
+- At every touchpoint you capture the user's goals, thoughts, and experiences
+
 ## Task analysis and HTA
 
 ::: {.callout-note}
@@ -160,7 +211,7 @@ A **scenario** is a narrative account of an activity or task, told from the user
 - Feeds analytical evaluation later: cognitive walkthrough and keystroke-level models build directly on it
 - **Layout appropriateness:** weighting each task path by frequency and cost lets you compute how far a layout sits from optimal
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 You interviewed twelve nurses about medication rounds. Would you first reach for a persona, a scenario, or a task analysis, and why? What would each one make visible that the other two would hide?
@@ -219,6 +270,8 @@ The **realist** view treats a representation as a proposition about users that c
 - **Verifiability:** can the claim be cross-checked against independent observations? 
 - **Traceability:** can you show the reasoning from data to claim?
 
+##
+
 ::: {.callout-warning title="Does automation dissolve the debate?"}
 - **Jung et al** generate personas straight from millions of logged interactions, promising representations that are grounded and always up to date
 - The realist worry: a fluent, auto-generated "Samantha, 25, watches 2 minutes of video" can read as more valid than the thin behavioral data underneath it warrants
@@ -226,7 +279,7 @@ The **realist** view treats a representation as a proposition about users that c
 - Design takeaway: automation can improve traceability, but someone still has to ask whether the representation is *true enough* to bet a design on
 :::
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Your team writes the persona "Marcus, a privacy-anxious freelancer." Is that a realist claim or an instrumentalist prop? What single piece of documentation would let a skeptical stakeholder trust it, and what verification criterion would turn it into a real requirement?
