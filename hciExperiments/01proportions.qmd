@@ -10,9 +10,10 @@ tail(prefsAB) # displays the last few rows of the data frame
 prefsAB$Subject <- factor(prefsAB$Subject) # convert to nominal factor
 prefsAB$Pref <- factor(prefsAB$Pref) # convert to nominal factor
 summary(prefsAB)
-ggplot(prefsAB,aes(Pref)) +
-  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
-  theme_tufte(base_size=7)
+prefsAB |>
+  ggplot(aes(Pref)) +
+    geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+    theme_tufte(base_size=11)
 ```
 
 Is the difference between preferences significant? A default $\chi^2$ test examines the proportions in two bins, expecting them to be equally apportioned.
@@ -46,9 +47,10 @@ prefsABC$Subject <- factor(prefsABC$Subject)
 prefsABC$Pref <- factor(prefsABC$Pref)
 summary(prefsABC)
 par(pin=c(2.75,1.25),cex=0.5)
-ggplot(prefsABC,aes(Pref))+
-  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1")+
-  theme_tufte(base_size=7)
+prefsABC |>
+  ggplot(aes(Pref))+
+    geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1")+
+    theme_tufte(base_size=11)
 ```
 
 You can think of the three websites as representing three bins and the preferences as filling up those bins. Either each bin gets one third of the preferences or there is a discrepancy. The Pearson $\chi^2$ test functions as an omnibus test to tell whether there is any discrepancy in the proportions of the three bins.
@@ -98,10 +100,11 @@ summary(prefsABsex)
 Plotting is slightly more complicated by the fact that we want to represent two groups. There are many ways to do this, including stacked bar charts, side-by-side bars, or the method chosen here, using `facet_wrap(~Sex)` to cause two separate plots based on Sex to be created.
 
 ```{r}
-ggplot(prefsABsex,aes(Pref)) +
-  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
-  facet_wrap(~Sex) +
-  theme_tufte(base_size=7)
+prefsABsex |>
+  ggplot(aes(Pref)) +
+    geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+    facet_wrap(~Sex) +
+    theme_tufte(base_size=11)
 ```
 
 Although we can guess by looking at the above plot that the difference for females is significant and the difference for males is not, a Pearson chi-square test provides some statistical evidence for this hunch.
@@ -140,10 +143,11 @@ prefsABCsex$Subject <- factor(prefsABCsex$Subject)
 prefsABCsex$Pref <- factor(prefsABCsex$Pref)
 prefsABCsex$Sex <- factor(prefsABCsex$Sex)
 summary(prefsABCsex)
-ggplot(prefsABCsex,aes(Pref)) +
-  geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
-  facet_wrap(~Sex) +
-  theme_tufte(base_size=7)
+prefsABCsex |>
+  ggplot(aes(Pref)) +
+    geom_bar(width=0.5,alpha=0.4,fill="lightskyblue1") +
+    facet_wrap(~Sex) +
+    theme_tufte(base_size=7)
 
 #. Pearson chi-square test
 prfs <- xtabs( ~ Pref + Sex, data=prefsABCsex)

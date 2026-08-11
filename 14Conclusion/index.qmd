@@ -1,0 +1,596 @@
+---
+title: "Action"
+subtitle: "Human-Computer Interaction"
+author:
+  - name: Valle Hansen
+    affiliations: University of Texas at Austin
+  - name: Mick McQuaid
+    affiliations: University of Texas at Austin
+date: last-modified
+date-format: "DD MMM YYYY"
+format:
+  revealjs:
+    theme: simple
+    transition: fade
+    slide-number: false
+    controls: true
+    controls-layout: edges
+    navigation-mode: linear
+    progress: false
+    center: false
+    width: 1600
+    height: 900
+    margin: 0.08
+    embed-resources: true
+slide-level: 2
+number-sections: false
+bibliography: master.bib
+monofont: VictorMono Nerd Font
+---
+
+# [Part VI: Action]{.r-fit-text}
+
+<style>
+:root {
+  --accent: #bf5700;
+  --ink: #1f2933;
+  --muted: #5b6770;
+  --pale: #f5f1eb;
+}
+
+.reveal {
+  font-family: "Fira Sans", "Aptos", sans-serif;
+  color: var(--ink);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: "Fira Sans", "Aptos", sans-serif;
+  color: var(--ink);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.reveal h2 {
+  font-size: 1.65em;
+}
+
+.reveal strong,
+.reveal em {
+  color: var(--accent);
+}
+
+.reveal ul,
+.reveal ol {
+  display: block;
+}
+
+.reveal li {
+  margin-bottom: 0.35em;
+}
+
+.reveal .source {
+  color: var(--muted);
+  font-size: 0.48em;
+  margin-top: 1.4em;
+}
+
+.reveal .big-question {
+  color: var(--accent);
+  font-size: 1.55em;
+  font-weight: 650;
+  line-height: 1.2;
+  margin-top: 1.1em;
+}
+
+.reveal .sequence {
+  color: var(--accent);
+  font-size: 1.55em;
+  font-weight: 650;
+  text-align: center;
+  margin-top: 1.4em;
+}
+
+.reveal .contrast {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2em;
+  margin-top: 0.9em;
+}
+
+.reveal .contrast > div {
+  border-top: 0.14em solid var(--accent);
+  padding-top: 0.55em;
+}
+
+.reveal .contrast h3 {
+  color: var(--accent);
+  font-size: 1em;
+  margin-top: 0;
+}
+
+.reveal .case {
+  background: var(--pale);
+  border-left: 0.16em solid var(--accent);
+  padding: 0.7em 0.9em;
+  margin: 0.8em 0;
+}
+
+.reveal .takeaway {
+  border-top: 0.16em solid var(--accent);
+  font-size: 1.28em;
+  line-height: 1.35;
+  margin-top: 1.1em;
+  padding-top: 0.7em;
+}
+
+.reveal .dim {
+  color: var(--muted);
+}
+
+.reveal .compact li {
+  margin-bottom: 0.2em;
+}
+</style>
+
+## The book ends by changing the question
+
+For most of the book, Norman asks us to understand the systems we have designed.
+
+<div class="big-question">
+What would it take to change them?
+</div>
+
+<div class="sequence">
+Learn &rarr; Reflect &rarr; Decide &rarr; Act
+</div>
+
+::: {.notes}
+Part VI comprises Chapters 36–38. Use the four verbs as the lecture's recurring structure. The shift is from diagnosis to agency, but Norman does not suggest that agency is simple or purely individual.
+:::
+
+::: {.source}
+@Norman2023, Part VI
+:::
+
+## By the end, we should be able to
+
+1. Compare **top-down** and **bottom-up** routes to change.
+2. Explain why warnings and technology are necessary but insufficient.
+3. Apply incremental, humanity-centered action to an HCI problem.
+4. Connect action to the book's four themes: artificial, meaningful, sustainable, and humanity centered.
+
+::: {.notes}
+These are lesson-level aims for this lecture, not claims about formal course-outcome alignment.
+:::
+
+# [What Can Be Done?]{.r-fit-text}
+
+## The scale of the problem exceeds personal choice
+
+- Individuals can change their own behavior.
+- Planetary problems also involve infrastructure, regulation, industry, and entrenched interests.
+- Large changes create immediate costs, political conflict, and resistance.
+
+<div class="takeaway">
+Personal responsibility matters—but it cannot substitute for system change.
+</div>
+
+::: {.notes}
+Invite students to distinguish “something I can do” from “something only a coordinated institution can do.” Norman argues that public opinion still matters because votes and sales create leverage.
+:::
+
+::: {.source}
+@Norman2023, ch. 36
+:::
+
+## Top-down action changes the rules
+
+- Governments establish policy, law, incentives, and enforcement.
+- Large organizations can redirect money and institutional priorities.
+- Common standards can distribute the cost of change across an industry.
+- Bureaucracy, political turnover, and tightly coupled megaprojects can slow progress.
+
+::: {.notes}
+Top-down does not mean automatically effective. Norman treats it as essential when voluntary action would leave a first mover at a competitive disadvantage.
+:::
+
+::: {.source}
+@Norman2023, ch. 36
+:::
+
+## Seat belts show both the power and delay of policy
+
+- Seat belts appeared in limited use in the **1930s**.
+- Installation in new US vehicles became mandatory in **1966**.
+- Usage requirements spread across the states only decades later.
+
+<div class="takeaway">
+Even a comparatively simple, evidence-backed intervention can take a generation to normalize.
+</div>
+
+::: {.notes}
+Norman uses the seat-belt history to temper expectations about rapid policy change. Avoid presenting this as a complete legal history; it is the book's illustrative timeline.
+:::
+
+::: {.source}
+Norman's 2023 account, @Norman2023, ch. 36
+:::
+
+## Bottom-up action builds pressure
+
+- Individuals organize around shared concerns.
+- Small groups make problems visible and demonstrate alternatives.
+- Coalitions convert dispersed concern into social, market, and political pressure.
+- Local action can spread without waiting for a single global plan.
+
+::: {.notes}
+Norman's examples include Greta Thunberg's climate mobilization and the Borgen Project's advocacy on poverty and health. Emphasize the mechanism: organizing makes individual concern legible to decision makers.
+:::
+
+::: {.source}
+@Norman2023, ch. 36
+:::
+
+## Top-down and bottom-up are not opponents
+
+::: {.contrast}
+::: {#top}
+### Top-down
+
+- Changes rules and infrastructure
+- Coordinates at scale
+- Distributes costs
+- Can compel participation
+:::
+
+::: {#bottom}
+### Bottom-up
+
+- Builds legitimacy and urgency
+- Reveals local knowledge
+- Experiments in context
+- Holds institutions accountable
+:::
+:::
+
+<div class="takeaway">
+Durable change needs pressure moving upward and capacity moving downward.
+</div>
+
+::: {.notes}
+The relationship is complementary, not a pipeline in which one side always begins. Ask students for an example where policy enabled local action and one where local action changed policy.
+:::
+
+## Discussion: map the leverage
+
+<div class="case">
+A digital service works well on new phones but excludes people with older devices, limited data plans, or unreliable connectivity.
+</div>
+
+In pairs, identify:
+
+1. One action a design team can take now.
+2. One action that requires organizational authority.
+3. One action that requires policy or an industry standard.
+4. One group that must help define what “better” means.
+
+::: {.notes}
+Give pairs three minutes, then collect one response per level. Possible extensions beyond the interface include procurement, device lifetimes, network access, support, and community-defined needs. Do not treat that list as the only acceptable response.
+:::
+
+# [What Can We Do?]{.r-fit-text}
+
+## Coalition-building turns fragments into force
+
+- Many groups already pursue compatible goals.
+- Working alone duplicates effort and limits visibility.
+- Shared methods, results, and failures help others move faster.
+- Partnerships amplify influence without requiring one centralized megaproject.
+
+<div class="takeaway">
+The design problem is not only inventing solutions; it is connecting efforts that already exist.
+</div>
+
+::: {.notes}
+Norman links this argument to the seventeenth UN Sustainable Development Goal: strengthening partnerships. Keep the emphasis on coordination rather than organizational consolidation.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Transition creates real local harm
+
+- A sustainable long-term change may eliminate present-day jobs.
+- New requirements can raise costs for firms and consumers.
+- Generic calls for “retraining” may ignore workers' existing abilities and identities.
+- A credible transition must address livelihoods, agency, and fairness.
+
+<div class="big-question">
+Who bears the cost while everyone waits for the benefit?
+</div>
+
+::: {.notes}
+Use fossil-fuel employment as Norman's central example. The point is not to argue against transition but to include short-term harm within the design problem.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Warning everyone is only the first step
+
+- Recognition must precede coordinated action.
+- Scientific evidence does not automatically become policy.
+- Repeated warnings can coexist with decades of delay.
+- Institutions may agree publicly and fail to implement privately.
+
+<div class="takeaway">
+Communication can create awareness; it cannot by itself create the capacity or incentives to act.
+</div>
+
+::: {.notes}
+Norman traces climate warnings from Revelle and Suess in 1957 through later political and citizen advocacy. Frame his discussion of COP meetings and US administrations as examples from a book published in 2023, not as an update on current policy.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Technology solves only part of a sociotechnical problem
+
+::: {.contrast}
+::: {#technical}
+### Technology can
+
+- Reduce emissions and waste
+- Improve energy and material efficiency
+- Measure progress
+- Make new practices possible
+:::
+
+::: {#social}
+### Technology cannot decide
+
+- Whose losses are acceptable
+- Which values should govern
+- How power should be shared
+- Why people should trust the change
+:::
+:::
+
+::: {.notes}
+Norman discusses proposals by Bill Gates and John Doerr as technically valuable but incomplete. His criticism is not anti-technology; it is anti-reductionism.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Human behavior is infrastructure
+
+- Policy is enacted—or blocked—through human institutions.
+- People judge distant benefits against immediate losses.
+- Trust, identity, emotion, and perceived fairness shape adoption.
+- A technically sound intervention can fail when its social conditions are ignored.
+
+<div class="takeaway">
+Behavior is not noise surrounding the “real” system. It is part of the system.
+</div>
+
+::: {.notes}
+Connect this claim to HCI: adoption, workarounds, non-use, and resistance are not necessarily user failures. They may reveal a mismatch between the proposed system and people's lived conditions.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Complex change needs many kinds of expertise
+
+- Technological
+- Economic
+- Political and legal
+- Organizational and commercial
+- Social and behavioral
+- Design
+
+<div class="takeaway">
+Design's distinctive contribution is integration: framing, making, testing, and working with people across boundaries.
+</div>
+
+::: {.notes}
+Norman casts designers as potentially useful neutral collaborators, not as experts who replace the other disciplines.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Wicked problems improve; they do not resolve neatly
+
+- The problem cannot be defined once and for all.
+- Causes and consequences cross institutional boundaries.
+- Each intervention changes the situation being addressed.
+- No single solution satisfies every stakeholder or value.
+
+<div class="takeaway">
+The absence of a perfect solution is not a reason for inaction.
+</div>
+
+::: {.notes}
+Norman draws on Rittel and Webber's term “wicked problems.” Stress that “wicked” means structurally difficult, not morally evil.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Start with a minimum viable outcome
+
+1. Find a tractable cause whose improvement would matter.
+2. Make a small intervention with the affected community.
+3. Observe consequences, including unintended ones.
+4. Preserve what works; revise or stop what does not.
+5. Use the learning to make the next step easier.
+
+<div class="takeaway">
+Small does not mean trivial. It means learnable, adaptable, and less likely to impose widespread harm.
+</div>
+
+::: {.notes}
+Link this to Norman's “searchers,” Lindblom's “muddling through,” and incremental modular design. A minimum viable outcome must provide a real benefit, not merely produce a prototype or metric.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Loosely coupled action can scale without becoming rigid
+
+- Many local groups pursue related outcomes.
+- Each adapts to its own context.
+- Groups share methods, evidence, and failures.
+- Coordination makes the collective effort visible to decision makers.
+
+<div class="takeaway">
+Scale can come from connection among initiatives—not only from making one initiative enormous.
+</div>
+
+::: {.notes}
+Contrast coordinated modularity with a single tightly coupled program. The aim is common direction with local freedom and feedback.
+:::
+
+::: {.source}
+@Norman2023, ch. 37
+:::
+
+## Application: design an action, not just an interface
+
+<div class="case">
+A scheduling system makes a service more efficient, but workers receive unpredictable hours and have less control over family time.
+</div>
+
+Design a **minimum viable outcome**:
+
+- What improvement should workers experience?
+- Who must participate in defining it?
+- What is the smallest meaningful change to try?
+- What evidence would tell you whom it helped—or harmed?
+- What organizational or policy change might follow?
+
+::: {.notes}
+Use this as a five-minute small-group activity or a whole-class synthesis. The scenario is intentionally different from the earlier access case so students must transfer the framework rather than repeat an answer.
+:::
+
+# [The Major Points]{.r-fit-text}
+
+## Artificial means changeable
+
+- Objects, institutions, metrics, customs, and technologies have been designed over time.
+- Path dependence makes them feel natural and difficult to question.
+- Their history constrains the present—but does not make the present inevitable.
+
+<div class="takeaway">
+If a harmful arrangement was made, it can be remade.
+</div>
+
+::: {.notes}
+This is the source of Norman's cautious optimism. Artificial does not mean fake or bad; it means human-made and therefore open to redesign.
+:::
+
+::: {.source}
+@Norman2023, ch. 38
+:::
+
+## Meaningful means measuring what matters
+
+- A single number can conceal a multidimensional reality.
+- Cost, productivity, and efficiency do not exhaust human value.
+- Qualitative evidence, stories, and dashboards can reveal different dimensions.
+- Measures should guide attention without erasing lived experience.
+
+::: {.notes}
+Connect to HCI evaluation: a faster task time can coexist with anxiety, exclusion, loss of autonomy, or poor long-term outcomes.
+:::
+
+::: {.source}
+@Norman2023, ch. 38
+:::
+
+## Sustainable means designing out waste
+
+- Treat waste and pollution as design failures, not inevitable by-products.
+- Prioritize repair, reuse, regeneration, and return.
+- Reduce the need for energy and material before optimizing supply.
+- Attack causes in production systems, not only symptoms at disposal.
+
+::: {.notes}
+Norman contrasts the cognitive burden of consumer recycling with circular systems that make repair, reuse, and return normal.
+:::
+
+::: {.source}
+@Norman2023, ch. 38
+:::
+
+## Humanity centered means designing with communities
+
+- Expand the boundary from an individual user to humanity, other living things, and the environment.
+- Replace prescriptive expertise with facilitation and partnership.
+- Respect local knowledge, disagreement, and self-determination.
+- Judge success over longer time horizons and wider systems.
+
+::: {.notes}
+“With” does not mean that professional expertise disappears. It changes the expert's role from sole author to facilitator, resource, and collaborator.
+:::
+
+::: {.source}
+@Norman2023, ch. 38
+:::
+
+## Action joins the four themes
+
+::: {.compact}
+- **Artificial:** Question what appears inevitable.
+- **Meaningful:** Define outcomes people can recognize and value.
+- **Sustainable:** Remove waste and protect future conditions.
+- **Humanity centered:** Share authority with affected communities.
+:::
+
+<div class="sequence">
+Learn &rarr; Reflect &rarr; Decide &rarr; Act &rarr; Learn again
+</div>
+
+::: {.notes}
+The added return to learning makes explicit the iterative logic that runs through Norman's incremental approach. It does not imply that the original four-part phrase included a fifth printed step.
+:::
+
+::: {.source}
+Synthesis of @Norman2023, Part VI
+:::
+
+## Exit reflection
+
+Choose an interactive system you know.
+
+1. What harmful condition does it treat as inevitable?
+2. What outcome would be meaningful to the people most affected?
+3. What is one minimum viable outcome you could pursue?
+4. Which bottom-up and top-down actors would have to work together?
+
+<div class="big-question">
+What would you do first—and what would you need to learn next?
+</div>
+
+::: {.notes}
+Students can write for two minutes, then share only the system, the proposed first action, and the next uncertainty. This is an unscored transfer check; do not require personal disclosure.
+:::
+
+# References
+
+::: {#refs}
+:::
+
+# [END]{.r-fit-text}
