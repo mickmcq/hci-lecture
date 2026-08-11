@@ -1,0 +1,413 @@
+---
+title: Interaction
+subtitle: Human-Computer Interaction
+---
+
+# [Week SIX]{.r-fit-text}
+
+Part IV of @Hornbaek2025
+
+# Intro
+
+So far we've looked at generalizable properties of humans and how we can understand specific users. Soon we'll look at engineering and the design of the machine. Interaction is the space in between the human and the machine.
+
+The concepts this week all commit to the idea of **mutual determinacy**: what happens cannot be attributed to the person or the machine alone.
+
+This week's question: *if "interaction" covers everything from a keypress to adopting a system across an organization, what good is it as a concept, and which theory do we reach for when?*
+
+# Case Study: Self-Checkout
+
+![](fiSelfCheckout.jpg)
+::: {.notes}
+https://unsplash.com/photos/a-person-standing-in-a-room-with-computers-and-other-equipment-K5f-v0FFPCs
+:::
+
+## Why start here?
+
+- **Information & control:** the scanner is a channel, and the bagging-area scale runs a feedback loop 
+- **Dialogue:** the screen walks you through turns, and one error state derails the whole conversation
+- **Tool use:** is this a tool for you, or did the store hand you the cashier's job?
+- **Automation:** checkout wasn't removed, it was reallocated to you, with one human supervising six lanes
+- **Rationality:** you chose this lane over the staffed one, a bet on which queue clears faster
+- **Practice:** self-checkout quietly rewrote grocery work, its etiquette, and even how theft happens
+
+# Information and Control
+
+Two engineering theories imported into HCI: interaction as **messages over a noisy channel** (information), and interaction as **feedback-guided control** toward a goal state.
+
+## Self-information
+
+- **Information source and channel:** a sender picks a message from a vocabulary and pushes it over a channel to a receiver; noise can corrupt it along the way
+- **Self-information:** the information in a message is the negative log of its probability, measured in bits
+- **Surprisal:** rare messages carry more information than common ones; a certain message carries zero
+- **Shannon** gave us the formalism; a fair coin flip is exactly 1 bit, four-heads-in-a-row is 4 bits
+
+##
+
+::: {.callout-note}
+The self-information of a message m is I(m) = -log2 P(m). If P(m) = 1, then I(m) = 0: a message you already knew tells you nothing.
+:::
+
+## Why bits change what you measure
+
+- **Entropy** is the average surprisal of a vocabulary: the average bits an optimal code needs per message
+- **Redundancy** is the slack between how you actually encode and that optimum; natural language is hugely redundant, which is exactly why **word prediction** works
+- Reframing typing as bits lets you ask a sharp question: what is the *theoretical* fastest this input method could go?
+- The design move: hunt for and remove redundancy the user is paying for in time
+- *Back to self-checkout: the barcode is an engineered, near-zero-ambiguity vocabulary, which is why the scan is fast and reliable; the delays live everywhere else*
+
+## Throughput
+
+- **Throughput:** bits communicated per second, a single number for how much a channel actually moves
+- It lets you compare input devices on one scale even when their ranges of motion differ wildly
+- **MacKenzie** measured roughly 10.6 bits/s for the hand, 2.9 for a trackball, and up to ~13.7 for an eye tracker
+- The design rule: when you cannot compare two input methods directly, compare their throughput
+
+## Comparing the incomparable
+
+- Throughput is how you defend a claim like "swipe typing beats tapping" without hand-waving
+- It normalizes away target size and distance, so a stylus and a thumb can be judged fairly
+- It also exposes ceilings: if a method is near its throughput limit, no amount of polish will make it much faster
+- Caution: those famous device numbers came from studies before 1992, on users with different experience; treat them as illustrative, not current
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A keyboard app claims a new layout is "20% faster." What single measurement would let you check that claim across users with different hand sizes and target sizes, and why does raw words-per-minute not settle it?
+:::
+
+## Closed-loop control
+
+- **Controlled variable:** the thing the user is driving, like cursor position or volume
+- **Feedback:** the user perceives the current state and corrects; the loop is *closed* because output feeds back into the next action
+- **Open-loop** action runs from motor memory with no correction: a swipe-to-unlock gesture; fast but imprecise
+- **Closed-loop** action is feedback-guided: dragging a pointer to an icon; slower but precise
+- *Back to self-checkout: the bagging area is a control loop comparing expected weight to actual, and "unexpected item" is that loop reporting a mismatch it can't resolve on its own*
+
+##
+
+::: {.callout-note}
+A system is closed-loop when the user's action is continuously regulated by feedback about the controlled variable. Remove the feedback and the same movement becomes open-loop.
+:::
+
+## Feedback is the whole game
+
+- This is why a laggy or missing cursor feels broken: you have severed the loop the user is closing
+- Control theory gives Fitts's law a *mechanism*: pointing is an exponential approach to the target, not just a regression line
+- The design rule, by deduction from control theory: feedback should be informative *for correction*, not merely decorative
+
+## Focused versus casual interaction
+
+- **Pohl and Murray-Smith**'s focused-casual continuum: how much closed-loop control a user must invest to act
+- **Focused:** full visual and motor engagement, high bits per second, centimeter-precise targets
+- **Casual:** "notification, go away" with a wave or a word; few bits, low effort, tolerant of noise
+- The design rule: let users *choose* their engagement level by situation, rather than forcing full attention every time
+
+##
+
+::: {.callout-tip title="In the wild"}
+🎤 *Do you trust a swipe keyboard enough not to look?*
+
+![](fiSwipe.png)
+:::
+
+##
+
+::: {.callout-warning title="If control theory is so powerful, why so little HCI?"}
+- **Shannon**'s information theory and control theory gave HCI rigorous, verifiable models of input; **MacKenzie** and others turned throughput into real device comparisons
+- But **Hornbaek, Kristensson & Oulasvirta** note both theories stalled: they only really work for pointing and text entry
+- The blockers: we lack good computational models of *perception*, and classic controllers (PID) are poor models of human supervisory control; neither handles delayed, multi-step goals
+- Design takeaway: reach for information and control to optimize a tight input loop, not to explain why someone abandoned your app; that needs the later theories
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Voice control of a smart speaker across the room: is turning the volume down by saying "quieter" focused or casual interaction? What would you change to let the same user get precise, focused control when they want it?
+:::
+
+# Dialogue
+
+Zoom out from the single message to the *conversation*: interaction as turns, where each turn resets the context for the next.
+
+## The two gulfs
+
+- **Norman**'s seven-stage model treats interaction as goal-directed dialogue: form a goal, act, then perceive and evaluate
+- **Gulf of execution:** the gap between what you want and figuring out how to do it with this interface
+- **Gulf of evaluation:** the gap between what the system did and understanding whether it moved you toward your goal
+- The whole model rests on one assumption: the user's core job is *inferring the system's state* well enough to pick the next act
+
+##
+
+::: {.callout-note}
+The gulf of execution is the distance from intention to the actions the system will accept. The gulf of evaluation is the distance from the system's output back to whether your goal advanced.
+:::
+
+## Dialogue as a state machine
+
+- A second perspective models dialogue as a **finite state machine**: states are modes, and each user action is a transition to the next state
+- **Mode:** the same input means different things depending on what state you're in; a modeless design accepts all inputs everywhere
+- The payoff is that you can *compute* properties of a design before building it: **dialogue length** (turns to the goal), **error-recovery cost** (turns to undo a mistake), **reversibility**, and **consistency** across similar states
+- The limit: an FSM captures structure only; it says nothing about how options or feedback are presented, or how the user perceives them
+- *Back to self-checkout: a jammed lane has a brutal error-recovery cost, several forced turns and a wait for the attendant, exactly the metric an FSM would flag*
+
+## Living on both sides of the gulf
+
+- Wide execution gulf: you know what you want but cannot find the command; **mapping** and affordances are what narrow it
+- Wide evaluation gulf: you did something and the system gave you nothing back, so you cannot tell if it worked
+- The design rule: make actions discoverable (narrow execution) and make consequences visible (narrow evaluation)
+- *Back to self-checkout: "unexpected item in the bagging area" is a wide evaluation gulf; the machine knows exactly what is wrong and tells you almost nothing you can act on*
+
+## Mixed-initiative interaction
+
+- **Mixed-initiative:** both the human and the system can take the initiative; the computer can act without a command
+- **Horvitz** framed the design problem: only automate when it beats direct manipulation, and weigh the expected utility of acting versus asking
+- Time actions to the user's attention, keep automation status visible, and always allow direct invoke and termination
+- The whole scheme runs on the system's estimate of the user's goal, which is usually made from very poor cues
+
+##
+
+::: {.callout-warning title="Is turn-taking really how we interact?"}
+- **Norman**'s model assumes the user already knows the options and is merely selecting among them
+- **Kirsh** countered from embodied cognition: we do not know the options; we *explore* to discover them, and we reshape the environment to change our own choices
+- **Suchman** adds that human-machine "dialogue" lacks the robust repair humans use; people hyperarticulate at Alexa and it gets *worse*
+- Design takeaway: design for **discoverability** and low-cost trial, not just visibility of a fixed option set
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+An email client auto-suggests adding a calendar event when it detects a meeting. Name one Horvitz principle it must respect so that a wrong guess is cheap, and describe the failure if it ignores that principle.
+:::
+
+# Tool Use
+
+The computer as something you pick up to change the world beyond it. This lens gives HCI four of its load-bearing words: utility, usability, accessibility, acceptability.
+
+## Utility
+
+- **Utility:** whether the tool's functionality can, in principle, do what the user needs
+- It is about the match between what the system offers and the user's actual tasks, existing or newly discovered
+- Utility is hard to predict: users often realize what they want only once they are using the thing
+- The classic split: getting the *right* design (utility) versus getting the design *right* (usability)
+
+::: {.callout-note}
+Utility is the in-principle capability of a tool to support a user's goals. It says nothing about whether operating the tool is easy.
+:::
+
+## Useful but unusable, and vice versa
+
+- Utility and usability are orthogonal: a tool can do exactly what you need and still be a source of constant frustration
+- **Golden**'s line from the 1980s: a program can be flexible, maintainable, correct, and still miserable to use
+- **Koelle**'s multi-year study of data glasses found usefulness and usability outranked price, privacy, and security for adoption
+- The design rule: confirm utility exists before you polish usability; a delightful tool nobody needs still fails
+
+## Accessibility
+
+- **Accessibility:** extending usability so that as many people as possible can operate the tool, regardless of individual capabilities
+- It is not a separate feature bolted on; it is usability with the range of human variation taken seriously
+- Eye-typing for nonspeaking users with motor disabilities is a tool that *only exists* because accessibility was the goal
+- The design rule: if a person with a given capability profile cannot operate it, the tool has failed *as a tool* for them
+- *Back to self-checkout: for a shopper who can't lift items onto the scale, reach the scanner, or read the screen, the lane is unusable, and removing the cashier removed their fallback*
+
+## Acceptability
+
+- **Acceptability:** whether users actually choose to adopt, weighing practical and social factors
+- The **Technology Acceptance Model** ties adoption to perceived usefulness and perceived ease of use
+- **Task-technology fit** adds: acceptance depends on how well the tool matches the specific task at hand
+- Usability is one of the best predictors of whether software gets abandoned; felt burden drives people away
+
+## Tools change how we think and perceive
+
+- **Cognitive integration:** with long use we internalize a tool and start *thinking* in its terms; abacus users compute by imagining the beads
+- **Transparency:** a mastered tool becomes "ready-at-hand" and we perceive *through* it; a blind user's cane extends their felt perception to its tip
+- The reciprocal is the whole point of the tool-use lens: tools don't just serve us, they reshape how we think, express, and work
+- The dark side is **deskilling**: over-reliance on spell checkers left more errors in place, and navigation aids erode spatial memory ("use it or lose it")
+- *Back to self-checkout: shoppers who only ever self-check quietly lose the fluency of a full-service transaction, and there's no cashier left to fall back on*
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A team ships a powerful internal analytics tool and nobody uses it. Using utility, usability, accessibility, and acceptability, name two distinct diagnoses for the abandonment and the different fix each implies.
+:::
+
+# Automation
+
+When the machine takes over part of the task. The question is never "automate or not" but *which* function, and *how much*, and what that does to the human left in the loop.
+
+## Types and levels of automation
+
+- **Types** map to stages of human information processing: acquisition, analysis, decision, action
+- **Levels** run from 1 (human does everything) to 10 (computer decides and ignores the human)
+- Any function can be automated at any level, so a system is really a grid of choices, not one dial
+- The **types and levels** framework: pick type and level per function, then evaluate the consequences
+
+::: {.callout-note}
+Automating a function means choosing which processing stage the machine handles (acquisition, analysis, decision, or action) and at what level, from advisory suggestion up to fully autonomous action.
+:::
+
+## Where on the grid to sit
+
+- A spell checker that *flags* a word is decision support at a low level; one that *silently rewrites* is action automation at a high level
+- Higher is not better: the right level is the one that keeps the human able to supervise and intervene
+- Evaluate against **mental workload, situation awareness, complacency, and skill degradation** before you commit
+- *Back to self-checkout: the store didn't remove checkout, it reallocated it to you and kept one attendant to supervise six lanes; that is a deliberate choice of type and level, not full automation*
+
+## The ironies of automation
+
+- **Bainbridge**'s irony: automation meant to relieve the human often makes the human *more* critical, not less
+- **Deskilling:** the more the system does, the more the operator's manual and cognitive skills decay, right when they are needed for recovery
+- **Vigilance:** we are terrible at watching an automated process do nothing wrong for hours, then pouncing at the one failure
+- **Agency:** doing less can erode the felt sense of control, which undermines the basic needs for autonomy and competence
+
+::: {.callout-tip title="In the wild"}
+![](fiAutocorrect.png)
+:::
+
+##
+
+::: {.callout-warning title="Should you just automate everything you can?"}
+- The **maximum automation** strategy: automate every function that can be automated, for efficiency and cost
+- **Bainbridge** and the **Fitts' list** tradition counter: this leaves the human whatever was too hard to automate, plus the "authority problem" of who has final control
+- Explainable-AI research adds the **explainability-accuracy trade-off**: the more capable the model, the harder its decisions are to explain to the person accountable for them
+- Design takeaway: allocate functions around keeping the human competent and in authority, not around what is merely automatable
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A radiology AI flags suspected tumors on scans. Which of Bainbridge's three ironies (deskilling, vigilance, agency) is the most dangerous here, and what design change would you make to blunt it?
+:::
+
+# Rationality
+
+Why does *this* behavior emerge here? The rationality lens says: because the user is doing the best they can, given what they want and what limits them. Explains not just what they did but what they chose not to.
+
+## Bounded rationality
+
+- **Rationality:** users pick actions they expect to yield the highest utility among the options they see
+- But full rationality is a fiction: perception, memory, time pressure, and incomplete beliefs impose **bounds**
+- **Simon**'s **satisficing:** users take the first option that is good enough, not the globally optimal one
+- To predict behavior you need both the rewards (goals, utility) *and* the bounds (cognitive and environmental limits)
+- *Back to self-checkout: picking the self-checkout over the staffed lane is a bounded bet on which queue clears faster, and joining the first lane that looks good enough is satisficing, not impatience*
+
+::: {.callout-note}
+Bounded rationality holds that users maximize expected utility subject to limits of cognition and environment. Where classical economics predicts the optimal choice, bounded rationality predicts the best *reachable* one.
+:::
+
+## Information foraging
+
+- **Pirolli & Card** borrowed optimal foraging theory from biology: users hunt information the way animals hunt food
+- **Information scent:** users judge a link or cue by how strongly it smells of the thing they want, and follow the strongest
+- **Patch departure:** users abandon a page when its gain rate drops below what a fresh patch would offer
+- The design rules: make scent honest and strong, cut between-patch time (latency, steps), and front-load absorbable overviews
+
+## Computational rationality
+
+- **Computational rationality:** model the user as choosing a *policy* over sequences of actions, as rational as their cognition allows
+- HCI rewards are usually **sparse and delayed**: a menu search is all cost until the click that finds the target
+- Formalize as a **Markov decision process**, solve with reinforcement learning, and the model reproduces real gaze and cursor patterns
+- For designers the punchline: design does not determine behavior; it changes the environment the user forms beliefs about
+
+##
+
+::: {.callout-warning title="Are users actually rational?"}
+- Most of the time people miss the optimal choice: we procrastinate, satisfice, and take shortcuts that hurt us later
+- **Suchman** argues behavior is situationally driven, not utility-maximizing; and people demonstrably fail to reach the optimal choice
+- Yet **Simon** and computational-rationality work show the *adaptation* itself, given the bounds, is the evidence of rationality
+- Design takeaway: do not model users as flawless optimizers, but do assume they respond rationally to the cost-reward structure you build; if they "misuse" it, look at your structure first
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Users keep bouncing off your search results after two seconds. Reading this through information foraging, give one scent explanation and one patch-departure explanation, and the different fix each points to.
+:::
+
+# Practice
+
+The widest lens, and the longest timescale. Interaction is embedded in real work, real organizations, real lives, and it keeps changing after you ship.
+
+## Appropriation
+
+- Three degrees of user adaptation: **personalization** (appearance), **tailoring** (functionality), **appropriation** (uses you never designed for)
+- **Appropriation:** users bend a system to purposes it was not built for; **Salovaara** found people using cameras as periscopes and scanners
+- Systems never fully prescribe their use; people ignore, work around, and creatively repurpose all of them
+- **Dix**'s guidance: allow interpretation, expose intentions, support rather than control, and *learn from* how people appropriate
+
+::: {.callout-note}
+Appropriation is the adoption of a system for goals and workflows its designers did not anticipate. Unlike personalization or tailoring, it can reshape the division of labor around the tool, not just the tool.
+:::
+
+## Design is not finished at launch
+
+- If tailoring never ends, **Henderson & Kyng** argue, design should not end at launch either
+- The design rule: build for continued design; monitor use, keep channels to users open through panels and communities
+- Appropriation is a signal, not a defect: what people repurpose tells you what to support next
+
+## The context of interaction
+
+- **Activity theory** (**Engestrom**): analyze the whole activity, including community, rules, and division of labor, not the isolated click
+- **Infrastructure:** the roads, grids, platforms, and standards that shape behavior precisely by staying invisible
+- **Infrastructural inversion:** deliberately flip attention to the unglamorous plumbing to see how the work really holds together
+- **Identity:** over time tools become part of who we are, the "Mac person," the "Wikipedian" moving from periphery to center
+- *Back to self-checkout: it shifted labor onto customers and grew its own norms, from bagging etiquette to the loss-prevention arms race, none of it designed into the kiosk*
+
+##
+
+::: {.callout-warning title="Has practice actually paid off for design?"}
+- The practice tradition promised rich, real-world grounding that the narrower theories miss
+- **Hornbaek, Kristensson & Oulasvirta** concede it has delivered less than hoped: practices are multi-faceted and brutally hard to pin down empirically
+- Infrastructures need hundreds of hours and multiple site visits; they sit outside rapid ethnography and contextual inquiry
+- Design takeaway: you often cannot fully *study* practice in time, so use **technology probes** and **participatory design** to engage it directly instead
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your team notices users pasting spreadsheet data into your chat app to share it, a use you never intended. Is that personalization, tailoring, or appropriation, and which of Dix's guidelines would you apply first?
+:::
+
+# Discussions
+
+## Is throughput a fair way to compare input methods, or does it measure the wrong thing?
+
+Information theory gives us one clean number; the question is whether one number can be fair.
+
+*Throughput lets you rank a stylus against a thumb against an eye tracker on a single scale, which is powerful. But it collapses learning, fatigue, comfort, error recovery, and context into a bits-per-second figure measured in a lab. When a method is "slower" by throughput but preferred by users, which do you trust, and what does that tell you about quantifying interaction at all?*
+
+## Is "inverse usability" ever ethical, or is a hard-to-find cancel button always a dark pattern?
+
+Information foraging says raising a path's cost steers users away from it; designers do this on purpose.
+
+*Sometimes friction protects users: a confirmation step before deleting an account, a cooling-off delay before a large trade. Sometimes it traps them: a cancel flow buried five cluttered patches deep. The mechanism is identical; only the intent differs. Where is the line, and can you defend a specific friction to a regulator without appealing to "it's good for them"?*
+
+## Do the ironies of automation get worse or better as AI gets more capable?
+
+Bainbridge wrote about pilots and process control in 1983; the question is whether smarter AI escapes her ironies or deepens them.
+
+*A more capable AI handles more, so the human is engaged even less: deskilling and vigilance failures should intensify, not fade. Yet a more capable AI might also explain itself better and hand off more gracefully. Which force wins? Argue whether the 737 MAX was a story about primitive automation or a preview of what highly capable, opaque AI does to the humans nominally in charge.*
+
+# Activities
+
+## Activity 1: Diagnose one failure through six lenses (~35 min)
+
+**Task:** In groups of 3 to 4, take one interaction failure (assigned or your own: a confusing kiosk, a fought-with autopilot, an abandoned enterprise tool) and diagnose it through each of the six theories of Part IV.
+
+**Produce:** A six-row table, one row per theory (information/control, dialogue, tool use, automation, rationality, practice), each naming the specific mechanism that theory exposes and the fix it implies. Include one row where you argue the theory adds *nothing* for this case, with your reasoning.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Which lens was most illuminating for your failure, and which was a forced fit? What does that say about matching theory to phenomenon?
+
+## Activity 2: Audit an AI agent's authority and evaluation gulf (~40 min)
+
+**Task:** In groups of 3 to 4, take a real interactive-AI feature (email smart-reply, an autonomous coding or travel agent, autocorrect, a recommender) and audit it against Horvitz's mixed-initiative principles and Bainbridge's ironies.
+
+**Produce:** An annotated screenshot or flow with at least five findings, each tagged to a principle or irony, rating how visible the automation's status is and how cheaply a wrong guess can be undone. Include one principle you think is *wrong* or overrated for modern AI agents, with your argument.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** For your agent, was the gulf of evaluation wider or narrower than a traditional GUI, and does more capability make it better or worse?
+
+{{< include endMatter.md >}}

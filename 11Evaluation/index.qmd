@@ -1,0 +1,292 @@
+---
+title: Evaluation
+subtitle: Human-Computer Interaction
+---
+
+# [Week ELEVEN]{.r-fit-text}
+
+Part VIII of @Hornbaek2025
+
+# Intro
+
+Last week we were in engineering territory: systems, safety, verification and validation. We asked whether a system was built right.
+
+This week's question: *how do we decide whether an interactive system is actually good, and whose judgment counts?*
+
+# Case Study: Google Glass?
+
+# Introduction to Evaluation
+
+## What counts as an evaluation
+
+::: {.callout-note}
+Evaluation is the attribution of value: assessing a design against explicit criteria (yardsticks) to conclude, in a systematic and defensible way, how good an interactive system is for its end-users.
+:::
+
+## Evaluation is not description
+
+- **Value, not description:** logging which commands people use is description; it tells you nothing about whether the interaction is good until you set a standard
+- **After, not before:** the book says user research asks what a good system might be but evaluation asks how good the system you built actually is. In industry, we use "user research" for any and all of these.
+- **Same method, different intent:** an interview or think-aloud can serve either goal; what differs is why you run it
+- **Systematic, not introspective:** the developer's opinion is biased and unrepresentative, so evaluation has to be replicable and open to scrutiny
+
+## Formative vs. summative
+
+::: {.callout-note}
+A formative evaluation is run to shape and improve a system in progress, feeding the next iteration. A summative evaluation is run to judge a finished system against fixed objectives, for procurement, contracts, or a go/no-go decision.
+:::
+
+## Which one you are running changes everything
+
+- **Formative asks "what do we fix?":** the Xerox Star icons were tested repeatedly on whether users could pick an icon "out of a crowd," then changed
+- **Summative asks "did we hit the bar?":** **Whiteside et al.** set quantitative targets like "8 to 10 successful interactions in 30 minutes" and checked against them
+- **The trap:** running a summative test on an early prototype and concluding the idea is bad, when it was never meant to pass yet
+- **Report the wins too:** listing what works well makes developers trust and act on the evaluation
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your team ships a feature and a PM asks for "a usability test to validate" the day before launch. Is that a formative or summative request, and what is the risk of answering it with an early-stage method?
+:::
+
+## Yardsticks
+
+::: {.callout-note}
+A yardstick is the standard against which value is judged: it may be absolute (meet a fixed target, such as a System Usability Scale score near 70) or relative (beat a baseline system on some measure).
+:::
+
+## A yardstick is useless until you operationalize it
+
+- **From construct to procedure:** "no usability problems" has to become a concrete test with tasks, participants, and measures before it can be applied
+- **Errors are not one thing:** you can operationalize error as inaccurate presses, misconceptions, or entering faulty system states, and the choice changes your results
+- **Even time needs a standard:** low time on task can mean high efficiency or low engagement; the number means nothing without a yardstick
+- **Absolute vs. relative decides your method:** absolute goals suit a summative test; relative claims usually need an experiment
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A client says the new checkout should be "faster." Give one absolute operationalization and one relative operationalization of that yardstick, and say which method each implies.
+:::
+
+## Validity, reliability, impact
+
+::: {.callout-note}
+Validity: do the evaluation's findings reflect the real value of the system for real users doing real tasks? Reliability: would you get the same findings if you repeated the study or swapped evaluators? Impact: do the results actually get used to change the system?
+:::
+
+## The three can pull against each other
+
+- **Validity is the whole point:** predicted problems must be the real problems of real users, or the evaluation is invalid
+- **Reliability is shakier than people admit:** the Comparative Usability Evaluation studies found different evaluators reporting markedly different problems on the same system
+- **Impact is persuasion:** **John and Marks** showed that seeing video of users struggling changes developers' behavior more than a written problem list
+- **A finding with no impact is wasted:** an accurate problem nobody acts on did not improve anything
+
+::: {.callout-warning title="Is evaluation always worth it?"}
+- **Mainstream view (Gould and Lewis, Nielsen):** evaluation is indispensable; systems are never right on the first try
+- **Greenberg and Buxton** countered in "Usability Evaluation Considered Harmful (Some of the Time)": thoughtless, mandatory evaluation can kill early ideas that need to evolve as imperfect prototypes
+- **The Tyranny of Evaluation** essay made a related point: top venues once rejected new ideas simply for lacking a controlled study
+- Design takeaway: match the evidence to the claim; do not run a summative test on a fragile prototype and call the vision a failure
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Two evaluators run the same heuristic evaluation and report almost no overlapping problems. Which of validity, reliability, and impact is most threatened, and would adding a third evaluator help?
+:::
+
+# Analytical Evaluation Methods
+
+## Analytic evaluation, no users required
+
+::: {.callout-note}
+Analytic evaluation methods assess a design without collecting data from real users: an expert compares the interface against guidelines, principles, or performance models to predict problems, focus areas, or task times.
+:::
+
+## Cheap, fast, and dangerous if you trust them too much
+
+- **Cost is the appeal:** an expert can evaluate any representation, from a use case to a shipped system, in hours instead of weeks
+- **Three uses:** find problems to fix in design, assess readiness against a baseline, or trace factors behind accidents
+- **They are complements, not replacements:** **Cockton and Woolrych** found 65% of heuristic predictions were wrong; **Hvannberg et al.** found 62% of real problems went undetected
+- **Skill dominates:** the same interface handed to two evaluators yields different results; analytic methods are wide open to the evaluator effect
+
+## Heuristic evaluation
+
+::: {.callout-note}
+Heuristic evaluation is an analytic method in which evaluators inspect an interface against a small set of usability heuristics (rules of thumb) and record where the design breaches them. The most cited set is the ten Molich and Nielsen heuristics, but often companies with mature research teams will develop their own custom heuristics.
+:::
+
+## What the heuristics actually catch
+
+- **Visibility of system status:** a progress bar for a long download; the user always knows what the system is doing
+- **Match with the real world, recognition over recall:** speak the user's language, show options rather than forcing memory
+- **Error prevention, then recovery:** confirm before deleting a file; when errors happen, explain them and offer a path out
+- **Consistency, user control, minimalist design:** honor platform conventions, support undo, cut anything that does not serve the primary goal
+- **Severity matters more than count:** a single catastrophic breach can sink a design; counting violations alone tells you little
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Open your own OS settings live and run one heuristic (say, "match with the real world") against a single screen. Narrate the first breach you find and rate its severity out loud.
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You flag a "consistency" violation but your teammate does not see it as a problem at all. Is that a validity issue, a reliability issue, or both, and what does the disagreement tell you about heuristic evaluation?
+:::
+
+## How many evaluators do you need?
+
+::: {.callout-note}
+Detecting a usability problem can be modeled as a Bernoulli trial: each evaluator finds a given problem with some probability p. The chance that at least one of k evaluators catches it is 1 minus (1 minus p) to the power k.
+:::
+
+## The magic-number claim, and why it wobbles
+
+- **Experts are efficient:** at p around 0.75, just two evaluators catch a given problem with 95% probability
+- **Novices are not:** a CS student's detection rate runs 7% to 75%, often near 30%, so you would need seven or more for the same confidence
+- **Coverage is harder than detection:** across many problems, even an expert misses a large share of "obvious" ones; a single evaluator is inherently unreliable
+- **Skill is the hidden variable:** the famous "you only need a few evaluators" rule quietly assumes those few are experts
+
+::: {.callout-warning title="Do five evaluators really find 85% of problems?"}
+- **Nielsen and Molich** popularized the idea that a handful of evaluators uncover most problems
+- **Cockton and Woolrych** and the Comparative Usability Evaluation studies countered: hit rates vary wildly, and different evaluators find different problems
+- The model itself assumes no false positives and equal skill, which real teams violate
+- Design takeaway: do not promise "five evaluators, 85% coverage"; report who the evaluators were and treat single-evaluator results with suspicion
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your budget covers three evaluators. They are CS students with a roughly 30% detection rate. Using the intuition from the Bernoulli model, should you promise a stakeholder "thorough coverage"? What would you say instead?
+:::
+
+## Cognitive walkthrough
+
+::: {.callout-note}
+A cognitive walkthrough is an analytic method that mentally simulates a novice exploring an interface: for each step of a task, the evaluator asks whether the user would try the right action, notice it, connect it to their goal, and see progress after doing it.
+:::
+
+## Built on a theory of guessing
+
+- **Four questions per step:** right goal, notice the action, associate action with effect, recognize progress; a "no" that cannot be explained is a critical issue
+- **Rooted in exploration theory:** **Polson and Lewis** modeled users as setting goals and guessing actions from perceptual cues, crossing the gulfs of evaluation and execution
+- **Scope is learnability:** it targets how novices learn a system, not expert speed; **Lewis et al.** found it caught 50% of problems from an empirical study
+- **Design tactics fall out of it:** make available actions salient, offer an obvious undo, present few alternatives, require few choices
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A new user stares at a screen with a valid button right in front of them and never presses it. Which of the four walkthrough questions most likely failed, and what redesign tactic addresses it?
+:::
+
+## Keystroke-level modeling
+
+::: {.callout-note}
+KLM is a simple mathematical model that predicts how long an expert, error-free user will take on a sequential task by summing standard time estimates for each operation: keystrokes, pointing, homing, mental operators, and system response.
+:::
+
+## A stopwatch you run on paper
+
+- **Add up the atoms:** **Card, Moran and Newell** gave empirical constants, such as 1.1 s to point, 0.4 s to home the hands, 1.2 s for a mental operator
+- **Homing is the silent tax:** in the worked replace-all example, moving hands between mouse and keyboard eats almost a quarter of the total time
+- **It assumes an expert with no errors:** no learning, no memory, no multitasking, which is exactly why it complements the novice-focused walkthrough
+- **Get the operator count right, not the order:** best practice cares more about how many mental operators than their exact sequence
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Two login designs do the same job; one keeps hands on the keyboard, the other forces repeated mouse-keyboard switches. Before doing the arithmetic, which KLM operator predicts the difference, and what would KLM completely miss about the two designs?
+:::
+
+## Think-aloud studies
+
+::: {.callout-note}
+A think-aloud study asks participants to verbalize their thinking while they use a system, so the evaluator can capture what they are trying to do, how they read feedback, and where they get stuck. **Nielsen** called it the single most important usability engineering method.
+:::
+
+## The one method that opens the black box
+
+- **Grounded in verbal protocols:** **Ericsson and Simon** argued that concurrent verbalization can validly reflect what is in short-term memory
+- **Three levels:** level 1 reports thoughts as-is, level 2 puts nonverbal content into words, level 3 asks for explanations and rationales
+- **Only levels 1 and 2 are "valid":** level 3 (explaining why) changes performance and no longer purely reflects thinking, though it can still be useful in HCI
+- **It is reactive and partial:** thinking aloud can speed you up or slow you down, and people know more than they say
+
+## Instructions and tasks
+
+::: {.callout-note}
+The instructions and tasks are the biggest levers on what a think-aloud study finds. Classic thinking aloud tells users to "keep talking" and behave "as if alone in the room"; tasks should be representative, and worded in the user's terms, not the system's.
+:::
+
+## Small wording changes, big behavior changes
+
+- **Classic vs. relaxed:** relaxed thinking aloud invites explanation and reflection (level 3); useful, but no longer neutral
+- **Instructions leak into behavior:** **Hertzum et al.** showed relaxed instructions changed visual search, navigation, and mental workload
+- **Avoid hidden help:** phrasing a task in the system's own terms tells users which feature to use and destroys realism
+- **Easy first task, concurrent over retrospective:** ease people in; **Alhadreti and Mayhew** found concurrent think-aloud beat retrospective and hybrid on problems found
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+You want to know whether users can figure out how to share a document. Write the task two ways, one with hidden help and one without, and say what each version would and would not reveal.
+:::
+
+## The evaluator effect
+-- add image --
+
+::: {.callout-warning title="Can two analysts trust the same tapes?"}
+- **Jacobsen et al.** gave four evaluators the same think-aloud recordings: only about a fifth of problems were found by all four, and about half by just one
+- This mirrors the low inter-evaluator agreement seen in analytic methods 
+- **Fan et al.** surveyed practitioners and found most skip best practices: no warm-up, leading prompts, interrupting users
+- Design takeaway: use multiple analysts, neutral prompts, and a shared coding scheme before you trust a think-aloud problem list
+:::
+
+# Discussions
+
+## When does evaluation do more harm than good?
+
+Evaluation is treated as indispensable, yet a serious line of work argues it can strangle good ideas.
+
+*"Usability Evaluation Considered Harmful" argued that mandatory, thoughtless evaluation punishes early, visionary prototypes that are supposed to be rough. Where is the line between rigor and premature judgment, and who decides when a system is "ready" to be evaluated?*
+
+## If evaluators disagree this much, can we trust any single usability report?
+
+The evaluator effect shows the same tapes yield different problem lists depending on who looks.
+
+*Only a fifth of problems were found by all four evaluators in Jacobsen et al. If reliability is this low, is a one-person heuristic evaluation worth anything? What would it take to make you act on a usability finding, and is that bar even affordable in practice?*
+
+## Analytic methods skip real users. When is that defensible, and when is it a cop-out?
+
+Analytic methods are cheap and fast, but carry high false positive and false negative rates.
+
+*A PM wants to skip user testing entirely and ship on the strength of a heuristic review because conversion pays the bills and the deadline is Friday. When is analytic-only evaluation a smart trade, and when is it negligence, especially for safety, accessibility, or inclusiveness?*
+
+## Can heuristics written for GUIs evaluate AI systems, or do opaque models need new yardsticks?
+
+Amershi et al. wrote 18 heuristics specifically for interactive AI because the old ten did not fit.
+
+*When the system's behavior is probabilistic, learns from you, and cannot fully explain itself, do classic yardsticks like "visibility of system status" or "user control" still mean anything? And when an AI agent acts on your behalf, who is even "the user" whose experience you evaluate?*
+
+# Activities
+
+## Activity 1: Heuristic evaluation showdown (~35 min)
+
+**Task:** In groups of 3 to 4, individually run a heuristic evaluation of the same real interface (a travel planner, a volunteer org homepage, or a settings panel) using the Molich and Nielsen heuristics, then combine your findings.
+
+**Produce:** A merged problem report table (minimum 6 problems) with columns for problem, heuristic breached, cause, frequency, severity, and a redesign suggestion. Mark which problems only one person found, and include one heuristic you think is overrated or wrong, with your argument.
+
+**Time:** 22 min group work · 13 min share-out
+
+**Debrief:** How much did your individual lists overlap, and what does that overlap (or lack of it) say about trusting a solo evaluation?
+
+## Activity 2: AI interface audit (~40 min)
+
+**Task:** In groups of 3 to 4, audit a real AI feature (autocomplete, a chatbot, an AI photo tool, or an AI-generated UI) against Amershi et al.'s 18 AI heuristics, and pick one task to model with KLM or probe with a quick think-aloud.
+
+**Produce:** An annotated screenshot flagging at least 5 heuristic violations, plus either a KLM estimate for one task or three think-aloud-style user quotes you would expect. Include one position statement: name one AI heuristic that is impossible to satisfy with today's opaque models, and argue why.
+
+**Time:** 25 min group work · 15 min share-out
+
+**Debrief:** Which failures were unique to the system being AI, and which are just old usability problems wearing a new coat?
+
+{{< include endMatter.md >}}
