@@ -11,9 +11,22 @@ Part VIII of @Hornbaek2025
 
 Last week we lived inside the lab: think-aloud studies and controlled experiments, where we bought precision by stripping the world away. But a keyboard that wins in a tapping task can still lose on a real phone, in a real pocket, or on a real commute.
 
+Three stops on one spectrum of system completeness: **field evaluation of a prototype**, then a **pilot study** of a partial-but-real system, then a **deployment study** of the fully shipped thing. 
+
 This week's question: *what do we learn when we drag evaluation back into the messy real world, and what does it cost us?*
 
-# Case Study: wikipedia?
+# Case Study: Google Glass
+
+![](fiGoogleGlass.png)
+
+# Why did Google Glass "fail"?
+
+A device that dazzled in demos and delighted its own testers, then collapsed on contact with real streets, bars, and strangers.
+
+- Google shipped it to self-selected **Explorers**: enthusiasts who paid $1,500 to opt in, so the early signal was glowing
+- The failure was social, not technical: bystanders could not tell when a camera was pointed at them, and *Glasshole* became a slur
+- Real contexts rejected it: bars, cinemas, and locker rooms banned the device the lab had never simulated
+- The model clash: engineers evaluated *a wearable display's features*; the world evaluated *what it feels like to stand next to someone wearing a camera*
 
 # Field Evaluations
 
@@ -26,6 +39,8 @@ Realism, and what it costs: ecological validity, degrees of the field, and exper
 - **The trade it buys:** realism, at the direct expense of precision and control
 - **The trade it pays:** you can no longer isolate one variable cleanly, because the world moves everything at once
 
+##
+
 ::: {.callout-note}
 An evaluation has high ecological validity when its people, tasks, context, and technology closely match real use, so that observed behavior reflects what users would actually do outside the study.
 :::
@@ -37,6 +52,8 @@ An evaluation has high ecological validity when its people, tasks, context, and 
 - **Kjeldskov** studied a mobile medical system in both settings and found comparable numbers of usability problems, and even context problems, in the lab
 - So "field is always richer" is not a law: it is a bet you make when the phenomenon you care about only shows up in the wild
 
+##
+
 ::: {.callout-warning title="Is the field always worth the hassle?"}
 - **Kjeldskov** on a mobile clinical system: the lab surfaced comparable usability problems, so the costly field study "was not worth the hassle"
 - **Hornbæk and colleagues** counter: field studies expose sociotechnical phenomena, like the nurses' collective reading, that a lab cannot stage
@@ -46,8 +63,8 @@ An evaluation has high ecological validity when its people, tasks, context, and 
 
 ## Degrees of the field
 
-- **The field is a continuum, not a switch:** an evaluation can have more or fewer features of the real world
-- **Four dials (McGrath):** people, activities, context, and technology can each be made more or less realistic
+- **Realism is a matter of degree (McGrath):** an evaluation can have more or fewer features of the real world, rather than being purely lab or purely field
+- **Four dimensions to turn up or down:** people, activities, context, and technology can each be made more or less realistic
 - **Rico and Brewster** tested phone gestures on a real sidewalk by a bus stop, so social context did the work a lab never could
 - **Mundane realism is overrated:** a lab dressed up like a living room matters less than tasks that feel meaningful and real
 
@@ -58,9 +75,28 @@ An evaluation has high ecological validity when its people, tasks, context, and 
 - **Rico and Brewster** still handed participants the tasks: field setting, controlled activity, a deliberate mix
 - The move: name the one dimension your result hinges on, crank that dial, and economize on the rest
 
+## The field is not a method
+
+- **Field evaluation is a setting, not a technique:** any empirical method can be run there
+- **Bring your whole toolbox:** think-aloud, interviews, observation, and unobtrusive data collection all work in the field
+- **The same method, a different job:** an interview in *user research* aims to understand users; an interview in *evaluation* judges a system against a standard
+- So do not ask "which method is the field method"; ask "which method answers my evaluation question, and how real do I need the setting to be"
+
+## The textbook says: Evaluation is not user research
+
+- **User research (Part III):** open-ended, aimed at understanding people, needs, and context before you commit to a design
+- **Evaluation (Part VIII):** aimed at judging a built system against a goal or standard
+- Same interview transcript, two different questions: *what do these people need* versus *does this system meet the bar*
+
+## Valle's take
+
+- The lines blur, because there's a lot you can learn about your users during evaluation that you couldn't learn without something to evaluate. 
+- In industry, this isn't a strong distinction made. 
+
 ## Experiments in the field
 
 - **Field experiment:** an experimental manipulation run in a real context of use rather than a lab
+- **Back to the keyboard:** one field study compared an autocorrect keyboard against a gesture keyboard, measuring text entry in the lab versus on users' own phones in everyday life, and the deployment context shifted the results
 - **Three broken assumptions:** random assignment, control, and independence of observations all come under threat
 - **Quasi-experiment:** the label for field experiments that violate these assumptions, so classic statistics do not straightforwardly apply
 - **Natural experiment:** a world event acts as the manipulation, like COVID-19 reshaping communication, or **Griggio** using a WhatsApp policy change as a switch
@@ -72,7 +108,7 @@ An evaluation has high ecological validity when its people, tasks, context, and 
 - Observations leak: **a school class will talk to each other about the study**, so their responses are no longer independent
 - The takeaway: report field results as quasi-experimental, with caution about causal claims, not as clean lab-grade proof
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A team deploys a new feed to whoever opts into the beta, then compares them against everyone else. They find the beta group is more engaged. Name the threatened assumption, and give one reason the difference might have nothing to do with the feed.
@@ -88,6 +124,8 @@ Putting an unfinished but real system into real use: pilot implementations, tech
 - **Not a prototype:** it always runs in the field, for a limited period, with real data and special precautions against breakdowns
 - **Scope:** it tests the whole sociotechnical system, not just one screen, over weeks to months
 - **Purpose:** explore the system's value, improve or assess its design, and reduce implementation risk before full commitment
+
+##
 
 ::: {.callout-note}
 A pilot implementation is a limited-time deployment of a real but unfinished system into its actual context of use, run with real data and safeguards, in order to learn about and reduce the risk of the eventual full implementation.
@@ -114,7 +152,7 @@ A pilot implementation is a limited-time deployment of a real but unfinished sys
 - The design move: decide in advance which one question the partial system must answer, and instrument exactly that
 - Everything the pilot or probe does not answer, name it out loud, so the team does not over-read the signal
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 Your team wants to test a new hospital scheduling system, but it is only 60% built. Would you run a lab usability test, a pilot implementation, or an MVP release, and what is the one thing each would tell you that the others would not?
@@ -130,6 +168,8 @@ Evaluating the fully shipped system, and deciding when realism is worth the hass
 - **Why bother after launch:** cut support costs, confirm the intended effects landed, and improve the system through use
 - **The evidence is already there:** support calls, app reviews, forum threads, and log files are unsolicited evaluation data
 - **Chilana** found only about half of HCI professionals do any usability work after deployment, so this stage is chronically neglected
+
+##
 
 ::: {.callout-note}
 A deployment study evaluates an interactive system after it has been fully released, gathering data from real use, such as feedback, logs, and behavior, to judge whether the system is achieving its purpose and how to improve it.
@@ -150,10 +190,10 @@ A deployment study evaluates an interactive system after it has been fully relea
 
 ## Is it worth the hassle?
 
-<Table 44.1 image>
+![](fiTable44.1.png)
 
 
-## Concept check{.r-fit-text}
+## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
 A banking app team wants to know how people navigate their newly launched site. They have logs from millions of sessions and a stack of one-star reviews. What can each source tell them that the other cannot, and which population is each one quietly missing?

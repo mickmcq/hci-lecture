@@ -13,7 +13,21 @@ Last week we were in engineering territory: systems, safety, verification and va
 
 This week's question: *how do we decide whether an interactive system is actually good, and whose judgment counts?*
 
-# Case Study: Google Glass?
+# Case Study: The check-in that left a patient behind
+
+<!-- IMAGE: an older patient at a hospital self-service check-in kiosk, small dense text on the screen, a busy reception desk behind them, an ambiguous "please see reception" or spinner state -->
+
+![](fiKiosk.png)
+
+# Why did the check-in fail?
+
+A patient arrives on time for an appointment, cannot get through the self-service kiosk, and is not even sure whether they are checked in.
+
+- The screen never made the state legible: "checked in," "still needs the desk," and "error" all looked about the same, so the patient could not tell whether they were done
+- Check-in demanded one rigid order (confirm identity, then insurance, then forms), and a single mistap dropped them into a dead-end screen with no way back
+- It assumed sharp eyes, steady hands, and fluency with insurance jargon and member IDs; a first-time, anxious, or older patient had nothing to guess from
+- Feeling unwell and under a waiting-room clock, every extra step and every timeout cost patience the patient did not have
+- **Gould and Lewis** put it plainly: everyone builds a prototype, but only some evaluate it; this kiosk was validated to post to the medical record, not to be completable by a sick 78-year-old
 
 # Introduction to Evaluation
 
@@ -23,10 +37,10 @@ This week's question: *how do we decide whether an interactive system is actuall
 Evaluation is the attribution of value: assessing a design against explicit criteria (yardsticks) to conclude, in a systematic and defensible way, how good an interactive system is for its end-users.
 :::
 
-## Evaluation is not description
+## Evaluation is not description, and not user research
 
 - **Value, not description:** logging which commands people use is description; it tells you nothing about whether the interaction is good until you set a standard
-- **After, not before:** the book says user research asks what a good system might be but evaluation asks how good the system you built actually is. In industry, we use "user research" for any and all of these.
+- **After, not before:** user research asks what a good system might be; evaluation asks how good the system you built actually is
 - **Same method, different intent:** an interview or think-aloud can serve either goal; what differs is why you run it
 - **Systematic, not introspective:** the developer's opinion is biased and unrepresentative, so evaluation has to be replicable and open to scrutiny
 
@@ -46,7 +60,7 @@ A formative evaluation is run to shape and improve a system in progress, feeding
 ## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-Your team ships a feature and a PM asks for "a usability test to validate" the day before launch. Is that a formative or summative request, and what is the risk of answering it with an early-stage method?
+Your team ships a feature and a PM asks for "a usability test to prove it's good" the day before launch. Is that a formative or summative request, and what is the risk of answering it with an early-stage method?
 :::
 
 ## Yardsticks
@@ -94,8 +108,6 @@ Validity: do the evaluation's findings reflect the real value of the system for 
 Two evaluators run the same heuristic evaluation and report almost no overlapping problems. Which of validity, reliability, and impact is most threatened, and would adding a third evaluator help?
 :::
 
-# Analytical Evaluation Methods
-
 ## Analytic evaluation, no users required
 
 ::: {.callout-note}
@@ -106,13 +118,13 @@ Analytic evaluation methods assess a design without collecting data from real us
 
 - **Cost is the appeal:** an expert can evaluate any representation, from a use case to a shipped system, in hours instead of weeks
 - **Three uses:** find problems to fix in design, assess readiness against a baseline, or trace factors behind accidents
-- **They are complements, not replacements:** **Cockton and Woolrych** found 65% of heuristic predictions were wrong; **Hvannberg et al.** found 62% of real problems went undetected
+- **They are complements, not replacements:** **Cockton and Woolrych** found 65% of heuristic predictions were wrong; **Hvannberg et al.** found 62% of problems went undetected in a usability test
 - **Skill dominates:** the same interface handed to two evaluators yields different results; analytic methods are wide open to the evaluator effect
 
 ## Heuristic evaluation
 
 ::: {.callout-note}
-Heuristic evaluation is an analytic method in which evaluators inspect an interface against a small set of usability heuristics (rules of thumb) and record where the design breaches them. The most cited set is the ten Molich and Nielsen heuristics, but often companies with mature research teams will develop their own custom heuristics.
+Heuristic evaluation is an analytic method in which evaluators inspect an interface against a small set of usability heuristics (rules of thumb) and record where the design breaches them. The most cited set is the ten Molich and Nielsen heuristics.
 :::
 
 ## What the heuristics actually catch
@@ -126,16 +138,10 @@ Heuristic evaluation is an analytic method in which evaluators inspect an interf
 ## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-Open your own OS settings live and run one heuristic (say, "match with the real world") against a single screen. Narrate the first breach you find and rate its severity out loud.
-:::
-
-## [Concept check]{.r-fit-text}
-
-::: {.callout-note title="Pause and think"}
 You flag a "consistency" violation but your teammate does not see it as a problem at all. Is that a validity issue, a reliability issue, or both, and what does the disagreement tell you about heuristic evaluation?
 :::
 
-## How many evaluators do you need?
+## How many evaluators do you need
 
 ::: {.callout-note}
 Detecting a usability problem can be modeled as a Bernoulli trial: each evaluator finds a given problem with some probability p. The chance that at least one of k evaluators catches it is 1 minus (1 minus p) to the power k.
@@ -147,6 +153,8 @@ Detecting a usability problem can be modeled as a Bernoulli trial: each evaluato
 - **Novices are not:** a CS student's detection rate runs 7% to 75%, often near 30%, so you would need seven or more for the same confidence
 - **Coverage is harder than detection:** across many problems, even an expert misses a large share of "obvious" ones; a single evaluator is inherently unreliable
 - **Skill is the hidden variable:** the famous "you only need a few evaluators" rule quietly assumes those few are experts
+
+##
 
 ::: {.callout-warning title="Do five evaluators really find 85% of problems?"}
 - **Nielsen and Molich** popularized the idea that a handful of evaluators uncover most problems
@@ -160,6 +168,40 @@ Detecting a usability problem can be modeled as a Bernoulli trial: each evaluato
 ::: {.callout-note title="Pause and think"}
 Your budget covers three evaluators. They are CS students with a roughly 30% detection rate. Using the intuition from the Bernoulli model, should you promise a stakeholder "thorough coverage"? What would you say instead?
 :::
+
+## Human error identification
+
+::: {.callout-note}
+HEI is an analytic method that starts from a task analysis, enumerates the states a system can be in, and builds a matrix of legal, illegal, and unavailable transitions between them. A user is then simulated moving toward a goal to expose where they could take a wrong step.
+:::
+
+## Hunting for the wrong turns
+
+- **It came from safety-critical work:** HEI grew up in aviation and hardware, but the state-based idea generalizes to most interfaces (a callback to last week's safety and risk)
+- **Task analysis first:** unlike heuristic evaluation, you map the states and goals before you look for trouble
+- **Three error types to enumerate:** the user confuses the correct action, confuses the machine's state, or simply selects wrong; for each, you assess the consequence
+- **It actually predicts:** **Baber and Stanton** watched 300 real vending-machine transactions, then showed one evaluator using HEI caught over 80% of the real problems in about 3.5 hours
+
+##
+
+::: {.callout-tip title="In the wild"}
+🎤 *Therac-25*
+
+![](fiTherac.jpg)
+:::
+
+::: {.notes}
+https://en.wikipedia.org/wiki/Therac-25
+https://www.tomshardware.com/software/notorious-software-bug-was-killing-people-40-years-ago-at-least-three-people-died-after-radiation-doses-that-were-100x-too-strong-from-the-buggy-therac-25-radiation-therapy-machine
+https://unsplash.com/photos/white-medical-machine-d7BwTSp3uQs
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+At a self-checkout, users constantly pay before scanning the last item and walk away. Which of HEI's three error types is that, and what state-transition change would prevent it?
+:::
+
 
 ## Cognitive walkthrough
 
@@ -192,6 +234,18 @@ KLM is a simple mathematical model that predicts how long an expert, error-free 
 - **Homing is the silent tax:** in the worked replace-all example, moving hands between mouse and keyboard eats almost a quarter of the total time
 - **It assumes an expert with no errors:** no learning, no memory, no multitasking, which is exactly why it complements the novice-focused walkthrough
 - **Get the operator count right, not the order:** best practice cares more about how many mental operators than their exact sequence
+
+::: {.callout-tip title="In the wild"}
+🎤 *4000 Clicks*
+
+![](fi4000Clicks.jpg)
+:::
+
+::: {.notes}
+https://unsplash.com/photos/person-sitting-while-using-laptop-computer-and-green-stethoscope-near-NFvdKIhxYlU
+https://www.beckershospitalreview.com/healthcare-information-technology/4-000-clicks-per-shift-ed-physicians-emr-burden/
+:::
+
 
 ## [Concept check]{.r-fit-text}
 
@@ -231,14 +285,45 @@ The instructions and tasks are the biggest levers on what a think-aloud study fi
 You want to know whether users can figure out how to share a document. Write the task two ways, one with hidden help and one without, and say what each version would and would not reveal.
 :::
 
+## Turning talk into problems
+
+::: {.callout-note}
+Analysis is a distinct step: the raw verbalizations are transcribed and segmented, then interesting moments are identified and classified, ideally by a different person so inter-rater reliability can be checked. Classification runs bottom-up (let themes emerge, as in affinity diagramming) or top-down (apply an existing code set).
+:::
+
+## Three kinds of usability problem
+
+- **Failure to reach the goal:** the user articulates a goal and cannot reach it within three minutes, gives up, produces the wrong result, or hits a dead end
+- **Misunderstanding the system:** the user knows the goal but cannot pick the right action, or expresses surprise at what the system did
+- **Negative experience:** the user voices frustration or says outright that something is a problem
+- **Report it usefully:** a usability problem list separates the problem, its cause, the behavioral consequence, and a possible fix
+- **Seeing is easier than solving:** spotting a problem in the protocol is quick; figuring out how to fix it is the hard part
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+A user sighs, says "I guess I'll just try this one," clicks the wrong menu, and eventually gives up. How many distinct usability problems is that, and which of the three types does each fall under?
+:::
+
 ## The evaluator effect
--- add image --
+
+::: {.callout-note}
+The evaluator effect: different evaluators, given the very same sessions, surface markedly different sets of usability problems. It hits both analytic methods and think-aloud, and it is fundamentally a reliability problem.
+:::
+
+## When the same tapes tell different stories
 
 ::: {.callout-warning title="Can two analysts trust the same tapes?"}
 - **Jacobsen et al.** gave four evaluators the same think-aloud recordings: only about a fifth of problems were found by all four, and about half by just one
-- This mirrors the low inter-evaluator agreement seen in analytic methods 
+- This mirrors the low inter-evaluator agreement seen in analytic methods (Chapter 41)
 - **Fan et al.** surveyed practitioners and found most skip best practices: no warm-up, leading prompts, interrupting users
 - Design takeaway: use multiple analysts, neutral prompts, and a shared coding scheme before you trust a think-aloud problem list
+:::
+
+## [Concept check]{.r-fit-text}
+
+::: {.callout-note title="Pause and think"}
+Your team runs think-aloud sessions on the check-in kiosk, and a single analyst codes them into one problem list. Given the evaluator effect, how far should you trust that list, and what is the cheapest change that would most raise your confidence in it?
 :::
 
 # Discussions
