@@ -1,3 +1,17 @@
+# Rendered output. Regenerated from index.qmd by `quarto render`, and previously
+# the main source of merge conflicts — 34 tracked index.html files totalling
+# 176MB, one of them 49MB. Render locally instead of pulling someone else's.
+index.html
+*_files/
+.quarto/
+
+# Quarto scratch
+/.quarto/
+
+# macOS / editor noise
 .DS_Store
-.claude/
-.Rhistory
+*~
+*.swp
+
+# Note: _seed/ is a submodule (github.com/mickmcq/courses-seed), not ignored.
+# Its build/ directory is generated and ignored inside the submodule itself.

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/mm223266/.config/nvim/**)",
+      "Read(//Users/mm223266/.config/nvim/lua/**)",
+      "Bash(grep -v -e \"^.*#\" -e \"--\")",
+      "Bash(nvim --version)",
+      "Bash(grep -v -e \"--\" -e \"^Binary\")",
+      "Bash(yaml-language-server --version)",
+      "Bash(npm --version)",
+      "Bash(R --version)",
+      "Bash(R -e \"installed.packages\\(\\)[,'Package']\")"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "figma-desktop"
+  ]
+}
