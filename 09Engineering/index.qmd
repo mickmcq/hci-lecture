@@ -487,5 +487,37 @@ Three aspects that especially help HCI designers
 - Function models specify how functions interrelate *without* deciding how they are carried out---encouraging exploration
 - The result is a system that can be built, verified, and validated---and understood, maintained, and reused
 
+# Activities
+
+## Activity 1: Raise the abstraction (~35 min)
+
+**Task:** In groups of 3 to 4, take one group member's project problem statement and climb the abstraction ladder. Write it at three levels: as stated (probably naming a solution), solution-neutral, and one level more abstract still. At each level, list two solutions that become available which were invisible one level down. Then decompose the middle level into a small function structure or FAST diagram — two levels deep, read left to right as *how* and right to left as *why* — and name at least three function carriers for one function.
+
+**Produce:** The three-rung ladder with its solutions, the diagram, and the carriers. Mark the rung you would actually design at, and say what you gave up by not going higher.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** At which rung did the problem stop being yours and start being someone else's? That boundary is a real engineering judgment, not a mistake.
+
+## Activity 2: Map the system around the interface (~40 min)
+
+**Task:** In groups of 3 to 4, pick a deployed system that makes consequential decisions about people with AI in the loop (résumé screening, content moderation, fraud flagging, clinical triage, proctoring). Each member draws a different diagram from the mapping toolbox — organizational, process, communication, and system — for the same system. Then combine them.
+
+**Produce:** The combined map, a list of stakeholders the interface does not represent at all, and an audit against the eight governance themes naming the two that this system most clearly fails. For each failure, say whether it is a property of the interface, the organization around it, or the boundary you drew.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Name one harm that is visible on your map and would be invisible in a usability test of the same system. Then name the point where your group's analysis started to stall — systems thinking invites analysis paralysis, and knowing where to stop is part of the skill.
+
+## Activity 3: Score the concepts, then break the score (~40 min)
+
+**Task:** In groups of 3 to 4, take three or four candidate designs for one member's project. Agree on five criteria, weight each 1 to 5, score each concept 1 to 5 per criterion, and compute the weighted totals against an ideal. Then attack your own result: find a defensible re-weighting that makes a different concept win, and check whether your winner scores badly on your highest-weighted criterion.
+
+**Produce:** The scoring table, the re-weighting that flips it, and a written narrative of one paragraph justifying which concept you would actually pursue — the narrative, not the arithmetic, is the deliverable. Then write one requirement for the winner in the five-property form (solution-independent, clear, concise, testable, traceable) and name which of the four verification methods would check it: inspection, demonstration, test, or analysis.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** How hard was it to find a re-weighting that flipped the winner? If it was easy, what does that say about the scores you just computed?
+
 {{< include endMatter.md >}}
 
