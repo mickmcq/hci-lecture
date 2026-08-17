@@ -15,9 +15,7 @@ This week's question: *how do we decide whether an interactive system is actuall
 
 # Case Study: The check-in that left a patient behind
 
-<!-- IMAGE: an older patient at a hospital self-service check-in kiosk, small dense text on the screen, a busy reception desk behind them, an ambiguous "please see reception" or spinner state -->
-
-![](fiKiosk.png)
+![](fiSelfCheckin.png)
 
 # Why did the check-in fail?
 
@@ -94,6 +92,8 @@ Validity: do the evaluation's findings reflect the real value of the system for 
 - **Reliability is shakier than people admit:** the Comparative Usability Evaluation studies found different evaluators reporting markedly different problems on the same system
 - **Impact is persuasion:** **John and Marks** showed that seeing video of users struggling changes developers' behavior more than a written problem list
 - **A finding with no impact is wasted:** an accurate problem nobody acts on did not improve anything
+
+##
 
 ::: {.callout-warning title="Is evaluation always worth it?"}
 - **Mainstream view (Gould and Lewis, Nielsen):** evaluation is indispensable; systems are never right on the first try
@@ -235,6 +235,8 @@ KLM is a simple mathematical model that predicts how long an expert, error-free 
 - **It assumes an expert with no errors:** no learning, no memory, no multitasking, which is exactly why it complements the novice-focused walkthrough
 - **Get the operator count right, not the order:** best practice cares more about how many mental operators than their exact sequence
 
+##
+
 ::: {.callout-tip title="In the wild"}
 🎤 *4000 Clicks*
 
@@ -356,15 +358,26 @@ Amershi et al. wrote 18 heuristics specifically for interactive AI because the o
 
 ## Activity 1: Heuristic evaluation showdown (~35 min)
 
-**Task:** In groups of 3 to 4, individually run a heuristic evaluation of the same real interface (a travel planner, a volunteer org homepage, or a settings panel) using the Molich and Nielsen heuristics, then combine your findings.
+**Task:** In groups of 3 to 4, individually run a heuristic evaluation of the same real interface (a travel planner, a volunteer org homepage, or a settings panel) using the Molich and Nielsen heuristics, then combine your findings by:
 
-**Produce:** A merged problem report table (minimum 6 problems) with columns for problem, heuristic breached, cause, frequency, severity, and a redesign suggestion. Mark which problems only one person found, and include one heuristic you think is overrated or wrong, with your argument.
+**Produce:** Each group posts its individual problem lists on the wall; everyone walks and tallies which problems appear on only one list vs. all of them.
 
 **Time:** 22 min group work · 13 min share-out
 
 **Debrief:** How much did your individual lists overlap, and what does that overlap (or lack of it) say about trusting a solo evaluation?
 
-## Activity 2: AI interface audit (~40 min)
+## Activity 2: "Two methods and a flow: cognitive walkthrough + think-aloud (~40 min) 
+
+**Task:** In groups of 3–4, pick one first-use flow (create an account and complete one core action). Half the group runs a cognitive walkthrough: for each step, ask the four questions (right goal? notice the action? associate it with the effect? see progress?) and log every "no" you can't explain away. The other half runs a think-aloud with one recruited outsider (a student from another group who hasn't seen the flow), using neutral instructions ("keep talking," "behave as if you're alone") and tasks worded in the user's terms, not the system's. 
+
+**Produce:** A merged problem list. Tag each problem: found by walkthrough, by think-aloud, or by both. Classify each as failure-to-reach-goal, misunderstanding, or negative-experience. Mark which problems only one method caught. 
+
+**Time:** 28 min · 12 min share-out
+
+**Debrief:** Which method caught what — and given the evaluator effect, how much would you trust either list from a single analyst?
+
+
+## Activity 3: AI interface audit (~40 min)
 
 **Task:** In groups of 3 to 4, audit a real AI feature (autocomplete, a chatbot, an AI photo tool, or an AI-generated UI) against Amershi et al.'s 18 AI heuristics, and pick one task to model with KLM or probe with a quick think-aloud.
 

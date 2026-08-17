@@ -196,7 +196,7 @@ A deployment study evaluates an interactive system after it has been fully relea
 ## [Concept check]{.r-fit-text}
 
 ::: {.callout-note title="Pause and think"}
-A banking app team wants to know how people navigate their newly launched site. They have logs from millions of sessions and a stack of one-star reviews. What can each source tell them that the other cannot, and which population is each one quietly missing?
+A banking app team wants to know how people navigate their newly launched site. They have logs from millions of sessions and a stack of one-star reviews. You already know to triangulate; now name the population each source structurally cannot see, and which one your specific question depends on.
 :::
 
 # Discussions
@@ -231,20 +231,21 @@ When an AI agent personalizes itself per user and acts on their behalf, no two p
 
 **Task:** In groups of 3 to 4, take a simple lab usability test (for example, a food-delivery app checkout) and redesign it as a field evaluation, deciding where to sit on each of McGrath's four dials: people, activities, context, technology.
 
-**Produce:** A one-page table with a row per dial stating your lab setting, your field setting, and what realism you gain, plus a threats-to-validity note; include one dial you deliberately left at "lab" and a written argument for why turning it up would be wrong.
+**Produce:** A single dial diagram — draw McGrath's four dials (people, activities, context, technology) as sliders, mark where the lab sits and where your field version moves each, and write one sentence on the dial you deliberately left at "lab."
 
 **Time:** 25 min group work · 10 min share-out
 
 **Debrief:** Which single dial, turned to field, would most change your findings, and why?
 
-## Activity 2: Audit an AI product's field evaluation (~40 min)
+## Activity 2: Design a pilot for a half-built system (~35 min) 
 
-**Task:** In groups of 3 to 4, pick a deployed AI product (a chatbot, a recommendation feed, an AI writing tool) and reconstruct how its makers likely evaluate it in the wild: logs, thumbs-up ratings, A/B tests, opt-in betas.
+**Task:** In groups of 3–4, take a partially built system (a 60%-complete hospital scheduler, a new internal tool, a campus app). Design a pilot implementation, not a lab test: real but unfinished system, real context, limited time, real data, safeguards against breakdown. 
 
-**Produce:** An annotated map of at least five real-world data sources they plausibly use, each tagged with the population it silently excludes and the threat to validity it carries; include one evaluation claim the company could honestly make and one it could not, with your reasoning.
+**Produce:** A one-page pilot plan stating the one question the pilot must answer, what you'll instrument to answer it, the safeguards you'll run, and — explicitly — the list of things this pilot cannot tell you (so nobody over-reads the signal). Name one sociotechnical effect (à la Hertzum's nurses reading the record aloud together) that a solo usability test would miss and your pilot might catch. 
 
-**Time:** 28 min group work · 12 min share-out
+**Time:** 25 min group · 10 min share-out 
 
-**Debrief:** Which threat to validity is hardest to fix for an AI system that personalizes per user, and what would you do about it?
+**Debrief:** What's your "shadow spreadsheet" — the workaround that, if it appears during the pilot, tells you exactly where the design misses reality?
+
 
 {{< include endMatter.md >}}

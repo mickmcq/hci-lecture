@@ -317,7 +317,7 @@ Large models will happily produce a fluent persona or a vivid scenario from a pr
 
 **Task:** In groups of 3 to 4, take a real logged metric your group knows (streak counter, time-on-page, "active users," scroll depth) and reverse-engineer what it can and cannot honestly prove about users.
 
-**Produce:** A three-column table with at least six rows: the logged event, the inference a team is tempted to draw, and the alternative explanation the log cannot rule out. Include one row where your group argues the metric is actively dangerous to optimize, with your reasoning.
+**Produce:** Split each group in two. One side argues "this metric proves users are engaged," the other argues "this metric proves nothing / is dangerous to optimize." Three-minute face-off, then write the single sentence both groups agree the log can honestly support.
 
 **Time:** 25 min group work · 10 min share-out
 
@@ -332,5 +332,16 @@ Large models will happily produce a fluent persona or a vivid scenario from a pr
 **Time:** 28 min group work · 12 min share-out
 
 **Debrief:** Did grounding the prompt in real quotes make the persona more *true*, or just more convincing?
+
+## Activity 3: From scenario to task model to a testable requirement (~40 min) 
+
+**Task:** In groups of 3–4, pick one goal a real user has in a familiar app (e.g., "cancel a subscription before the renewal date"). Move it down the representation ladder in three steps: (1) write a short scenario in the user's voice, including their thoughts and reactions, not just clicks; (2) turn it into a hierarchical task analysis — a goal/subgoal tree with at least two levels and one plan/condition; (3) extract one user requirement with a measurable verification criterion. 
+
+**Produce:** The scenario, the HTA tree, and the requirement. Then state, for each representation, one thing it made visible and one thing it hid (personas hide the sequence; scenarios hide how general it is; task analysis hides how it feels). 
+
+**Time:** 28 min group · 12 min share-out
+
+**Debrief:** At which step did your group argue the most, and does that argument belong to the data or to your interpretation of it?
+
 
 {{< include endMatter.md >}}

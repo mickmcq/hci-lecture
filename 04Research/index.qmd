@@ -379,11 +379,29 @@ Teams increasingly prompt a model to role-play respondents or interviewees inste
 
 **Debrief:** Which flaw was hardest to fix without introducing a new one?
 
-## Activity 2: Method-match for an AI feature (~40 min)
+## Activity 2: Watch, don't ask: a 12-minute contextual inquiry (~35 min) 
+
+**Task:** In pairs, one person performs a real, mundane task on their own phone (find and mute a specific notification; add an event to their calendar; split a bill in a payments app) while narrating nothing unprompted. The partner is the "apprentice": observe, take timestamped notes, and use only concreteness probes ("show me the last time you actually did that," "wait, why that tap?"). Swap. Then, from your notes, do 5 minutes of open coding on the observed behavior. 
+
+**Produce:** For each observation, one code (bottom-up) and one say-do gap you saw — something the user did that they would probably not have reported in an interview. Then name one code that is at risk of being your interpretation rather than their behavior. 
+
+**Time:** ~24 min paired work (12 observe + swap, ~5 code) · ~11 min share-out
+
+**Debrief:** What did watching surface that asking would have missed — and where did you contaminate the data by being the apprentice?
+
+## Activity 3: Method-match for an AI feature (~40 min)
 
 **Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
 
-**Produce:** A table of three research questions mapped to methods with a one-line justification each, plus one place the say-do gap or reactivity would bite. Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
+## Activity 3: Method-match for an AI feature (~40 min)
+
+**Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
+
+**Produce:** a one-paragraph research-plan memo written to a skeptical PM — "here are our three questions, the method we'd use for each, and the one place the say-do gap will bite us.". Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Where did two groups pick opposite methods for the same question, and who was right?
 
 **Time:** 28 min group work · 12 min share-out
 

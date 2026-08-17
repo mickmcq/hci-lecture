@@ -432,11 +432,11 @@ Experience is inferred by each user from mood, memory, and context, so the desig
 
 *One camp says experiences are individual and idiosyncratic, so claiming to design them is hubris; the peak-end rule is the most we can exploit. The other says we intentionally craft experiences all the time, in film, dining, and games, so why should software be exempt. Your answer changes what you promise a client and what you measure.*
 
-## When an AI agent acts on your behalf, who is "the user"?
+## If beauty buys usability judgments, is a plain, honest interface a competitive disadvantage?
 
-An agent that books, buys, and messages for you has to hold common ground with you and with the humans it contacts, while modeling neither well.
+Tractinsky's ATM study says a prettier interface is rated more usable even when it isn't. Diefenbach found pragmatic and hedonic quality correlate at ~0.62, so we can't cleanly separate them anyway. 
 
-*Classic HCI put one person in front of one system. An autonomous agent splits "the user" into the principal it serves and the people it acts upon, and it lacks a genuine theory of mind for either. If the agent misreads shared context, who is accountable, and whose needs win when they conflict?*
+*If a gorgeous UI earns goodwill and patience the flow hasn't earned, is a team that refuses to "decorate" being principled or naive? Where is the line between earning goodwill and cashing a check the product can't back?*
 
 ## Collaborative systems keep failing for the same reasons. Is this inevitable?
 
@@ -452,11 +452,22 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 # Activities
 
-## Activity 1: Motivation and dark-pattern teardown (~35 min)
+## Activity 1: Peak-end journey redesign" (~35 min) 
+
+**Task:** In groups of 3–4, map the remembered experience of one product with an emotional arc (a tax filing app, a return/refund flow, an onboarding, a cancellation). Plot the experiencing curve — moment-to-moment good/bad — across the whole journey. 
+
+**Produce:** A journey line marking the peak, the trough, and the ending, plus one redesign that improves the remembered experience without necessarily making the task faster (duration neglect gives you that license). Include one McCarthy & Wright thread (anticipation, connecting, interpreting, reflecting, appropriating, recounting) that your product currently ignores, and how you'd design for it. 
+
+**Time:** 25 min group · 10 min share-out
+
+**Debrief:** Did your redesign make the experience better or just make it remembered as better — and is that an ethical distinction?
+
+
+## Activity 2: Motivation and dark-pattern teardown (~35 min)
 
 **Task:** In groups of 3 to 4, pick one app everyone uses and reverse-engineer its motivational design across two full user flows (onboarding and a retention or cancellation flow).
 
-**Produce:** A table with at least 8 rows, each row a feature mapped to the SDT need it serves (autonomy, competence, relatedness) or the retention goal it serves, marked as supportive, borderline, or dark pattern, with a one-line transparency test for each. Include one feature your group thinks is wrongly designed, with the redesign you would ship and your argument for it.
+**Produce:** Pick the one feature your group thinks is most manipulative and ship a before/after — a sketch or wireframe of the redesigned flow plus a three-sentence rationale naming the SDT need it now serves and the transparency test it now passes. 
 
 **Time:** 25 min group work · 10 min share-out
 

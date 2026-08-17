@@ -362,13 +362,18 @@ We tell designers to show options so users can recognize, not recall. Generative
 
 *If the interface is different on every visit, users cannot build the long-term memory that makes recognition and expectation work; every screen is a novice screen. Is a personalized, ever-changing UI a gift or a tax on cognition? When does adaptivity help, and when does consistency win?*
 
+## Where does saliency stop being a budget and start being coercion?
+
+The same red-and-large treatment that guides a novice to the primary action is what an infinite-scroll app spends to keep you there. When is spending your saliency budget *for* the user, and when is it spending it *on* them? Is there a perceptual equivalent of a dark pattern, and could a color-blind or low-vision user even see it coming?
+
+
 # Activities
 
 ## Activity 1: Saliency and Fitts audit of a live interface (~35 min)
 
 **Task:** In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against the Perception and Motor Control material.
 
-**Produce:** An annotated screenshot table with at least 6 rows: for each, name the element, its intended importance, its actual saliency (what draws the eye first), and its Fitts cost (rough D and W for the primary action). Include at least one row flagged "this design decision is wrong, and here is our argument."
+**Produce:** An annotated screenshot marked up in place: a heat-order overlay (number the elements 1–5 in the order the eye lands) and a callout arrow on each primary target labeled with its rough D/W.  Include at least one feature flagged "this design decision is wrong, and here is our argument."
 
 **Time:** 25 min group work · 10 min share-out
 
@@ -378,10 +383,22 @@ We tell designers to show options so users can recognize, not recall. Generative
 
 **Task:** In groups of 3 to 4, take an AI feature you all use (autocomplete, a chat assistant, an agentic "do it for me" button) and map the mental model it invites versus the one it actually deserves.
 
-**Produce:** A two-column table with at least 6 rows: "what users predict it will do" vs "what it actually does," plus a legibility fix for each mismatch. End with one position statement: name one place the product *exploits* a heuristic (availability, status quo, loss framing) and argue whether that is acceptable.
+**Produce:** A two-column table with at least 6 rows: "what users predict it will do" vs "what it actually does," plus a legibility fix for each mismatch. End with one position statement: name one place the product *exploits* a heuristic (availability, status quo, loss framing) and argue whether that is acceptable. For each finding, who is excluded or harmed, and is the exclusion designed-in or incidental?
 
 **Time:** 28 min group work · 12 min share-out
 
 **Debrief:** Which mismatch would cause the most damage if the assistant acted autonomously, and why?
+
+## Activity 3: Greyscale & memory-load teardown (~30 min) 
+
+**Task:** In groups of 3–4, take one real multi-step flow (a checkout, a 2-factor login, a form wizard). Do two passes. 
+Pass 1 (perception): screenshot it, then convert to greyscale (phone accessibility setting or a filter) and mark every place where meaning was carried by color alone. 
+Pass 2 (memory): mark every place the flow forces the user to hold a value in working memory across a screen or step. 
+
+**Produce:** An annotated flow with (a) at least 3 color-only failures and a redundant-encoding fix for each, and (b) at least 2 working-memory loads with a "carry-state-forward" redesign for each. End by naming which single change would help the most users and estimating who it excludes today. 
+
+**Time:** 20 min group · 10 min share-out
+
+**Debrief:** Which was more common in your flow — color-only signals or memory loads — and which is cheaper to fix?
 
 {{< include endMatter.md >}}

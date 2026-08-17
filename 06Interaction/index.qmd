@@ -18,6 +18,7 @@ This week's question: *if "interaction" covers everything from a keypress to ado
 # Case Study: Self-Checkout
 
 ![](fiSelfCheckout.jpg)
+
 ::: {.notes}
 https://unsplash.com/photos/a-person-standing-in-a-room-with-computers-and-other-equipment-K5f-v0FFPCs
 :::
@@ -54,7 +55,6 @@ The self-information of a message m is I(m) = -log2 P(m). If P(m) = 1, then I(m)
 - **Redundancy** is the slack between how you actually encode and that optimum; natural language is hugely redundant, which is exactly why **word prediction** works
 - Reframing typing as bits lets you ask a sharp question: what is the *theoretical* fastest this input method could go?
 - The design move: hunt for and remove redundancy the user is paying for in time
-- *Back to self-checkout: the barcode is an engineered, near-zero-ambiguity vocabulary, which is why the scan is fast and reliable; the delays live everywhere else*
 
 ## Throughput
 
@@ -82,7 +82,6 @@ A keyboard app claims a new layout is "20% faster." What single measurement woul
 - **Feedback:** the user perceives the current state and corrects; the loop is *closed* because output feeds back into the next action
 - **Open-loop** action runs from motor memory with no correction: a swipe-to-unlock gesture; fast but imprecise
 - **Closed-loop** action is feedback-guided: dragging a pointer to an icon; slower but precise
-- *Back to self-checkout: the bagging area is a control loop comparing expected weight to actual, and "unexpected item" is that loop reporting a mismatch it can't resolve on its own*
 
 ##
 
@@ -149,14 +148,12 @@ The gulf of execution is the distance from intention to the actions the system w
 - **Mode:** the same input means different things depending on what state you're in; a modeless design accepts all inputs everywhere
 - The payoff is that you can *compute* properties of a design before building it: **dialogue length** (turns to the goal), **error-recovery cost** (turns to undo a mistake), **reversibility**, and **consistency** across similar states
 - The limit: an FSM captures structure only; it says nothing about how options or feedback are presented, or how the user perceives them
-- *Back to self-checkout: a jammed lane has a brutal error-recovery cost, several forced turns and a wait for the attendant, exactly the metric an FSM would flag*
 
 ## Living on both sides of the gulf
 
 - Wide execution gulf: you know what you want but cannot find the command; **mapping** and affordances are what narrow it
 - Wide evaluation gulf: you did something and the system gave you nothing back, so you cannot tell if it worked
 - The design rule: make actions discoverable (narrow execution) and make consequences visible (narrow evaluation)
-- *Back to self-checkout: "unexpected item in the bagging area" is a wide evaluation gulf; the machine knows exactly what is wrong and tells you almost nothing you can act on*
 
 ## Mixed-initiative interaction
 
@@ -208,7 +205,6 @@ Utility is the in-principle capability of a tool to support a user's goals. It s
 - It is not a separate feature bolted on; it is usability with the range of human variation taken seriously
 - Eye-typing for nonspeaking users with motor disabilities is a tool that *only exists* because accessibility was the goal
 - The design rule: if a person with a given capability profile cannot operate it, the tool has failed *as a tool* for them
-- *Back to self-checkout: for a shopper who can't lift items onto the scale, reach the scanner, or read the screen, the lane is unusable, and removing the cashier removed their fallback*
 
 ## Acceptability
 
@@ -223,7 +219,6 @@ Utility is the in-principle capability of a tool to support a user's goals. It s
 - **Transparency:** a mastered tool becomes "ready-at-hand" and we perceive *through* it; a blind user's cane extends their felt perception to its tip
 - The reciprocal is the whole point of the tool-use lens: tools don't just serve us, they reshape how we think, express, and work
 - The dark side is **deskilling**: over-reliance on spell checkers left more errors in place, and navigation aids erode spatial memory ("use it or lose it")
-- *Back to self-checkout: shoppers who only ever self-check quietly lose the fluency of a full-service transaction, and there's no cashier left to fall back on*
 
 ## [Concept check]{.r-fit-text}
 
@@ -251,7 +246,6 @@ Automating a function means choosing which processing stage the machine handles 
 - A spell checker that *flags* a word is decision support at a low level; one that *silently rewrites* is action automation at a high level
 - Higher is not better: the right level is the one that keeps the human able to supervise and intervene
 - Evaluate against **mental workload, situation awareness, complacency, and skill degradation** before you commit
-- *Back to self-checkout: the store didn't remove checkout, it reallocated it to you and kept one attendant to supervise six lanes; that is a deliberate choice of type and level, not full automation*
 
 ## The ironies of automation
 
@@ -259,6 +253,8 @@ Automating a function means choosing which processing stage the machine handles 
 - **Deskilling:** the more the system does, the more the operator's manual and cognitive skills decay, right when they are needed for recovery
 - **Vigilance:** we are terrible at watching an automated process do nothing wrong for hours, then pouncing at the one failure
 - **Agency:** doing less can erode the felt sense of control, which undermines the basic needs for autonomy and competence
+
+##
 
 ::: {.callout-tip title="In the wild"}
 ![](fiAutocorrect.png)
@@ -289,7 +285,6 @@ Why does *this* behavior emerge here? The rationality lens says: because the use
 - But full rationality is a fiction: perception, memory, time pressure, and incomplete beliefs impose **bounds**
 - **Simon**'s **satisficing:** users take the first option that is good enough, not the globally optimal one
 - To predict behavior you need both the rewards (goals, utility) *and* the bounds (cognitive and environmental limits)
-- *Back to self-checkout: picking the self-checkout over the staffed lane is a bounded bet on which queue clears faster, and joining the first lane that looks good enough is satisficing, not impatience*
 
 ::: {.callout-note}
 Bounded rationality holds that users maximize expected utility subject to limits of cognition and environment. Where classical economics predicts the optimal choice, bounded rationality predicts the best *reachable* one.
@@ -351,7 +346,6 @@ Appropriation is the adoption of a system for goals and workflows its designers 
 - **Infrastructure:** the roads, grids, platforms, and standards that shape behavior precisely by staying invisible
 - **Infrastructural inversion:** deliberately flip attention to the unglamorous plumbing to see how the work really holds together
 - **Identity:** over time tools become part of who we are, the "Mac person," the "Wikipedian" moving from periphery to center
-- *Back to self-checkout: it shifted labor onto customers and grew its own norms, from bagging etiquette to the loss-prevention arms race, none of it designed into the kiosk*
 
 ##
 
@@ -378,7 +372,7 @@ Information theory gives us one clean number; the question is whether one number
 
 ## Is "inverse usability" ever ethical, or is a hard-to-find cancel button always a dark pattern?
 
-Information foraging says raising a path's cost steers users away from it; designers do this on purpose.
+We discussed this in Week 3 as motivation; now watch the same line drawn with information foraging, where raising a path's cost is the mechanism that steers users away from it; designers do this on purpose.
 
 *Sometimes friction protects users: a confirmation step before deleting an account, a cooling-off delay before a large trade. Sometimes it traps them: a cancel flow buried five cluttered patches deep. The mechanism is identical; only the intent differs. Where is the line, and can you defend a specific friction to a regulator without appealing to "it's good for them"?*
 
@@ -400,7 +394,15 @@ Bainbridge wrote about pilots and process control in 1983; the question is wheth
 
 **Debrief:** Which lens was most illuminating for your failure, and which was a forced fit? What does that say about matching theory to phenomenon?
 
-## Activity 2: Audit an AI agent's authority and evaluation gulf (~40 min)
+## Activity 2: Put a number on the channel (~15 min) 
+
+**Task:** Individually or in pairs: (1) For two real targets on a phone screen (a big primary button vs. the tiny close-X on an ad), estimate D and W and compute the Fitts index of difficulty, log2(D/W + 1). (2) Given MacKenzie's rough device throughputs (hand ~10.5 bits/s, trackball ~2.9, eye tracker ~13.7), reason about which input method a "20% faster" keyboard claim could plausibly be beating, and why raw words-per-minute wouldn't settle it. 
+
+**Produce:** Two ID numbers and one paragraph on what throughput normalizes that WPM doesn't. 
+
+**Debrief:** Where did your D/W estimate feel arbitrary, and does that undermine the model or just its inputs?
+
+## Activity 3: Audit an AI agent's authority and evaluation gulf (~40 min)
 
 **Task:** In groups of 3 to 4, take a real interactive-AI feature (email smart-reply, an autonomous coding or travel agent, autocorrect, a recommender) and audit it against Horvitz's mixed-initiative principles and Bainbridge's ironies.
 
