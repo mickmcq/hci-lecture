@@ -398,7 +398,9 @@ Bainbridge wrote about pilots and process control in 1983; the question is wheth
 
 **Task:** Individually or in pairs: (1) For two real targets on a phone screen (a big primary button vs. the tiny close-X on an ad), estimate D and W and compute the Fitts index of difficulty, log2(D/W + 1). (2) Given MacKenzie's rough device throughputs (hand ~10.5 bits/s, trackball ~2.9, eye tracker ~13.7), reason about which input method a "20% faster" keyboard claim could plausibly be beating, and why raw words-per-minute wouldn't settle it. 
 
-**Produce:** Two ID numbers and one paragraph on what throughput normalizes that WPM doesn't. 
+**Produce:** Two ID numbers and one paragraph on what throughput normalizes that WPM doesn't.
+
+**Time:** 10 min individual or paired work · 5 min share-out
 
 **Debrief:** Where did your D/W estimate feel arbitrary, and does that undermine the model or just its inputs?
 

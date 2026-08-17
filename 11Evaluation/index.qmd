@@ -366,7 +366,7 @@ Amershi et al. wrote 18 heuristics specifically for interactive AI because the o
 
 **Debrief:** How much did your individual lists overlap, and what does that overlap (or lack of it) say about trusting a solo evaluation?
 
-## Activity 2: "Two methods and a flow: cognitive walkthrough + think-aloud (~40 min) 
+## Activity 2: Two methods and a flow: cognitive walkthrough + think-aloud (~40 min)
 
 **Task:** In groups of 3–4, pick one first-use flow (create an account and complete one core action). Half the group runs a cognitive walkthrough: for each step, ask the four questions (right goal? notice the action? associate it with the effect? see progress?) and log every "no" you can't explain away. The other half runs a think-aloud with one recruited outsider (a student from another group who hasn't seen the flow), using neutral instructions ("keep talking," "behave as if you're alone") and tasks worded in the user's terms, not the system's. 
 
