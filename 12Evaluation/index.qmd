@@ -127,5 +127,37 @@ Experiments are often presented in terms of categories of analysis. For instance
 - The remaining lectures for this week will toggle between displaying the `index.html` file and the RStudio window
 - As a result, I need you to have completed the steps discussed in this lecture, so you can follow along on the remaining lectures
 
+# Activities
+
+## Activity 1: From question to test, and back (~35 min)
+
+**Task:** In pairs, work in the direction this week argues for: from the question to the technique, never the reverse. I will give you eight questions in plain language ("does the same person type faster on a phone sitting or standing?", "do more people prefer A, B, or C?", "does perceived effort differ between two search engines?"). For each, find the matching example in `index.html` and justify the match from the *shape of the data*, not the name of the test: how many factors, how many levels each, between or within subjects, and what type the response variable is — a count, a time, a Likert rating, or a nominal preference. Then reverse it: I will name three techniques and you write the question each answers, in the words a person who has not taken this class would use.
+
+**Produce:** A table with one row per question giving the four structural facts, the matching example file, and the test. Then add a ninth row: a question your own project could actually ask about your prototype, mapped to the closest template in the zip file.
+
+**Time:** 25 min paired work · 10 min share-out
+
+**Debrief:** Which of the four structural facts was hardest to determine from the question as worded? That ambiguity is a design flaw in the *study*, not in the question — what would you have to decide before collecting a single data point?
+
+## Activity 2: Break the assumptions (~40 min)
+
+**Task:** Individually or in pairs, open `04moreOneway.qmd` and work with `designtime.csv`, the task times for Illustrator versus InDesign. Run the comparison three ways on the same data: a $t$-test on the raw times taken at face value, a $t$-test on log-transformed times after checking the assumptions, and the nonparametric Mann-Whitney test, which assumes no particular distribution. Do the checking rather than guessing — Shapiro-Wilk on each group and on the residuals to see whether normality holds, then Kolmogorov-Smirnov to decide whether log-normality justifies the transformation.
+
+**Produce:** The three results side by side with their $p$-values, plus one sentence per route on what it assumes about the data. State which result you would report and why. Then say plainly whether the three routes agree — and if they do agree, whether that agreement means the assumptions did not matter here or that you got lucky.
+
+**Time:** 28 min work · 12 min share-out
+
+**Debrief:** Task-completion times are almost never normally distributed. If your three routes had disagreed, and you had only ever learned the first one, what would you have published?
+
+## Activity 3: Audit an AI's statistical advice (~40 min)
+
+**Task:** In pairs, hand an AI model one of the datasets from the zip file along with a plain-language question, and ask it to choose an analysis, write the R code, and interpret the result. Use `srchscrl.csv` or `mbltxt.csv` — both record repeated measurements from the same people, and both carry a column recording presentation order (`Order` and `Posture_Order` respectively), so the structure matters. Then actually run the code it gave you and audit three things: did it choose a test appropriate to the data's structure, did it check any assumptions before applying the test, and did it read the result correctly.
+
+**Produce:** An annotated transcript marking every place the model got the structure right or wrong, with particular attention to whether it treated repeated measurements from one person as independent observations, and whether it did anything at all with the order column. Include the corrected analysis. End with a position: name one part of this workflow you would delegate to a model on your own project and one you would not, with the specific failure from your transcript that decides it.
+
+**Time:** 28 min paired work · 12 min share-out
+
+**Debrief:** A wrong test still returns a $p$-value, and it looks exactly like a right one. What in your transcript would have tipped off a reader who did not have the raw data?
+
 {{< include endMatter.md >}}
 
