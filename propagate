@@ -1,0 +1,25 @@
+
+dest=~/other/mickmcquaid.com/jekyll/mickmcq.github.io/hci
+for d in \
+  01Intro \
+  02People \
+  03People \
+  04Research \
+  05Research \
+  06Interaction \
+  07Interfaces \
+  08Design \
+  09Engineering \
+  10Engineering \
+  11Evaluation \
+  12Evaluation \
+  13Evaluation \
+  14Conclusion
+do
+  if [ -f "$d/index.html" ]
+  then
+    cp -p "$d/index.html" "$dest/$d/index.html"
+  else
+    echo "propagate: skipping $d, no index.html" >&2
+  fi
+done
