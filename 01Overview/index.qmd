@@ -8,6 +8,7 @@ title: 01 Overview
 @Hornbaek2025
 
 ## Starts with an Overview of HCI
+We'll get to that
 
 ## Through what lens do you view HCI?
 - Historical
@@ -28,7 +29,7 @@ title: 01 Overview
 
 ## Disciplines
 - HCI is a multidisciplinary field
-- Engineers, Computer scientists, psychologists, sociologists, anthropologists, designers all came together, especially around the CHI conference
+- Engineers, computer scientists, psychologists, sociologists, anthropologists, designers all came together, especially around the CHI conference
 
 ## Communities
 - HCI is a community
@@ -47,11 +48,12 @@ title: 01 Overview
 - HCI has been practiced in industry almost as long as in academia
 - Apple was an early hotbed of HCI research in the 1980s
 - Today, it seems that more HCI PhDs work in industry than in academia
+- Industry is not just Big Tech! (We'll have a guest speaker from ExxonMobil's UX operation)
 
 ## Economic
 - In some ways, the story of HCI has been the story of plummeting hardware costs:
-- Early researchers were concerned with a single user, making the most of expensive hardware, measuing tasks minutely
-- As costs plummeted, researcher became interested in discretionary computer use
+- Early researchers were concerned with a single user, making the most of expensive hardware, measuring tasks minutely
+- As costs plummeted, researchers became interested in discretionary computer use
 - Eventually, workgroups became a focus as cheap networks proliferated
 - Later, communities of practice (joined by interest but geographically dispersed) and communities of life (geographically concentrated) became a focus
 - Today, many HCI researchers are focused on society in general as computing permeates every aspect of our lives
@@ -72,11 +74,50 @@ title: 01 Overview
 - Most governments have HCI researchers and practitioners, as do many non-profits
 - They are often brought together by organizations like NIST and ISO to establish standards
 
-# Isn't technology changing too fast to study?
+## Isn't technology changing too fast to study?
 - Technology changes, but human behavior doesn't change as fast
 - HCI researchers and practitioners have found that there are enduring principles
 - Some of the ideas you will study in this course come from the 1950s, like Fitts's Law, but still matter now and in the future
 - We'll try to focus on the enduring principles, although we may often sample the *flavor of the month*
+
+# Preview of coming attractions
+
+## Before class
+- We expect you to read the textbook and watch video lectures
+- Why?
+- So we can spend class time on discussion and exercises
+- We need to ground the discussion and exercises in the textbook's content
+- The videos provide a second look at the textbook and, in some cases, deviate from the textbook, so both matter
+
+## In class
+- We expect both attendance, which is graded, and active participation
+- It's not just for you but for your classmates as well
+- You're likely to know each other for years to come, based on my experience of over twenty years of teaching HCI
+- Make a good first impression
+- Be someone your classmates can rely on
+- Only then will they want to be your workmates
+
+## After class
+- There is homework
+- It should be informed by your experiences
+- It should be informed by your reading and watching
+- We want to educate your intuition, not replace it
+
+## The arc of the semester
+- We take an analytical approach
+- Breaking things down into their constituent parts
+- Some would argue that HCI demands a holistic approach
+- That's harder to do in an intro class, but always look for opportunities to integrate and synthesize
+- We start with people, then progress to different aspects of the subject
+- Always, we want to put what we know together, even when it's fragmentary
+
+# Your HCI / UX adventure
+- We are happy to be part of it
+- Make sure your classmates are part of it, even though your projects are individual
+- You need portfolio pieces that identify you and bear your unique stamp
+- But you also need to learn how to work with others on HCI / UX
+
+# Finally, let us just say *Welcome!*
 
 {{< include endMatter.md >}} 
 

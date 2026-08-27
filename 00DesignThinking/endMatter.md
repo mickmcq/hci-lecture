@@ -1,0 +1,1 @@
+../../../_seed/courses/appProtoStudio/endMatter.md
