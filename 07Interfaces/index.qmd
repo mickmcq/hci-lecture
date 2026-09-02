@@ -1029,5 +1029,37 @@ Shneiderman's three properties [@Shneiderman1983]
 - Tangible: computation is tied to physical manipulation of objects
 - Mixed reality: virtual content becomes associated with physical reality, or vice versa
 
+# Activities
+
+## Activity 1: One task, four interaction styles (~35 min)
+
+**Task:** In groups of 3 to 4, take one ordinary task (rename a batch of files, book a room, set a recurring reminder) and realize it in four of the five interaction styles: command line, form, menu, GUI, reality-based. Then analyze the design space with QOC — write the questions the design must answer, the options each style takes, and the criteria that decide between them.
+
+**Produce:** Four thumbnail sketches plus a QOC table with at least four questions. Mark, for each style, where it sits for a novice, an intermediate, and an expert — and name one style that is best for exactly one of those three and bad for the other two.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Which style won for your task, and did it win on the criteria or on your familiarity with it?
+
+## Activity 2: Move it off the screen (~35 min)
+
+**Task:** In groups of 3 to 4, take one piece of status information a product currently shows on screen (battery level, sync state, an unread count, upload progress) and redisplay it three ways: as a minimal visual display (an LED or a single segment), as audio (an auditory icon or an earcon), and as haptics. First classify what type of value it actually is — nominal, ordinal, or quantitative — because that decides which channels can carry it.
+
+**Produce:** A three-row spec table giving, per modality, the mark or channel used, what resolution it can carry, and what it loses. Include the one case your encoding cannot express at all, and say what the interface should fall back to.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Battery level looks trivial and isn't. Where did your encoding force you to decide something the on-screen version had been quietly hiding?
+
+## Activity 3: Crutch or running shoe: audit an AI interface's directness (~40 min)
+
+**Task:** In groups of 3 to 4, take an AI feature that has replaced direct manipulation with a prompt box (AI photo editing, an AI slide or document generator, an agentic coding tool) and audit it against Shneiderman's three properties of direct manipulation and Hutchins's account of directness as distance plus engagement.
+
+**Produce:** An annotated flow with at least five findings, each naming whether the AI widened or narrowed the gulf of execution and the gulf of evaluation. Include one task the prompt box does better than any direct-manipulation version could, and one where it is strictly worse. End with a position: is this interface a crutch — making the best of our inability to specify what we want — or a running shoe that augments beyond what pointing could do? Use Hollan's distinction and defend your answer with a specific interaction from your audit.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Direct manipulation struggles with referring to past actions, repetition, and concurrency. Did the AI interface fix those three, or trade them for new problems?
+
 {{< include endMatter.md >}}
 

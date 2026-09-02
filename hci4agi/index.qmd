@@ -19,9 +19,6 @@ format:
     subtitle-as-header: false
     controls: true
     controls-layout: edges
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 filters:
   - reveal-header
   - autofade.lua
@@ -30,8 +27,7 @@ number-sections: false
 engine: knitr
 embed-resources: true
 bibliography: master.bib
-monofont: JetBrainsMono Nerd Font
-mathfont: TeX Gyre Math
+mathfont: Fira Math
 menu:
   side: 'right'
 css: "style.css"
@@ -139,20 +135,4 @@ The gulf of execution, according to @Norman2013, refers to the challenge of conv
 ## Coda
 Check out [https://news.ycombinator.com/item?id=43484944](https://news.ycombinator.com/item?id=43484944) for examples of current interfaces to gen AI and some critiques thereof
 
----
-
-::: {style="text-align: right; font-size: 300px; font-weight: bold;"}
-END
-:::
-
-# References
-
-::: {#refs}
-:::
-
-# Colophon
-
-This slideshow was produced using `quarto`
-
-Fonts are *Roboto Light*, *Roboto Bold*, and *JetBrains Mono Nerd Font*
-
+{{< include endMatter.md >}}

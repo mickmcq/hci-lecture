@@ -393,15 +393,7 @@ Teams increasingly prompt a model to role-play respondents or interviewees inste
 
 **Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
 
-## Activity 3: Method-match for an AI feature (~40 min)
-
-**Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
-
 **Produce:** a one-paragraph research-plan memo written to a skeptical PM — "here are our three questions, the method we'd use for each, and the one place the say-do gap will bite us.". Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
-
-**Time:** 28 min group work · 12 min share-out
-
-**Debrief:** Where did two groups pick opposite methods for the same question, and who was right?
 
 **Time:** 28 min group work · 12 min share-out
 

@@ -641,5 +641,37 @@ Example requirements for airport immigration are impressively concrete: "The ave
 - Agile emphasizes fast iteration; usability engineering ensures high usability but has been criticized as glorified trial and error
 - Even though processes are idealizations, following one offers many advantages over ad hoc practice
 
+# Activities
+
+## Activity 1: Sketch until it hurts (~35 min)
+
+**Task:** Individually, take the design problem from your own project and sketch eight solutions in eight minutes — one minute each, no erasing, no styling. Then swap sheets within a group of 3 to 4 and sort each other's sketches into piles: which of these are genuinely different approaches, and which are one idea wearing different clothes? Then break fixation deliberately by creating new reference points — a metaphor from outside the domain, an analogy from nature or another industry, an existing product solving an adjacent problem — and sketch four more.
+
+**Produce:** The full sheet, with the second round marked against the first. State how many materially different approaches you actually have, using the project's definition: different in the substance of the approach, not in how it looks.
+
+**Time:** 25 min individual and group work · 10 min share-out
+
+**Debrief:** Did the reference points produce new approaches, or new decoration on the approach you had already committed to in minute one?
+
+## Activity 2: Run a crit (~40 min)
+
+**Task:** In groups of 3 to 4, run a structured critique of one wireframe or sketch per person. The presenter shows the design and explains the choices; the group responds in three separate passes, and does not mix them: first describe only what is there, then interpret what it seems to be for, then judge whether it achieves that. Rotate until everyone has presented.
+
+**Produce:** For each design, a written record with the three passes kept apart, plus one decision the crit could not settle by argument. For that decision, specify the cheapest prototype that would settle it and say what fidelity it needs — and no more.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Where did your group jump straight to judgment, and what did skipping description cost the presenter? Greenberg and Buxton warn that evaluating too early fixates the designer — did that happen here?
+
+## Activity 3: Does the model fixate too? (~40 min)
+
+**Task:** In groups of 3 to 4, give an AI model the same design problem you sketched in Activity 1 and ask for fifteen solutions. Classify each against Boden's three types of creativity: combinatorial, exploratory, or transformational. Then apply the same materially-different test you used on your own sketches.
+
+**Produce:** The classified list, the count of materially different approaches, and a direct comparison against your human round: which produced more ideas, which produced more distinct ones, and which produced the idea you would actually pursue. Include one idea the model gave you that you would not have reached, and one place it was obviously anchored to the way you phrased the prompt.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Did reading the model's list widen your design space or fixate you on its framing? State whether you will use a model in the divergent phase of your own project, and what rule you would set for yourself if you do.
+
 {{< include endMatter.md >}}
 

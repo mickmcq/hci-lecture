@@ -7,13 +7,10 @@ title: "01 Intro"
 # Intros
 - Valle: ux research director at indeed and mom.
 - Mick: associate professor of instruction and dad. 
-- You: say something interesting about yourself as we go around the room.
-
-::: {.notes}
-These are speaker notes
-:::
+- You: say what job description you'll be seeking after you graduate, and say something interesting about yourself as we go around the room.
 
 # Today 
+- Design Thinking Exercise (already done)
 - Syllabus
 - Canvas
 - Mick's website

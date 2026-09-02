@@ -1,0 +1,14 @@
+---
+title: "Human Computer Interaction"
+subtitle: "Lecture Notes Location"
+date: today
+format: html
+---
+
+The lecture notes for this course are located at
+
+[https://mickmcquaid.com/hci.html](https://mickmcquaid.com/hci.html)
+
+You have to open this in a new tab or window. If you just click on the links, therein, Canvas will balk for some reason.
+
+This is because of their structure, which is difficult for Canvas to cope with.

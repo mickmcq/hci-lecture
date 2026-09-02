@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# propagate — copy each published deck's rendered index.html to the Jekyll site.
+#
+# The deck list is discovered, never hardcoded: every deck seed.sh knows about
+# is published, minus any holding a .nopropagate marker. A hardcoded list is
+# what let four live decks go unpublished for as long as they existed.
+#
+# .nopropagate  drop this file in a deck that is live but not for the public
+#               site. Retired decks should be renamed old* instead, which takes
+#               them out of seeding and rendering too.
+# EXTRA         dirs that are published but not seeded (not clean-revealjs).
+#
+#   ./propagate            copy
+#   ./propagate --dry-run  show what would be copied, touch nothing
+set -uo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
+
+dest=~/other/mickmcquaid.com/jekyll/mickmcq.github.io/hci
+EXTRA="14Conclusion"
+
+dry=0
+[ "${1:-}" = --dry-run ] && dry=1
+
+# The seed can sit at any level above the decks, so walk up looking for it.
+seed=""; p="$PWD"
+while [ "$p" != / ]; do
+  [ -x "$p/_seed/seed.sh" ] && { seed="$p/_seed/seed.sh"; break; }
+  p="$(dirname "$p")"
+done
+[ -n "$seed" ] || { echo "propagate: found no _seed/seed.sh above $PWD" >&2; exit 1; }
+
+decks=()
+while IFS= read -r rel; do
+  d="$(basename "$rel")"
+  [ -e "$d/.nopropagate" ] && { echo "propagate: skipping $d (.nopropagate)" >&2; continue; }
+  decks+=("$d")
+done < <("$seed" --list | grep -v '^--')
+for d in $EXTRA; do [ -d "$d" ] && decks+=("$d"); done
+
+[ ${#decks[@]} -gt 0 ] || { echo "propagate: no decks to publish" >&2; exit 1; }
+
+copied=0; missing=0
+for d in "${decks[@]}"; do
+  if [ ! -f "$d/index.html" ]; then
+    echo "propagate: skipping $d, no index.html" >&2
+    missing=$((missing+1)); continue
+  fi
+  if [ "$dry" -eq 1 ]; then
+    echo "would copy  $d/index.html  ->  $dest/$d/"
+  else
+    mkdir -p "$dest/$d" && cp -p "$d/index.html" "$dest/$d/index.html"
+  fi
+  copied=$((copied+1))
+done
+
+if [ "$dry" -eq 1 ]; then echo "propagate: $copied deck(s) would be copied, $missing unrendered"
+else echo "propagate: $copied deck(s) copied, $missing unrendered"; fi
+exit $(( missing > 0 ))

@@ -452,7 +452,7 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 # Activities
 
-## Activity 1: Peak-end journey redesign" (~35 min) 
+## Activity 1: Peak-end journey redesign (~35 min)
 
 **Task:** In groups of 3–4, map the remembered experience of one product with an emotional arc (a tax filing app, a return/refund flow, an onboarding, a cancellation). Plot the experiencing curve — moment-to-moment good/bad — across the whole journey. 
 
@@ -473,7 +473,7 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 **Debrief:** Across groups, which single mechanic drew the most disagreement about "nudge vs. dark pattern," and what decided it?
 
-## Activity 2: AI conversation-partner audit (~40 min)
+## Activity 3: AI conversation-partner audit (~40 min)
 
 **Task:** In groups of 3 to 4, run three short conversations with a current AI chatbot, deliberately provoking a misunderstanding in each, and analyze the interaction with this week's vocabulary.
 
