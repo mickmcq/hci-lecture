@@ -336,25 +336,105 @@ A **mental model** is a memory-based representation of an interactive system, us
 An AI assistant silently changes a document's formatting when you accept a suggestion. Users are angry even though the edit was "correct." Using mental models and legibility, explain the anger, then name one design change that repairs the user's model.
 :::
 
-# Discussions
+## Agenda 
 
-## When is it fair to design *for* people's biases rather than against them?
+|Block | Min |
+|-------|-----|
+| Welcome + attendance | 5 |
+| Project Milestone 1 | 5 |
+| **Discussion 1:** How far do general models get us? | 30 |
+| **Activity 1:** Saliency + Fitts audit | 35 |
+| **BREAK** | 15 |
+| **Discussion 2:** Designing around limits vs exploiting them | 30 |
+| **Activity 2:** AI mental-model audit | 40 |
+| **Discussion 3:** AI agents and wrap | 20 |
 
-Defaults, loss framing, and recognition-over-recall all steer behavior whether or not the user notices.
+---
 
-*The same cognitive levers that make an interface effortless are the ones that power dark patterns. Where is the line between a helpful default and manipulation, and who gets to draw it? This is the central ethics-of-captology debate, and there is no clean answer.*
+## Individual Project Milestone 1 
 
-## Is a "general understanding of people" actually possible, or a comforting fiction?
+**The assignment.** Each student picks one **broken experience inside an app they actually use** and will redesign it across the semester. It is a **slice of the app, not the whole app**: an onboarding flow, a checkout, a search-and-filter, a settings or notification setup, a password reset, etc. 
+
+Milestone 1 is just two things: **pick the flow, and define the problem.** 
+
+Due by midnight next Thursday, Sep 10.
+
+## Details for M1
+
+- **Why a slice, not an app.** Depth over breadth. You'll iterate on this same flow all semester, so a bounded target lets you go deep instead of redrawing everything shallowly.
+- **What "broken" means.** A real friction, something that made *you* or someone you watched stumble, abandon, or swear at the screen. 
+- **Framing is the deliverable for M1.** By the end you should be able to complete one sentence: *"For [user] trying to [goal], [flow] breaks because [problem]."* That means naming the user, their goal, where it breaks, and a shred of evidence (your own run-through plus a couple of observations). Resist jumping to the fix.
+- **Use this week's vocabulary to diagnose the break.** Is it a **perception** failure (nothing salient, clutter, color-only signal), a **motor** failure (targets too small or far, a steering-tunnel menu), or a **cognition** failure (working-memory overload, forcing recall instead of recognition, a mental-model clash)? Or...is it something else entirely?
+- **Common pitfalls to avoid:** picking a whole app; picking something only cosmetic; jumping to a solution before framing; choosing a flow you can't actually use or observe.
+
+## Discussion setup
+
+We're going to follow a 1-2-4 structure, which means:
+
+- **4 minutes:** Everyone considers the discussion question individually (1)
+- **8 minutes:** Break into pairs and discuss the question (2)
+- **8 minutes:** Group up into 2 pairs or 4 people and discuss the question together (4)
+- **10 minutes:** Debrief / share out with the class.
+
+---
+
+## Discussion 1: How far do general models get us? 
+
+**Is a "general understanding of people" actually possible, or a comforting fiction?**
 
 The book argues theories of perception, memory, and motor control generalize across users and contexts; critics say every situation is too particular.
 
 *Lincoln and Guba argued generalization smuggles in determinism and reductionism. Landauer said we should "get real" and just test with users. If general theory is weak, why teach Fitts and Cowan at all? If it is strong, why does user research still exist? Argue where the line sits.*
 
-## Who is "the user" when an AI agent acts on your behalf?
+---
+
+## Activity 1: Saliency and Fitts audit of a live interface
+
+**Task:** In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against the Perception and Motor Control material.
+
+**Produce:** One shared slide per group (google slides, powerpoint, figma). Drop in a screenshot, number the important parts, and for each numbered part write: (a) what you think the designers wanted you to notice first, (b) what your eye actually noticed first, and (c) whether it's easy or hard to tap, and why (too small? too far from your thumb? jammed in a corner?). Add one part you think is just badly designed, with your reason.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Where did saliency and Fitts *agree* that an element was mis-designed, and where did they conflict?
+
+---
+
+# [BREAK 15 min]{.r-fit-text}
+
+---
+
+## Discussion 2: Designing around limits vs exploiting them
+
+**When is it fair to design *for* people's biases rather than against them?**
+
+Defaults, loss framing, and recognition-over-recall all steer behavior whether or not the user notices.
+
+*The same cognitive levers that make an interface effortless are the ones that power dark patterns. Where is the line between a helpful default and manipulation, and who gets to draw it? This is the central ethics-of-captology debate.*
+
+---
+
+## Activity 2: AI mental-model audit 
+
+**Task:** In groups of 3 to 4, take an AI feature you all use (autocomplete, a chat assistant, an agentic "do it for me" button). Before you click, say out loud what you *think* it's going to do (your mental model). Then actually use it and watch what it really does (the system model).
+
+**Produce:** One shared slide or two-column table per group: "What we expected it to do" vs. "What it actually did." List at least 6. For every surprise, write one small change that would've made it clearer, so people aren't caught off guard. Then finish with a position: point to one sneaky nudge the app uses to get you to do what it wants (a pre-checked box, a "you'll miss out" warning), and say whether that's fair.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Which mismatch would cause the most damage if the assistant acted autonomously, and why?
+
+---
+
+## Discussion 3: AI agents as users
+
+**Who is "the user" when an AI agent acts on your behalf?**
 
 When an agent books, buys, or writes for you, the perceiving-deciding human is partly out of the loop.
 
 *Every model in this deck assumes a human perceiving a display and choosing an action. An agent breaks that: perception, memory, and decision-making are split between person and machine. Does Fitts' Law even apply when nobody points? Whose mental model matters when the human never sees the interface? Push on what "human-centered" means here.*
+
+# Additional Discussions & Activities
 
 ## Recognition beats recall for humans. Does that still hold when the interface writes itself?
 
@@ -365,29 +445,6 @@ We tell designers to show options so users can recognize, not recall. Generative
 ## Where does saliency stop being a budget and start being coercion?
 
 The same red-and-large treatment that guides a novice to the primary action is what an infinite-scroll app spends to keep you there. When is spending your saliency budget *for* the user, and when is it spending it *on* them? Is there a perceptual equivalent of a dark pattern, and could a color-blind or low-vision user even see it coming?
-
-
-# Activities
-
-## Activity 1: Saliency and Fitts audit of a live interface (~35 min)
-
-**Task:** In groups of 3 to 4, pick one real screen (a checkout, a booking flow, a settings page) and audit it against the Perception and Motor Control material.
-
-**Produce:** An annotated screenshot marked up in place: a heat-order overlay (number the elements 1–5 in the order the eye lands) and a callout arrow on each primary target labeled with its rough D/W.  Include at least one feature flagged "this design decision is wrong, and here is our argument."
-
-**Time:** 25 min group work · 10 min share-out
-
-**Debrief:** Where did saliency and Fitts *agree* that an element was mis-designed, and where did they conflict?
-
-## Activity 2: Reverse-engineer an AI assistant's mental model (~40 min)
-
-**Task:** In groups of 3 to 4, take an AI feature you all use (autocomplete, a chat assistant, an agentic "do it for me" button) and map the mental model it invites versus the one it actually deserves.
-
-**Produce:** A two-column table with at least 6 rows: "what users predict it will do" vs "what it actually does," plus a legibility fix for each mismatch. End with one position statement: name one place the product *exploits* a heuristic (availability, status quo, loss framing) and argue whether that is acceptable. For each finding, who is excluded or harmed, and is the exclusion designed-in or incidental?
-
-**Time:** 28 min group work · 12 min share-out
-
-**Debrief:** Which mismatch would cause the most damage if the assistant acted autonomously, and why?
 
 ## Activity 3: Greyscale & memory-load teardown (~30 min) 
 
