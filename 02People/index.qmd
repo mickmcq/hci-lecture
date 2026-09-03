@@ -355,8 +355,8 @@ An AI assistant silently changes a document's formatting when you accept a sugge
 | **Activity 1:** Saliency + Fitts audit | 35 |
 | **BREAK** | 15 |
 | **Discussion 2:** Designing around limits vs exploiting them | 30 |
-| **Activity 2:** AI mental-model audit | 40 |
-| **Discussion 3:** AI agents and wrap | 20 |
+| **Activity 2:** AI mental-model audit | 35 |
+| **Activity 3:** Transitions in Figma | 25 |
 
 ---
 
@@ -436,11 +436,17 @@ Defaults, loss framing, and recognition-over-recall all steer behavior whether o
 
 ---
 
-**Time:** 28 min group work · 12 min share-out
+**Time:** 25 min group work · 10 min share-out
 
 **Debrief:** Which mismatch would cause the most damage if the assistant acted autonomously, and why?
 
 ---
+
+## Activity 3: Transitions in Figma
+
+![](fiFigma.png)
+
+# Additional Discussions & Activities
 
 ## Discussion 3: AI agents as users
 
@@ -449,8 +455,6 @@ Defaults, loss framing, and recognition-over-recall all steer behavior whether o
 When an agent books, buys, or writes for you, the perceiving-deciding human is partly out of the loop.
 
 *Every model in this deck assumes a human perceiving a display and choosing an action. An agent breaks that: perception, memory, and decision-making are split between person and machine. Does Fitts's Law even apply when nobody points? Whose mental model matters when the human never sees the interface? Push on what "human-centered" means here.*
-
-# Additional Discussions & Activities
 
 ## Recognition beats recall for humans. Does that still hold when the interface writes itself?
 
