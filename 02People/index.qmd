@@ -412,8 +412,6 @@ The book argues theories of perception, memory, and motor control generalize acr
 
 **Debrief:** Where did saliency and Fitts *agree* that an element was mis-designed, and where did they conflict?
 
----
-
 # [BREAK 15 min]{.r-fit-text}
 
 ---
@@ -439,8 +437,6 @@ Defaults, loss framing, and recognition-over-recall all steer behavior whether o
 **Time:** 25 min group work · 10 min share-out
 
 **Debrief:** Which mismatch would cause the most damage if the assistant acted autonomously, and why?
-
----
 
 ## Activity 3: Transitions in Figma
 
