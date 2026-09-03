@@ -474,6 +474,8 @@ Pass 2 (memory): mark every place the flow forces the user to hold a value in wo
 
 **Produce:** An annotated flow with (a) at least 3 color-only failures and a redundant-encoding fix for each, and (b) at least 2 working-memory loads with a "carry-state-forward" redesign for each. End by naming which single change would help the most users and estimating who it excludes today. 
 
+---
+
 **Time:** 20 min group · 10 min share-out
 
 **Debrief:** Which was more common in your flow — color-only signals or memory loads — and which is cheaper to fix?
