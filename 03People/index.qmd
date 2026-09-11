@@ -40,6 +40,8 @@ Self-determination theory, intrinsic vs. extrinsic motivation, behavior change, 
 - **Relatedness:** a sense of reciprocal belonging with other people
 - **Deci & Ryan:** optimal functioning needs all three satisfied, not just one
 
+---
+
 ::: {.callout-note}
 Self-determination theory holds that three basic psychological needs - autonomy, competence, and relatedness - underlie human motivation, and that activities satisfying them produce intrinsic motivation and well-being.
 :::
@@ -103,6 +105,8 @@ A language app currently gives XP for every lesson. A designer proposes cash rew
 - **Fogg's model:** behavior happens only when motivation, ability, and a trigger arrive at the same moment
 - **Nudging (Thaler & Sunstein):** small changes to the choice architecture shift behavior without banning options or changing incentives
 - **Goal setting:** concrete, specific goals beat vague intentions
+
+---
 
 ::: {.callout-note}
 Behavior change technology uses models of motivation to help people move toward a chosen behavior, whether by staging that change (transtheoretical model), aligning motivation, ability, and triggers (Fogg), or reshaping choices (nudging).
@@ -168,6 +172,8 @@ Experiencing vs. experiences, the peak-end rule, and the pragmatic-hedonic split
 - **Peak-end rule:** we anchor our memory of an episode to its most intense moment and its ending
 - **Duration neglect:** how long the good or bad part lasted barely registers
 
+---
+
 ::: {.callout-note}
 An experience is not a recording of moment-to-moment experiencing; it is an inferred, reconstructed account shaped by peaks, endings, mood, and context, which is why remembered experience and lived experience routinely diverge.
 :::
@@ -213,6 +219,8 @@ Think about the last app you were excited to download. Which of the six threads 
 - **Identification:** how the product lets you express who you are to others
 - **Evocation:** how it calls up memories and past relationships
 
+---
+
 ::: {.callout-note}
 **Hassenzahl**'s model separates pragmatic attributes (achieving goals) from hedonic attributes (stimulation, identification, evocation); overall appeal is inferred from the combination, and the designer's intended character may not be the character the user perceives.
 :::
@@ -251,6 +259,8 @@ Articulation work and the social-technical gap, then common ground and theory of
 - **Four cells:** co-located synchronous (tabletop), co-located asynchronous (a public message board), remote synchronous (videoconferencing), remote asynchronous (email)
 - Why it matters: time and space drive how people coordinate, so moving a tool to a different cell changes the whole interaction
 
+---
+
 ::: {.callout-note}
 The two-axis model classifies collaborative systems along synchronous versus asynchronous and co-located versus remote, giving four quadrants that each call for different kinds of technological support.
 :::
@@ -268,6 +278,8 @@ Your team moves its daily standup from an in-person huddle (co-located, synchron
 - **Ackerman's social-technical gap:** human activity is flexible, nuanced, and contextual, while software is rigid, scripted, and rule-bound
 - The gap is the divide between what we know we must support socially and what we can support technically
 - **Outeraction (Nardi et al):** the "you there?" pings that set up conditions for real exchange are not overhead, they are the glue
+
+---
 
 ::: {.callout-note}
 Articulation work is the coordinating activity, extraneous to the task itself, that a group must do to make cooperative work possible; the social-technical gap is the persistent distance between that flexible social reality and what rigid systems can support.
@@ -304,6 +316,8 @@ Your team adopts a tool where engineers must tag every task so managers get nice
 - **Embodied grounding:** pointing, gaze, a cursor flicked over the thing you mean
 - **Intersubjectivity:** the mutual understanding that makes "let's go to the usual place, 👍" enough
 - **The least-effort trade-off:** be very clear up front, or be sloppy and stay ready to repair; conversational agents have to pick a side
+
+---
 
 ::: {.callout-note}
 Common ground is the shared understanding collaborators must establish to act together; grounding is the ongoing process of building and repairing it, and intersubjectivity is the mutual, reciprocal knowledge it produces.
@@ -344,6 +358,8 @@ Reduced cues and how relationships form online, then computers as social actors.
 - **Media richness theory:** channels differ in cue systems, feedback speed, natural expression, and audience specificity; match richness to how ambiguous the situation is
 - **Social information processing (Walther):** people still build real relationships in lean channels, they just adapt and it takes longer
 
+---
+
 ::: {.callout-note}
 Computer-mediated communication removes many nonverbal cues; the cues-filtered-out hypothesis predicts weaker social connection, while social information processing theory holds that people compensate through the medium and form full relationships more slowly.
 :::
@@ -378,6 +394,8 @@ A new work-chat tool strips all reactions and emoji "to keep things professional
 - **Repair:** the moves we make to fix a misunderstanding, often flagged first ("wait, sorry") before the correction lands
 - Why it matters: agents handle speech well but stumble on turn-taking and repair, which is exactly where conversations with them break
 
+---
+
 ::: {.callout-note}
 Conversation analysis examines how order is achieved in talk through turn-taking, interactional sequences such as adjacency pairs, and repair, the mechanisms people use to correct misunderstandings.
 :::
@@ -394,6 +412,8 @@ You ask a voice assistant a question and it answers a slightly different one. Wh
 - In Nass's study, users were *politer* rating a computer on the same computer than on paper, as if not to hurt its feelings
 - **Anthropomorphic systems** deliberately give software human looks and manners, from Clippy to voice agents
 - Give a system a "personality" and people respond as they would to a person with that personality
+
+---
 
 ::: {.callout-note}
 The computers-as-social-actors framework holds that people automatically, often unconsciously, apply social norms and expectations from human interaction to computers, especially when the system presents human-like cues.
@@ -460,6 +480,8 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 **Time:** 25 min group · 10 min share-out
 
+---
+
 **Debrief:** Did your redesign make the experience better or just make it remembered as better — and is that an ethical distinction?
 
 
@@ -471,6 +493,8 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 **Time:** 25 min group work · 10 min share-out
 
+---
+
 **Debrief:** Across groups, which single mechanic drew the most disagreement about "nudge vs. dark pattern," and what decided it?
 
 ## Activity 3: AI conversation-partner audit (~40 min)
@@ -481,6 +505,9 @@ CASA says people will treat a chatbot socially no matter what; anthropomorphism 
 
 **Time:** 28 min group work · 12 min share-out
 
+---
+
 **Debrief:** Which was worse for the interaction, the agent's missing theory of mind or its over-human self-presentation, and how could design fix the one your group picked?
 
 {{< include endMatter.md >}}
+
