@@ -347,6 +347,47 @@ A validated scale measures a construct with several items and checks that they m
 A Product Manager shows you a survey: 12,000 respondents, 92% "agree the new feature is useful," recruited via a banner inside the feature. Give two reasons that 92% might be worthless, naming the specific bias each time.
 :::
 
+## Agenda 9/17
+
+|Block | Min |
+|-------|-----|
+| Guest: Taylor Arndt, Techopolis | 60 |
+| **BREAK** | 5 |
+| Project Milestone 2 | 10 |
+| **Discussion 1:** How far do general models get us? | 30 |
+| **Activity 1:** Saliency + Fitts audit | 35 |
+| **Discussion 2:** Designing around limits vs exploiting them | 30 |
+| **Activity 2:** AI mental-model audit | 35 |
+| **Activity 3:** Transitions in Figma | 25 |
+
+---
+
+## Individual Project Milestone 2 
+
+**The assignment.** In M1 you claimed a flow was broken and completed the sentence "For [user] trying to [goal], [flow] breaks because [problem]." That claim currently rests on your own run-through and a couple of observations. M2 is where you go find out whether you're right.
+
+M2 is two things: **elicit real usage data about the break, and analyze it into findings.**
+
+Due by midnight, Oct 1.
+
+## Details for M1
+
+- **Elicitation means you draw the data out** instead of assuming. Actively collect evidence of how people use the flow you've chosen: watch them, time them, ask them, or mine what already exists. 
+- **Use at least two different kinds of method** from the User Research chapters. A survey tells you how often; observation and interviews tell you why.
+- **Tie the research back to the speficic broken experience.** For example, if M1 diagnosed a motor failure, you should be measuring target size, distance, mis-taps. The methods you choose need to be capable of producing evidence about your specific problem.
+
+---
+
+- **Analysis is the deliverable.** Raw quotes and timings aren't findings. Group them into patterns across participants, quantify what you can, and say what each finding implies. 
+- **Expect your original problem statement to change.** It's normal for the data to reshape or sharpen the break you framed in M1. Update the sentence and say what changed and why.
+
+## What to turn in
+
+- A short research plan (questions, methods, who your participants were, why these methods fit the problem)
+- Your raw data / artifacts (notes, timings, screenshots, a transcript excerpt, etc.)
+- Your analysis (themes with evidence, quantified where possible)
+- A revised problem statement (or, if you didn't revise it, why not?)
+
 # Discussions
 
 ## If you are not the user, can you ever escape your own perspective?
