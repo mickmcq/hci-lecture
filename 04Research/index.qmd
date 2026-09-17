@@ -351,14 +351,13 @@ A Product Manager shows you a survey: 12,000 respondents, 92% "agree the new fea
 
 |Block | Min |
 |-------|-----|
-| Guest: Taylor Arndt, Techopolis | 60 |
+| **Guest**: Taylor Arndt, Techopolis | 60 |
 | **BREAK** | 5 |
 | Project Milestone 2 | 10 |
-| **Discussion 1:** How far do general models get us? | 30 |
-| **Activity 1:** Saliency + Fitts audit | 35 |
-| **Discussion 2:** Designing around limits vs exploiting them | 30 |
-| **Activity 2:** AI mental-model audit | 35 |
-| **Activity 3:** Transitions in Figma | 25 |
+| **Discussion 1:** You are not the user | 30 |
+| **Activity 1:** Contextual inquiry | 35 |
+| **Discussion 2:** Synthetic users | 30 |
+| **Activity 2:** AI method match | 35 |
 
 ---
 
@@ -388,7 +387,7 @@ Due by midnight, Oct 1.
 - Your analysis (themes with evidence, quantified where possible)
 - A revised problem statement (or, if you didn't revise it, why not?)
 
-# Discussions
+# Discussions & Activities
 
 ## If you are not the user, can you ever escape your own perspective?
 
@@ -396,11 +395,17 @@ User research assumes empirical data beats the designer's intuition, yet the cha
 
 *Is rigorous user research a genuine correction to designer bias, or does it just launder the same biases through a method? Where is the line between listening to users and letting the loudest signal design your product?*
 
-## When, if ever, is covert observation justified?
+## Activity: Watch, don't ask: a 12-minute contextual inquiry (~35 min) 
 
-Field research is strongest when people do not modify their behavior for the observer, but reactivity is reduced most by watching people who did not fully consent.
+**Task:** In pairs, one person performs a real, mundane task on their own phone (find and mute a specific notification; add an event to their calendar; split a bill in a payments app) while narrating nothing unprompted. The partner is the "apprentice": observe, take timestamped notes, and use only concreteness probes ("show me the last time you actually did that," "wait, why that tap?"). Swap. Then, from your notes, do 5 minutes of open coding on the observed behavior. 
 
-*Weigh the realism you gain against the autonomy you take. Would you run a covert study of a vulnerable group if it were the only way to surface a real harm? What would make it defensible, or never defensible?*
+**Produce:** For each observation, one code (bottom-up) and one say-do gap you saw — something the user did that they would probably not have reported in an interview. Then name one code that is at risk of being your interpretation rather than their behavior. 
+
+---
+
+**Time:** ~24 min paired work (12 observe + swap, ~5 code) · ~11 min share-out
+
+**Debrief:** What did watching surface that asking would have missed — and where did you contaminate the data by being the apprentice?
 
 ## Are LLM-simulated "synthetic users" user research or a category error (or something else)?
 
@@ -408,9 +413,27 @@ Teams increasingly prompt a model to role-play respondents or interviewees inste
 
 *A synthetic user has no tacit knowledge, no say-do gap, and no future it cannot imagine, because it has no behavior at all. Does simulating users reintroduce the exact "you are not the user" problem the field exists to solve, or is there a defensible use? Name where you would and would not trust it.*
 
-# Activities
+## Activity: Method-match for an AI feature (~40 min)
 
-## Activity 1: Question teardown and rebuild (~35 min)
+**Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
+
+**Produce:** a one-paragraph research-plan memo written to a skeptical PM — "here are our three questions, the method we'd use for each, and the one place the say-do gap will bite us.". Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
+
+---
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Where did two groups pick opposite methods for the same question, and who was right?
+
+# Additional Discussions & Activities
+
+## When, if ever, is covert observation justified?
+
+Field research is strongest when people do not modify their behavior for the observer, but reactivity is reduced most by watching people who did not fully consent.
+
+*Weigh the realism you gain against the autonomy you take. Would you run a covert study of a vulnerable group if it were the only way to surface a real harm? What would make it defensible, or never defensible?*
+
+## Activity: Question teardown and rebuild (~35 min)
 
 **Task:** In groups of 3 to 4, take the provided set of eight flawed interview and survey questions (leading, double-barreled, vague, future-hypothetical, socially loaded) and diagnose then repair each one.
 
@@ -419,25 +442,5 @@ Teams increasingly prompt a model to role-play respondents or interviewees inste
 **Time:** 25 min group work · 10 min share-out
 
 **Debrief:** Which flaw was hardest to fix without introducing a new one?
-
-## Activity 2: Watch, don't ask: a 12-minute contextual inquiry (~35 min) 
-
-**Task:** In pairs, one person performs a real, mundane task on their own phone (find and mute a specific notification; add an event to their calendar; split a bill in a payments app) while narrating nothing unprompted. The partner is the "apprentice": observe, take timestamped notes, and use only concreteness probes ("show me the last time you actually did that," "wait, why that tap?"). Swap. Then, from your notes, do 5 minutes of open coding on the observed behavior. 
-
-**Produce:** For each observation, one code (bottom-up) and one say-do gap you saw — something the user did that they would probably not have reported in an interview. Then name one code that is at risk of being your interpretation rather than their behavior. 
-
-**Time:** ~24 min paired work (12 observe + swap, ~5 code) · ~11 min share-out
-
-**Debrief:** What did watching surface that asking would have missed — and where did you contaminate the data by being the apprentice?
-
-## Activity 3: Method-match for an AI feature (~40 min)
-
-**Task:** In groups of 3 to 4, choose a real AI feature (a coding assistant, an AI chat agent, an AI photo editor). Write three research questions about its real use, then assign each to a method (interview, contextual inquiry, field observation, survey) and justify the choice with McGrath's realism, precision, and generalizability.
-
-**Produce:** a one-paragraph research-plan memo written to a skeptical PM — "here are our three questions, the method we'd use for each, and the one place the say-do gap will bite us.". Forced position: name one question where you would trust an LLM-simulated "synthetic user" and one where you absolutely would not, with your reasoning.
-
-**Time:** 28 min group work · 12 min share-out
-
-**Debrief:** Where did two groups pick opposite methods for the same question, and who was right?
 
 {{< include endMatter.md >}}
