@@ -369,8 +369,8 @@ Your team notices users pasting spreadsheet data into your chat app to share it,
 | **Guest**: Daniel Pogue, ExxonMobil | 60 |
 | **BREAK** | 5 |
 | Project Milestone 3 | 10 |
-| **Discussion 1:** You are not the user | 30 |
-| **Activity 1:** Contextual inquiry | 30 |
+| **Discussion:** Ironies of automation | 30 |
+| **Activity:** AI authority & evaluation gulf | 30 |
 | **Figma** with Yang | 30 |
 
 ---
@@ -401,7 +401,7 @@ Due by midnight, Oct 15 (two weeks)
 
 *A more capable AI handles more, so the person is engaged even less, and deskilling, complacency, and lost situation awareness should intensify: the navigator who can no longer find their way without the app, the writer who can no longer draft without the chatbot. Yet a more capable AI might also explain its reasoning, hand off gracefully, and ask for a real decision instead of rubber-stamp approval. So in an actual workplace, where do you draw the line between what to automate and what a human keeps doing, and when the system is wrong, who is on the hook, the user who stopped checking or the designer who told them they safely could? Is capability the cure or the accelerant?*
 
-## Activity: Audit an AI agent's authority and evaluation gulf (~40 min)
+## Activity: Audit an AI agent's authority and evaluation gulf 
 
 **Task:** In groups of 3 to 4, take a real interactive-AI feature (email smart-reply, an autonomous coding or travel agent, autocorrect, a recommender) and audit it against Horvitz's mixed-initiative principles and Bainbridge's ironies.
 
@@ -409,15 +409,19 @@ Due by midnight, Oct 15 (two weeks)
 
 **Time:** 28 min group work · 12 min share-out
 
+---
+
 **Debrief:** For your agent, was the gulf of evaluation wider or narrower than a traditional GUI, and does more capability make it better or worse?
 
-## Activity: Diagnose one failure through six lenses (~35 min)
+## Activity: Diagnose one failure through six lenses 
 
 **Task:** In groups of 3 to 4, take one interaction failure (a fought-with autopilot, an abandoned enterprise tool) and diagnose it through each of the six theories of Part IV.
 
 **Produce:** A six-row table, one row per theory (information/control, dialogue, tool use, automation, rationality, practice), each naming the specific mechanism that theory exposes and the fix it implies. Include one row where you argue the theory adds *nothing* for this case, with your reasoning.
 
 **Time:** 25 min group work · 10 min share-out
+
+---
 
 **Debrief:** Which lens was most illuminating for your failure, and which was a forced fit? 
 
@@ -440,6 +444,8 @@ We discussed this in Week 3 as motivation; now watch the same line drawn with in
 **Task:** Individually or in pairs: (1) For two real targets on a phone screen (a big primary button vs. the tiny close-X on an ad), estimate D and W and compute the Fitts index of difficulty, log2(D/W + 1). (2) Given MacKenzie's rough device throughputs (hand ~10.5 bits/s, trackball ~2.9, eye tracker ~13.7), reason about which input method a "20% faster" keyboard claim could plausibly be beating, and why raw words-per-minute wouldn't settle it. 
 
 **Produce:** Two ID numbers and one paragraph on what throughput normalizes that WPM doesn't.
+
+---
 
 **Time:** 10 min individual or paired work · 5 min share-out
 
