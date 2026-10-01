@@ -7,11 +7,11 @@ window.MathJax = {
     processEnvironments: true
   },
   chtml: {
-    font: 'mathjax-fira'
+    font: 'mathjax-asana'
   },
   startup: {
     ready: () => {
-      console.log('MathJax is loaded and ready with font: mathjax-fira (Fira Math)');
+      console.log('MathJax is loaded and ready with font: mathjax-asana (Asana Math)');
       MathJax.startup.defaultReady();
     }
   }

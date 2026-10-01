@@ -355,9 +355,8 @@ A Product Manager shows you a survey: 12,000 respondents, 92% "agree the new fea
 | **BREAK** | 5 |
 | Project Milestone 2 | 10 |
 | **Discussion 1:** You are not the user | 30 |
-| **Activity 1:** Contextual inquiry | 35 |
-| **Discussion 2:** Synthetic users | 30 |
-| **Activity 2:** AI method match | 35 |
+| **Activity 1:** Contextual inquiry | 30 |
+| **Figma** with Yang | 45 |
 
 ---
 
@@ -369,7 +368,7 @@ M2 is two things: **elicit real usage data about the break, and analyze it into 
 
 Due by midnight, Oct 1.
 
-## Details for M1
+## Details for M2
 
 - **Elicitation means you draw the data out** instead of assuming. Actively collect evidence of how people use the flow you've chosen: watch them, time them, ask them, or mine what already exists. 
 - **Use at least two different kinds of method** from the User Research chapters. A survey tells you how often; observation and interviews tell you why.

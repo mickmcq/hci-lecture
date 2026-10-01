@@ -362,7 +362,66 @@ Appropriation is the adoption of a system for goals and workflows its designers 
 Your team notices users pasting spreadsheet data into your chat app to share it, a use you never intended. Is that personalization, tailoring, or appropriation, and which of Dix's guidelines would you apply first?
 :::
 
-# Discussions
+## Agenda 10/1
+
+|Block | Min |
+|-------|-----|
+| **Guest**: Daniel Pogue, ExxonMobil | 60 |
+| **BREAK** | 5 |
+| Project Milestone 3 | 10 |
+| **Discussion 1:** You are not the user | 30 |
+| **Activity 1:** Contextual inquiry | 30 |
+| **Figma** with Yang | 30 |
+
+---
+
+## Individual Project Milestone 3 
+
+**The assignment.** In M2 you went out and got real usage data about the break and analyzed it into findings (due tonight by midnight!). Hopefully you now have a sharper, evidence-backed version of "For [user] trying to [goal], [flow] breaks because [problem]." Now you get to start creating!
+
+Generate 4 to 5 **materially different** solutions to the break you validated in M2.
+
+Due by midnight, Oct 15 (two weeks)
+
+## Details for M3
+
+- Materially different means different in kind, not degree. Five versions of the same button are one idea, not five. Change the modality, the flow, the defaults, or who does the work between the human and the system. If two of your ideas could be A/B tested against each other, they are too close.
+- Anchor every solution to your M2 findings. Each idea has to attack the specific break your data exposed, not "improve the app" in general. If M2 showed a motor failure, one solution might enlarge and space the targets, another might remove the tap entirely with a gesture or voice, another might have the system predict and ask you to confirm. 
+- Go for quantity and spread first, and include at least one idea that feels too expensive, too weird, or too ambitious.
+
+---
+
+- For each solution, deliver a rough sketch, wireframe, or storyboard plus a sentence or two on how it works. Low fidelity is expected; the point is that a reader can tell the five apart and see the mechanism of each. 
+- You can do this in Figma, but you don't have to. Again, low fidelity is best here.
+- Name what each solution trades off, and don't pick a winner yet (that's M4). Every solution buys something and costs something: say both, and where it helps, name which lens from Part IV (Interaction) it's leaning on.
+
+# In Class
+
+## As AI gets more capable, do the ironies of automation ease or deepen?
+
+*A more capable AI handles more, so the person is engaged even less, and deskilling, complacency, and lost situation awareness should intensify: the navigator who can no longer find their way without the app, the writer who can no longer draft without the chatbot. Yet a more capable AI might also explain its reasoning, hand off gracefully, and ask for a real decision instead of rubber-stamp approval. So in an actual workplace, where do you draw the line between what to automate and what a human keeps doing, and when the system is wrong, who is on the hook, the user who stopped checking or the designer who told them they safely could? Is capability the cure or the accelerant?*
+
+## Activity: Audit an AI agent's authority and evaluation gulf (~40 min)
+
+**Task:** In groups of 3 to 4, take a real interactive-AI feature (email smart-reply, an autonomous coding or travel agent, autocorrect, a recommender) and audit it against Horvitz's mixed-initiative principles and Bainbridge's ironies.
+
+**Produce:** An annotated screenshot or flow with at least five findings, each tagged to a principle or irony, rating how visible the automation's status is and how cheaply a wrong guess can be undone. Include one principle you think is *wrong* or overrated for modern AI agents, with your argument.
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** For your agent, was the gulf of evaluation wider or narrower than a traditional GUI, and does more capability make it better or worse?
+
+## Activity: Diagnose one failure through six lenses (~35 min)
+
+**Task:** In groups of 3 to 4, take one interaction failure (a fought-with autopilot, an abandoned enterprise tool) and diagnose it through each of the six theories of Part IV.
+
+**Produce:** A six-row table, one row per theory (information/control, dialogue, tool use, automation, rationality, practice), each naming the specific mechanism that theory exposes and the fix it implies. Include one row where you argue the theory adds *nothing* for this case, with your reasoning.
+
+**Time:** 25 min group work · 10 min share-out
+
+**Debrief:** Which lens was most illuminating for your failure, and which was a forced fit? 
+
+# Additional Discussions & Activities
 
 ## Is throughput a fair way to compare input methods, or does it measure the wrong thing?
 
@@ -376,24 +435,6 @@ We discussed this in Week 3 as motivation; now watch the same line drawn with in
 
 *Sometimes friction protects users: a confirmation step before deleting an account, a cooling-off delay before a large trade. Sometimes it traps them: a cancel flow buried five cluttered patches deep. The mechanism is identical; only the intent differs. Where is the line, and can you defend a specific friction to a regulator without appealing to "it's good for them"?*
 
-## Do the ironies of automation get worse or better as AI gets more capable?
-
-Bainbridge wrote about pilots and process control in 1983; the question is whether smarter AI escapes her ironies or deepens them.
-
-*A more capable AI handles more, so the human is engaged even less: deskilling and vigilance failures should intensify, not fade. Yet a more capable AI might also explain itself better and hand off more gracefully. Which force wins? Argue whether the 737 MAX was a story about primitive automation or a preview of what highly capable, opaque AI does to the humans nominally in charge.*
-
-# Activities
-
-## Activity 1: Diagnose one failure through six lenses (~35 min)
-
-**Task:** In groups of 3 to 4, take one interaction failure (assigned or your own: a confusing kiosk, a fought-with autopilot, an abandoned enterprise tool) and diagnose it through each of the six theories of Part IV.
-
-**Produce:** A six-row table, one row per theory (information/control, dialogue, tool use, automation, rationality, practice), each naming the specific mechanism that theory exposes and the fix it implies. Include one row where you argue the theory adds *nothing* for this case, with your reasoning.
-
-**Time:** 25 min group work · 10 min share-out
-
-**Debrief:** Which lens was most illuminating for your failure, and which was a forced fit? What does that say about matching theory to phenomenon?
-
 ## Activity 2: Put a number on the channel (~15 min) 
 
 **Task:** Individually or in pairs: (1) For two real targets on a phone screen (a big primary button vs. the tiny close-X on an ad), estimate D and W and compute the Fitts index of difficulty, log2(D/W + 1). (2) Given MacKenzie's rough device throughputs (hand ~10.5 bits/s, trackball ~2.9, eye tracker ~13.7), reason about which input method a "20% faster" keyboard claim could plausibly be beating, and why raw words-per-minute wouldn't settle it. 
@@ -404,14 +445,5 @@ Bainbridge wrote about pilots and process control in 1983; the question is wheth
 
 **Debrief:** Where did your D/W estimate feel arbitrary, and does that undermine the model or just its inputs?
 
-## Activity 3: Audit an AI agent's authority and evaluation gulf (~40 min)
-
-**Task:** In groups of 3 to 4, take a real interactive-AI feature (email smart-reply, an autonomous coding or travel agent, autocorrect, a recommender) and audit it against Horvitz's mixed-initiative principles and Bainbridge's ironies.
-
-**Produce:** An annotated screenshot or flow with at least five findings, each tagged to a principle or irony, rating how visible the automation's status is and how cheaply a wrong guess can be undone. Include one principle you think is *wrong* or overrated for modern AI agents, with your argument.
-
-**Time:** 28 min group work · 12 min share-out
-
-**Debrief:** For your agent, was the gulf of evaluation wider or narrower than a traditional GUI, and does more capability make it better or worse?
 
 {{< include endMatter.md >}}
