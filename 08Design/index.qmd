@@ -643,9 +643,11 @@ Example requirements for airport immigration are impressively concrete: "The ave
 
 # Activities
 
-## Activity 1: Sketch until it hurts (~35 min)
+## Activity 1: Crazy Eights (~35 min)
 
-**Task:** Individually, take the design problem from your own project and sketch eight solutions in eight minutes — one minute each, no erasing, no styling. Then swap sheets within a group of 3 to 4 and sort each other's sketches into piles: which of these are genuinely different approaches, and which are one idea wearing different clothes? Then break fixation deliberately by creating new reference points — a metaphor from outside the domain, an analogy from nature or another industry, an existing product solving an adjacent problem — and sketch four more.
+**Task:** Individually, divide an $11\times 17$ sheet into eight parts. Then take the following design problem and sketch four solutions in 8 minutes — 2 minutes each, no erasing, no styling. Then swap sheets within a group of 3 to 4 and sort each other's sketches for 7 minutes: which of these are genuinely different approaches, and which are one idea wearing different clothes? Then break fixation deliberately by creating new reference points — a metaphor from outside the domain, an analogy from nature or another industry, an existing product solving an adjacent problem — and sketch four more for 8 minutes. The design problem is that *six people are trying to split a restaurant bill while the server waits impatiently. You decide whether they will split it evenly or by who ordered what. Use the left side of the sheet for the first four and the right side for the next four.*
+
+---
 
 **Produce:** The full sheet, with the second round marked against the first. State how many materially different approaches you actually have, using the project's definition: different in the substance of the approach, not in how it looks.
 
@@ -657,7 +659,9 @@ Example requirements for airport immigration are impressively concrete: "The ave
 
 **Task:** In groups of 3 to 4, run a structured critique of one wireframe or sketch per person. The presenter shows the design and explains the choices; the group responds in three separate passes, and does not mix them: first describe only what is there, then interpret what it seems to be for, then judge whether it achieves that. Rotate until everyone has presented.
 
-**Produce:** For each design, a written record with the three passes kept apart, plus one decision the crit could not settle by argument. For that decision, specify the cheapest prototype that would settle it and say what fidelity it needs — and no more.
+**Produce:** For each design, a written record with the three passes kept apart and numbered, plus one decision the crit could not settle by argument. For that decision, specify the cheapest prototype that would settle it and say what fidelity it needs — and no more.
+
+---
 
 **Time:** 28 min group work · 12 min share-out
 
@@ -668,6 +672,8 @@ Example requirements for airport immigration are impressively concrete: "The ave
 **Task:** In groups of 3 to 4, give an AI model the same design problem you sketched in Activity 1 and ask for fifteen solutions. Classify each against Boden's three types of creativity: combinatorial, exploratory, or transformational. Then apply the same materially-different test you used on your own sketches.
 
 **Produce:** The classified list, the count of materially different approaches, and a direct comparison against your human round: which produced more ideas, which produced more distinct ones, and which produced the idea you would actually pursue. Include one idea the model gave you that you would not have reached, and one place it was obviously anchored to the way you phrased the prompt.
+
+---
 
 **Time:** 28 min group work · 12 min share-out
 
