@@ -330,9 +330,31 @@ Your team runs think-aloud sessions on the check-in kiosk, and a single analyst 
 
 # Discussions
 
+## The think-aloud paradox 
+
+Can a method built on self-report catch the problems users don’t notice they’re having? Does narrating change the behavior you want to understand?
+
+## The evaluator effect 
+
+When evaluators disagree, which problems are “real”?
+
+## Activity 2: Two methods and a flow: cognitive walkthrough + think-aloud
+
+**Task:** As a class we fix one shared flow. One side of the room evaluates it with a think-aloud, in groups of 3 to 4, one person as a first-time user, the others recording. The other side runs a cognitive walkthrough, asking the four questions at each step. Nobody does both. Then each think-aloud group pairs with a walkthrough group to merge findings.
+
+**Produce:** Each group first makes its own problem list. Each cross-method pair then builds one side-by-side table marking: problems both methods caught, problems only the walkthrough predicted, problems only the think-aloud exposed. If you had to choose: which single method would you keep for this flow, and what kind of problem(s) does that choice make you blind to?
+
+**Time:** 15 min run your method · 10 min pair across methods and merge · 15 min share-out
+
+**Debrief:** Across the room, which problems surfaced only in the real runs, and which did only the walkthrough predict? Did the walkthrough raise alarms the real users never hit? What does the split say about running one method alone?
+
 ## When does evaluation do more harm than good?
 
 Evaluation is treated as indispensable, yet a serious line of work argues it can strangle good ideas.
+
+
+
+# Appendix
 
 *"Usability Evaluation Considered Harmful" argued that mandatory, thoughtless evaluation punishes early, visionary prototypes that are supposed to be rough. Where is the line between rigor and premature judgment, and who decides when a system is "ready" to be evaluated?*
 
