@@ -24,8 +24,11 @@ A patient arrives on time for an appointment, cannot get through the self-servic
 - The screen never made the state legible: "checked in," "still needs the desk," and "error" all looked about the same, so the patient could not tell whether they were done
 - Check-in demanded one rigid order (confirm identity, then insurance, then forms), and a single mistap dropped them into a dead-end screen with no way back
 - It assumed sharp eyes, steady hands, and fluency with insurance jargon and member IDs; a first-time, anxious, or older patient had nothing to guess from
+
+# Why did the check-in fail? (continued)
+
 - Feeling unwell and under a waiting-room clock, every extra step and every timeout cost patience the patient did not have
-- **Gould and Lewis** put it plainly: everyone builds a prototype, but only some evaluate it; this kiosk was validated to post to the medical record, not to be completable by a sick 78-year-old
+- @Gould1985 put it plainly: everyone builds a prototype, but only some evaluate it; this kiosk was validated to post to the medical record, not to be completable by a sick 78-year-old
 
 # Introduction to Evaluation
 
@@ -90,14 +93,14 @@ Validity: do the evaluation's findings reflect the real value of the system for 
 
 - **Validity is the whole point:** predicted problems must be the real problems of real users, or the evaluation is invalid
 - **Reliability is shakier than people admit:** the Comparative Usability Evaluation studies found different evaluators reporting markedly different problems on the same system
-- **Impact is persuasion:** **John and Marks** showed that seeing video of users struggling changes developers' behavior more than a written problem list
+- **Impact is persuasion:** @John1997 showed that seeing video of users struggling changes developers' behavior more than a written problem list
 - **A finding with no impact is wasted:** an accurate problem nobody acts on did not improve anything
 
 ##
 
 ::: {.callout-warning title="Is evaluation always worth it?"}
-- **Mainstream view (Gould and Lewis, Nielsen):** evaluation is indispensable; systems are never right on the first try
-- **Greenberg and Buxton** countered in "Usability Evaluation Considered Harmful (Some of the Time)": thoughtless, mandatory evaluation can kill early ideas that need to evolve as imperfect prototypes
+- **Mainstream view** [@Gould1985; @Nielsen1993]: evaluation is indispensable; systems are never right on the first try
+- @Greenberg2008 countered in "Usability Evaluation Considered Harmful (Some of the Time)": thoughtless, mandatory evaluation can kill early ideas that need to evolve as imperfect prototypes
 - **The Tyranny of Evaluation** essay made a related point: top venues once rejected new ideas simply for lacking a controlled study
 - Design takeaway: match the evidence to the claim; do not run a summative test on a fragile prototype and call the vision a failure
 :::
@@ -118,13 +121,13 @@ Analytic evaluation methods assess a design without collecting data from real us
 
 - **Cost is the appeal:** an expert can evaluate any representation, from a use case to a shipped system, in hours instead of weeks
 - **Three uses:** find problems to fix in design, assess readiness against a baseline, or trace factors behind accidents
-- **They are complements, not replacements:** **Cockton and Woolrych** found 65% of heuristic predictions were wrong; **Hvannberg et al.** found 62% of problems went undetected in a usability test
+- **They are complements, not replacements:** @Cockton2001 found 65% of heuristic predictions were wrong; @Hvannberg2007 found 62% of problems went undetected in a usability test
 - **Skill dominates:** the same interface handed to two evaluators yields different results; analytic methods are wide open to the evaluator effect
 
 ## Heuristic evaluation
 
 ::: {.callout-note}
-Heuristic evaluation is an analytic method in which evaluators inspect an interface against a small set of usability heuristics (rules of thumb) and record where the design breaches them. The most cited set is the ten Molich and Nielsen heuristics.
+Heuristic evaluation is an analytic method in which evaluators inspect an interface against a small set of usability heuristics (rules of thumb) and record where the design breaches them. The most cited set is the ten Molich and Nielsen heuristics [@NielsenMolich1990; @Nielsen1994].
 :::
 
 ## What the heuristics actually catch
@@ -144,21 +147,24 @@ You flag a "consistency" violation but your teammate does not see it as a proble
 ## How many evaluators do you need
 
 ::: {.callout-note}
-Detecting a usability problem can be modeled as a Bernoulli trial: each evaluator finds a given problem with some probability p. The chance that at least one of k evaluators catches it is 1 minus (1 minus p) to the power k.
+Detecting a usability problem can be modeled as a Bernoulli trial: each evaluator finds a given problem with some probability $p$. The chance that at least one of $k$ evaluators catches it is
+$$
+1 - (1 - p)^k
+$$
 :::
 
 ## The magic-number claim, and why it wobbles
 
-- **Experts are efficient:** at p around 0.75, just two evaluators catch a given problem with 95% probability
-- **Novices are not:** a CS student's detection rate runs 7% to 75%, often near 30%, so you would need seven or more for the same confidence
+- **Experts are efficient:** at $p = 0.75$, two evaluators catch a given problem with probability $1 - 0.25^2 \approx 0.94$, and three push it past 0.98
+- **Novices are not:** a CS student's detection rate runs 7% to 75%, often near 30%; at $p = 0.30$ seven evaluators reach only about 0.92, and it takes nine to pass 0.95
 - **Coverage is harder than detection:** across many problems, even an expert misses a large share of "obvious" ones; a single evaluator is inherently unreliable
 - **Skill is the hidden variable:** the famous "you only need a few evaluators" rule quietly assumes those few are experts
 
 ##
 
 ::: {.callout-warning title="Do five evaluators really find 85% of problems?"}
-- **Nielsen and Molich** popularized the idea that a handful of evaluators uncover most problems
-- **Cockton and Woolrych** and the Comparative Usability Evaluation studies countered: hit rates vary wildly, and different evaluators find different problems
+- @NielsenMolich1990 popularized the idea that a handful of evaluators uncover most problems
+- @Cockton2001 and the Comparative Usability Evaluation studies countered: hit rates vary wildly, and different evaluators find different problems
 - The model itself assumes no false positives and equal skill, which real teams violate
 - Design takeaway: do not promise "five evaluators, 85% coverage"; report who the evaluators were and treat single-evaluator results with suspicion
 :::
@@ -180,15 +186,15 @@ HEI is an analytic method that starts from a task analysis, enumerates the state
 - **It came from safety-critical work:** HEI grew up in aviation and hardware, but the state-based idea generalizes to most interfaces (a callback to last week's safety and risk)
 - **Task analysis first:** unlike heuristic evaluation, you map the states and goals before you look for trouble
 - **Three error types to enumerate:** the user confuses the correct action, confuses the machine's state, or simply selects wrong; for each, you assess the consequence
-- **It actually predicts:** **Baber and Stanton** watched 300 real vending-machine transactions, then showed one evaluator using HEI caught over 80% of the real problems in about 3.5 hours
+- **It actually predicts:** @Baber1996 watched 300 real vending-machine transactions, then showed one evaluator using HEI caught over 80% of the real problems in about 3.5 hours
 
 ##
 
 ::: {.callout-tip title="In the wild"}
 🎤 *Therac-25*
+:::
 
 ![](fiTherac.jpg)
-:::
 
 ::: {.notes}
 https://en.wikipedia.org/wiki/Therac-25
@@ -212,8 +218,8 @@ A cognitive walkthrough is an analytic method that mentally simulates a novice e
 ## Built on a theory of guessing
 
 - **Four questions per step:** right goal, notice the action, associate action with effect, recognize progress; a "no" that cannot be explained is a critical issue
-- **Rooted in exploration theory:** **Polson and Lewis** modeled users as setting goals and guessing actions from perceptual cues, crossing the gulfs of evaluation and execution
-- **Scope is learnability:** it targets how novices learn a system, not expert speed; **Lewis et al.** found it caught 50% of problems from an empirical study
+- **Rooted in exploration theory:** @Polson1990 modeled users as setting goals and guessing actions from perceptual cues, crossing the gulfs of evaluation and execution
+- **Scope is learnability:** it targets how novices learn a system, not expert speed; @Lewis1990 found it caught 50% of problems from an empirical study
 - **Design tactics fall out of it:** make available actions salient, offer an obvious undo, present few alternatives, require few choices
 
 ## [Concept check]{.r-fit-text}
@@ -230,7 +236,7 @@ KLM is a simple mathematical model that predicts how long an expert, error-free 
 
 ## A stopwatch you run on paper
 
-- **Add up the atoms:** **Card, Moran and Newell** gave empirical constants, such as 1.1 s to point, 0.4 s to home the hands, 1.2 s for a mental operator
+- **Add up the atoms:** Card, Moran, and Newell [-@Card1983] gave empirical constants, such as 1.1 s to point, 0.4 s to home the hands, 1.2 s for a mental operator
 - **Homing is the silent tax:** in the worked replace-all example, moving hands between mouse and keyboard eats almost a quarter of the total time
 - **It assumes an expert with no errors:** no learning, no memory, no multitasking, which is exactly why it complements the novice-focused walkthrough
 - **Get the operator count right, not the order:** best practice cares more about how many mental operators than their exact sequence
@@ -239,9 +245,9 @@ KLM is a simple mathematical model that predicts how long an expert, error-free 
 
 ::: {.callout-tip title="In the wild"}
 🎤 *4000 Clicks*
+:::
 
 ![](fi4000Clicks.jpg)
-:::
 
 ::: {.notes}
 https://unsplash.com/photos/person-sitting-while-using-laptop-computer-and-green-stethoscope-near-NFvdKIhxYlU
@@ -258,12 +264,12 @@ Two login designs do the same job; one keeps hands on the keyboard, the other fo
 ## Think-aloud studies
 
 ::: {.callout-note}
-A think-aloud study asks participants to verbalize their thinking while they use a system, so the evaluator can capture what they are trying to do, how they read feedback, and where they get stuck. **Nielsen** called it the single most important usability engineering method.
+A think-aloud study asks participants to verbalize their thinking while they use a system, so the evaluator can capture what they are trying to do, how they read feedback, and where they get stuck. @Nielsen1993 called it the single most important usability engineering method.
 :::
 
 ## The one method that opens the black box
 
-- **Grounded in verbal protocols:** **Ericsson and Simon** argued that concurrent verbalization can validly reflect what is in short-term memory
+- **Grounded in verbal protocols:** @Ericsson1984 argued that concurrent verbalization can validly reflect what is in short-term memory
 - **Three levels:** level 1 reports thoughts as-is, level 2 puts nonverbal content into words, level 3 asks for explanations and rationales
 - **Only levels 1 and 2 are "valid":** level 3 (explaining why) changes performance and no longer purely reflects thinking, though it can still be useful in HCI
 - **It is reactive and partial:** thinking aloud can speed you up or slow you down, and people know more than they say
@@ -277,9 +283,9 @@ The instructions and tasks are the biggest levers on what a think-aloud study fi
 ## Small wording changes, big behavior changes
 
 - **Classic vs. relaxed:** relaxed thinking aloud invites explanation and reflection (level 3); useful, but no longer neutral
-- **Instructions leak into behavior:** **Hertzum et al.** showed relaxed instructions changed visual search, navigation, and mental workload
+- **Instructions leak into behavior:** @Hertzum2009 showed relaxed instructions changed visual search, navigation, and mental workload
 - **Avoid hidden help:** phrasing a task in the system's own terms tells users which feature to use and destroys realism
-- **Easy first task, concurrent over retrospective:** ease people in; **Alhadreti and Mayhew** found concurrent think-aloud beat retrospective and hybrid on problems found
+- **Easy first task, concurrent over retrospective:** ease people in; @Alhadreti2018 found concurrent think-aloud beat retrospective and hybrid on problems found
 
 ## [Concept check]{.r-fit-text}
 
@@ -316,9 +322,9 @@ The evaluator effect: different evaluators, given the very same sessions, surfac
 ## When the same tapes tell different stories
 
 ::: {.callout-warning title="Can two analysts trust the same tapes?"}
-- **Jacobsen et al.** gave four evaluators the same think-aloud recordings: only about a fifth of problems were found by all four, and about half by just one
+- @Jacobsen1998 gave four evaluators the same think-aloud recordings: only about a fifth of problems were found by all four, and about half by just one
 - This mirrors the low inter-evaluator agreement seen in analytic methods (Chapter 41)
-- **Fan et al.** surveyed practitioners and found most skip best practices: no warm-up, leading prompts, interrupting users
+- @Fan2020 surveyed practitioners and found most skip best practices: no warm-up, leading prompts, interrupting users
 - Design takeaway: use multiple analysts, neutral prompts, and a shared coding scheme before you trust a think-aloud problem list
 :::
 
@@ -344,6 +350,8 @@ When evaluators disagree, which problems are “real”?
 
 **Produce:** Each group first makes its own problem list. Each cross-method pair then builds one side-by-side table marking: problems both methods caught, problems only the walkthrough predicted, problems only the think-aloud exposed. If you had to choose: which single method would you keep for this flow, and what kind of problem(s) does that choice make you blind to?
 
+---
+
 **Time:** 15 min run your method · 10 min pair across methods and merge · 15 min share-out
 
 **Debrief:** Across the room, which problems surfaced only in the real runs, and which did only the walkthrough predict? Did the walkthrough raise alarms the real users never hit? What does the split say about running one method alone?
@@ -362,7 +370,7 @@ Evaluation is treated as indispensable, yet a serious line of work argues it can
 
 The evaluator effect shows the same tapes yield different problem lists depending on who looks.
 
-*Only a fifth of problems were found by all four evaluators in Jacobsen et al. If reliability is this low, is a one-person heuristic evaluation worth anything? What would it take to make you act on a usability finding, and is that bar even affordable in practice?*
+*Only a fifth of problems were found by all four evaluators in @Jacobsen1998. If reliability is this low, is a one-person heuristic evaluation worth anything? What would it take to make you act on a usability finding, and is that bar even affordable in practice?*
 
 ## Analytic methods skip real users. When is that defensible, and when is it a cop-out?
 
@@ -372,7 +380,7 @@ Analytic methods are cheap and fast, but carry high false positive and false neg
 
 ## Can heuristics written for GUIs evaluate AI systems, or do opaque models need new yardsticks?
 
-Amershi et al. wrote 18 heuristics specifically for interactive AI because the old ten did not fit.
+@Amershi2019 wrote 18 heuristics specifically for interactive AI because the old ten did not fit.
 
 *When the system's behavior is probabilistic, learns from you, and cannot fully explain itself, do classic yardsticks like "visibility of system status" or "user control" still mean anything? And when an AI agent acts on your behalf, who is even "the user" whose experience you evaluate?*
 
@@ -380,7 +388,7 @@ Amershi et al. wrote 18 heuristics specifically for interactive AI because the o
 
 ## Activity 1: Heuristic evaluation showdown (~35 min)
 
-**Task:** In groups of 3 to 4, individually run a heuristic evaluation of the same real interface (a travel planner, a volunteer org homepage, or a settings panel) using the Molich and Nielsen heuristics, then combine your findings by:
+**Task:** In groups of 3 to 4, individually run a heuristic evaluation of the same real interface (a travel planner, a volunteer org homepage, or a settings panel) using the Molich and Nielsen heuristics [@NielsenMolich1990; @Nielsen1994], then combine your findings by:
 
 **Produce:** Each group posts its individual problem lists on the wall; everyone walks and tallies which problems appear on only one list vs. all of them.
 
@@ -394,6 +402,8 @@ Amershi et al. wrote 18 heuristics specifically for interactive AI because the o
 
 **Produce:** A merged problem list. Tag each problem: found by walkthrough, by think-aloud, or by both. Classify each as failure-to-reach-goal, misunderstanding, or negative-experience. Mark which problems only one method caught. 
 
+---
+
 **Time:** 28 min · 12 min share-out
 
 **Debrief:** Which method caught what — and given the evaluator effect, how much would you trust either list from a single analyst?
@@ -401,9 +411,11 @@ Amershi et al. wrote 18 heuristics specifically for interactive AI because the o
 
 ## Activity 3: AI interface audit (~40 min)
 
-**Task:** In groups of 3 to 4, audit a real AI feature (autocomplete, a chatbot, an AI photo tool, or an AI-generated UI) against Amershi et al.'s 18 AI heuristics, and pick one task to model with KLM or probe with a quick think-aloud.
+**Task:** In groups of 3 to 4, audit a real AI feature (autocomplete, a chatbot, an AI photo tool, or an AI-generated UI) against the 18 AI heuristics of @Amershi2019, and pick one task to model with KLM or probe with a quick think-aloud.
 
 **Produce:** An annotated screenshot flagging at least 5 heuristic violations, plus either a KLM estimate for one task or three think-aloud-style user quotes you would expect. Include one position statement: name one AI heuristic that is impossible to satisfy with today's opaque models, and argue why.
+
+---
 
 **Time:** 25 min group work · 15 min share-out
 
