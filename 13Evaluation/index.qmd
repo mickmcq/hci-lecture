@@ -249,6 +249,9 @@ When an AI agent personalizes itself and acts on each user's behalf, there is no
 
 - **AI clinical scribe (family clinic):** built: live transcription and a draft note. Missing: EHR write-back, specialty templates, billing codes. Wrinkle: the obvious fake is a human reviewing every note, which is exactly what inflates early trust.
 - **Hospital medication-scheduling module:** built: ward schedule and nurse login. Missing: pharmacy integration, interaction alerts, offline mode. Wrinkle: patient safety means some things cannot be faked, and paper is still legally required.
+
+---
+
 - **Kitchen display system (one restaurant):** built: order display and bump. Missing: allergy flags, POS integration, printer fallback. Wrinkle: watch whether the line reorganizes around the screen or keeps a paper shadow.
 - **Municipal parking app (one neighborhood):** built: find-a-spot and pay. Missing: enforcement integration, offline, non-English support. Wrinkle: whoever downloads it is not the whole population, and the coverage gap is the equity story.
 
