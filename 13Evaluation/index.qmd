@@ -201,51 +201,55 @@ A banking app team wants to know how people navigate their newly launched site. 
 
 # Discussions
 
-## When is realism worth losing control?
+## Google Glass passed every lab test, but still failed. What kind of product *can't* be evaluated in a lab?
 
-Field studies buy you the truth of real use and hand back your ability to say what caused what.
+Glass worked flawlessly on the bench and died on the street, so the real question isn't "is the field better," it's which products have their make-or-break qualities only in the wild.
 
-*Kjeldskov found the lab caught the same problems for a fraction of the cost, yet the nurses' collective reading only ever appeared in the field. Where is the line? For a given evaluation goal, students should be able to argue when the extra realism earns its price and when it is expensive theater.*
+## When a deployment fails, can you ever say "the design was fine, the rollout was bad"?
 
-## Is self-selection a fatal flaw, or an honest signal?
+The interface, the training, the organization, and the user's context all move at once. How do you know what to do next? Examples?
 
-The users who opt into your beta are not a random sample, and that is exactly why the result may not generalize.
+## How do you field-evaluate an AI that gives every user a different system?
 
-*The Wikipedia Adventure died on self-selection: opted-in newcomers were simply different. But one could argue that the people who choose your product are the people who matter. Is filtering by motivation a bias to correct, or the real-world condition you should be studying?*
+When an AI agent personalizes itself and acts on each user's behalf, there is no fixed interface and no shared task, so "evaluating the design" starts to dissolve.
 
-## Whose consent covers a deployment study?
-
-Every shipped feature is a live experiment on people who never agreed to be studied.
-
-*Log analysis, A/B tests, and feed tweaks run on real users continuously, often without meaningful notice. When does routine product measurement cross into unconsented human-subjects research, and what would honest field-evaluation ethics actually require of a company?*
-
-## How do you run a field evaluation of an AI that acts for the user?
-
-When an AI agent personalizes itself per user and acts on their behalf, no two people see the same system, and "the task" is negotiated in real time.
-
-*If an AI assistant books, buys, and writes differently for every user, there is no fixed interface to evaluate and no shared task to standardize. What does ecological validity even mean here, who counts as "the user" when the agent acts, and can a controlled field experiment survive a system that rewrites itself for each person?*
+## Is AI a novelty or here to stay? How do we know?
 
 # Activities
 
-## Activity 1: From lab test to field study (~35 min)
+## Activity 1: Believe it yet? (~35 min)
 
-**Task:** In groups of 3 to 4, take a simple lab usability test (for example, a food-delivery app checkout) and redesign it as a field evaluation, deciding where to sit on each of McGrath's four dials: people, activities, context, technology.
-
-**Produce:** A single dial diagram — draw McGrath's four dials (people, activities, context, technology) as sliders, mark where the lab sits and where your field version moves each, and write one sentence on the dial you deliberately left at "lab."
+**Task:** In groups of 3 to 4, interrogate the rosy launch dashboard of FitStreak, a habit-tracking fitness app six weeks post-launch (signals on the next slide). For each "good news" number, decide what it optimistically implies, what could be faking it (novelty, self-selection, the say-do gap), and what it hides. Pick the one signal you would stake a real design decision on today, and defend why it survives when the others don't.
 
 **Time:** 25 min group work · 10 min share-out
 
-**Debrief:** Which single dial, turned to field, would most change your findings, and why?
+**Debrief:** Which signal looked strongest but turned out weakest, and what did the day-one dashboard structurally fail to show?
 
-## Activity 2: Design a pilot for a half-built system (~35 min) 
+## Activity 1: FitStreak's launch dashboard
 
-**Task:** In groups of 3–4, take a partially built system (a 60%-complete hospital scheduler, a new internal tool, a campus app). Design a pilot implementation, not a lab test: real but unfinished system, real context, limited time, real data, safeguards against breakdown. 
+- **Daily active users up 40% in three weeks** 
+- **92% say they'd recommend it** 
+- **Support tickets down 30%** 
+- **Average session now 11 minutes** 
+- **Beta testers rate the streak feature 4.8/5** 
 
-**Produce:** A one-page pilot plan stating the one question the pilot must answer, what you'll instrument to answer it, the safeguards you'll run, and — explicitly — the list of things this pilot cannot tell you (so nobody over-reads the signal). Name one sociotechnical effect (à la Hertzum's nurses reading the record aloud together) that a solo usability test would miss and your pilot might catch. 
+## Activity 2: Design a pilot for a half-built system (~40 min)
 
-**Time:** 25 min group · 10 min share-out 
+**Task:** In groups of 3 to 4, design a pilot implementation for a system that is only ~60% built: a limited-time field deployment in its real context, with real data and safeguards. Pick a scenario card from the next slide. Decide the one question the pilot must answer, which missing 40% you fake versus leave broken, the setting, and what you instrument.
 
-**Debrief:** What's your "shadow spreadsheet" — the workaround that, if it appears during the pilot, tells you exactly where the design misses reality?
+**Produce:** A pilot plan: the one question, built-versus-faked, setting and McGrath dials, users and self-selection, safeguards, instrumentation, and one sentence on what the pilot cannot conclude. Two forced positions: name the feature you deliberately leave broken or faked and defend the pilot's honesty without it; and make the safety-net call, how much breakdown support you staff, and whether that support reveals real adoption or props up a system that would otherwise fail.
 
+---
+
+**Time:** 28 min group work · 12 min share-out
+
+**Debrief:** Whose pilot survives a bad week, an outage or a staff change? Did anyone's safeguards guarantee a positive result? And for the AI scribe group: how much of the early trust was the model, and how much was the human fixing every note?
+
+## Activity 2: Pick a scenario
+
+- **AI clinical scribe (family clinic):** built: live transcription and a draft note. Missing: EHR write-back, specialty templates, billing codes. Wrinkle: the obvious fake is a human reviewing every note, which is exactly what inflates early trust.
+- **Hospital medication-scheduling module:** built: ward schedule and nurse login. Missing: pharmacy integration, interaction alerts, offline mode. Wrinkle: patient safety means some things cannot be faked, and paper is still legally required.
+- **Kitchen display system (one restaurant):** built: order display and bump. Missing: allergy flags, POS integration, printer fallback. Wrinkle: watch whether the line reorganizes around the screen or keeps a paper shadow.
+- **Municipal parking app (one neighborhood):** built: find-a-spot and pay. Missing: enforcement integration, offline, non-English support. Wrinkle: whoever downloads it is not the whole population, and the coverage gap is the equity story.
 
 {{< include endMatter.md >}}
