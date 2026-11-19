@@ -545,6 +545,8 @@ Interactive machine learning lets a *designer* rapidly supply training data to c
 
 **Produce:** The fault tree, plus each leaf placed on a risk matrix by likelihood and impact. Then propose one design change and state which of three things it does: removes the hazard, removes the exposure, or merely warns. Cook's point applies — if your tree has a single *and*-free path to the top, you have probably not looked hard enough.
 
+---
+
 **Time:** 25 min group work · 10 min share-out
 
 **Debrief:** How many groups' fixes were warnings? A warning leaves both the hazard and the exposure in place and moves the risk onto the user.
@@ -555,6 +557,8 @@ Interactive machine learning lets a *designer* rapidly supply training data to c
 
 **Produce:** A table of command, undo behavior, and whether strong-cu held. Then write a short specification for undo in an agentic AI context, where a single instruction produced a multi-step change across several files or records: state what one press of undo reverts, what it cannot revert, and what the interface shows the user before they press it.
 
+---
+
 **Time:** 25 min work · 10 min share-out
 
 **Debrief:** Undo is provably not an ordinary command. In your AI case, is undo even the right affordance, or does an irreversible multi-step action need a different mechanism — a preview, a staging area, a confirmation — instead?
@@ -564,6 +568,8 @@ Interactive machine learning lets a *designer* rapidly supply training data to c
 **Task:** In groups of 3 to 4, take a menu or toolbar of roughly eight commands. Define the task instance by estimating each command's frequency of use. Define an objective function — expected selection time is a reasonable one, built from Hick–Hyman for the decision and Fitts's law for the pointing. Compute it for the current layout and for two alternatives, including a frequency-ordered one.
 
 **Produce:** The three scores and the winner. Then answer the three questions that make "optimal" mean anything: best out of which options, best for what, and best with what guarantees. Finish by naming one epistemic uncertainty your model ignores — something real that your objective function has no term for.
+
+---
 
 **Time:** 28 min group work · 12 min share-out
 
